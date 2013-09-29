@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.20827.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HFT", "HFT\HFT.csproj", "{ECA1A4BA-FFE0-4A6B-ADEE-59514170B89A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Krs.Ats.IBNet", "Interactive Brokers API\Krs.Ats.IBNet\Krs.Ats.IBNet.csproj", "{98672E16-97B1-4204-86CC-EA0009CA15F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KRS.ATS.TestApp", "Interactive Brokers API\Krs.Ats.TestApp\KRS.ATS.TestApp.csproj", "{6991EC5C-B18D-42BA-87B0-7A696F78AC77}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ECA1A4BA-FFE0-4A6B-ADEE-59514170B89A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECA1A4BA-FFE0-4A6B-ADEE-59514170B89A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECA1A4BA-FFE0-4A6B-ADEE-59514170B89A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECA1A4BA-FFE0-4A6B-ADEE-59514170B89A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98672E16-97B1-4204-86CC-EA0009CA15F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98672E16-97B1-4204-86CC-EA0009CA15F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98672E16-97B1-4204-86CC-EA0009CA15F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98672E16-97B1-4204-86CC-EA0009CA15F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6991EC5C-B18D-42BA-87B0-7A696F78AC77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6991EC5C-B18D-42BA-87B0-7A696F78AC77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6991EC5C-B18D-42BA-87B0-7A696F78AC77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6991EC5C-B18D-42BA-87B0-7A696F78AC77}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

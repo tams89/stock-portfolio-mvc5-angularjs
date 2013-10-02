@@ -6,6 +6,7 @@ using System.Configuration;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,20 +14,17 @@ namespace ORM.Models
 {
     public abstract class EntityBase<T> where T : class
     {
-        private static string ConnectionString
-        {
-            get
-            {
-                return ConfigurationManager.ConnectionStrings["HFTDB"].ConnectionString;
-            }
-        }
+        /// <summary>
+        /// Retrieve the first connection string in the app.config.
+        /// </summary>
+        private static string _connectionString = "Data Source=.;Initial Catalog=HFT;Integrated Security=True";
 
-        public static T Get(int? id = null)
+        public static IEnumerable<T> GetAll()
         {
-            using (var c = new SqlConnection(ConnectionString))
+            using (var c = new SqlConnection(_connectionString))
             {
                 c.Open();
-                var entity = c.Get<T>(id);
+                var entity = c.GetList<T>(buffered: true);
                 c.Close();
 
                 return entity;

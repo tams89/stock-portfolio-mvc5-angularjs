@@ -11,10 +11,11 @@ namespace ORM.Models
     /// <summary>
     /// Tick Model
     /// </summary>
-    // TODO: INgerit this class from entity base.
     public class Tick : EntityBase<Tick>
     {
         public Guid Id { get; set; }
+
+        public string Symbol { get; set; }
 
         public DateTime Date { get; set; }
 

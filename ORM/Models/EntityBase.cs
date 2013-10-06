@@ -1,14 +1,6 @@
 ﻿using DapperExtensions;
-using Microsoft.SqlServer.Server;
-using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Data.Common;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ORM.Models
 {
@@ -25,6 +17,24 @@ namespace ORM.Models
             {
                 c.Open();
                 var entity = c.GetList<T>(buffered: true);
+                c.Close();
+
+                return entity;
+            }
+        }
+
+        /// <summary>
+        /// Gets tick data collection from db by matching symbol.
+        /// </summary>
+        /// <param name="symbol">The symbol to look for.</param>
+        /// <returns>Collection of tick data.</returns>
+        public static IEnumerable<Tick> GetBySymbol(string symbol)
+        {
+            using (var c = new SqlConnection(_connectionString))
+            {
+                c.Open();
+                var predicate = Predicates.Field<Tick>(x => x.Symbol, Operator.Like, symbol);
+                var entity = c.GetList<Tick>(predicate);
                 c.Close();
 
                 return entity;

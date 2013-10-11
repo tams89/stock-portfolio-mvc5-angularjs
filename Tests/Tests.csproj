@@ -55,7 +55,7 @@
     <Compile Include="OptionDataTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Domain\Core.csproj">
+    <ProjectReference Include="..\Core\Core.csproj">
       <Project>{bfcef614-1598-44c5-a3e0-3a956d5cd209}</Project>
       <Name>Core</Name>
     </ProjectReference>

@@ -1,0 +1,87 @@
+<query xmlns:yahoo="http://www.yahooapis.com/v1/base.rng" yahoo:count="1" yahoo:created="2013-05-12T16:30:37Z" yahoo:lang="en-US">
+  <results>
+    <quote symbol="">
+      <Ask>32.80</Ask>
+      <AverageDailyVolume>49855600</AverageDailyVolume>
+      <Bid>32.70</Bid>
+      <AskRealtime>32.80</AskRealtime>
+      <BidRealtime>32.70</BidRealtime>
+      <BookValue>9.185</BookValue>
+      <Change_PercentChange>+0.03 - +0.09%</Change_PercentChange>
+      <Change>+0.03</Change>
+      <Commission/>
+      <ChangeRealtime>+0.03</ChangeRealtime>
+      <AfterHoursChangeRealtime>N/A - N/A</AfterHoursChangeRealtime>
+      <DividendShare>0.86</DividendShare>
+      <LastTradeDate>5/10/2013</LastTradeDate>
+      <TradeDate/>
+      <EarningsShare>1.938</EarningsShare>
+      <ErrorIndicationreturnedforsymbolchangedinvalid/>
+      <EPSEstimateCurrentYear>2.76</EPSEstimateCurrentYear>
+      <EPSEstimateNextYear>3.07</EPSEstimateNextYear>
+      <EPSEstimateNextQuarter>0.68</EPSEstimateNextQuarter>
+      <DaysLow>32.32</DaysLow>
+      <DaysHigh>32.72</DaysHigh>
+      <YearLow>26.26</YearLow>
+      <YearHigh>32.52</YearHigh>
+      <HoldingsGainPercent>- - -</HoldingsGainPercent>
+      <AnnualizedGain/>
+      <HoldingsGain/>
+      <HoldingsGainPercentRealtime>N/A - N/A</HoldingsGainPercentRealtime>
+      <HoldingsGainRealtime/>
+      <MoreInfo>cn</MoreInfo>
+      <OrderBookRealtime/>
+      <MarketCapitalization>273.0B</MarketCapitalization>
+      <MarketCapRealtime/>
+      <EBITDA>30.493B</EBITDA>
+      <ChangeFromYearLow>+6.43</ChangeFromYearLow>
+      <PercentChangeFromYearLow>+24.49%</PercentChangeFromYearLow>
+      <LastTradeRealtimeWithTime>N/A - &lt;b&gt;32.69&lt;/b&gt;</LastTradeRealtimeWithTime>
+      <ChangePercentRealtime>N/A - +0.09%</ChangePercentRealtime>
+      <ChangeFromYearHigh>+0.17</ChangeFromYearHigh>
+      <PercebtChangeFromYearHigh>+0.52%</PercebtChangeFromYearHigh>
+      <LastTradeWithTime>May 10 - &lt;b&gt;32.69&lt;/b&gt;</LastTradeWithTime>
+      <LastTradePriceOnly>32.69</LastTradePriceOnly>
+      <HighLimit/>
+      <LowLimit/>
+      <DaysRange>32.32 - 32.72</DaysRange>
+      <DaysRangeRealtime>N/A - N/A</DaysRangeRealtime>
+      <FiftydayMovingAverage>28.6342</FiftydayMovingAverage>
+      <TwoHundreddayMovingAverage>27.9396</TwoHundreddayMovingAverage>
+      <ChangeFromTwoHundreddayMovingAverage>+4.7504</ChangeFromTwoHundreddayMovingAverage>
+      <PercentChangeFromTwoHundreddayMovingAverage>+17.00%</PercentChangeFromTwoHundreddayMovingAverage>
+      <ChangeFromFiftydayMovingAverage>+4.0558</ChangeFromFiftydayMovingAverage>
+      <PercentChangeFromFiftydayMovingAverage>+14.16%</PercentChangeFromFiftydayMovingAverage>
+      <Name>Microsoft Corpora</Name>
+      <Notes/>
+      <Open>32.61</Open>
+      <PreviousClose>32.66</PreviousClose>
+      <PricePaid/>
+      <ChangeinPercent>+0.09%</ChangeinPercent>
+      <PriceSales>3.59</PriceSales>
+      <PriceBook>3.56</PriceBook>
+      <ExDividendDate>Feb 19</ExDividendDate>
+      <PERatio>16.85</PERatio>
+      <DividendPayDate>Jun 13</DividendPayDate>
+      <PERatioRealtime/>
+      <PEGRatio>1.39</PEGRatio>
+      <PriceEPSEstimateCurrentYear>11.83</PriceEPSEstimateCurrentYear>
+      <PriceEPSEstimateNextYear>10.64</PriceEPSEstimateNextYear>
+      <Symbol></Symbol>
+      <SharesOwned/>
+      <ShortRatio>2.30</ShortRatio>
+      <LastTradeTime>4:00pm</LastTradeTime>
+      <TickerTrend>&amp;nbsp;==+===&amp;nbsp;</TickerTrend>
+      <OneyrTargetPrice>32.83</OneyrTargetPrice>
+      <Volume>36396524</Volume>
+      <HoldingsValue/>
+      <HoldingsValueRealtime/>
+      <YearRange>26.26 - 32.52</YearRange>
+      <DaysValueChange>- - +0.09%</DaysValueChange>
+      <DaysValueChangeRealtime>N/A - N/A</DaysValueChangeRealtime>
+      <StockExchange>NasdaqNM</StockExchange>
+      <DividendYield>2.63</DividendYield>
+      <PercentChange>+0.09%</PercentChange>
+    </quote>
+  </results>
+</query>

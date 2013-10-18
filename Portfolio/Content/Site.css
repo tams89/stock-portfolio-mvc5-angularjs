@@ -1,17 +1,8 @@
-﻿html {
+﻿body {
     background-color: black;
     background-image: url(Images/2_billion_gold_price_bet.jpg);
     background-repeat: no-repeat;
-    -ms-background-size: cover;
     background-size: cover;
-    font-family: sans-serif;
-}
-
-body {
-    padding-top: 80px;
-    padding-bottom: 20px;
-    background-color: #000000;
-    background-color: rgba(0, 0, 0, 0.60);
 }
 
 footer {
@@ -57,10 +48,22 @@ input[type="checkbox"].input-validation-error {
 }
 
 .jumbotron {
+    max-height: 180px;
     background-color: transparent;
     color: whitesmoke;
 }
 
 .home {
     color: antiquewhite;
+}
+
+.navbar-inverse {
+    background-image: repeating-linear-gradient(-0deg, rgb(255,255,255) 90%, black 60%);
+}
+
+.overlay {
+    position: inherit;
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.60);
+    margin-top: 60px;
 }

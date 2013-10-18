@@ -21,7 +21,7 @@ let cnd x =
 /// x: strike price of option
 /// t: time to expiration in years
 /// r: risk free interest rate
-/// v: volatility
+/// v: volatility (typically annualized)
 let Black_Scholes type' s x t r v =
         let d1=(log(s / x) + (r+v*v/2.0)*t)/(v*sqrt(t))
         let d2=d1-v*sqrt(t)

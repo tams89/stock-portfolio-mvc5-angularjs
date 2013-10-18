@@ -68,6 +68,13 @@
     <Compile Include="YahooApiEngineOptions.fs" />
     <Compile Include="YahooApiEngineStock.fs" />
     <Content Include="yqlstock.xml" />
+    <None Include="Samples\MathNet.Numerics.FSharp\Vectors.fsx" />
+    <None Include="Samples\MathNet.Numerics.FSharp\RandomAndDistributions.fsx" />
+    <None Include="Samples\MathNet.Numerics.FSharp\MCMC.fsx" />
+    <None Include="Samples\MathNet.Numerics.FSharp\Matrices.fsx" />
+    <None Include="Samples\MathNet.Numerics.FSharp\LinearRegression.fsx" />
+    <None Include="Samples\MathNet.Numerics.FSharp\Histogram.fsx" />
+    <None Include="Samples\MathNet.Numerics.FSharp\Apply.fsx" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Antlr3.Runtime">
@@ -83,6 +90,18 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="FSharp.Data.TypeProviders, Version=4.3.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="MathNet.Numerics">
+      <HintPath>..\packages\MathNet.Numerics.2.6.1\lib\net40\MathNet.Numerics.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MathNet.Numerics.FSharp">
+      <HintPath>..\packages\MathNet.Numerics.FSharp.2.6.0\lib\net40\MathNet.Numerics.FSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MathNet.Numerics.IO">
+      <HintPath>..\packages\MathNet.Numerics.2.6.1\lib\net40\MathNet.Numerics.IO.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="System" />
     <Reference Include="System.Core" />

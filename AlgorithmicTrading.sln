@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Krs.Ats.IBNet", "Interactive Brokers API\Krs.Ats.IBNet\Krs.Ats.IBNet.csproj", "{98672E16-97B1-4204-86CC-EA0009CA15F4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KRS.ATS.TestApp", "Interactive Brokers API\Krs.Ats.TestApp\KRS.ATS.TestApp.csproj", "{6991EC5C-B18D-42BA-87B0-7A696F78AC77}"
@@ -17,6 +19,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{BFCEF614-1598-44C5-A3E0-3A956D5CD209}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{68AD4F77-FE4B-4EF9-A585-69C736BCD21B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio", "Portfolio\Portfolio.csproj", "{16A33873-0735-4C48-832D-453E30C9E7D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,6 +48,10 @@ Global
 		{68AD4F77-FE4B-4EF9-A585-69C736BCD21B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68AD4F77-FE4B-4EF9-A585-69C736BCD21B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68AD4F77-FE4B-4EF9-A585-69C736BCD21B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16A33873-0735-4C48-832D-453E30C9E7D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16A33873-0735-4C48-832D-453E30C9E7D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16A33873-0735-4C48-832D-453E30C9E7D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16A33873-0735-4C48-832D-453E30C9E7D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svnroot/quantifa/!svn/ver/7/trunk/Quantifa
+END
+Calendar.fs
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svnroot/quantifa/!svn/ver/7/trunk/Quantifa/Calendar.fs
+END
+DayCounter.fs
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/quantifa/!svn/ver/7/trunk/Quantifa/DayCounter.fs
+END
+Date.fs
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svnroot/quantifa/!svn/ver/7/trunk/Quantifa/Date.fs
+END
+Solvers1d.fs
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svnroot/quantifa/!svn/ver/7/trunk/Quantifa/Solvers1d.fs
+END
+Period.fs
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svnroot/quantifa/!svn/ver/7/trunk/Quantifa/Period.fs
+END
+OptionSpec.fs
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svnroot/quantifa/!svn/ver/7/trunk/Quantifa/OptionSpec.fs
+END
+Const.fs
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svnroot/quantifa/!svn/ver/7/trunk/Quantifa/Const.fs
+END
+Integrals.fs
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svnroot/quantifa/!svn/ver/7/trunk/Quantifa/Integrals.fs
+END
+Math.fs
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svnroot/quantifa/!svn/ver/7/trunk/Quantifa/Math.fs
+END
+Script.fsx
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svnroot/quantifa/!svn/ver/7/trunk/Quantifa/Script.fsx
+END
+BlackScholes.fs
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/quantifa/!svn/ver/7/trunk/Quantifa/BlackScholes.fs
+END
+StockSpec.fs
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svnroot/quantifa/!svn/ver/7/trunk/Quantifa/StockSpec.fs
+END
+Heston.fs
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svnroot/quantifa/!svn/ver/7/trunk/Quantifa/Heston.fs
+END
+Distributions.fs
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svnroot/quantifa/!svn/ver/7/trunk/Quantifa/Distributions.fs
+END
+Quantifa.fsproj
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/quantifa/!svn/ver/7/trunk/Quantifa/Quantifa.fsproj
+END
+Enum.fs
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svnroot/quantifa/!svn/ver/7/trunk/Quantifa/Enum.fs
+END

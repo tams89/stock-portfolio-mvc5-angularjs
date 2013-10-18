@@ -12,7 +12,7 @@ namespace HFTTests
         [TestMethod]
         public void GetTickTest()
         {
-            var tick = Tick.GetAll();
+            var tick = Tick.Get();
             Assert.IsNotNull(tick);
         }
     }

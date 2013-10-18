@@ -3,6 +3,7 @@
     background-image: url(Images/2_billion_gold_price_bet.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    color: whitesmoke;
 }
 
 footer {
@@ -66,4 +67,8 @@ input[type="checkbox"].input-validation-error {
     padding: 50px;
     background-color: rgba(0, 0, 0, 0.60);
     margin-top: 60px;
+}
+
+.nav, .pagination, .carousel a {
+    cursor: pointer;
 }

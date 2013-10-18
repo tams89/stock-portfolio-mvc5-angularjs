@@ -47,18 +47,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Portfolio\Security.cs" />
+    <Compile Include="Models\Portfolio\PortfolioSecurities.cs" />
+    <Compile Include="Models\Portfolio\User.cs" />
+    <Compile Include="Models\Portfolio\Portfolio.cs" />
     <Compile Include="ORM\Constants.cs" />
-    <Compile Include="ORM\Mappings\HFT\TickMapper.cs" />
+    <Compile Include="ORM\Mappings\HFT\TickMap.cs" />
     <Compile Include="Models\EntityBase.cs" />
     <Compile Include="Models\HFT\Tick.cs" />
-    <Compile Include="Models\Portfolio\CompanyData.cs" />
-    <Compile Include="Models\Portfolio\MarketData.cs" />
-    <Compile Include="Models\Portfolio\Option.cs" />
+    <Compile Include="ORM\Mappings\Portfolio\PortfolioSecuritiesMap.cs" />
+    <Compile Include="ORM\Mappings\Portfolio\UserMap.cs" />
+    <Compile Include="ORM\Mappings\Portfolio\SecurityMap.cs" />
+    <Compile Include="ORM\Mappings\Portfolio\PortfolioMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

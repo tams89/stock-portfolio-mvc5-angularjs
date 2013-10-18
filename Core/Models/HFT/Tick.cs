@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using Core.ORM;
+using DapperExtensions;
 
 namespace Core.Models.HFT
 {
@@ -24,5 +28,23 @@ namespace Core.Models.HFT
         public decimal Close { get; set; }
 
         public int Volume { get; set; }
+
+        /// <summary>
+        /// Gets tick data collection from db by matching symbol.
+        /// </summary>
+        /// <param name="symbol">The symbol to look for.</param>
+        /// <returns>Collection of tick data.</returns>
+        public static IEnumerable<Tick> BySymbol(string symbol)
+        {
+            using (var c = new SqlConnection(Constants.AlgoTradingDbConnectionStr))
+            {
+                c.Open();
+                var predicate = Predicates.Field<Tick>(x => x.Symbol, Operator.Like, symbol);
+                var entity = c.GetList<Tick>(predicate);
+                c.Close();
+
+                return entity;
+            }
+        }
     }
 }

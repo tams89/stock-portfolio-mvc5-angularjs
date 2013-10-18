@@ -3,9 +3,9 @@ using DapperExtensions.Mapper;
 
 namespace Core.ORM.Mappings.HFT
 {
-    public class TickMapper : ClassMapper<Tick>
+    public class TickMap : ClassMapper<Tick>
     {
-        public TickMapper()
+        public TickMap()
         {
             base.Schema("HFT");
             base.Table("Tick");

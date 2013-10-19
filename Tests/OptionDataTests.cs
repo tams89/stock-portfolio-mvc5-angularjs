@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Linq;
 
-namespace HFTTests
+namespace Test
 {
     [TestClass]
     public class OptionDataTests

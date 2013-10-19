@@ -10,6 +10,7 @@ namespace Core.ORM.Mappings.Portfolio
             base.Schema("Portfolio");
             base.Table("Security");
             Map(f => f.SecurityId).Key(KeyType.Guid);
+            Map(f => f.Symbol).Column("Symbol");
         }
     }
 }

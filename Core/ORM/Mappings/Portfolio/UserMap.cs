@@ -10,6 +10,7 @@ namespace Core.ORM.Mappings.Portfolio
             base.Schema("Portfolio");
             base.Table("User");
             Map(f => f.UserId).Key(KeyType.Guid);
+            Map(f => f.UserName).Column("UserName");
         }
     }
 }

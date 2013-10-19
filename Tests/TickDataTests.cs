@@ -1,7 +1,9 @@
-﻿using Core.Models.HFT;
+﻿using System.Linq;
+using Core.Models.HFT;
+using Core.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace HFTTests
+namespace Test
 {
     [TestClass]
     public class TickDataTests
@@ -12,8 +14,8 @@ namespace HFTTests
         [TestMethod]
         public void GetTickTest()
         {
-            var tick = Tick.Get();
-            Assert.IsNotNull(tick);
+            var tick = new HFTService<Tick>().GetAll();
+            Assert.IsNotNull(tick.Count() > 10);
         }
     }
 }

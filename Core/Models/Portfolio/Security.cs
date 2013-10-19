@@ -8,6 +8,17 @@ namespace Core.Models.Portfolio
 {
     public class Security
     {
+        public Security()
+        {
+            
+        }
+
+        public Security(Guid id, string symbol)
+        {
+            SecurityId = id;
+            Symbol = symbol;
+        }
+
         public Guid SecurityId { get; set; }
         public string Symbol { get; set; }
     }

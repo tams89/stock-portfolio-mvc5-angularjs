@@ -8,7 +8,18 @@ namespace Core.Models.Portfolio
 {
     public class Portfolio
     {
+        public Portfolio()
+        {
+
+        }
+
+        public Portfolio(Guid id, Guid userId)
+        {
+            PortfolioId = id;
+            UserId = userId;
+        }
+
         public Guid PortfolioId { get; set; }
-        public User User { get; set; }
+        public Guid UserId { get; set; }
     }
 }

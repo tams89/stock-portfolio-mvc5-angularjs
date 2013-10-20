@@ -5,18 +5,19 @@ using System.Linq;
 using System.Text;
 using Core.Models.HFT;
 using Core.ORM;
+using Core.Services.Interfaces;
 using DapperExtensions;
 
 namespace Core.Services
 {
-    public class HFTService<T> : ServiceBase<T> where T : class, new()
+    public class HFTService<T> : ServiceBase<T>, IHFTService where T : class, new()
     {
         /// <summary>
         /// Gets tick data collection from db by matching symbol.
         /// </summary>
         /// <param name="symbol">The symbol to look for.</param>
         /// <returns>Collection of tick data.</returns>
-        public static IEnumerable<Tick> BySymbol(string symbol)
+        public IEnumerable<Tick> BySymbol(string symbol)
         {
             using (var c = new SqlConnection(Constants.AlgoTradingDbConnectionStr))
             {

@@ -40,27 +40,27 @@ namespace Test
         [TestMethod]
         public void CheckUserData()
         {
-            var x = new PortfolioService<User>().GetAll();
+            var x = new PortfolioService<User>().Get();
             Assert.IsNotNull(x);
         }
 
         [TestMethod]
         public void CheckPortfolio()
         {
-            var x = new PortfolioService<Portfolio>().GetAll();
+            var x = new PortfolioService<Portfolio>().Get();
             Assert.IsNotNull(x);
         }
         [TestMethod]
         public void CheckSecurityData()
         {
-            var x = new PortfolioService<Security>().GetAll();
+            var x = new PortfolioService<Security>().Get();
             Assert.IsNotNull(x);
         }
 
         [TestMethod]
         public void CheckPortfolioSecurityData()
         {
-            var x = new PortfolioService<PortfolioSecurity>().GetAll();
+            var x = new PortfolioService<PortfolioSecurity>().Get();
             Assert.IsNotNull(x);
         }
     }

@@ -14,7 +14,7 @@ namespace Test
         [TestMethod]
         public void GetTickTest()
         {
-            var tick = new HFTService<Tick>().GetAll();
+            var tick = new HFTService<Tick>().Get();
             Assert.IsNotNull(tick.Count() > 10);
         }
     }

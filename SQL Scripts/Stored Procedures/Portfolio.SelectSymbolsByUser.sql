@@ -12,7 +12,7 @@ CREATE PROCEDURE Portfolio.SelectSymbolsByUser
 AS
 BEGIN
 	SET NOCOUNT ON;
-	SELECT S.Symbol 
+	SELECT S.SecurityId, S.Symbol 
 	FROM Portfolio.[User] U
     INNER JOIN Portfolio.Portfolio P ON U.UserId = P.UserId
     INNER JOIN Portfolio.Portfolio_Security PS ON P.PortfolioId = PS.PortfolioId

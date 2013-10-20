@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Core.Models.Portfolio;
 using Core.ORM;
+using Dapper;
 using DapperExtensions;
 
 namespace Core.Services
@@ -21,15 +23,15 @@ namespace Core.Services
             using (var c = new SqlConnection(Constants.AlgoTradingDbConnectionStr))
             {
                 c.Open();
-                var sql = @"SELECT S.Symbol 
-                            FROM Portfolio.[User] U
-                            INNER JOIN Portfolio.Portfolio P ON U.UserId = P.UserId
-                            INNER JOIN Portfolio.Portfolio_Security PS ON P.PortfolioId = PS.PortfolioId
-                            INNER JOIN Portfolio.Security S ON PS.SecurityId = S.SecurityId";
+                var symbols = c.Query<Security>
+                    (
+                        "Portfolio.SelectSymbolsByUser", 
+                        new { UserName = AuthenticatedUser },
+                        commandType: CommandType.StoredProcedure
+                    );
                 c.Close();
-
-                return entity;
+                return symbols;
             }
         }
-   }
+    }
 }

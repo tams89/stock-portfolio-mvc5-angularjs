@@ -84,10 +84,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="DbSetup.cs" />
-    <Compile Include="TickDataTests.cs" />
+    <Compile Include="DbSetupPortfolio.cs" />
+    <Compile Include="HFTTests.cs" />
+    <Compile Include="PortfolioServiceTest.cs" />
+    <Compile Include="PortfolioTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="OptionDataTests.cs" />
+    <Compile Include="FinanceLibararyTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">

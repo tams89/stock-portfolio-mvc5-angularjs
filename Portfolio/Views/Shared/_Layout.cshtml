@@ -5,10 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/animationCss")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/bootstrapAnimate")
+    <script>
+        var app = angular.module("ui.bootstrap", ["ngAnimate"]);
+    </script>
     <meta name="description" content="S.E. Enterprises algorithmic trading API." />
 </head>
-<body>
+<body class="my-element">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -36,9 +42,9 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - S.E. Corp.</p>
+            <p>&copy; @DateTime.Now.Year - S.E. Plc.</p>
         </footer>
-        @Scripts.Render("~/bundles/angularbootstrap")
+        @Scripts.Render("~/bundles/respond")
         @RenderSection("scripts", required: false)
     </div>
 </body>

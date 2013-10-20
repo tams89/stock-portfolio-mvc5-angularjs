@@ -6,19 +6,30 @@ namespace Portfolio.App_Start
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                "~/Content/bootstrap.css",
+                "~/Content/bootstrap-buttons.css",
+                "~/Content/Site.css"));
+
+            bundles.Add(new StyleBundle("~/Content/animationCss").Include(
+                "~/Content/Animate/animate.css"));
+
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/modernizr-*"));
+                "~/Scripts/modernizr-*"));
+
+            bundles.Add(new ScriptBundle("~/bundles/angular").Include(
+                "~/Scripts/Angular/angular.js",
+                "~/Scripts/Angular/angular-*"));
+
+            bundles.Add(new ScriptBundle("~/bundles/bootstrapAnimate").Include(
+                "~/Scripts/Angular/ui-bootstrap-*",
+                "~/Scripts/Angular/Animate/angular-animate.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/angularbootstrap").Include(
-                      "~/Scripts/angular.js",
-                      "~/Scripts/angular-*",
-                      "~/Scripts/ui-bootstrap-*",
-                      "~/Scripts/respond.js"));
+                "~/Scripts/Angular/ui-bootstrap-*"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/bootstrap-buttons.css",
-                      "~/Content/Site.css"));
+            bundles.Add(new ScriptBundle("~/bundles/respond").Include(
+                "~/Scripts/respond.js"));
         }
     }
 }

@@ -8,13 +8,14 @@
     @Styles.Render("~/Content/animationCss")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/angular")
-    @Scripts.Render("~/bundles/bootstrapAnimate")
+    @Scripts.Render("~/bundles/animate")
+    @Scripts.Render("~/bundles/bootstrap")
     <script>
-        var app = angular.module("ui.bootstrap", ["ngAnimate"]);
+        angular.module('ui.bootstrap', ['ngAnimate']);
     </script>
     <meta name="description" content="S.E. Enterprises algorithmic trading API." />
 </head>
-<body class="my-element">
+<body ng-view="animate">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">

@@ -5,3 +5,10 @@
 <h3>@ViewBag.Message</h3>
 
 <p>Use this area to provide additional information.</p>
+
+<script src="~/Scripts/Directives/app.js"></script>
+<div ng-controller="AppCtrl">
+    <h2>Angular Test</h2>
+    <button class="btn btn-primary" ng-click="app.toggle=!app.toggle">Toggle</button>
+    <div class="toggle" ng-if="app.toggle">Show something...</div>
+</div>

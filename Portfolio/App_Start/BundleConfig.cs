@@ -21,9 +21,6 @@ namespace Portfolio.App_Start
                 "~/Scripts/Angular/angular.js",
                 "~/Scripts/Angular/angular-*"));
 
-            bundles.Add(new ScriptBundle("~/bundles/animate").Include(
-                "~/Scripts/Angular/Animate/angular-animate.js"));
-
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                 "~/Scripts/Angular/ui-bootstrap-*"));
 

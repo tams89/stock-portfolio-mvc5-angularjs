@@ -73,18 +73,26 @@ input[type="checkbox"].input-validation-error {
     cursor: pointer;
 }
 
-.animate.ng-enter {
-    -webkit-animation: fadeIn 1s;
-    -moz-animation: fadeIn 1s;
-    -ms-animation: fadeIn 1s;
-    -o-animation: fadeIn 1s;
-    animation: fadeIn 1s;
+.toggle {
+    -webkit-transition: linear 1s;
+    -moz-transition: linear 1s;
+    -ms-transition: linear 1s;
+    -o-transition: linear 1s;
+    transition: linear 1s;
 }
 
-.animate.ng-leave {
-    -webkit-animation: fadeOut 1s;
-    -moz-animation: fadeOut 1s;
-    -ms-animation: fadeOut 1s;
-    -o-animation: fadeOut 1s;
-    animation: fadeOut 1s;
+.toggle.ng-enter {
+    opacity: 0;
+}
+
+.toggle.ng-enter-active {
+    opacity: 1;
+}
+
+.toggle.ng-leave {
+    opacity: 1;
+}
+
+.toggle.ng-enter-leave {
+    opacity: 0;
 }

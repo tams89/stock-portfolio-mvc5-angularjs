@@ -6,10 +6,6 @@
     <title>Portfolio</title>
     @Styles.Render("~/Content/css")
     @Styles.Render("~/Content/animationCss")
-    @Scripts.Render("~/bundles/angular")
-    @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/modernizr")
     <meta name="description" content="S.E. Enterprises algorithmic trading API." />
 </head>
 <body>
@@ -21,11 +17,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("AlgoTrader", "Index", "Home", null, new { @class = "navbar-brand" })
+                @Html.ActionLink("AlgoTrader", "Main", "Home", null, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav" ng-controller="NavigationController">
-                    <li ng-class="{'active':getClass('/Index')}"><a href="#/Index">Home</a></li>
+                    <li ng-class="{'active':getClass('/Home')}"><a href="#/Home">Home</a></li>
                     <li ng-class="{'active':getClass('/About')}"><a href="#/About">About</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -35,19 +31,22 @@
         </div>
     </div>
     <div class="container body-content overlay" animate-view>
-        <div ng-view></div>
-        <div>
-            @RenderBody()
+        <div ng-view>
+            @* Where Angular Partials are rendered. *@
         </div>
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - S.E. Plc.</p>
         </footer>
-        @Scripts.Render("~/bundles/respond")
-        @RenderSection("scripts", required: false)
     </div>
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
     @Scripts.Render("~/App/AlgoTrader.js")
     @Scripts.Render("~/App/Controllers/NavigationController.js")
     @Scripts.Render("~/App/Directives/AnimatePageTransition.js")
+    @Scripts.Render("~/bundles/respond")
 </body>
 </html>

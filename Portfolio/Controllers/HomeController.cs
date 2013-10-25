@@ -8,7 +8,7 @@ namespace Portfolio.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Main()
         {
             return View();
         }

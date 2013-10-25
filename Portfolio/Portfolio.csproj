@@ -450,14 +450,7 @@
     <Content Include="Scripts\Angular\ui-bootstrap-tpls-0.6.0.js" />
     <Content Include="Scripts\Angular\ui-bootstrap-tpls-0.6.0.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Views\Shared\Error.cshtml">
-      <SubType>Code</SubType>
-    </Content>
-    <Content Include="Views\Shared\_Layout.cshtml">
-      <SubType>Code</SubType>
-    </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -466,7 +459,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Scripts\jquery-2.0.3.min.map" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Main.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

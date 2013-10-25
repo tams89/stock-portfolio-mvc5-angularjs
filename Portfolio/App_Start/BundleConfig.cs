@@ -24,6 +24,9 @@ namespace Portfolio.App_Start
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                 "~/Scripts/Angular/ui-bootstrap-*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+                "~/Scripts/Jquery/jquery-*"));
+
             bundles.Add(new ScriptBundle("~/bundles/respond").Include(
                 "~/Scripts/respond.js"));
         }

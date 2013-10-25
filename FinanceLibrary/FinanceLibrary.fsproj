@@ -91,7 +91,7 @@
     </Reference>
     <Reference Include="FSharp.Data.TypeProviders, Version=4.3.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="MathNet.Numerics">
-      <HintPath>..\packages\MathNet.Numerics.2.6.1\lib\net40\MathNet.Numerics.dll</HintPath>
+      <HintPath>..\packages\MathNet.Numerics.2.6.2\lib\net40\MathNet.Numerics.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="MathNet.Numerics.FSharp">
@@ -99,7 +99,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="MathNet.Numerics.IO">
-      <HintPath>..\packages\MathNet.Numerics.2.6.1\lib\net40\MathNet.Numerics.IO.dll</HintPath>
+      <HintPath>..\packages\MathNet.Numerics.2.6.2\lib\net40\MathNet.Numerics.IO.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib" />

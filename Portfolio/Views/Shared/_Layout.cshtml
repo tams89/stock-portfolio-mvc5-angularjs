@@ -1,17 +1,18 @@
 ﻿<!DOCTYPE html>
-<html ng-app="ui.bootstrap">
+<html ng-app="AlgoTrader">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>Portfolio</title>
     @Styles.Render("~/Content/css")
     @Styles.Render("~/Content/animationCss")
-    @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/angular")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/modernizr")
     <meta name="description" content="S.E. Enterprises algorithmic trading API." />
 </head>
-<body ng-view="animate">
+<body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -23,11 +24,9 @@
                 @Html.ActionLink("AlgoTrader", "Index", "Home", null, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Portfolio", "Index", "Portfolio")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                <ul class="nav navbar-nav" ng-controller="NavigationController">
+                    <li ng-class="{'active':getClass('/Index')}"><a href="#/Index">Home</a></li>
+                    <li ng-class="{'active':getClass('/About')}"><a href="#/About">About</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="navbar-text">Welcome, @User.Identity.Name!</li>
@@ -35,8 +34,11 @@
             </div>
         </div>
     </div>
-    <div class="container body-content overlay">
-        @RenderBody()
+    <div class="container body-content overlay" animate-view>
+        <div ng-view></div>
+        <div>
+            @RenderBody()
+        </div>
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - S.E. Plc.</p>
@@ -44,5 +46,8 @@
         @Scripts.Render("~/bundles/respond")
         @RenderSection("scripts", required: false)
     </div>
+    @Scripts.Render("~/App/AlgoTrader.js")
+    @Scripts.Render("~/App/Controllers/NavigationController.js")
+    @Scripts.Render("~/App/Directives/AnimatePageTransition.js")
 </body>
 </html>

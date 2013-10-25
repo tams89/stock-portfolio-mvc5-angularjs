@@ -73,36 +73,13 @@ input[type="checkbox"].input-validation-error {
     cursor: pointer;
 }
 
-#ng-view {
-  position:relative;
-}
-
 /* Animations */
-.slide-animation.ng-enter, .slide-animation.ng-leave {
-  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-  -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-  -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  min-height:1000px;
+.animate-enter {
+	-webkit-transition: 1s linear all; /* Chrome */
+	transition: 1s linear all;
+	opacity: 0;
 }
-
-.slide-animation.ng-enter {
-  left:100px;
-}
-
-.slide-animation.ng-enter.ng-enter-active {
-  left:0;
-}
-
-.slide-animation.ng-leave {
-  left:0;
-}
-
-.slide-animation.ng-leave.ng-leave-active {
-  left:-100px;
+ 
+.animate-enter.animate-enter-active {
+	opacity: 1;
 }

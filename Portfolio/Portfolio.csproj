@@ -131,6 +131,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App\Directives\" />
     <Folder Include="App\Services\" />
     <Folder Include="App_Data\" />
     <Folder Include="ViewModels\" />
@@ -148,7 +149,6 @@
   <ItemGroup>
     <Content Include="App\AlgoTrader.js" />
     <Content Include="App\Controllers\NavigationController.js" />
-    <Content Include="App\Directives\AnimatePageTransition.js" />
     <Content Include="App\Views\Main\About.html" />
     <Content Include="App\Views\Main\Home.html" />
     <Content Include="Content\Animate\animate.css" />
@@ -433,9 +433,6 @@
     </Content>
     <Content Include="App\Controllers\NavigationController.min.js.map">
       <DependentUpon>NavigationController.js</DependentUpon>
-    </Content>
-    <Content Include="App\Directives\AnimatePageTransition.min.js.map">
-      <DependentUpon>AnimatePageTransition.js</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\jquery-2.0.3.js" />

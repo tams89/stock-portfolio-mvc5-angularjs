@@ -30,23 +30,23 @@
             </div>
         </div>
     </div>
-    <div class="container body-content overlay" animate-view>
-        <div ng-view>
-            @* Where Angular Partials are rendered. *@
-        </div>
+    <div class="container body-content overlay">
+        <div ng-animate="'animate'" ng-view>
+        @* Where Angular Partials are rendered. *@
+    </div>
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - S.E. Plc.</p>
         </footer>
     </div>
     @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/bundles/angular")
+    @*@Scripts.Render("~/bundles/angular")*@
+    @Scripts.Render("https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
 
     @Scripts.Render("~/App/AlgoTrader.js")
     @Scripts.Render("~/App/Controllers/NavigationController.js")
-    @Scripts.Render("~/App/Directives/AnimatePageTransition.js")
     @Scripts.Render("~/bundles/respond")
 </body>
 </html>

@@ -16,3 +16,14 @@ app.controller("HomeController", function ($scope) {
 
 app.controller("AboutController", function ($scope) {
 });
+
+app.controller("StockController", function ($scope) {
+    $scope.Hello = "Tamesh says hello!";
+    $scope.selected = undefined;
+    $scope.symbols = [];
+
+    $scope.OnInputChange = function() {
+        $scope.symbols = [];
+        
+    };
+});

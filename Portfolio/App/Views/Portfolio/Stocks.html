@@ -1,0 +1,11 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-controller="StockController">
+<head>
+    <title>Stock Analysis</title>
+</head>
+    <body>
+        <input type="text" ng-model="Hello"/>
+        {{Hello}}
+        <input class="input-sm" type="text" ng-change="OnInputChange()" ng-model="selected" typeahead="symbol for symbol in symbols | filter:$viewValue">
+    </body>
+</html>

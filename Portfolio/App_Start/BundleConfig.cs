@@ -9,7 +9,8 @@ namespace Portfolio.App_Start
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/bootstrap.css",
                 "~/Content/bootstrap-buttons.css",
-                "~/Content/Site.css"));
+                "~/Content/Site.css"
+                ));
 
             bundles.Add(new StyleBundle("~/Content/animationCss").Include(
                 "~/Content/Animate/animate.css"));

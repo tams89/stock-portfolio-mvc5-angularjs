@@ -1,4 +1,4 @@
-﻿var app = angular.module("AlgoTrader", ["ui.bootstrap"]);
+﻿var app = angular.module("AlgoTrader", ["ui.bootstrap", "ngRoute", "ngAnimate"]);
 
 // Route config
 app.config(["$routeProvider", function ($routeProvider) {

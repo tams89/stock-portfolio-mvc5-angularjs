@@ -1,8 +1,8 @@
 ﻿body {
+    background-position: center;
     background-color: black;
     background-image: url(Images/2_billion_gold_price_bet.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
     color: whitesmoke;
 }
 
@@ -49,7 +49,7 @@ input[type="checkbox"].input-validation-error {
 }
 
 .jumbotron {
-    max-height: 180px;
+    max-height: 160px;
     background-color: transparent;
     color: whitesmoke;
 }
@@ -74,12 +74,11 @@ input[type="checkbox"].input-validation-error {
 }
 
 /* Animations */
-.animate-enter {
-	-webkit-transition: 1s linear all; /* Chrome */
-	transition: 1s linear all;
-	opacity: 0;
-}
- 
-.animate-enter.animate-enter-active {
-	opacity: 1;
+
+.page-change.ng-enter {
+    -webkit-animation: fadeInLeft 1s;
+    -moz-animation: fadeInLeft 1s;
+    -ms-animation: fadeInLeft 1s;
+    -o-animation: fadeInLeft 1s;
+    animation: fadeInLeft 1s;
 }

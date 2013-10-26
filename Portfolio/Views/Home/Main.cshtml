@@ -31,9 +31,9 @@
         </div>
     </div>
     <div class="container body-content overlay">
-        <div ng-animate="'animate'" ng-view>
-        @* Where Angular Partials are rendered. *@
-    </div>
+        <div class="page-change" ng-view>
+            @* Where Angular Partials are rendered. *@
+        </div>
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - S.E. Plc.</p>
@@ -41,7 +41,9 @@
     </div>
     @Scripts.Render("~/bundles/modernizr")
     @*@Scripts.Render("~/bundles/angular")*@
-    @Scripts.Render("https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js")
+    @Scripts.Render("http://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js")
+    @Scripts.Render("http://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-route.min.js")
+    @Scripts.Render("http://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-animate.min.js")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
 

@@ -21,8 +21,22 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav" ng-controller="NavigationController">
-                    <li ng-class="{'active':getClass('/Home')}"><a href="#/Home">Home</a></li>
-                    <li ng-class="{'active':getClass('/About')}"><a href="#/About">About</a></li>
+                    <li class="dropdown" ng-class="{'active':getClass('/Main')}">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Main <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li ng-class="{'active':getClass('/Main/Home')}"><a href="#/Main/Home">Home</a></li>
+                            <li ng-class="{'active':getClass('/Main/About')}"><a href="#/Main/About">About</a></li>        
+                        </ul>
+                    </li>
+                    <li class="dropdown" ng-class="{'active':getClass('/Portfolio')}">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Portfolio <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li ng-class="{'active':getClass('/Portfolio/Stocks')}"><a href="#/Portfolio/Stocks">Stock Analysis</a></li>
+                            <li ng-class="{'active':getClass('/Portfolio/Options')}"><a href="#/Portfolio/Options">Option Analysis</a></li>
+                        </ul>
+                    </li>
+                    @*<li ng-class="{'active':getClass('/Home')}"><a href="#/Home">Home</a></li>
+                    <li ng-class="{'active':getClass('/About')}"><a href="#/About">About</a></li>*@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="navbar-text">Welcome, @User.Identity.Name!</li>

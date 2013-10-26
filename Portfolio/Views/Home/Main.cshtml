@@ -25,7 +25,7 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Main <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li ng-class="{'active':getClass('/Main/Home')}"><a href="#/Main/Home">Home</a></li>
-                            <li ng-class="{'active':getClass('/Main/About')}"><a href="#/Main/About">About</a></li>        
+                            <li ng-class="{'active':getClass('/Main/About')}"><a href="#/Main/About">About</a></li>
                         </ul>
                     </li>
                     <li class="dropdown" ng-class="{'active':getClass('/Portfolio')}">
@@ -36,7 +36,7 @@
                         </ul>
                     </li>
                     @*<li ng-class="{'active':getClass('/Home')}"><a href="#/Home">Home</a></li>
-                    <li ng-class="{'active':getClass('/About')}"><a href="#/About">About</a></li>*@
+                        <li ng-class="{'active':getClass('/About')}"><a href="#/About">About</a></li>*@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="navbar-text">Welcome, @User.Identity.Name!</li>
@@ -54,7 +54,7 @@
         </footer>
     </div>
     @Scripts.Render("~/bundles/modernizr")
-    @*@Scripts.Render("~/bundles/angular")*@
+    @Scripts.Render("~/bundles/angular")
     @Scripts.Render("http://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js")
     @Scripts.Render("http://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-route.min.js")
     @Scripts.Render("http://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-animate.min.js")

@@ -17,13 +17,13 @@ app.controller("HomeController", function ($scope) {
 app.controller("AboutController", function ($scope) {
 });
 
-app.controller("StockController", function ($scope) {
+app.controller("StockController", function ($scope, ajaxService) {
     $scope.Hello = "Tamesh says hello!";
     $scope.selected = undefined;
     $scope.symbols = [];
 
     $scope.OnInputChange = function() {
         $scope.symbols = [];
-        
+        $scope.symbols = ajaxService.getSymbols();
     };
 });

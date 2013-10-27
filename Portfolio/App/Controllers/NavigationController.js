@@ -20,10 +20,8 @@ app.controller("AboutController", function ($scope) {
 app.controller("StockController", function ($scope, ajaxService) {
     $scope.Hello = "Tamesh says hello!";
     $scope.selected = undefined;
-    $scope.symbols = [];
 
-    $scope.OnInputChange = function() {
-        $scope.symbols = [];
+    $scope.OnInputChange = function () {
         $scope.symbols = ajaxService.getSymbols();
     };
 });

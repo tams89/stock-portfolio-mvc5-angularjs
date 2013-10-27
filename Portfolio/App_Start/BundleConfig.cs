@@ -32,6 +32,18 @@ namespace Portfolio.App_Start
 
             bundles.Add(new ScriptBundle("~/bundles/respond").Include(
                 "~/Scripts/respond.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/angularApp")
+                .IncludeDirectory("~/App", "*.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/angularDirectives")
+                .IncludeDirectory("~/App/Directives", "*.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/angularServices")
+                .IncludeDirectory("~/App/Services", "*.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/angularControllers")
+                .IncludeDirectory("~/App/Controllers", "*.js"));
         }
     }
 }

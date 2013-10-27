@@ -13,9 +13,14 @@ namespace Portfolio.Controllers
 
         private IYahooFinanceService YahooFinanceService;
 
-        public HomeController(IYahooFinanceService YahooFinanceService)
+        public HomeController(IYahooFinanceService yahooFinanceService)
         {
-            this.YahooFinanceService = YahooFinanceService;
+            YahooFinanceService = yahooFinanceService;
+        }
+
+        public HomeController()
+        {
+            
         }
 
         #endregion Dependencies

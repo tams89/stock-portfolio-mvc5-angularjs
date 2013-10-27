@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using System.ComponentModel.DataAnnotations
+<!DOCTYPE html>
 <html ng-app="AlgoTrader">
 <head>
     <meta charset="utf-8" />
@@ -35,8 +36,6 @@
                             <li ng-class="{'active':getClass('/Portfolio/Options')}"><a href="#/Portfolio/Options">Option Analysis</a></li>
                         </ul>
                     </li>
-                    @*<li ng-class="{'active':getClass('/Home')}"><a href="#/Home">Home</a></li>
-                        <li ng-class="{'active':getClass('/About')}"><a href="#/About">About</a></li>*@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="navbar-text">Welcome, @User.Identity.Name!</li>
@@ -46,23 +45,25 @@
     </div>
     <div class="container body-content overlay">
         <div class="page-change" ng-view>
-            @* Where Angular Partials are rendered. *@
+            <!-- Angular renders views onto this tag. -->
         </div>
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - S.E. Plc.</p>
         </footer>
     </div>
+    <!-- Angular and other libraries/frameworks. -->
     @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/bundles/angular")
     @Scripts.Render("http://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js")
     @Scripts.Render("http://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-route.min.js")
     @Scripts.Render("http://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-animate.min.js")
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-
-    @Scripts.Render("~/App/AlgoTrader.js")
-    @Scripts.Render("~/App/Controllers/NavigationController.js")
     @Scripts.Render("~/bundles/respond")
+    @Scripts.Render("~/bundles/bootstrap")
+    <!-- Angular User Scripts. -->
+    @Scripts.Render("~/bundles/angularApp")
+    @Scripts.Render("~/bundles/angularDirectives")
+    @Scripts.Render("~/bundles/angularServices")
+    @Scripts.Render("~/bundles/angularControllers")
 </body>
 </html>

@@ -2,13 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml" ng-controller="StockController">
 <head>
     <title>Stock Analysis</title>
-    <h1>Stock Analysis</h1>
 </head>
     <body>
+        <h1>Stock Analysis</h1>
         <hr />
         <div>
             <span>Search:</span>
-            <input class="form-control" type="text" ng-change="OnInputChange()" ng-model="selected" typeahead="symbol for symbol in symbols | filter:$viewValue">
+            <pre>Selected {{selected | json}}</pre>
+            <!--<input class="form-control" type="text" ng-change="OnInputChange()" ng-model="selected" typeahead="symbol for symbol in symbols | filter:$viewValue">-->
+            <input class="form-control" type="text" ng-change="OnInputChange()" ng-model="selected" typeahead="symbol for symbol in symbols | filter:$viewValue | limitTo: 10">
         </div>
     </body>
 </html>

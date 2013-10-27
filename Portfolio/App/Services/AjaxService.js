@@ -1,11 +1,11 @@
-﻿app.factory("ajaxService", function($http) {
+﻿app.factory("ajaxService", function ($http) {
     return {
-        getSymbols: function() {
-            // Return symbols a.k.a the promise n angular lingo directly
-            return $http.get("/Home/AutoComplete")
-                .then(function() {
+        getSymbols: function (selected) {
+            // Return symbols a.k.a the promise in angular lingo directly
+            return $http.post("/Home/AutoComplete", { "symbol": selected })
+                .then(function (response) {
                     // resolve promise as data.
-                    return result.data;
+                    return response.data;
                 });
         }
     };

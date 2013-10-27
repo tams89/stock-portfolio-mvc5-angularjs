@@ -28,9 +28,9 @@ namespace Core.Services
         /// </summary>
         public IEnumerable<GoogleFinanceJSON> SymbolSearch(string term)
         {
-            if (string.IsNullOrEmpty(term))
-                throw new NullReferenceException("term");
+            if (string.IsNullOrEmpty(term)) return Enumerable.Empty<GoogleFinanceJSON>();
 
+            WebRequest.DefaultWebProxy = null;
             using (var client = new WebClient())
             {
                 // Query string plus argument, returns json string.

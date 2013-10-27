@@ -18,11 +18,6 @@ namespace Portfolio.Controllers
             YahooFinanceService = yahooFinanceService;
         }
 
-        public HomeController()
-        {
-            
-        }
-
         #endregion Dependencies
 
         public ActionResult Main()
@@ -30,11 +25,14 @@ namespace Portfolio.Controllers
             return View();
         }
 
-        [HttpPost]
         public JsonResult AutoComplete(string symbol)
         {
-            var results = YahooFinanceService.SymbolSearch(symbol);
-            return Json(results, JsonRequestBehavior.DenyGet);
+            var results = YahooFinanceService.SymbolSearch(symbol).ToArray();
+            if (!results.Any()) return null;
+
+            var json = results.Select(x => new { x.Name, x.Symbol });
+            //var json = results.SelectMany(x => new[] { x.Name });
+            return Json(json, JsonRequestBehavior.AllowGet);
         }
     }
 }

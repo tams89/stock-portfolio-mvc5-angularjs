@@ -3,14 +3,15 @@
 <head>
     <title>Stock Analysis</title>
 </head>
-    <body>
-        <h1>Stock Analysis</h1>
-        <hr />
-        <div>
+<body>
+    <h1>Stock Analysis</h1>
+    <hr />
+    <div>
+        <form>
             <span>Search:</span>
             <pre>Selected {{selected | json}}</pre>
-            <!--<input class="form-control" type="text" ng-change="OnInputChange()" ng-model="selected" typeahead="symbol for symbol in symbols | filter:$viewValue">-->
-            <input class="form-control" type="text" ng-change="OnInputChange()" ng-model="selected" typeahead="symbol for symbol in symbols | filter:$viewValue | limitTo: 10">
-        </div>
-    </body>
+            <input class="form-control" type="text" ng-change="OnInputChange()" ng-model="selected" typeahead="symbol as symbol.Name + ' - ' + symbol.Symbol for symbol in symbols | limitTo: 5">
+        </form>
+    </div>
+</body>
 </html>

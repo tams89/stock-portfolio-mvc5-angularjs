@@ -141,7 +141,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App\Directives\" />
     <Folder Include="App_Data\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
@@ -160,6 +159,7 @@
     <Content Include="App\AlgoTrader.js" />
     <Content Include="App\Controllers\NavigationController.js" />
     <Content Include="App\Controllers\StockController.js" />
+    <Content Include="App\Directives\ngEnter.js" />
     <Content Include="App\Services\AutocompleteService.js" />
     <Content Include="App\Services\StockAnalysisService.js" />
     <Content Include="App\Views\Main\About.html" />
@@ -171,6 +171,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap-buttons.css" />
     <Content Include="Content\Images\2_billion_gold_price_bet.jpg" />
+    <Content Include="Content\toaster.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -448,6 +449,9 @@
     <Content Include="Scripts\Angular\i8n\angular-locale_zu-za.js" />
     <Content Include="Scripts\Angular\i8n\angular-locale_zu.js" />
     <Content Include="Scripts\Angular\version.json" />
+    <Content Include="App\Directives\ngEnter.min.js.map">
+      <DependentUpon>ngEnter.js</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\Angular\angular-animate.js" />
     <Content Include="Scripts\Angular\angular-animate.min.js" />
@@ -479,6 +483,7 @@
     <Content Include="Scripts\Angular\ui-bootstrap-0.6.0.min.js" />
     <Content Include="Scripts\Angular\ui-bootstrap-tpls-0.6.0.js" />
     <Content Include="Scripts\Angular\ui-bootstrap-tpls-0.6.0.min.js" />
+    <Content Include="Scripts\Toast\toaster.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Web.config" />
@@ -493,6 +498,8 @@
     <Content Include="Scripts\_references.min.js.map">
       <DependentUpon>_references.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\Toast\bower.json" />
+    <Content Include="Scripts\Toast\README.md" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">

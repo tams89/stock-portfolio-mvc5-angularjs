@@ -9,7 +9,8 @@ namespace Portfolio.App_Start
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/bootstrap.css",
                 "~/Content/bootstrap-buttons.css",
-                "~/Content/Site.css"
+                "~/Content/Site.css",
+                "~/Content/toaster.css"
                 ));
 
             bundles.Add(new StyleBundle("~/Content/animationCss").Include(
@@ -29,6 +30,9 @@ namespace Portfolio.App_Start
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                 "~/Scripts/Jquery/jquery-*"));
+
+            bundles.Add(new ScriptBundle("~/bundles/toast").Include(
+                "~/Scripts/Toast/toaster.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/respond").Include(
                 "~/Scripts/respond.js"));

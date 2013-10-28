@@ -159,7 +159,9 @@
   <ItemGroup>
     <Content Include="App\AlgoTrader.js" />
     <Content Include="App\Controllers\NavigationController.js" />
-    <Content Include="App\Services\AjaxService.js" />
+    <Content Include="App\Controllers\StockController.js" />
+    <Content Include="App\Services\AutocompleteService.js" />
+    <Content Include="App\Services\StockAnalysisService.js" />
     <Content Include="App\Views\Main\About.html" />
     <Content Include="App\Views\Main\Home.html" />
     <Content Include="App\Views\Portfolio\Stocks.html" />
@@ -173,24 +175,33 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\Angular\angular-animate.js" />
-    <Content Include="Scripts\Angular\angular-animate.min.js" />
-    <Content Include="Scripts\Angular\angular-cookies.js" />
-    <Content Include="Scripts\Angular\angular-cookies.min.js" />
-    <Content Include="Scripts\Angular\angular-loader.js" />
-    <Content Include="Scripts\Angular\angular-loader.min.js" />
-    <Content Include="Scripts\Angular\angular-mocks.js" />
-    <Content Include="Scripts\Angular\angular-resource.js" />
-    <Content Include="Scripts\Angular\angular-resource.min.js" />
-    <Content Include="Scripts\Angular\angular-route.js" />
-    <Content Include="Scripts\Angular\angular-route.min.js" />
-    <Content Include="Scripts\Angular\angular-sanitize.js" />
-    <Content Include="Scripts\Angular\angular-sanitize.min.js" />
-    <Content Include="Scripts\Angular\angular-scenario.js" />
-    <Content Include="Scripts\Angular\angular-touch.js" />
-    <Content Include="Scripts\Angular\angular-touch.min.js" />
-    <Content Include="Scripts\Angular\angular.js" />
-    <Content Include="Scripts\Angular\angular.min.js" />
+    <Content Include="App\AlgoTrader.min.js.map">
+      <DependentUpon>AlgoTrader.js</DependentUpon>
+    </Content>
+    <Content Include="App\Controllers\NavigationController.min.js.map">
+      <DependentUpon>NavigationController.js</DependentUpon>
+    </Content>
+    <Content Include="App\Services\AjaxService.min.js.map">
+      <DependentUpon>AutocompleteService.js</DependentUpon>
+    </Content>
+    <Content Include="App\Controllers\StockController.min.js.map">
+      <DependentUpon>StockController.js</DependentUpon>
+    </Content>
+    <Content Include="App\Services\StockAnalysisService.min.js.map">
+      <DependentUpon>StockAnalysisService.js</DependentUpon>
+    </Content>
+    <Content Include="App\Services\AutocompleteService.min.js.map">
+      <DependentUpon>AutocompleteService.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\angular-animate.min.js.map" />
+    <Content Include="Scripts\Angular\angular-cookies.min.js.map" />
+    <Content Include="Scripts\Angular\angular-loader.min.js.map" />
+    <Content Include="Scripts\Angular\angular-resource.min.js.map" />
+    <Content Include="Scripts\Angular\angular-route.min.js.map" />
+    <Content Include="Scripts\Angular\angular-sanitize.min.js.map" />
+    <Content Include="Scripts\Angular\angular-touch.min.js.map" />
+    <Content Include="Scripts\Angular\angular.min.js.map" />
+    <Content Include="Scripts\Angular\errors.json" />
     <Content Include="Scripts\Angular\i8n\angular-locale_af-na.js" />
     <Content Include="Scripts\Angular\i8n\angular-locale_af-za.js" />
     <Content Include="Scripts\Angular\i8n\angular-locale_af.js" />
@@ -436,24 +447,27 @@
     <Content Include="Scripts\Angular\i8n\angular-locale_zh.js" />
     <Content Include="Scripts\Angular\i8n\angular-locale_zu-za.js" />
     <Content Include="Scripts\Angular\i8n\angular-locale_zu.js" />
-    <Content Include="App\AlgoTrader.min.js.map">
-      <DependentUpon>AlgoTrader.js</DependentUpon>
-    </Content>
-    <Content Include="App\Controllers\NavigationController.min.js.map">
-      <DependentUpon>NavigationController.js</DependentUpon>
-    </Content>
-    <Content Include="App\Services\AjaxService.min.js.map">
-      <DependentUpon>AjaxService.js</DependentUpon>
-    </Content>
-    <Content Include="Scripts\Angular\angular-animate.min.js.map" />
-    <Content Include="Scripts\Angular\angular-cookies.min.js.map" />
-    <Content Include="Scripts\Angular\angular-loader.min.js.map" />
-    <Content Include="Scripts\Angular\angular-resource.min.js.map" />
-    <Content Include="Scripts\Angular\angular-route.min.js.map" />
-    <Content Include="Scripts\Angular\angular-sanitize.min.js.map" />
-    <Content Include="Scripts\Angular\angular-touch.min.js.map" />
-    <Content Include="Scripts\Angular\angular.min.js.map" />
+    <Content Include="Scripts\Angular\version.json" />
     <None Include="Scripts\jquery-2.0.3.intellisense.js" />
+    <Content Include="Scripts\Angular\angular-animate.js" />
+    <Content Include="Scripts\Angular\angular-animate.min.js" />
+    <Content Include="Scripts\Angular\angular-cookies.js" />
+    <Content Include="Scripts\Angular\angular-cookies.min.js" />
+    <Content Include="Scripts\Angular\angular-loader.js" />
+    <Content Include="Scripts\Angular\angular-loader.min.js" />
+    <Content Include="Scripts\Angular\angular-mocks.js" />
+    <Content Include="Scripts\Angular\angular-resource.js" />
+    <Content Include="Scripts\Angular\angular-resource.min.js" />
+    <Content Include="Scripts\Angular\angular-route.js" />
+    <Content Include="Scripts\Angular\angular-route.min.js" />
+    <Content Include="Scripts\Angular\angular-sanitize.js" />
+    <Content Include="Scripts\Angular\angular-sanitize.min.js" />
+    <Content Include="Scripts\Angular\angular-scenario.js" />
+    <Content Include="Scripts\Angular\angular-touch.js" />
+    <Content Include="Scripts\Angular\angular-touch.min.js" />
+    <Content Include="Scripts\Angular\angular.js" />
+    <Content Include="Scripts\Angular\angular.min.js" />
+    <Content Include="Scripts\Angular\version.txt" />
     <Content Include="Scripts\jquery-2.0.3.js" />
     <Content Include="Scripts\jquery-2.0.3.min.js" />
     <Content Include="Scripts\Jquery\jquery-2.0.3.js" />
@@ -476,11 +490,18 @@
     </Content>
     <Content Include="Scripts\jquery-2.0.3.min.map" />
     <Content Include="Views\Home\Main.cshtml" />
+    <Content Include="Scripts\_references.min.js.map">
+      <DependentUpon>_references.js</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">
       <Project>{BFCEF614-1598-44C5-A3E0-3A956D5CD209}</Project>
       <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FinanceLibrary\FinanceLibrary.fsproj">
+      <Project>{7b0b1df4-e819-4283-90af-77e999ec8ce3}</Project>
+      <Name>FinanceLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

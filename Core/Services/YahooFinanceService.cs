@@ -6,6 +6,8 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using AlgoTrader.YahooApi;
+using Core.Services.Interfaces;
 using Newtonsoft.Json.Linq;
 
 namespace Core.Services
@@ -60,6 +62,22 @@ namespace Core.Services
 
                 return jsonCustomArray;
             }
+        }
+
+        /// <summary>
+        /// Obtains market data related to symbol.
+        /// </summary>
+        public VolatilityAndMarketData.MarketData GetMarketData(string symbol, DateTime? from, DateTime? to)
+        {
+            if (string.IsNullOrEmpty(symbol)) return null;
+
+            if (!from.HasValue)
+                from = DateTime.Now.AddMonths(-3);
+            if (!to.HasValue)
+                to = DateTime.Now;
+
+            var marketData = VolatilityAndMarketData.getMarketData(symbol, from.Value, to.Value);
+            return marketData.Head;
         }
     }
 }

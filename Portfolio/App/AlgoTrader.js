@@ -5,12 +5,10 @@ app.config(["$routeProvider", function ($routeProvider) {
     $routeProvider
         .when('/Main/Home',
             {
-                controller: "HomeController",
                 templateUrl: "/App/Views/Main/Home.html"
             })
         .when("/Main/About",
             {
-                controller: "AboutController",
                 templateUrl: "/App/Views/Main/About.html"
             })
         .when("/Portfolio/Stocks",

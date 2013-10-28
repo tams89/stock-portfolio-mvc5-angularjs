@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
-using Core.Services;
+using Core.Services.Interfaces;
 
 namespace Portfolio.Controllers
 {
@@ -11,11 +8,11 @@ namespace Portfolio.Controllers
     {
         #region Dependencies
 
-        private IYahooFinanceService YahooFinanceService;
+        private readonly IYahooFinanceService _yahooFinanceService;
 
         public HomeController(IYahooFinanceService yahooFinanceService)
         {
-            YahooFinanceService = yahooFinanceService;
+            _yahooFinanceService = yahooFinanceService;
         }
 
         #endregion Dependencies
@@ -28,11 +25,18 @@ namespace Portfolio.Controllers
         [HttpPost]
         public JsonResult AutoComplete(string symbol)
         {
-            var results = YahooFinanceService.SymbolSearch(symbol).ToArray();
+            var results = _yahooFinanceService.SymbolSearch(symbol).ToArray();
             if (!results.Any()) return null;
 
             var json = results.Select(x => new { x.Name, x.Symbol });
             return Json(json);
+        }
+
+        [HttpPost]
+        public JsonResult MarketData(string symbol)
+        {
+            var marketData = _yahooFinanceService.GetMarketData(symbol, null, null);
+            return Json(marketData);
         }
     }
 }

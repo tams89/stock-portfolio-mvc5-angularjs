@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using AlgoTrader.YahooApi;
 
-namespace Core.Services
+namespace Core.Services.Interfaces
 {
     public interface IYahooFinanceService
     {
@@ -13,5 +15,10 @@ namespace Core.Services
         /// Searches API for matching companies by symbol or company name.
         /// </summary>
         IEnumerable<YahooFinanceService.GoogleFinanceJSON> SymbolSearch(string term);
+
+        /// <summary>
+        /// Obtains market data related to symbol.
+        /// </summary>
+        VolatilityAndMarketData.MarketData GetMarketData(string symbol, DateTime? from, DateTime? to);
     }
 }

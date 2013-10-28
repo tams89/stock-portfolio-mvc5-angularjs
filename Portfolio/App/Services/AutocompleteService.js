@@ -1,4 +1,4 @@
-﻿app.factory("autocompleteService", function ($http) {
+﻿app.service("autocompleteService", function ($http) {
     return {
         getSymbols: function (selected) {
             return $http.post("/Home/AutoComplete", { "symbol": selected })

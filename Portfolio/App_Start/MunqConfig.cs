@@ -1,5 +1,6 @@
 using System.Web.Mvc;
 using Core.Services;
+using Core.Services.Interfaces;
 using Munq.MVC3;
 
 [assembly: WebActivator.PreApplicationStartMethod(typeof(Portfolio.App_Start.MunqConfig), "PreStart")]

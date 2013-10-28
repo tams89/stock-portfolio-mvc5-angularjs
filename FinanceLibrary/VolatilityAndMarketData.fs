@@ -7,7 +7,10 @@ open System.Text
 open System.Net
 open System.Globalization
 
+let mutable Symbol = ""
+
 let makeUrl symbol (dfrom:DateTime) (dto:DateTime) = 
+    Symbol <- symbol
     //Uses the not-so-known chart-data:
     new Uri("http://ichart.finance.yahoo.com/table.csv?s=" + symbol + 
        "&e=" + dto.Day.ToString() + "&d=" + dto.Month.ToString() + "&f=" + dto.Year.ToString() +
@@ -30,7 +33,8 @@ let reformat (response:string) =
 let getRequest uri = (fetch >> reformat) uri
 
 type MarketData =
-    {Date: DateTime;
+    {Symbol: string;
+     Date: DateTime;
      Open: double;
      High: double;
      Low: double;
@@ -40,7 +44,9 @@ type MarketData =
 
 let converter (data:List<List<string>>) =
     [for dataArray in data.Tail do
-        yield {Date = DateTime.ParseExact(dataArray.[0],"yyyy-MM-dd",CultureInfo.InvariantCulture);
+        yield { 
+          Symbol = Symbol;
+          Date = DateTime.ParseExact(dataArray.[0],"yyyy-MM-dd",CultureInfo.InvariantCulture);
           Open = System.Convert.ToDouble(dataArray.[1]);
           High = System.Convert.ToDouble(dataArray.[2]);
           Low = System.Convert.ToDouble(dataArray.[3]);

@@ -20,8 +20,8 @@ namespace Portfolio.App_Start
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                 "~/Scripts/Angular/angular.js",
-                "~/Scripts/Angular/angular-*",
-                "~/Scripts/Angular/i8n/angular-*"
+                "~/Scripts/Angular/angular-route.js",
+                "~/Scripts/Angular/angular-animate.js"
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(

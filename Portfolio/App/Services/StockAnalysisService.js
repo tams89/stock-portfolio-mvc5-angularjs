@@ -18,5 +18,5 @@
     this.removeStock = function (idx) {
         stocks.splice(idx, 1);
     };
-
+    
 });

@@ -19,11 +19,15 @@
         }
     };
 
+    $scope.RemoveFromList = function (idx) {
+        stockAnalysisService.removeStock(idx);
+    };
+
     function doesExist(symbol) {
         for (var i = 0; i < $scope.selectedSymbols.length; i++) {
             if ($scope.selectedSymbols[i].Symbol == symbol) {
                 $scope.selected = undefined;
-                toaster.pop("warning", "", "Wops that ones already there...");
+                toaster.pop("warning", "", "Duplicate!");
                 return true;
             }
         }

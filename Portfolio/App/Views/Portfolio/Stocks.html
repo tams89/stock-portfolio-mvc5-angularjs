@@ -10,7 +10,7 @@
     <div>
         <form>
             <span>Search:</span>
-            <input class="form-control" type="text" placeholder="Press Enter to Add" ng-change="OnInputChange()" ng-enter="OnEnterIfSelected()" ng-model="selected" typeahead="symbol as symbol.Name + ' - ' + symbol.Symbol for symbol in symbols | limitTo: 5">
+            <input class="form-control" type="text" placeholder="Press Enter to Add" ng-change="OnInputChange()" ng-enter="OnEnterIfSelected()" ng-model="selected" typeahead="symbol as symbol.Name + ' - ' + symbol.Symbol for symbol in symbols | limitTo: 5" autofocus>
         </form>
     </div>
     <div>
@@ -38,6 +38,7 @@
                     <th>
                         Low
                     </th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -56,6 +57,11 @@
                     </td>
                     <td>
                         {{s.Low}}
+                    </td>
+                    <td>
+                        <button class="btn btn-danger btn-mini" ng-click="RemoveFromList($index)">
+                            <i class="glyphicon glyphicon-remove"></i>
+                        </button>
                     </td>
                 </tr>
             </tbody>

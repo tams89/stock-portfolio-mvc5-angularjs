@@ -157,8 +157,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App\AlgoTrader.js" />
+    <Content Include="App\Services\highChartService.js" />
     <Content Include="App\Controllers\NavigationController.js" />
     <Content Include="App\Controllers\StockController.js" />
+    <Content Include="App\Directives\highcharts-ng.js" />
     <Content Include="App\Directives\ngEnter.js" />
     <Content Include="App\Services\AutocompleteService.js" />
     <Content Include="App\Services\StockAnalysisService.js" />
@@ -452,6 +454,15 @@
     <Content Include="App\Directives\ngEnter.min.js.map">
       <DependentUpon>ngEnter.js</DependentUpon>
     </Content>
+    <Content Include="App\Directives\highcharts-ng.min.js.map">
+      <DependentUpon>highcharts-ng.js</DependentUpon>
+    </Content>
+    <Content Include="App\Services\HighChartController.min.js.map">
+      <DependentUpon>highChartService.js</DependentUpon>
+    </Content>
+    <Content Include="App\Services\highChartService.min.js.map">
+      <DependentUpon>highChartService.js</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\Angular\angular-animate.js" />
     <Content Include="Scripts\Angular\angular-animate.min.js" />
@@ -472,6 +483,7 @@
     <Content Include="Scripts\Angular\angular.js" />
     <Content Include="Scripts\Angular\angular.min.js" />
     <Content Include="Scripts\Angular\version.txt" />
+    <Content Include="Scripts\HighCharts\highcharts.js" />
     <Content Include="Scripts\jquery-2.0.3.js" />
     <Content Include="Scripts\jquery-2.0.3.min.js" />
     <Content Include="Scripts\Jquery\jquery-2.0.3.js" />
@@ -484,6 +496,7 @@
     <Content Include="Scripts\Angular\ui-bootstrap-tpls-0.6.0.js" />
     <Content Include="Scripts\Angular\ui-bootstrap-tpls-0.6.0.min.js" />
     <Content Include="Scripts\Toast\toaster.js" />
+    <Content Include="Scripts\UnderScore\underscore-min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Web.config" />

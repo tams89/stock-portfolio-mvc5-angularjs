@@ -19,6 +19,6 @@ namespace Core.Services.Interfaces
         /// <summary>
         /// Obtains market data related to symbol.
         /// </summary>
-        VolatilityAndMarketData.MarketData GetMarketData(string symbol, DateTime? from, DateTime? to);
+        IEnumerable<VolatilityAndMarketData.MarketData> GetMarketData(string symbol, DateTime? from, DateTime? to);
     }
 }

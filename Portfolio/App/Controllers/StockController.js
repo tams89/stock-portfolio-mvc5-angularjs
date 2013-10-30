@@ -1,4 +1,6 @@
-﻿app.controller("StockController", function ($scope, autocompleteService, stockAnalysisService, toaster) {
+﻿app.controller("StockController", function ($scope, autocompleteService, stockAnalysisService, toaster, highChartService) {
+
+    var lastSymbol;
     $scope.selectedSymbols = [];
     $scope.selected = undefined;
 
@@ -13,17 +15,35 @@
     };
 
     $scope.OnEnterIfSelected = function () {
-        if (doesExist($scope.selected.Symbol) === false) {
-            stockAnalysisService.addStock($scope.selected.Symbol);
-            $scope.selected = undefined;
-        }
+        var symbol = $scope.selected.Symbol;
+        lastSymbol = symbol;
+        addToList(symbol);
+        $scope.selected = undefined;
     };
+
+    function addToList(symbol) {
+        if (doesExist(symbol) === false) {
+            stockAnalysisService.addStock(symbol);
+        }
+    }
+
+    function updateChart(symbol) {
+        var data = stockAnalysisService.getHistoricalDataBySymbol(symbol);
+        var flattened = stockAnalysisService.flattenData("AdjClose", data);
+        highChartService.addSeries($scope.chart, flattened, symbol);
+    }
+
+    $scope.$watchCollection("selectedSymbols", function () {
+        if (lastSymbol != null) {
+            updateChart(lastSymbol);
+        }
+    });
 
     $scope.RemoveFromList = function (idx) {
         stockAnalysisService.removeStock(idx);
     };
 
-    function doesExist(symbol) {
+    var doesExist = function (symbol) {
         for (var i = 0; i < $scope.selectedSymbols.length; i++) {
             if ($scope.selectedSymbols[i].Symbol == symbol) {
                 $scope.selected = undefined;
@@ -32,6 +52,21 @@
             }
         }
         return false;
-    }
+    };
+
+    $scope.chart = {
+        options: {
+            chart: {
+                type: 'line'
+            }
+        },
+        title: {
+            text: 'Historical Trend (Adjusted Close)'
+        },
+        xAxis: {
+          title: { text: "Price ($)" }  
+        },
+        loading: false
+    };
 
 });

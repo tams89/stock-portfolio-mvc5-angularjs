@@ -30,44 +30,51 @@ namespace Core.Services
         /// </summary>
         public IEnumerable<GoogleFinanceJSON> SymbolSearch(string term)
         {
-            if (string.IsNullOrEmpty(term)) return Enumerable.Empty<GoogleFinanceJSON>();
-
-            WebRequest.DefaultWebProxy = null;
-            using (var client = new WebClient())
+            try
             {
-                // Query string plus argument, returns json string.
-                var googleFinanceJson = @"http://www.google.com/finance/match?matchtype=matchall&ei=zhbaUIDlCKSWiAL8zwE&q=" + term.Trim();
+                if (string.IsNullOrEmpty(term)) return Enumerable.Empty<GoogleFinanceJSON>();
 
-                // Download json data as a string.
-                var json = client.DownloadString(googleFinanceJson);
+                WebRequest.DefaultWebProxy = null;
+                using (var client = new WebClient())
+                {
+                    // Query string plus argument, returns json string.
+                    var googleFinanceJson = @"http://www.google.com/finance/match?matchtype=matchall&ei=zhbaUIDlCKSWiAL8zwE&q=" + term.Trim();
 
-                // Useful data in Json contained within [...]
-                var firstOccurrence = json.IndexOf('[');
-                var secondOccurrence = json.IndexOf(']');
+                    // Download json data as a string.
+                    var json = client.DownloadString(googleFinanceJson);
 
-                // Remove invalid chars from string perfore parsing.
-                var trimmed = json.Substring(firstOccurrence, secondOccurrence - firstOccurrence + 1);
+                    // Useful data in Json contained within [...]
+                    var firstOccurrence = json.IndexOf('[');
+                    var secondOccurrence = json.IndexOf(']');
 
-                // Parse json array to valid json object.
-                var parsed = JArray.Parse(trimmed);
+                    // Remove invalid chars from string perfore parsing.
+                    var trimmed = json.Substring(firstOccurrence, secondOccurrence - firstOccurrence + 1);
 
-                // This array can be customised to give the desired JSON array.
-                var jsonCustomArray = parsed
-                    .Select(x => new GoogleFinanceJSON
-                    {
-                        Symbol = x["t"].ToObject<string>(),
-                        Name = x["n"].ToObject<string>()
-                    })
-                    .Where(x => !string.IsNullOrEmpty(x.Symbol) && !string.IsNullOrEmpty(x.Name));
+                    // Parse json array to valid json object.
+                    var parsed = JArray.Parse(trimmed);
 
-                return jsonCustomArray;
+                    // This array can be customised to give the desired JSON array.
+                    var jsonCustomArray = parsed
+                        .Select(x => new GoogleFinanceJSON
+                        {
+                            Symbol = x["t"].ToObject<string>(),
+                            Name = x["n"].ToObject<string>()
+                        })
+                        .Where(x => !string.IsNullOrEmpty(x.Symbol) && !string.IsNullOrEmpty(x.Name));
+
+                    return jsonCustomArray;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
             }
         }
 
         /// <summary>
         /// Obtains market data related to symbol.
         /// </summary>
-        public VolatilityAndMarketData.MarketData GetMarketData(string symbol, DateTime? from, DateTime? to)
+        public IEnumerable<VolatilityAndMarketData.MarketData> GetMarketData(string symbol, DateTime? from, DateTime? to)
         {
             if (string.IsNullOrEmpty(symbol)) return null;
 
@@ -77,7 +84,7 @@ namespace Core.Services
                 to = DateTime.Now;
 
             var marketData = VolatilityAndMarketData.getMarketData(symbol, from.Value, to.Value);
-            return marketData.Head;
+            return marketData;
         }
     }
 }

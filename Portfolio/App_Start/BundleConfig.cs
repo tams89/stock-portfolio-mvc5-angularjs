@@ -19,6 +19,9 @@ namespace Portfolio.App_Start
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                 "~/Scripts/modernizr-*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/highChart").Include(
+                "~/Scripts/HighCharts/highcharts.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                 "~/Scripts/Angular/angular.js",
                 "~/Scripts/Angular/angular-route.js",
@@ -36,6 +39,9 @@ namespace Portfolio.App_Start
 
             bundles.Add(new ScriptBundle("~/bundles/respond").Include(
                 "~/Scripts/respond.js"));
+            
+            bundles.Add(new ScriptBundle("~/bundles/underScore").Include(
+                "~/Scripts/UnderScore/underscore-min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/angularApp")
                 .IncludeDirectory("~/App", "*.js"));

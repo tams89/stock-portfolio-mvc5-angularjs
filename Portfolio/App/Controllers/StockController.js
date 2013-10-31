@@ -1,4 +1,6 @@
-﻿app.controller("StockController", function ($scope, autocompleteService, stockAnalysisService, toaster, highChartService) {
+﻿"use strict";
+
+app.controller("StockController", function ($scope, autocompleteService, stockAnalysisService, toaster, highChartService) {
 
     var lastSymbol;
     $scope.selectedSymbols = [];
@@ -27,20 +29,15 @@
         }
     }
 
-    function updateChart(symbol) {
-        var data = stockAnalysisService.getHistoricalDataBySymbol(symbol);
-        var flattened = stockAnalysisService.flattenData("AdjClose", data);
-        highChartService.addSeries($scope.chart, flattened, symbol);
-    }
-
     $scope.$watchCollection("selectedSymbols", function () {
         if (lastSymbol != null) {
-            updateChart(lastSymbol);
+            highChartService.updateChart($scope.chart, $scope.selectedSymbols);
         }
     });
 
     $scope.RemoveFromList = function (idx) {
         stockAnalysisService.removeStock(idx);
+        highChartService.updateChart($scope.chart, $scope.selectedSymbols);
     };
 
     var doesExist = function (symbol) {
@@ -64,7 +61,10 @@
             text: 'Historical Trend (Adjusted Close)'
         },
         xAxis: {
-          title: { text: "Price ($)" }  
+            title: { text: "Date" }
+        },
+        yAxis: {
+            title: { text: "Value ($)" }
         },
         loading: false
     };

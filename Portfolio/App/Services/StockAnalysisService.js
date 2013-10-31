@@ -1,10 +1,14 @@
-﻿app.service("stockAnalysisService", function ($http, highChartService) {
+﻿app.service("stockAnalysisService", function ($http) {
 
     var stocks = [];
     var historicalData = [];
 
     this.getStocks = function () {
         return stocks;
+    };
+
+    this.getHistoricalData = function() {
+        return historicalData;
     };
 
     this.getHistoricalDataBySymbol = function (symbol) {

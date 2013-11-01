@@ -10,7 +10,7 @@ namespace Core.Utilities
         public static IEnumerable<DtoT> InjectList(IEnumerable<T> injectFrom)
         {
             var dto = DtoFactory<DtoT>.Create();
-            return injectFrom.AsParallel().AsOrdered().Select(obj => dto.InjectFrom(obj) as DtoT).ToList();
+            return injectFrom.Select(obj => dto.InjectFrom(obj) as DtoT);
         }
 
         public static DtoT Inject(object injectFrom)

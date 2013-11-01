@@ -35,7 +35,7 @@ namespace Portfolio.Controllers
         [HttpPost]
         public JsonResult MarketData(string symbol)
         {
-            var marketData = _yahooFinanceService.GetMarketData(symbol, null, null);
+            var marketData = _yahooFinanceService.GetData(symbol, null, null);
             return Json(marketData);
         }
     }

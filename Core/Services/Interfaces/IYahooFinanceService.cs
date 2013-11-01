@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using AlgoTrader.YahooApi;
+using Core.DTOs;
 
 namespace Core.Services.Interfaces
 {
@@ -19,6 +20,11 @@ namespace Core.Services.Interfaces
         /// <summary>
         /// Obtains market data related to symbol.
         /// </summary>
-        IEnumerable<VolatilityAndMarketData.MarketData> GetMarketData(string symbol, DateTime? from, DateTime? to);
+        IEnumerable<MarketDto> GetData(string symbol, DateTime? @from, DateTime? to);
+
+        /// <summary>
+        /// Obtains option table by symbol.
+        /// </summary>
+        IEnumerable<OptionDto> GetData(string symbol);
     }
 }

@@ -10,7 +10,7 @@ namespace Portfolio
     {
         protected void Application_Start()
         {
-            MunqConfig.PreStart();
+            MunqConfig.PreStart(); // IoC
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

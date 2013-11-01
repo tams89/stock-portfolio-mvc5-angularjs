@@ -90,6 +90,7 @@
     <Compile Include="PortfolioTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FinanceLibararyTests.cs" />
+    <Compile Include="YahooFinanceServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">

@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.IO;
 using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using AlgoTrader.YahooApi;
+using Core.DTOs;
+using Core.Factory;
 using Core.Services.Interfaces;
+using Core.Utilities;
 using Newtonsoft.Json.Linq;
+using Omu.ValueInjecter;
 
 namespace Core.Services
 {
@@ -72,19 +72,25 @@ namespace Core.Services
         }
 
         /// <summary>
-        /// Obtains market data related to symbol.
+        /// Obtains stock data related to symbol.
         /// </summary>
-        public IEnumerable<VolatilityAndMarketData.MarketData> GetMarketData(string symbol, DateTime? from, DateTime? to)
+        public IEnumerable<MarketDto> GetData(string symbol, DateTime? from, DateTime? to)
         {
             if (string.IsNullOrEmpty(symbol)) return null;
+            if (!from.HasValue) from = DateTime.Now.AddMonths(-3);
+            if (!to.HasValue) to = DateTime.Now;
+            var marketData = VolatilityAndMarketData.getMarketData(symbol, from.Value, to.Value).ToList();
+            return DtoInjector<VolatilityAndMarketData.MarketData, MarketDto>.InjectList(marketData);
+        }
 
-            if (!from.HasValue)
-                from = DateTime.Now.AddMonths(-3);
-            if (!to.HasValue)
-                to = DateTime.Now;
-
-            var marketData = VolatilityAndMarketData.getMarketData(symbol, from.Value, to.Value);
-            return marketData;
+        /// <summary>
+        /// Obtains option table by symbol.
+        /// </summary>
+        public IEnumerable<OptionDto> GetData(string symbol)
+        {
+            if (string.IsNullOrEmpty(symbol)) return null;
+            var optionData = Options.GetOptionsData(symbol);
+            return DtoInjector<Options.OptionsData, OptionDto>.InjectList(optionData);
         }
     }
 }

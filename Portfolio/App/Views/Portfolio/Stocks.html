@@ -2,7 +2,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml" ng-controller="StockController">
 <head>
     <title>Stock Analysis</title>
-    <toaster-container></toaster-container>
 </head>
 <body>
     <h1>Stock Analysis</h1>
@@ -13,7 +12,7 @@
             <input class="form-control" type="text" placeholder="Press Enter to Add" ng-change="OnInputChange()" ng-enter="OnEnterIfSelected()" ng-model="selected" typeahead="symbol as symbol.Name + ' - ' + symbol.Symbol for symbol in symbols | limitTo: 5" autofocus>
         </form>
     </div>
-    <div>
+    <div ng-show="isStockListEmpty()">
         <hr />
         <table class="table table-condensed table-striped">
             <thead>
@@ -42,7 +41,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="s in selectedSymbols">
+                <tr ng-repeat="s in stockList">
                     <td>
                         {{s.Symbol}}
                     </td>
@@ -67,7 +66,11 @@
             </tbody>
         </table>
     </div>
-    <div ng-show="selectedSymbols.length">
+    <div ng-hide="isStockListEmpty()">
+        <hr />
+        <p>Please search for a company to view its stock data.</p>
+    </div>
+    <div ng-show="stockList.length">
         <hr />
         <div>
             <highchart id="stockChart" config="chart"></highchart>

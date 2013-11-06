@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Web.Helpers;
 using System.Web.Mvc;
 using Core.Services.Interfaces;
 
@@ -37,6 +38,13 @@ namespace Portfolio.Controllers
         {
             var marketData = _yahooFinanceService.GetData(symbol, null, null);
             return Json(marketData);
+        }
+
+        [HttpPost]
+        public JsonResult OptionData(string symbol)
+        {
+            var optionData = _yahooFinanceService.GetData(symbol);
+            return Json(optionData);
         }
     }
 }

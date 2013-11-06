@@ -157,15 +157,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App\AlgoTrader.js" />
+    <Content Include="App\Controllers\OptionController.js" />
     <Content Include="App\Services\highChartService.js" />
     <Content Include="App\Controllers\NavigationController.js" />
     <Content Include="App\Controllers\StockController.js" />
-    <Content Include="App\Directives\highcharts-ng.js" />
+    <Content Include="App\Modules\highcharts-ng.js" />
     <Content Include="App\Directives\ngEnter.js" />
     <Content Include="App\Services\AutocompleteService.js" />
+    <Content Include="App\Services\OptionAnalysisService.js" />
     <Content Include="App\Services\StockAnalysisService.js" />
     <Content Include="App\Views\Main\About.html" />
     <Content Include="App\Views\Main\Home.html" />
+    <Content Include="App\Views\Portfolio\Options.html" />
     <Content Include="App\Views\Portfolio\Stocks.html" />
     <Content Include="Content\Animate\animate.css" />
     <Content Include="Content\Animate\animate.min.css" />
@@ -454,7 +457,7 @@
     <Content Include="App\Directives\ngEnter.min.js.map">
       <DependentUpon>ngEnter.js</DependentUpon>
     </Content>
-    <Content Include="App\Directives\highcharts-ng.min.js.map">
+    <Content Include="App\Modules\highcharts-ng.min.js.map">
       <DependentUpon>highcharts-ng.js</DependentUpon>
     </Content>
     <Content Include="App\Services\HighChartController.min.js.map">
@@ -462,6 +465,12 @@
     </Content>
     <Content Include="App\Services\highChartService.min.js.map">
       <DependentUpon>highChartService.js</DependentUpon>
+    </Content>
+    <Content Include="App\Controllers\OptionController.min.js.map">
+      <DependentUpon>OptionController.js</DependentUpon>
+    </Content>
+    <Content Include="App\Services\OptionAnalysisService.min.js.map">
+      <DependentUpon>OptionAnalysisService.js</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\Angular\angular-animate.js" />

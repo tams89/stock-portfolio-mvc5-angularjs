@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-controller="OptionController">
+<head>
+    <title>Options</title>
+</head>
+<body>
+    <h1>Option Analysis</h1>
+    <hr />
+    <div>
+        <form>
+            <span>Search:</span>
+            <input class="form-control" type="text" placeholder="Press Enter to Add"
+                   ng-change="OnInputChange()" ng-enter="OnEnterIfSelected()" ng-model="selected"
+                   typeahead="symbol as symbol.Name + ' - ' + symbol.Symbol for symbol in symbols | limitTo: 5" autofocus />
+        </form>
+    </div>
+    <div ng-show="hasOptionData()">
+        <hr />
+        <h4>
+            Option Table
+        </h4>
+        <table class="table table-condensed table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Symbol
+                    </th>
+                    <th>
+                        Strike
+                    </th>
+                    <th>
+                        Ask
+                    </th>
+                    <th>
+                        Bid
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="option in optionData">
+                    <td>
+                        {{option.Symbol}}
+                    </td>
+                    <td>
+                        {{option.StrikePrice}}
+                    </td>
+                    <td>
+                        {{option.Ask}}
+                    </td>
+                    <td>
+                        {{option.Bid}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div ng-hide="hasOptionData()">
+        <hr />
+        <p>Please search for a company to view its option table.</p>
+    </div>
+</body>
+</html>

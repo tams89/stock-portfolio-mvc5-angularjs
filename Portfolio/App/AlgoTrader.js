@@ -16,5 +16,10 @@ app.config(["$routeProvider", function ($routeProvider) {
                 controller: "StockController",
                 templateUrl: "/App/Views/Portfolio/Stocks.html"
             })
+        .when("/Portfolio/Options",
+            {
+                controller: "OptionController",
+                templateUrl: "/App/Views/Portfolio/Options.html"
+            })
         .otherwise({ redirectTo: "/Main/Home" });
 }]);

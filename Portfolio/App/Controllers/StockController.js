@@ -3,12 +3,12 @@
 app.controller("StockController", function ($scope, autocompleteService, stockAnalysisService, toaster, highChartService) {
 
     var lastSymbol;
-    $scope.selectedSymbols = [];
+    $scope.stockList = [];
     $scope.selected = undefined;
 
     init();
     function init() {
-        $scope.selectedSymbols = stockAnalysisService.getStocks();
+        $scope.stockList = stockAnalysisService.getStocks();
     }
 
     $scope.symbols = [];
@@ -29,20 +29,20 @@ app.controller("StockController", function ($scope, autocompleteService, stockAn
         }
     }
 
-    $scope.$watchCollection("selectedSymbols", function () {
+    $scope.$watchCollection("stockList", function () {
         if (lastSymbol != null) {
-            highChartService.updateChart($scope.chart, $scope.selectedSymbols);
+            highChartService.updateChart($scope.chart, $scope.stockList);
         }
     });
 
     $scope.RemoveFromList = function (idx) {
         stockAnalysisService.removeStock(idx);
-        highChartService.updateChart($scope.chart, $scope.selectedSymbols);
+        highChartService.updateChart($scope.chart, $scope.stockList);
     };
 
     var doesExist = function (symbol) {
-        for (var i = 0; i < $scope.selectedSymbols.length; i++) {
-            if ($scope.selectedSymbols[i].Symbol == symbol) {
+        for (var i = 0; i < $scope.stockList.length; i++) {
+            if ($scope.stockList[i].Symbol == symbol) {
                 $scope.selected = undefined;
                 toaster.pop("warning", "", "Duplicate!");
                 return true;
@@ -67,6 +67,14 @@ app.controller("StockController", function ($scope, autocompleteService, stockAn
             title: { text: "Value ($)" }
         },
         loading: false
+    };
+
+    $scope.isStockListEmpty = function() {
+        if ($scope.stockList.length > 0) {
+            return true;
+        } else {
+            return false;
+        }
     };
 
 });

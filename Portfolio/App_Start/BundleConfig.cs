@@ -39,12 +39,15 @@ namespace Portfolio.App_Start
 
             bundles.Add(new ScriptBundle("~/bundles/respond").Include(
                 "~/Scripts/respond.js"));
-            
+
             bundles.Add(new ScriptBundle("~/bundles/underScore").Include(
                 "~/Scripts/UnderScore/underscore-min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/angularApp")
                 .IncludeDirectory("~/App", "*.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/angularModules")
+                .IncludeDirectory("~/App/Modules", "*.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/angularDirectives")
                 .IncludeDirectory("~/App/Directives", "*.js"));

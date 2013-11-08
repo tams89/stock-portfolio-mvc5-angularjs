@@ -1,6 +1,11 @@
-﻿@{
+﻿@model IEnumerable<Core.DTOs.OptionDto>
+
+@{
     Layout = null;
 }
+
+<!--Hidden JSON result-->
+<input type="hidden" value="{{optionData}}" />
 
 <h1>Option Analysis</h1>
 <hr />
@@ -14,10 +19,9 @@
 </div>
 <spinner></spinner>
 <div>
-    <div ng-controller="OptionGridController">
+    <div id="grid">
         <hr />
-        <div class="grid-style" ng-grid="optionGrid">
-        </div>
+        <div class="grid-style" ng-grid="optionGrid"></div>
     </div>
 </div>
 <div ng-hide="hasOptionData()">

@@ -15,7 +15,6 @@ app.controller("OptionController", function ($scope, autocompleteService, toaste
         $scope.symbols = autocompleteService.getSymbols($scope.selected);
     };
 
-
     $scope.OnEnterIfSelected = function () {
         var symbol = $scope.selected.Symbol;
         $scope.loading = true;
@@ -27,7 +26,7 @@ app.controller("OptionController", function ($scope, autocompleteService, toaste
         });
     };
 
-    $scope.hasOptionData = function() {
+    $scope.hasOptionData = function () {
         if ($scope.optionData.length > 0) {
             return true;
         } else {

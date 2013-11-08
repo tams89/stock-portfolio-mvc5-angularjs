@@ -86,10 +86,8 @@
   <ItemGroup>
     <Compile Include="DbSetupPortfolio.cs" />
     <Compile Include="HFTTests.cs" />
-    <Compile Include="PortfolioServiceTest.cs" />
     <Compile Include="PortfolioTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FinanceLibararyTests.cs" />
     <Compile Include="YahooFinanceServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>

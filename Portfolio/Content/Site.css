@@ -112,5 +112,8 @@ textarea {
 
 .table-striped > tbody > tr:nth-child(odd) > td,
 .table-striped > tbody > tr:nth-child(odd) > th {
+    position: absolute;
     background-color: rgba(0, 0, 0, 0.40);
+    height: 600px;
+    overflow: auto;
 }

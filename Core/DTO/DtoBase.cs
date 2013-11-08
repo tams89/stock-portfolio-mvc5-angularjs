@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Test
+namespace Core.DTOs
 {
-    class PortfolioServiceTest
+    public abstract class DtoBase
     {
+
     }
 }

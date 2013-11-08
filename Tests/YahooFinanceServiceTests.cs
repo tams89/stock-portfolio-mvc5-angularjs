@@ -15,10 +15,17 @@ namespace Test
         private readonly IYahooFinanceService _yahooFinanceService = new YahooFinanceService();
 
         [TestMethod]
-        public void GetMarketData()
+        public void GetStockData()
         {
             var marketData = _yahooFinanceService.GetData("MSFT", null, null);
             Assert.IsNotNull(marketData);
+        }
+
+        [TestMethod]
+        public void GetOptionData()
+        {
+            var optionData = _yahooFinanceService.GetData("GOOG");
+            Assert.IsNotNull(optionData);
         }
     }
 }

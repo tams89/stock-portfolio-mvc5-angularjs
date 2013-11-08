@@ -9,17 +9,16 @@
     <div>
         <form>
             <span>Search:</span>
-            <input class="form-control" type="text" placeholder="Press Enter to Add" ng-change="OnInputChange()" ng-enter="OnEnterIfSelected()" ng-model="selected" typeahead="symbol as symbol.Name + ' - ' + symbol.Symbol for symbol in symbols | limitTo: 5" autofocus>
+            <input class="form-control" type="text" placeholder="Press Enter to Add" ng-change="OnInputChange()" ng-enter="OnEnterIfSelected()" 
+                   ng-model="selected" typeahead="symbol as symbol.Name + ' - ' + symbol.Symbol for symbol in symbols | limitTo: 5" autofocus>
         </form>
     </div>
     <div ng-show="isStockListEmpty()">
         <hr />
         <table class="table table-condensed table-striped">
-            <thead>
-            <td>
+            <tr>
                 Market Data
-            </td>
-            </thead>
+            </tr>
             <thead>
                 <tr>
                     <th>

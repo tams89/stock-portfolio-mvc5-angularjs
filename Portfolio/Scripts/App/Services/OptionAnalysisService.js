@@ -17,7 +17,7 @@
 
     this.getOptions = function (symbol) {
         var deferred = $q.defer();
-        $http.post("/Home/OptionData", { "symbol": symbol }).success(function (data) {
+        $http.post("/Portfolio/OptionData", { "symbol": symbol }).success(function (data) {
             deferred.resolve(data);
         });
         return deferred.promise;

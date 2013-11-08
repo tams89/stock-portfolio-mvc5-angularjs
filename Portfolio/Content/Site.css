@@ -5,6 +5,9 @@
 body {
     background-position: initial;
     -ms-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
     background-size: cover;
     background-color: black;
     background-image: url(Images/2_billion_gold_price_bet.jpg);
@@ -106,14 +109,12 @@ textarea {
 }
 
 .table {
+    background-color: #000000;
     background-color: rgba(0,0,0, 0.40);
-    width: auto;
 }
 
 .table-striped > tbody > tr:nth-child(odd) > td,
 .table-striped > tbody > tr:nth-child(odd) > th {
-    position: absolute;
+    background-color: #000000;
     background-color: rgba(0, 0, 0, 0.40);
-    height: 600px;
-    overflow: auto;
 }

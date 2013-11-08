@@ -44,19 +44,19 @@ namespace Portfolio.App_Start
                 "~/Scripts/UnderScore/underscore-min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/angularApp")
-                .IncludeDirectory("~/App", "*.js"));
+                .IncludeDirectory("~/Scripts/App", "*.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/angularModules")
-                .IncludeDirectory("~/App/Modules", "*.js"));
+                .IncludeDirectory("~/Scripts/App/Modules", "*.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/angularDirectives")
-                .IncludeDirectory("~/App/Directives", "*.js"));
+                .IncludeDirectory("~/Scripts/App/Directives", "*.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/angularServices")
-                .IncludeDirectory("~/App/Services", "*.js"));
+                .IncludeDirectory("~/Scripts/App/Services", "*.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/angularControllers")
-                .IncludeDirectory("~/App/Controllers", "*.js"));
+                .IncludeDirectory("~/Scripts/App/Controllers", "*.js"));
         }
     }
 }

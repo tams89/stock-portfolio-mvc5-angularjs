@@ -21,7 +21,7 @@
     };
 
     this.addStock = function (symbol) {
-        return $http.post("/Home/MarketData", { "symbol": symbol })
+        return $http.post("/Portfolio/MarketData", { "symbol": symbol })
             .success(function (data) {
                 historicalData.push(data);
                 stocks.push(data[0]);

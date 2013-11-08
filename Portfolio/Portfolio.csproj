@@ -157,16 +157,19 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App\AlgoTrader.js" />
-    <Content Include="App\Controllers\OptionController.js" />
-    <Content Include="App\Services\highChartService.js" />
-    <Content Include="App\Controllers\NavigationController.js" />
-    <Content Include="App\Controllers\StockController.js" />
-    <Content Include="App\Modules\highcharts-ng.js" />
-    <Content Include="App\Directives\ngEnter.js" />
-    <Content Include="App\Services\AutocompleteService.js" />
-    <Content Include="App\Services\OptionAnalysisService.js" />
-    <Content Include="App\Services\StockAnalysisService.js" />
+    <Content Include="Scripts\App\AlgoTrader.js" />
+    <Content Include="Scripts\App\Controllers\OptionController.js" />
+    <Content Include="Scripts\App\Services\highChartService.js" />
+    <Content Include="Scripts\App\Controllers\NavigationController.js" />
+    <Content Include="Scripts\App\Controllers\StockController.js" />
+    <Content Include="Scripts\App\Modules\highcharts-ng.js" />
+    <Content Include="Scripts\App\Directives\ngEnter.js" />
+    <Content Include="Scripts\App\Services\AutocompleteService.js" />
+    <Content Include="Scripts\App\Services\OptionAnalysisService.js" />
+    <Content Include="Scripts\App\Services\StockAnalysisService.js" />
+    <Content Include="Scripts\Angular\ng-grid.debug.js" />
+    <Content Include="Scripts\Angular\ng-grid.js" />
+    <Content Include="Scripts\Angular\ng-grid.min.js" />
     <Content Include="Views\Main\Index.cshtml" />
     <None Include="Views\Main\About.cshtml" />
     <None Include="Views\Main\Home.cshtml" />
@@ -183,22 +186,22 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="App\AlgoTrader.min.js.map">
+    <Content Include="Scripts\App\AlgoTrader.min.js.map">
       <DependentUpon>AlgoTrader.js</DependentUpon>
     </Content>
-    <Content Include="App\Controllers\NavigationController.min.js.map">
+    <Content Include="Scripts\App\Controllers\NavigationController.min.js.map">
       <DependentUpon>NavigationController.js</DependentUpon>
     </Content>
-    <Content Include="App\Services\AjaxService.min.js.map">
+    <Content Include="Scripts\App\Services\AjaxService.min.js.map">
       <DependentUpon>AutocompleteService.js</DependentUpon>
     </Content>
-    <Content Include="App\Controllers\StockController.min.js.map">
+    <Content Include="Scripts\App\Controllers\StockController.min.js.map">
       <DependentUpon>StockController.js</DependentUpon>
     </Content>
-    <Content Include="App\Services\StockAnalysisService.min.js.map">
+    <Content Include="Scripts\App\Services\StockAnalysisService.min.js.map">
       <DependentUpon>StockAnalysisService.js</DependentUpon>
     </Content>
-    <Content Include="App\Services\AutocompleteService.min.js.map">
+    <Content Include="Scripts\App\Services\AutocompleteService.min.js.map">
       <DependentUpon>AutocompleteService.js</DependentUpon>
     </Content>
     <Content Include="Scripts\Angular\angular-animate.min.js.map" />
@@ -456,22 +459,22 @@
     <Content Include="Scripts\Angular\i8n\angular-locale_zu-za.js" />
     <Content Include="Scripts\Angular\i8n\angular-locale_zu.js" />
     <Content Include="Scripts\Angular\version.json" />
-    <Content Include="App\Directives\ngEnter.min.js.map">
+    <Content Include="Scripts\App\Directives\ngEnter.min.js.map">
       <DependentUpon>ngEnter.js</DependentUpon>
     </Content>
-    <Content Include="App\Modules\highcharts-ng.min.js.map">
+    <Content Include="Scripts\App\Modules\highcharts-ng.min.js.map">
       <DependentUpon>highcharts-ng.js</DependentUpon>
     </Content>
-    <Content Include="App\Services\HighChartController.min.js.map">
+    <Content Include="Scripts\App\Services\HighChartController.min.js.map">
       <DependentUpon>highChartService.js</DependentUpon>
     </Content>
-    <Content Include="App\Services\highChartService.min.js.map">
+    <Content Include="Scripts\App\Services\highChartService.min.js.map">
       <DependentUpon>highChartService.js</DependentUpon>
     </Content>
-    <Content Include="App\Controllers\OptionController.min.js.map">
+    <Content Include="Scripts\App\Controllers\OptionController.min.js.map">
       <DependentUpon>OptionController.js</DependentUpon>
     </Content>
-    <Content Include="App\Services\OptionAnalysisService.min.js.map">
+    <Content Include="Scripts\App\Services\OptionAnalysisService.min.js.map">
       <DependentUpon>OptionAnalysisService.js</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-2.0.3.intellisense.js" />

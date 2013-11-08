@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html ng-app="AlgoTrader">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/animationCss")
+    <meta name="description" content="S.E. Enterprises algorithmic trading API." />
+</head>
+<body>
+    <toaster-container></toaster-container>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#/Main/Home">AlgoTrader</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav" ng-controller="NavigationController">
+                    <li class="dropdown" ng-class="{'active':getClass('/Main')}">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Main <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li ng-class="{'active':getClass('/Main/Home')}"><a href="#/Main/Home">Home</a></li>
+                            <li ng-class="{'active':getClass('/Main/About')}"><a href="#/Main/About">About</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" ng-class="{'active':getClass('/Portfolio')}">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Portfolio <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li ng-class="{'active':getClass('/Portfolio/Stocks')}"><a href="#/Portfolio/Stocks">Stock Analysis</a></li>
+                            <li ng-class="{'active':getClass('/Portfolio/Options')}"><a href="#/Portfolio/Options">Option Analysis</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="navbar-text">Welcome, @User.Identity.Name!</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content overlay">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - S.E. Plc.</p>
+        </footer>
+    </div>
+    <!-- Angular and other libraries/frameworks. -->
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/Angular")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/respond")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/toast")
+    @Scripts.Render("~/bundles/highChart")
+    @Scripts.Render("~/bundles/underScore")
+    <!-- Angular User Scripts. -->
+    @Scripts.Render("~/bundles/angularApp")
+    @Scripts.Render("~/bundles/angularModules")
+    @Scripts.Render("~/bundles/angularDirectives")
+    @Scripts.Render("~/bundles/angularServices")
+    @Scripts.Render("~/bundles/angularControllers")
+</body>
+</html>

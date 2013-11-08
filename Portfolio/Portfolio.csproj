@@ -149,7 +149,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\MunqConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="Controllers\PortfolioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -166,10 +167,11 @@
     <Content Include="App\Services\AutocompleteService.js" />
     <Content Include="App\Services\OptionAnalysisService.js" />
     <Content Include="App\Services\StockAnalysisService.js" />
-    <Content Include="App\Views\Main\About.html" />
-    <Content Include="App\Views\Main\Home.html" />
-    <Content Include="App\Views\Portfolio\Options.html" />
-    <Content Include="App\Views\Portfolio\Stocks.html" />
+    <Content Include="Views\Main\Index.cshtml" />
+    <None Include="Views\Main\About.cshtml" />
+    <None Include="Views\Main\Home.cshtml" />
+    <None Include="Views\Portfolio\Options.cshtml" />
+    <None Include="Views\Portfolio\Stocks.cshtml" />
     <Content Include="Content\Animate\animate.css" />
     <Content Include="Content\Animate\animate.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -516,12 +518,13 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Scripts\jquery-2.0.3.min.map" />
-    <Content Include="Views\Home\Main.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\_references.min.js.map">
       <DependentUpon>_references.js</DependentUpon>
     </Content>
     <Content Include="Scripts\Toast\bower.json" />
     <Content Include="Scripts\Toast\README.md" />
+    <Content Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">

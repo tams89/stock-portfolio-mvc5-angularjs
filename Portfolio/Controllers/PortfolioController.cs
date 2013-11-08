@@ -1,24 +1,28 @@
 ﻿using System.Linq;
-using System.Web.Helpers;
 using System.Web.Mvc;
 using Core.Services.Interfaces;
 
 namespace Portfolio.Controllers
 {
-    public class HomeController : Controller
+    public class PortfolioController : Controller
     {
         #region Dependencies
 
         private readonly IYahooFinanceService _yahooFinanceService;
 
-        public HomeController(IYahooFinanceService yahooFinanceService)
+        public PortfolioController(IYahooFinanceService yahooFinanceService)
         {
             _yahooFinanceService = yahooFinanceService;
         }
 
         #endregion Dependencies
 
-        public ActionResult Main()
+        public ActionResult Stocks()
+        {
+            return View();
+        }
+
+        public ActionResult Options()
         {
             return View();
         }

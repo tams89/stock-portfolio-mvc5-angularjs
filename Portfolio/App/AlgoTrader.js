@@ -1,25 +1,25 @@
 ﻿var app = angular.module("AlgoTrader", ["ui.bootstrap", "ngRoute", "ngAnimate", "toaster", "highcharts-ng"]);
 
 // Route config
-app.config(["$routeProvider", function ($routeProvider) {
+app.config(["$routeProvider", function($routeProvider) {
     $routeProvider
         .when('/Main/Home',
             {
-                templateUrl: "/App/Views/Main/Home.html"
+                templateUrl: "/Main/Home"
             })
         .when("/Main/About",
             {
-                templateUrl: "/App/Views/Main/About.html"
+                templateUrl: "/Main/About"
             })
         .when("/Portfolio/Stocks",
             {
                 controller: "StockController",
-                templateUrl: "/App/Views/Portfolio/Stocks.html"
+                templateUrl: "/Portfolio/Stocks"
             })
         .when("/Portfolio/Options",
             {
                 controller: "OptionController",
-                templateUrl: "/App/Views/Portfolio/Options.html"
+                templateUrl: "/Portfolio/Options"
             })
         .otherwise({ redirectTo: "/Main/Home" });
 }]);

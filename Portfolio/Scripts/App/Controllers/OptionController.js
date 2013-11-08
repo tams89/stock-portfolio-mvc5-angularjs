@@ -15,12 +15,15 @@ app.controller("OptionController", function ($scope, autocompleteService, toaste
         $scope.symbols = autocompleteService.getSymbols($scope.selected);
     };
 
+
     $scope.OnEnterIfSelected = function () {
         var symbol = $scope.selected.Symbol;
+        $scope.loading = true;
         var optionDataPromise = optionAnalysisService.getOptions(symbol);
         optionDataPromise.then(function (data) {
             $scope.optionData = data;
             console.log("Option promise forefilled data count: " + $scope.optionData.length);
+            $scope.loading = false;
         });
     };
 

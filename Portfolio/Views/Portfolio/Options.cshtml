@@ -12,54 +12,13 @@
                typeahead="symbol as symbol.Name + ' - ' + symbol.Symbol for symbol in symbols | limitTo: 5" autofocus />
     </form>
 </div>
-<div ng-show="hasOptionData()">
-    <hr />
-    <p>Select an Option Type to filter by:</p>
-    <div>
-        <input type="radio" value="C" ng-model="optionType" />
+<spinner></spinner>
+<div>
+    <div ng-controller="OptionGridController">
+        <hr />
+        <div class="grid-style" ng-grid="optionGrid">
+        </div>
     </div>
-    <div>
-        <input type="radio" value="P" ng-model="optionType" />
-    </div>
-    <br />
-    <h4>
-        Option Table
-    </h4>
-    <table class="table table-condensed table-striped">
-        <thead>
-            <tr>
-                <th>
-                    Symbol
-                </th>
-                <th>
-                    Strike
-                </th>
-                <th>
-                    Ask
-                </th>
-                <th>
-                    Bid
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <!--Edit limitTo to use paging function built into new controller.-->
-            <tr ng-repeat="option in optionData | filter:optionType">
-                <td>
-                    {{option.Symbol}}
-                </td>
-                <td>
-                    {{option.StrikePrice}}
-                </td>
-                <td>
-                    {{option.Ask}}
-                </td>
-                <td>
-                    {{option.Bid}}
-                </td>
-            </tr>
-        </tbody>
-    </table>
 </div>
 <div ng-hide="hasOptionData()">
     <hr />

@@ -10,11 +10,15 @@ namespace Portfolio.App_Start
                 "~/Content/bootstrap.css",
                 "~/Content/bootstrap-buttons.css",
                 "~/Content/Site.css",
-                "~/Content/toaster.css"
+                "~/Content/toaster.css",
+                "~/Content/spinner.css"
                 ));
 
             bundles.Add(new StyleBundle("~/Content/animationCss").Include(
                 "~/Content/Animate/animate.css"));
+
+            bundles.Add(new StyleBundle("~/Content/gridCss").Include(
+                "~/Content/ng-grid.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                 "~/Scripts/modernizr-*"));
@@ -25,7 +29,8 @@ namespace Portfolio.App_Start
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                 "~/Scripts/Angular/angular.js",
                 "~/Scripts/Angular/angular-route.js",
-                "~/Scripts/Angular/angular-animate.js"
+                "~/Scripts/Angular/angular-animate.js",
+                "~/Scripts/Angular/angular-resource.js"
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(

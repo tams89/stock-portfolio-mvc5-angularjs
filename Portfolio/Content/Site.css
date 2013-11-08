@@ -118,3 +118,38 @@ textarea {
     background-color: #000000;
     background-color: rgba(0, 0, 0, 0.40);
 }
+
+.ngGrid {
+    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0.40);
+}
+
+.ngTopPanel {
+    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0.10);
+}
+
+.ngRow.odd {
+    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0.20);
+}
+
+.ngRow.even {
+    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0.30);
+}
+
+.grid-style {
+    min-height: 250px;
+    max-height: 300px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.spinner {
+    background-position-x: center;
+    background-position-y: center;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-image: url(Images/ajax-loader.gif);
+}

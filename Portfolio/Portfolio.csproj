@@ -157,8 +157,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Images\ajax-loader.gif" />
+    <Content Include="Content\ng-grid.css" />
+    <Content Include="Content\ng-grid.min.css" />
+    <Content Include="Content\spinner.css" />
+    <Content Include="Content\spinner.min.css">
+      <DependentUpon>spinner.css</DependentUpon>
+    </Content>
     <Content Include="Scripts\App\AlgoTrader.js" />
     <Content Include="Scripts\App\Controllers\OptionController.js" />
+    <Content Include="Scripts\App\Controllers\OptionGridController.js" />
+    <Content Include="Scripts\App\Directives\spinner.js" />
     <Content Include="Scripts\App\Services\highChartService.js" />
     <Content Include="Scripts\App\Controllers\NavigationController.js" />
     <Content Include="Scripts\App\Controllers\StockController.js" />
@@ -167,10 +176,20 @@
     <Content Include="Scripts\App\Services\AutocompleteService.js" />
     <Content Include="Scripts\App\Services\OptionAnalysisService.js" />
     <Content Include="Scripts\App\Services\StockAnalysisService.js" />
-    <Content Include="Scripts\Angular\ng-grid.debug.js" />
-    <Content Include="Scripts\Angular\ng-grid.js" />
-    <Content Include="Scripts\Angular\ng-grid.min.js" />
+    <Content Include="Scripts\App\Directives\ng-grid.debug.js" />
+    <Content Include="Scripts\App\Directives\ng-grid.js" />
+    <Content Include="Scripts\App\Directives\ng-grid.min.js" />
+    <Content Include="Content\Directives\spinner.html" />
     <Content Include="Views\Main\Index.cshtml" />
+    <Content Include="Scripts\App\Controllers\OptionGridController.min.js.map">
+      <DependentUpon>OptionGridController.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\App\Directives\loadSpinner.min.js.map">
+      <DependentUpon>spinner.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\App\Directives\spinner.min.js.map">
+      <DependentUpon>spinner.js</DependentUpon>
+    </Content>
     <None Include="Views\Main\About.cshtml" />
     <None Include="Views\Main\Home.cshtml" />
     <None Include="Views\Portfolio\Options.cshtml" />

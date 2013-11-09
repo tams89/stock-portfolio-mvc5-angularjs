@@ -15,7 +15,7 @@ app.controller("OptionController", function ($scope, autocompleteService, toaste
         $scope.symbols = autocompleteService.getSymbols($scope.selected);
     };
 
-    $scope.OnEnterIfSelected = function () {
+    $scope.SelectSymbol = function () {
         var symbol = $scope.selected.Symbol;
         $scope.loading = true;
         var optionDataPromise = optionAnalysisService.getOptions(symbol);

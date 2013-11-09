@@ -1,9 +1,9 @@
-﻿<h1>Stock Analysis</h1>
+﻿<h1>Stock Data</h1>
 <hr />
 <div>
     <form>
         <span>Search:</span>
-        <input class="form-control" type="text" placeholder="Press Enter to Add" ng-change="OnInputChange()" ng-enter="OnEnterIfSelected()"
+        <input class="form-control" type="text" placeholder="Please search for a company to view its stock data. (Press Enter to Select)" ng-change="OnInputChange()" ng-enter="SelectSymbol()"
                ng-model="selected" typeahead="symbol as symbol.Name + ' - ' + symbol.Symbol for symbol in symbols | limitTo: 5" autofocus>
     </form>
 </div>
@@ -34,6 +34,7 @@
                     Low
                 </th>
                 <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -54,6 +55,9 @@
                     {{s.Low}}
                 </td>
                 <td>
+                    <input type="checkbox" ng-click="updateChart(s.Symbol)" />
+                </td>
+                <td>
                     <button class="btn btn-danger btn-mini" ng-click="RemoveFromList($index)">
                         <span class="glyphicon glyphicon-remove"></span>
                     </button>
@@ -62,13 +66,12 @@
         </tbody>
     </table>
 </div>
-<div ng-hide="isStockListEmpty()">
-    <hr />
-    <p>Please search for a company to view its stock data.</p>
-</div>
-<div ng-show="stockList.length">
-    <hr />
+<div>
+    <br />
+    <button class="btn" ng-click="testChart()">Test Chart</button>
     <div>
-        <highchart id="stockChart" config="chart"></highchart>
+        <hr />
+        <!--DotNet HighChart here-->
+        <div id="container" style="height: 500px; min-width: 600px"></div>
     </div>
 </div>

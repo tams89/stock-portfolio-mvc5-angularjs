@@ -161,8 +161,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap.css" />
     <Content Include="Content\Styles\bootstrap-buttons.css" />
     <Content Include="Content\Styles\bootstrap.css" />
     <Content Include="Content\Images\ajax-loader.gif" />
@@ -182,9 +180,10 @@
     <Content Include="Scripts\App\Controllers\StockController.js" />
     <Content Include="Scripts\App\Modules\highcharts-ng.js" />
     <Content Include="Scripts\App\Directives\ngEnter.js" />
-    <Content Include="Scripts\App\Services\AutocompleteService.js" />
-    <Content Include="Scripts\App\Services\OptionAnalysisService.js" />
-    <Content Include="Scripts\App\Services\StockAnalysisService.js" />
+    <Content Include="Scripts\App\Services\autocompleteService.js" />
+    <Content Include="Scripts\App\Services\highStockService.js" />
+    <Content Include="Scripts\App\Services\optionAnalysisService.js" />
+    <Content Include="Scripts\App\Services\stockAnalysisService.js" />
     <Content Include="Content\Directives\spinner.html" />
     <Content Include="Scripts\HighStock\highstock.js" />
     <Content Include="Scripts\HighStock\Modules\exporting.js" />
@@ -204,9 +203,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\App\Services\highStockService.min.js.map">
+      <DependentUpon>highStockService.js</DependentUpon>
+    </Content>
     <None Include="Views\Main\About.cshtml" />
     <None Include="Views\Main\Home.cshtml" />
-    <Content Include="Views\Portfolio\HighStock.cshtml" />
     <None Include="Views\Portfolio\Options.cshtml" />
     <None Include="Views\Portfolio\Stocks.cshtml" />
     <Content Include="Content\Images\2_billion_gold_price_bet.jpg" />
@@ -220,16 +221,16 @@
       <DependentUpon>NavigationController.js</DependentUpon>
     </Content>
     <Content Include="Scripts\App\Services\AjaxService.min.js.map">
-      <DependentUpon>AutocompleteService.js</DependentUpon>
+      <DependentUpon>autocompleteService.js</DependentUpon>
     </Content>
     <Content Include="Scripts\App\Controllers\StockController.min.js.map">
       <DependentUpon>StockController.js</DependentUpon>
     </Content>
     <Content Include="Scripts\App\Services\StockAnalysisService.min.js.map">
-      <DependentUpon>StockAnalysisService.js</DependentUpon>
+      <DependentUpon>stockAnalysisService.js</DependentUpon>
     </Content>
     <Content Include="Scripts\App\Services\AutocompleteService.min.js.map">
-      <DependentUpon>AutocompleteService.js</DependentUpon>
+      <DependentUpon>autocompleteService.js</DependentUpon>
     </Content>
     <Content Include="Scripts\Angular\angular-animate.min.js.map" />
     <Content Include="Scripts\Angular\angular-cookies.min.js.map" />
@@ -502,7 +503,7 @@
       <DependentUpon>OptionController.js</DependentUpon>
     </Content>
     <Content Include="Scripts\App\Services\OptionAnalysisService.min.js.map">
-      <DependentUpon>OptionAnalysisService.js</DependentUpon>
+      <DependentUpon>optionAnalysisService.js</DependentUpon>
     </Content>
     <Content Include="Scripts\Angular\angular-animate.js" />
     <Content Include="Scripts\Angular\angular-animate.min.js" />

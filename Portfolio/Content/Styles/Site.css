@@ -21,8 +21,8 @@ footer {
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 5px;
+    padding-left: 5px;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */

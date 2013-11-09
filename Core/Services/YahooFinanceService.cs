@@ -77,9 +77,9 @@ namespace Core.Services
         public IEnumerable<MarketDto> GetData(string symbol, DateTime? from, DateTime? to)
         {
             if (string.IsNullOrEmpty(symbol)) return null;
-            if (!from.HasValue) from = DateTime.Now.AddMonths(-3);
-            if (!to.HasValue) to = DateTime.Now;
-            var marketData = VolatilityAndMarketData.getMarketData(symbol, from.Value, to.Value).ToList();
+            if (!from.HasValue) from = DateTime.Today.AddYears(-2);
+            if (!to.HasValue) to = DateTime.Today;
+            var marketData = VolatilityAndMarketData.getMarketData(symbol, from.Value, to.Value).Reverse();
             return DtoInjector<VolatilityAndMarketData.MarketData, MarketDto>.InjectList(marketData);
         }
 

@@ -3,7 +3,7 @@
     var stocks = [];
     var historicalData = [];
 
-    this.getStocks = function () {
+    this.getStockList = function () {
         return stocks;
     };
 
@@ -20,7 +20,7 @@
         return null;
     };
 
-    this.addStock = function (symbol) {
+    this.getStockData = function (symbol) {
         return $http.post("/Portfolio/MarketData", { "symbol": symbol })
             .success(function (data) {
                 historicalData.push(data);
@@ -33,8 +33,8 @@
         stocks.splice(idx, 1);
     };
 
-    this.flattenData = function (flattenByProp, array) {
-        return _.flatten(_.pluck(array, flattenByProp.toString()));
-    };
+    //this.flattenData = function (flattenByProp, array) {
+    //    return _.flatten(_.pluck(array, flattenByProp.toString()));
+    //};
 
 });

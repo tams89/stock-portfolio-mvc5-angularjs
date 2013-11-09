@@ -4,7 +4,7 @@
 
 body {
     background-color: black;
-    background-image: url(Images/2_billion_gold_price_bet.jpg);
+    background-image: url(/Content/Images/2_billion_gold_price_bet.jpg);
     background-position: initial;
     -moz-background-size: cover;
     -ms-background-size: cover;
@@ -148,7 +148,7 @@ textarea {
 
 .spinner {
     height: 40px;
-    background-image: url(Images/ajax-loader.gif);
+    background-image: url(/Content/Images/ajax-loader.gif);
     background-position-x: center;
     background-position-y: center;
     background-repeat: no-repeat;

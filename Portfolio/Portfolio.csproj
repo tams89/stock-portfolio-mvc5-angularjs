@@ -157,29 +157,51 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Styles\bootstrap-buttons.css" />
+    <Content Include="Content\Styles\bootstrap.css" />
+    <Content Include="Content\Styles\bootstrap.min.css" />
     <Content Include="Content\Images\ajax-loader.gif" />
-    <Content Include="Content\ng-grid.css" />
-    <Content Include="Content\ng-grid.min.css" />
-    <Content Include="Content\spinner.css" />
-    <Content Include="Content\spinner.min.css">
-      <DependentUpon>spinner.css</DependentUpon>
-    </Content>
+    <Content Include="Content\Styles\ng-grid.css" />
+    <Content Include="Content\Styles\ng-grid.min.css" />
+    <Content Include="Content\Styles\Site.css" />
+    <Content Include="Content\Styles\spinner.css" />
+    <Content Include="Content\Styles\spinner.min.css" />
+    <Content Include="Content\Styles\animate.css" />
+    <Content Include="Content\Styles\animate.min.css" />
+    <Content Include="Content\Styles\bootstrap-buttons.min.css" />
+    <Content Include="Content\Styles\Site.min.css" />
+    <Content Include="Content\Styles\toaster.min.css" />
+    <Content Include="Content\Styles\toaster.css" />
     <Content Include="Scripts\App\AlgoTrader.js" />
+    <Content Include="Scripts\App\AlgoTrader.min.js" />
+    <Content Include="Scripts\App\Controllers\HighChartController.min.js" />
+    <Content Include="Scripts\App\Controllers\NavigationController.min.js" />
     <Content Include="Scripts\App\Controllers\OptionController.js" />
+    <Content Include="Scripts\App\Controllers\OptionController.min.js" />
     <Content Include="Scripts\App\Controllers\OptionGridController.js" />
+    <Content Include="Scripts\App\Controllers\OptionGridController.min.js" />
+    <Content Include="Scripts\App\Controllers\StockController.min.js" />
+    <Content Include="Scripts\App\Directives\ng-grid.js" />
+    <Content Include="Scripts\App\Directives\ng-grid.min.js" />
+    <Content Include="Scripts\App\Directives\ngEnter.min.js" />
     <Content Include="Scripts\App\Directives\spinner.js" />
+    <Content Include="Scripts\App\Directives\spinner.min.js" />
+    <Content Include="Scripts\App\Services\AjaxService.min.js" />
+    <Content Include="Scripts\App\Services\AutocompleteService.min.js" />
+    <Content Include="Scripts\App\Services\BackGridService.min.js" />
     <Content Include="Scripts\App\Services\highChartService.js" />
     <Content Include="Scripts\App\Controllers\NavigationController.js" />
     <Content Include="Scripts\App\Controllers\StockController.js" />
     <Content Include="Scripts\App\Modules\highcharts-ng.js" />
     <Content Include="Scripts\App\Directives\ngEnter.js" />
     <Content Include="Scripts\App\Services\AutocompleteService.js" />
+    <Content Include="Scripts\App\Services\highChartService.min.js" />
     <Content Include="Scripts\App\Services\OptionAnalysisService.js" />
+    <Content Include="Scripts\App\Services\OptionAnalysisService.min.js" />
     <Content Include="Scripts\App\Services\StockAnalysisService.js" />
-    <Content Include="Scripts\App\Directives\ng-grid.debug.js" />
-    <Content Include="Scripts\App\Directives\ng-grid.js" />
-    <Content Include="Scripts\App\Directives\ng-grid.min.js" />
     <Content Include="Content\Directives\spinner.html" />
+    <Content Include="Scripts\App\Services\StockAnalysisService.min.js" />
+    <Content Include="Scripts\_references.min.js" />
     <Content Include="Views\Main\Index.cshtml" />
     <Content Include="Scripts\App\Controllers\OptionGridController.min.js.map">
       <DependentUpon>OptionGridController.js</DependentUpon>
@@ -190,21 +212,16 @@
     <Content Include="Scripts\App\Directives\spinner.min.js.map">
       <DependentUpon>spinner.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\Toast\README.md" />
+    <Content Include="Scripts\UnderScore\underscore-min.map" />
     <None Include="Views\Main\About.cshtml" />
     <None Include="Views\Main\Home.cshtml" />
     <None Include="Views\Portfolio\Options.cshtml" />
     <None Include="Views\Portfolio\Stocks.cshtml" />
-    <Content Include="Content\Animate\animate.css" />
-    <Content Include="Content\Animate\animate.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\bootstrap-buttons.css" />
     <Content Include="Content\Images\2_billion_gold_price_bet.jpg" />
-    <Content Include="Content\toaster.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="Scripts\App\AlgoTrader.min.js.map">
       <DependentUpon>AlgoTrader.js</DependentUpon>
     </Content>
@@ -496,7 +513,6 @@
     <Content Include="Scripts\App\Services\OptionAnalysisService.min.js.map">
       <DependentUpon>OptionAnalysisService.js</DependentUpon>
     </Content>
-    <None Include="Scripts\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\Angular\angular-animate.js" />
     <Content Include="Scripts\Angular\angular-animate.min.js" />
     <Content Include="Scripts\Angular\angular-cookies.js" />
@@ -517,8 +533,6 @@
     <Content Include="Scripts\Angular\angular.min.js" />
     <Content Include="Scripts\Angular\version.txt" />
     <Content Include="Scripts\HighCharts\highcharts.js" />
-    <Content Include="Scripts\jquery-2.0.3.js" />
-    <Content Include="Scripts\jquery-2.0.3.min.js" />
     <Content Include="Scripts\Jquery\jquery-2.0.3.js" />
     <Content Include="Scripts\Jquery\jquery-2.0.3.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
@@ -539,13 +553,11 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Scripts\jquery-2.0.3.min.map" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\_references.min.js.map">
       <DependentUpon>_references.js</DependentUpon>
     </Content>
     <Content Include="Scripts\Toast\bower.json" />
-    <Content Include="Scripts\Toast\README.md" />
     <Content Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -559,11 +571,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
-    <Content Include="Content\Animate\bower.json" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\Jquery\jquery-2.0.3.min.map" />
   </ItemGroup>

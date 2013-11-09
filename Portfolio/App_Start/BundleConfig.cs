@@ -7,18 +7,17 @@ namespace Portfolio.App_Start
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                "~/Content/bootstrap.css",
-                "~/Content/bootstrap-buttons.css",
-                "~/Content/Site.css",
-                "~/Content/toaster.css",
-                "~/Content/spinner.css"
+                "~/Content/Styles/bootstrap.css",
+                "~/Content/Styles/bootstrap-buttons.css",
+                "~/Content/Styles/toaster.css",
+                "~/Content/Styles/spinner.css",
+                "~/Content/Styles/ng-grid.css",
+                "~/Content/Styles/animate.css"
                 ));
 
-            bundles.Add(new StyleBundle("~/Content/animationCss").Include(
-                "~/Content/Animate/animate.css"));
-
-            bundles.Add(new StyleBundle("~/Content/gridCss").Include(
-                "~/Content/ng-grid.css"));
+            bundles.Add(new StyleBundle("~/Content/siteCss").Include(
+                "~/Content/Styles/Site.css"
+                ));
 
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                 "~/Scripts/modernizr-*"));

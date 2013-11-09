@@ -20,7 +20,7 @@ namespace Portfolio.App_Start
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                "~/Scripts/modernizr-*"));
+                "~/Scripts/Modernizer/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/highChart").Include(
                 "~/Scripts/HighCharts/highcharts.js"));
@@ -42,7 +42,7 @@ namespace Portfolio.App_Start
                 "~/Scripts/Toast/toaster.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/respond").Include(
-                "~/Scripts/respond.js"));
+                "~/Scripts/Respond/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/underScore").Include(
                 "~/Scripts/UnderScore/underscore-min.js"));

@@ -535,9 +535,9 @@
     <Content Include="Scripts\HighCharts\highcharts.js" />
     <Content Include="Scripts\Jquery\jquery-2.0.3.js" />
     <Content Include="Scripts\Jquery\jquery-2.0.3.min.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\Modernizer\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Respond\respond.js" />
+    <Content Include="Scripts\Respond\respond.min.js" />
     <Content Include="Scripts\Angular\ui-bootstrap-0.6.0.js" />
     <Content Include="Scripts\Angular\ui-bootstrap-0.6.0.min.js" />
     <Content Include="Scripts\Angular\ui-bootstrap-tpls-0.6.0.js" />

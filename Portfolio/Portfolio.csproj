@@ -220,7 +220,7 @@
     <None Include="Views\Portfolio\Stocks.cshtml" />
     <Content Include="Content\Images\2_billion_gold_price_bet.jpg" />
     <Content Include="favicon.ico" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\App\AlgoTrader.min.js.map">
       <DependentUpon>AlgoTrader.js</DependentUpon>
@@ -571,9 +571,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\Jquery\jquery-2.0.3.min.map" />

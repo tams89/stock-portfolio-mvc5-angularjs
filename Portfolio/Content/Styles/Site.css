@@ -142,8 +142,12 @@ textarea {
 .grid-style {
     overflow-x: hidden;
     overflow-y: hidden;
-    min-height: 250px;
-    max-height: 300px;
+    min-height: 300px;
+    max-height: 600px;
+}
+
+.ngVerticalBarVisible {
+    background-color: transparent;
 }
 
 .spinner {

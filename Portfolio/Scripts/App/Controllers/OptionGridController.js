@@ -5,15 +5,14 @@
         multiSelect: false,
         selectedItemns: $scope.selectedOptions,
         columnDefs: [
-            { field: "Symbol", width: "28%" },
-            { field: "Type" },
-            { field: "StrikePrice", displayName: "Strike" },
-            { field: "LastPrice", displayName: "Last" },
-            { field: "Change" },
-            { field: "Bid" },
-            { field: "Ask" },
-            { field: "Vol" },
-            { field: "OpenInt" }
+            { field: "Symbol", width: "27%" },
+            { field: "StrikePrice", displayName: "Strike", width: "10%" },
+            { field: "LastPrice", displayName: "Last", width: "10%" },
+            { field: "Change", width: "10%" },
+            { field: "Bid", width: "10%" },
+            { field: "Ask", width: "10%" },
+            { field: "Vol", width: "10%" },
+            { field: "OpenInt", width: "10%" }
         ]
     };
     

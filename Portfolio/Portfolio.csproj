@@ -225,6 +225,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="Views\Main\About.cshtml" />
     <None Include="Views\Main\Home.cshtml" />
+    <Content Include="Views\Portfolio\HighStock.cshtml" />
     <None Include="Views\Portfolio\Options.cshtml" />
     <None Include="Views\Portfolio\Stocks.cshtml" />
     <Content Include="Content\Images\2_billion_gold_price_bet.jpg" />

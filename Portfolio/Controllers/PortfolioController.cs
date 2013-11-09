@@ -28,6 +28,11 @@ namespace Portfolio.Controllers
             return View();
         }
 
+        public ActionResult HighStock()
+        {
+            return View();
+        }
+
         [HttpPost]
         public JsonResult AutoComplete(string symbol)
         {

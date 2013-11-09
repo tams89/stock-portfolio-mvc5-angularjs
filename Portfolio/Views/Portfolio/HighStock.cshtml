@@ -1,0 +1,76 @@
+﻿<div>
+    <h1>Stock Charts</h1>
+    <hr />
+    <div>
+        <form>
+            <span>Search:</span>
+            <input class="form-control" type="text" placeholder="Press Enter to Add" ng-change="OnInputChange()" ng-enter="OnEnterIfSelected()"
+                   ng-model="selected" typeahead="symbol as symbol.Name + ' - ' + symbol.Symbol for symbol in symbols | limitTo: 5" autofocus>
+        </form>
+    </div>
+    <spinner></spinner>
+    <div ng-show="isStockListEmpty()">
+        <hr />
+        <table class="table table-condensed table-striped">
+            <thead>
+                <tr>
+                    <td>
+                        Market Data
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Symbol
+                    </th>
+                    <th>
+                        Open
+                    </th>
+                    <th>
+                        Close
+                    </th>
+                    <th>
+                        High
+                    </th>
+                    <th>
+                        Low
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="s in stockList">
+                    <td>
+                        {{s.Symbol}}
+                    </td>
+                    <td>
+                        {{s.Open}}
+                    </td>
+                    <td>
+                        {{s.Close}}
+                    </td>
+                    <td>
+                        {{s.High}}
+                    </td>
+                    <td>
+                        {{s.Low}}
+                    </td>
+                    <td>
+                        <button class="btn btn-danger btn-mini" ng-click="RemoveFromList($index)">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div ng-hide="isStockListEmpty()">
+        <hr />
+        <p>Please search for a company to view its stock data.</p>
+    </div>
+    <div ng-show="stockList.length">
+        <hr />
+        <div>
+            <!--DotNet HighChart here-->
+        </div>
+    </div>
+</div>

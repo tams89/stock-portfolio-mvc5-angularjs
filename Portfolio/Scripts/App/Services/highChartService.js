@@ -32,10 +32,12 @@
             if (categories != null) {
                 var dates = [];
                 for (var j = 0; j <= categories.length; j++) {
-                    var date = new Date(parseInt(categories[j].toString().substr(6,13))); // TODO: Fix x-axis column for dates.
-                    dates.push(date);
+                    if (categories[j] != null) {
+                        var date = new Date(parseInt(categories[j].toString().substr(6, 13)));
+                        dates.push(date);
+                    }
                 }
-                
+
                 chart.xAxis.categories.
                 chart.xAxis.categories.push(dates);
                 chart.xAxis.tickInterval = dates.length % 70;

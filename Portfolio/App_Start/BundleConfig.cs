@@ -22,8 +22,8 @@ namespace Portfolio.App_Start
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                 "~/Scripts/Modernizer/modernizr-*"));
 
-            bundles.Add(new ScriptBundle("~/bundles/highChart").Include(
-                "~/Scripts/HighCharts/highcharts.js"));
+            bundles.Add(new ScriptBundle("~/bundles/highStock")
+                .IncludeDirectory("~/Scripts/HighStock", "*.js", true));
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                 "~/Scripts/Angular/angular.js",

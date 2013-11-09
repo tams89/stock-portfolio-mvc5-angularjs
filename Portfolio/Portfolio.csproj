@@ -46,6 +46,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="DotNet.Highcharts">
+      <HintPath>..\packages\DotNet.Highcharts.2.0\lib\DotNet.Highcharts.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Munq.IocContainer">
       <HintPath>..\packages\Munq.IocContainer.3.1.6\Lib\Munq.IocContainer.dll</HintPath>
@@ -159,55 +162,33 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Styles\bootstrap-buttons.css" />
     <Content Include="Content\Styles\bootstrap.css" />
-    <Content Include="Content\Styles\bootstrap.min.css" />
     <Content Include="Content\Images\ajax-loader.gif" />
     <Content Include="Content\Styles\ng-grid.css" />
-    <Content Include="Content\Styles\ng-grid.min.css" />
     <Content Include="Content\Styles\Site.css" />
     <Content Include="Content\Styles\spinner.css" />
-    <Content Include="Content\Styles\spinner.min.css" />
     <Content Include="Content\Styles\animate.css" />
-    <Content Include="Content\Styles\animate.min.css" />
-    <Content Include="Content\Styles\bootstrap-buttons.min.css" />
-    <Content Include="Content\Styles\Site.min.css" />
-    <Content Include="Content\Styles\toaster.min.css" />
     <Content Include="Content\Styles\toaster.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Scripts\App\AlgoTrader.js" />
-    <Content Include="Scripts\App\AlgoTrader.min.js" />
-    <Content Include="Scripts\App\Controllers\HighChartController.min.js" />
-    <Content Include="Scripts\App\Controllers\NavigationController.min.js" />
     <Content Include="Scripts\App\Controllers\OptionController.js" />
-    <Content Include="Scripts\App\Controllers\OptionController.min.js" />
     <Content Include="Scripts\App\Controllers\OptionGridController.js" />
-    <Content Include="Scripts\App\Controllers\OptionGridController.min.js" />
-    <Content Include="Scripts\App\Controllers\StockController.min.js" />
     <Content Include="Scripts\App\Directives\ng-grid.js" />
-    <Content Include="Scripts\App\Directives\ng-grid.min.js" />
-    <Content Include="Scripts\App\Directives\ngEnter.min.js" />
     <Content Include="Scripts\App\Directives\spinner.js" />
-    <Content Include="Scripts\App\Directives\spinner.min.js" />
-    <Content Include="Scripts\App\Services\AjaxService.min.js" />
-    <Content Include="Scripts\App\Services\AutocompleteService.min.js" />
-    <Content Include="Scripts\App\Services\BackGridService.min.js" />
     <Content Include="Scripts\App\Services\highChartService.js" />
     <Content Include="Scripts\App\Controllers\NavigationController.js" />
     <Content Include="Scripts\App\Controllers\StockController.js" />
     <Content Include="Scripts\App\Modules\highcharts-ng.js" />
     <Content Include="Scripts\App\Directives\ngEnter.js" />
     <Content Include="Scripts\App\Services\AutocompleteService.js" />
-    <Content Include="Scripts\App\Services\highChartService.min.js" />
     <Content Include="Scripts\App\Services\OptionAnalysisService.js" />
-    <Content Include="Scripts\App\Services\OptionAnalysisService.min.js" />
     <Content Include="Scripts\App\Services\StockAnalysisService.js" />
     <Content Include="Content\Directives\spinner.html" />
-    <Content Include="Scripts\App\Services\StockAnalysisService.min.js" />
-    <Content Include="Scripts\_references.min.js" />
+    <Content Include="Scripts\HighStock\highstock.js" />
+    <Content Include="Scripts\HighStock\Modules\exporting.js" />
+    <Content Include="Scripts\HighStock\Themes\grid.js" />
     <Content Include="Views\Main\Index.cshtml" />
     <Content Include="Scripts\App\Controllers\OptionGridController.min.js.map">
       <DependentUpon>OptionGridController.js</DependentUpon>
@@ -567,7 +548,6 @@
     <Content Include="Scripts\_references.min.js.map">
       <DependentUpon>_references.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\Toast\bower.json" />
     <Content Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>

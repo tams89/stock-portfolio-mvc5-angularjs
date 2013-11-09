@@ -25,7 +25,9 @@ app.controller("StockController", function ($scope, autocompleteService, stockAn
 
     function addToList(symbol) {
         if (doesExist(symbol) === false) {
+            $scope.loading = true;
             stockAnalysisService.addStock(symbol);
+            $scope.loading = false;
         }
     }
 

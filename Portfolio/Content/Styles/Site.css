@@ -79,6 +79,7 @@ textarea {
 .form-control {
     display: inline-block;
     padding: 6px 12px;
+    min-width: 600px;
     width: auto;
     height: 30px;
     -ms-border-radius: 4px;

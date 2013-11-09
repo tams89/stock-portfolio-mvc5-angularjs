@@ -11,6 +11,7 @@
                ng-model="selected" typeahead="symbol as symbol.Name + ' - ' + symbol.Symbol for symbol in symbols | limitTo: 5" autofocus>
     </form>
 </div>
+<spinner></spinner>
 <div ng-show="isStockListEmpty()">
     <hr />
     <table class="table table-condensed table-striped">

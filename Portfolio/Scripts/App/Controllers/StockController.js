@@ -7,6 +7,7 @@
     init();
     function init() {
         $scope.stockList = stockAnalysisService.getStockList();
+        highStockService.createChart();
     }
 
     $scope.symbols = [];
@@ -31,17 +32,15 @@
         }
     }
 
-    $scope.RemoveFromList = function (idx) {
+    $scope.RemoveFromList = function (idx, symbol) {
         stockAnalysisService.removeStock(idx);
-        //highChartService.updateChart($scope.chart, $scope.stockList);
+        $scope.updateChart(symbol, false);
     };
 
     $scope.isStockListEmpty = function () {
         if ($scope.stockList.length > 0) return true;
         return false;
     };
-
-    $scope.checked = false;
 
     $scope.updateChart = function (symbol, checked) {
         if (symbol == null) return;
@@ -51,7 +50,12 @@
         } else {
             highStockService.removeSeries(symbol); // Remove series from chart
         }
-        highStockService.createChart(); // create chart after series options set.
+        if (!highStockService.isChartEmpty()) {
+            highStockService.createChart(); // create chart after series options set.
+            $scope.isChartEmpty = false;
+        }
     };
+
+    $scope.isChartEmpty = true;
 
 });

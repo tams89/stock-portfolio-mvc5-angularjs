@@ -530,7 +530,6 @@
     <Content Include="Scripts\Angular\angular.js" />
     <Content Include="Scripts\Angular\angular.min.js" />
     <Content Include="Scripts\Angular\version.txt" />
-    <Content Include="Scripts\HighCharts\highcharts.js" />
     <Content Include="Scripts\Jquery\jquery-2.0.3.js" />
     <Content Include="Scripts\Jquery\jquery-2.0.3.min.js" />
     <Content Include="Scripts\Modernizer\modernizr-2.6.2.js" />

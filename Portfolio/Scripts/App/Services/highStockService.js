@@ -7,10 +7,6 @@
         names = [],
         colors = Highcharts.getOptions().colors;
 
-    this.getChart = function() {
-        return chart;
-    };
-
     this.addHistoricalDataSeries = function (data) {
         try {
             if (data == undefined) return;
@@ -77,6 +73,11 @@
                 seriesOptions.splice(i, 1);
             }
         }
+    };
+
+    this.isChartEmpty = function () {
+        if (seriesOptions.length == 0) return true;
+        return false;
     };
 
     this.clearSeries = function () {

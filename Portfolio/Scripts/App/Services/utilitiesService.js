@@ -21,4 +21,12 @@
         return _.flatten(_.pluck(array, flattenByProp.toString()));
     };
 
+    this.removeFromArray = function (array, item) {
+        for (var i = 0; i <= array.length; i++) {
+            if (array[i] == item) {
+                array.splice(i, 1);
+            }
+        }
+    };
+
 });

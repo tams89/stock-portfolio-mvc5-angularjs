@@ -3,7 +3,6 @@
 }
 
 body {
-    overflow: hidden;
     background-color: black;
     background-image: url(/Content/Images/2_billion_gold_price_bet.jpg);
     background-position: initial;
@@ -49,7 +48,7 @@ textarea {
 
 .overlay {
     position: inherit;
-    margin-top: 80px;
+    margin-top: 60px;
     margin-bottom: 20px;
     padding: 40px;
     background-color: rgba(0, 0, 0, 0.60);
@@ -178,7 +177,7 @@ textarea {
 }
 
 .spinner {
-    height: 40px;
+    height: 30px;
     background-image: url(/Content/Images/ajax-loader.gif);
     background-position-x: center;
     background-position-y: center;

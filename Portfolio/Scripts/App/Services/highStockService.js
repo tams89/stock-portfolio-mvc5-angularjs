@@ -18,7 +18,7 @@
                 }
             }
             names.push(data[0].symbol);
-            seriesOptions.push({ name: data[0].Symbol, data: dataNAdjClose });
+            seriesOptions.push({ name: data[0].Symbol, data: dataNAdjClose, color: randomColorGen() });
         } catch (e) {
             console.log(e);
         }
@@ -28,6 +28,7 @@
         // create the chart when all data is ready.
         chart = $("#container").highcharts("StockChart", {
             chart: {
+                reflow: true
             },
             rangeSelector: {
                 selected: 4
@@ -57,17 +58,13 @@
             },
             series: seriesOptions
         });
-
-        var t = Highcharts.getOptions();
     };
 
-    function getRandomColor() {
-        var letters = '0123456789ABCDEF'.split('');
-        var color = '#';
-        for (var i = 0; i < 6; i++) {
-            color += letters[Math.round(Math.random() * 15)];
-        }
-        return color;
+    // Returns random colour from array.
+    function randomColorGen() {
+        var colours = ['#D200D6', '#D60C00', '#5BD600', '#000000', '#00C5FF', '#0052FF', '#F09600'];
+        var random = Math.floor((Math.random() * 7) + 1); // random number 1-7
+        return colours[random];
     }
 
     this.duplicatedSeries = function (symbol) {

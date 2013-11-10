@@ -210,6 +210,9 @@
     <Content Include="Scripts\App\Services\utilitiesService.min.js.map">
       <DependentUpon>utilitiesService.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\HighStock\Themes\grid.min.js.map">
+      <DependentUpon>grid.js</DependentUpon>
+    </Content>
     <None Include="Views\Main\About.cshtml" />
     <None Include="Views\Main\Home.cshtml" />
     <None Include="Views\Portfolio\Options.cshtml" />

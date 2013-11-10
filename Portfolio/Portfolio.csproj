@@ -161,6 +161,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Directives\circle.html" />
+    <Content Include="Content\Styles\circle.css" />
     <Content Include="Content\Styles\bootstrap-buttons.css" />
     <Content Include="Content\Styles\bootstrap.css" />
     <Content Include="Content\Images\ajax-loader.gif" />
@@ -173,6 +175,7 @@
     <Content Include="Scripts\App\AlgoTrader.js" />
     <Content Include="Scripts\App\Controllers\OptionController.js" />
     <Content Include="Scripts\App\Controllers\OptionGridController.js" />
+    <Content Include="Scripts\App\Directives\circle.js" />
     <Content Include="Scripts\App\Directives\ng-grid.js" />
     <Content Include="Scripts\App\Directives\spinner.js" />
     <Content Include="Scripts\App\Services\highChartService.js" />
@@ -983,6 +986,9 @@
     </Content>
     <Content Include="Scripts\Angular\angular-scenario.min.js.map">
       <DependentUpon>angular-scenario.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\App\Directives\circle.min.js.map">
+      <DependentUpon>circle.js</DependentUpon>
     </Content>
     <None Include="Views\Main\About.cshtml" />
     <None Include="Views\Main\Home.cshtml" />

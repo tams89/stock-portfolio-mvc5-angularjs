@@ -4,9 +4,9 @@
     $scope.stockList = []; // for stock watch table list
     $scope.selected = undefined; // input selection property
     $scope.isChartEmpty = true;
+    $scope.symbols = [];
 
     init();
-
     function init() {
         $scope.stockList = stockAnalysisService.getStockList();
         if (!highStockService.isChartEmpty()) {
@@ -15,12 +15,11 @@
         }
     }
 
-    $scope.symbols = [];
-    $scope.OnInputChange = function() {
+    $scope.OnInputChange = function () {
         $scope.symbols = autocompleteService.getSymbols($scope.selected);
     };
 
-    $scope.SelectSymbol = function() {
+    $scope.SelectSymbol = function () {
         var symbol = $scope.selected.Symbol;
         if (symbol === undefined || symbol === null) return;
         lastSymbol = symbol;

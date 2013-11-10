@@ -3,7 +3,6 @@
     var chart,
         seriesOptions = [],
         yAxisOptions = [],
-        seriesCounter = 0,
         names = [],
         colors = Highcharts.getOptions().colors;
 
@@ -20,7 +19,6 @@
             }
             names.push(data[0].symbol);
             seriesOptions.push({ name: data[0].Symbol, data: dataNAdjClose });
-            seriesCounter++;
         } catch (e) {
             console.log(e);
         }
@@ -46,12 +44,11 @@
                 plotLines: [{
                     value: 0,
                     width: 2,
-                    color: "silver"
                 }]
             },
             plotOptions: {
                 series: {
-                    compare: "percent"
+                    compare: "percent",
                 }
             },
             tooltip: {
@@ -61,6 +58,15 @@
             series: seriesOptions
         });
     };
+
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF'.split('');
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.round(Math.random() * 15)];
+        }
+        return color;
+    }
 
     this.duplicatedSeries = function (symbol) {
         return utilitiesService.isItemInArrayProp(seriesOptions, "name", symbol);

@@ -1,4 +1,22 @@
-﻿
+﻿<div>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/SiteCss")
+    <!-- Angular and other libraries/frameworks. -->
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/Angular")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/respond")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/toast")
+    @Scripts.Render("~/bundles/highStock")
+    @Scripts.Render("~/bundles/underScore")
+    <!-- Angular User Scripts. -->
+    @Scripts.Render("~/bundles/angularApp")
+    @Scripts.Render("~/bundles/angularModules")
+    @Scripts.Render("~/bundles/angularDirectives")
+    @Scripts.Render("~/bundles/angularServices")
+    @Scripts.Render("~/bundles/angularControllers")
+</div>
 <div class="navbar navbar-inverse navbar-fixed-top">
     <toaster-container></toaster-container>
     <div class="container">

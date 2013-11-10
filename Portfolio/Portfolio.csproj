@@ -185,6 +185,7 @@
     <Content Include="Scripts\App\Services\optionAnalysisService.js" />
     <Content Include="Scripts\App\Services\stockAnalysisService.js" />
     <Content Include="Content\Directives\spinner.html" />
+    <Content Include="Scripts\App\Services\utilitiesService.js" />
     <Content Include="Scripts\HighStock\highstock.js" />
     <Content Include="Scripts\HighStock\Modules\exporting.js" />
     <Content Include="Scripts\HighStock\Themes\grid.js" />
@@ -205,6 +206,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\App\Services\highStockService.min.js.map">
       <DependentUpon>highStockService.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\App\Services\utilitiesService.min.js.map">
+      <DependentUpon>utilitiesService.js</DependentUpon>
     </Content>
     <None Include="Views\Main\About.cshtml" />
     <None Include="Views\Main\Home.cshtml" />
@@ -239,7 +243,9 @@
     <Content Include="Scripts\Angular\angular-route.min.js.map" />
     <Content Include="Scripts\Angular\angular-sanitize.min.js.map" />
     <Content Include="Scripts\Angular\angular-touch.min.js.map" />
-    <Content Include="Scripts\Angular\angular.min.js.map" />
+    <Content Include="Scripts\Angular\angular.min.js.map">
+      <DependentUpon>angular.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\Angular\errors.json" />
     <Content Include="Scripts\Angular\i8n\angular-locale_af-na.js" />
     <Content Include="Scripts\Angular\i8n\angular-locale_af-za.js" />

@@ -55,7 +55,7 @@
                     {{s.Low}}
                 </td>
                 <td>
-                    <input type="checkbox" ng-click="updateChart(s.Symbol)" />
+                    <input type="checkbox" ng-model="checked" ng-change="updateChart(s.Symbol, checked)" />
                 </td>
                 <td>
                     <button class="btn btn-danger btn-mini" ng-click="RemoveFromList($index)">
@@ -67,8 +67,6 @@
     </table>
 </div>
 <div>
-    <br />
-    <button class="btn" ng-click="testChart()">Test Chart</button>
     <div>
         <hr />
         <!--DotNet HighChart here-->

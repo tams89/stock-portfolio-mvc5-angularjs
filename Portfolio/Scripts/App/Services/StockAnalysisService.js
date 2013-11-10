@@ -7,7 +7,7 @@
         return stocks;
     };
 
-    this.getHistoricalData = function() {
+    this.getHistoricalData = function () {
         return historicalData;
     };
 
@@ -24,7 +24,7 @@
         return $http.post("/Portfolio/MarketData", { "symbol": symbol })
             .success(function (data) {
                 historicalData.push(data);
-                stocks.push(data[0]);
+                stocks.push(data[data.length-1]);
             });
     };
 

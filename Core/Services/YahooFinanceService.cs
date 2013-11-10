@@ -79,7 +79,7 @@ namespace Core.Services
             if (string.IsNullOrEmpty(symbol)) return null;
             if (!from.HasValue) from = DateTime.Today.AddYears(-2);
             if (!to.HasValue) to = DateTime.Today;
-            var marketData = VolatilityAndMarketData.getMarketData(symbol, from.Value, to.Value).Reverse();
+            var marketData = VolatilityAndMarketData.getMarketData(symbol, from.Value, to.Value).Reverse(); // old to recent.
             return DtoInjector<VolatilityAndMarketData.MarketData, MarketDto>.InjectList(marketData);
         }
 

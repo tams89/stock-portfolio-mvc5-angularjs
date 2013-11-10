@@ -3,11 +3,15 @@
     var lastSymbol;
     $scope.stockList = []; // for stock watch table list
     $scope.selected = undefined; // input selection property
+    $scope.isChartEmpty = true;
 
     init();
     function init() {
         $scope.stockList = stockAnalysisService.getStockList();
-        highStockService.createChart();
+        if (!highStockService.isChartEmpty()) {
+            $scope.isChartEmpty = false;
+            highStockService.createChart();
+        }
     }
 
     $scope.symbols = [];
@@ -50,12 +54,9 @@
         } else {
             highStockService.removeSeries(symbol); // Remove series from chart
         }
-        if (!highStockService.isChartEmpty()) {
-            highStockService.createChart(); // create chart after series options set.
-            $scope.isChartEmpty = false;
-        }
+        if (!highStockService.isChartEmpty()) $scope.isChartEmpty = false;
+        else $scope.isChartEmpty = true;
+        highStockService.createChart(); // create chart after series options set.
     };
-
-    $scope.isChartEmpty = true;
 
 });

@@ -38,7 +38,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="s in stockList">
+            <tr class="page-change" ng-repeat="s in stockList">
                 <td>
                     {{s.Symbol}}
                 </td>
@@ -66,8 +66,8 @@
         </tbody>
     </table>
 </div>
-<div ng-hide="isChartEmpty">
+<div class="show-hide-animation" ng-hide="isChartEmpty">
     <hr />
     <!--DotNet HighChart here-->
-    <div id="container" style="height: 500px; min-width: 600px"></div>
+    <div class="page-change" id="container" style="height: 500px; min-width: 650px"></div>
 </div>

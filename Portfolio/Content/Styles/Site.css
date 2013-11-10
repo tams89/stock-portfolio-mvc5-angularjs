@@ -13,6 +13,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     color: whitesmoke;
+    overflow: hidden;
 }
 
 footer {
@@ -107,6 +108,27 @@ textarea {
     -o-animation: fadeInLeft 1s;
     -webkit-animation: fadeInLeft 1s;
     animation: fadeInLeft 1s;
+}
+
+.show-hide-animation.ng-hide-add,
+.show-hide-animation.ng-hide-remove {
+  -webkit-transition:0.2s linear all;
+  -moz-transition:0.2s linear all;
+  -o-transition:0.5s linear all;
+  transition:0.2s linear all;
+  display:block!important;
+}
+.show-hide-animation.ng-hide-remove {
+  opacity:0;
+}
+.show-hide-animation.ng-hide-remove.ng-hide-remove-active {
+  opacity:1;
+}
+.show-hide-animation.ng-hide-add {
+  opacity:1;
+}
+.show-hide-animation.ng-hide-add.ng-hide-add-active {
+  opacity:0;
 }
 
 .table {

@@ -79,9 +79,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DTOs\DtoBase.cs" />
-    <Compile Include="DTOs\OptionDto.cs" />
-    <Compile Include="DTOs\MarketDto.cs" />
+    <Compile Include="DTO\DtoBase.cs" />
+    <Compile Include="DTO\MarketDto.cs" />
+    <Compile Include="DTO\OptionDto.cs" />
     <Compile Include="Factory\DtoFactory.cs" />
     <Compile Include="Models\Portfolio\Security.cs" />
     <Compile Include="Models\Portfolio\PortfolioSecurity.cs" />

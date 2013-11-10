@@ -1,4 +1,4 @@
-﻿app.controller("OptionGridController", function ($scope) {
+﻿app.controller("OptionGridController", function($scope) {
 
     $scope.optionGrid = {
         data: "optionData",
@@ -15,5 +15,5 @@
             { field: "OpenInt", width: "10%" }
         ]
     };
-    
+
 });

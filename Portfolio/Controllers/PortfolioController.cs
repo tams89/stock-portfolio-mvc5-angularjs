@@ -1,6 +1,8 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 using Core.DTOs;
+using Core.Services;
 using Core.Services.Interfaces;
 
 namespace Portfolio.Controllers
@@ -36,24 +38,24 @@ namespace Portfolio.Controllers
         [HttpPost]
         public JsonResult AutoComplete(string symbol)
         {
-            var results = _yahooFinanceService.SymbolSearch(symbol).ToArray();
+            YahooFinanceService.GoogleFinanceJSON[] results = _yahooFinanceService.SymbolSearch(symbol).ToArray();
             if (!results.Any()) return null;
 
-            var json = results.Select(x => new { x.Name, x.Symbol });
+            var json = results.Select(x => new {x.Name, x.Symbol});
             return Json(json);
         }
 
         [HttpPost]
         public JsonResult MarketData(string symbol)
         {
-            var marketData = _yahooFinanceService.GetData(symbol, null, null);
+            IEnumerable<MarketDto> marketData = _yahooFinanceService.GetData(symbol, null, null);
             return Json(marketData);
         }
 
         [HttpPost]
         public JsonResult OptionData(string symbol)
         {
-            var optionData = _yahooFinanceService.GetData(symbol);
+            IEnumerable<OptionDto> optionData = _yahooFinanceService.GetData(symbol);
             return Json(optionData);
         }
     }

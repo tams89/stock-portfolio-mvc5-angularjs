@@ -64,7 +64,7 @@
     <Compile Include="Contracts\Equity.cs" />
     <Compile Include="Contracts\Forex.cs" />
     <Compile Include="Contracts\Future.cs" />
-    <Compile Include="Contracts\Indice.cs" />
+    <Compile Include="Contracts\Index.cs" />
     <Compile Include="Contracts\Option.cs" />
     <Compile Include="EnumDescConverter.cs" />
     <Compile Include="Enums\ActionSide.cs" />
@@ -111,7 +111,7 @@
     <Compile Include="EventArgs\ReceiveFAEventArgs.cs" />
     <Compile Include="EventArgs\ScannerDataEventArgs.cs" />
     <Compile Include="EventArgs\ScannerParametersEventArgs.cs" />
-    <Compile Include="EventArgs\UpdateMktDepthL2EventArgs.cs" />
+    <Compile Include="EventArgs\UpdateMarketDepthL2EventArgs.cs" />
     <Compile Include="ComboLeg.cs" />
     <Compile Include="Contract.cs" />
     <Compile Include="ContractDetails.cs" />
@@ -147,7 +147,7 @@
     <Compile Include="Enums\TickType.cs" />
     <Compile Include="EventArgs\UpdateAccountTimeEventArgs.cs" />
     <Compile Include="EventArgs\UpdateAccountValueEventArgs.cs" />
-    <Compile Include="EventArgs\UpdateMktDepthEventArgs.cs" />
+    <Compile Include="EventArgs\UpdateMarketDepthEventArgs.cs" />
     <Compile Include="EventArgs\UpdateNewsBulletinEventArgs.cs" />
     <Compile Include="EventArgs\UpdatePortfolioEventArgs.cs" />
     <Compile Include="TagValue.cs" />

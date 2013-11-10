@@ -1,17 +1,17 @@
-﻿app.service("stockAnalysisService", function ($http) {
+﻿app.service("stockAnalysisService", function($http) {
 
     var stocks = [];
     var historicalData = [];
 
-    this.getStockList = function () {
+    this.getStockList = function() {
         return stocks;
     };
 
-    this.getHistoricalData = function () {
+    this.getHistoricalData = function() {
         return historicalData;
     };
 
-    this.getHistoricalDataBySymbol = function (symbol) {
+    this.getHistoricalDataBySymbol = function(symbol) {
         for (var i = 0; i <= historicalData.length; i++) {
             if (historicalData[i][0].Symbol === symbol) {
                 return historicalData[i];
@@ -20,16 +20,16 @@
         return null;
     };
 
-    this.getStockData = function (symbol) {
+    this.getStockData = function(symbol) {
         return $http.post("/Portfolio/MarketData", { "symbol": symbol })
-            .success(function (data) {
+            .success(function(data) {
                 historicalData.push(data);
-                stocks.push(data[data.length-1]);
+                stocks.push(data[data.length - 1]);
             });
     };
 
     // Uses $index from ng-repeat to locate and splice element from array.
-    this.removeStock = function (idx) {
+    this.removeStock = function(idx) {
         stocks.splice(idx, 1);
     };
 

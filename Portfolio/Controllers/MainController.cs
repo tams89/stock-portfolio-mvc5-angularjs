@@ -1,7 +1,4 @@
-﻿using System.Linq;
-using System.Web.Helpers;
-using System.Web.Mvc;
-using Core.Services.Interfaces;
+﻿using System.Web.Mvc;
 
 namespace Portfolio.Controllers
 {

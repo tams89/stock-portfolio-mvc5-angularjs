@@ -1,4 +1,4 @@
-﻿app.controller("StockController", function ($scope, utilitiesService, autocompleteService, stockAnalysisService, highStockService, toaster) {
+﻿app.controller("StockController", function($scope, utilitiesService, autocompleteService, stockAnalysisService, highStockService, toaster) {
 
     var lastSymbol;
     $scope.stockList = []; // for stock watch table list
@@ -6,6 +6,7 @@
     $scope.isChartEmpty = true;
 
     init();
+
     function init() {
         $scope.stockList = stockAnalysisService.getStockList();
         if (!highStockService.isChartEmpty()) {
@@ -15,11 +16,11 @@
     }
 
     $scope.symbols = [];
-    $scope.OnInputChange = function () {
+    $scope.OnInputChange = function() {
         $scope.symbols = autocompleteService.getSymbols($scope.selected);
     };
 
-    $scope.SelectSymbol = function () {
+    $scope.SelectSymbol = function() {
         var symbol = $scope.selected.Symbol;
         if (symbol === undefined || symbol === null) return;
         lastSymbol = symbol;
@@ -36,17 +37,17 @@
         }
     }
 
-    $scope.RemoveFromList = function (idx, symbol) {
+    $scope.RemoveFromList = function(idx, symbol) {
         stockAnalysisService.removeStock(idx);
         $scope.updateChart(symbol, false);
     };
 
-    $scope.isStockListEmpty = function () {
+    $scope.isStockListEmpty = function() {
         if ($scope.stockList.length > 0) return true;
         return false;
     };
 
-    $scope.updateChart = function (symbol, checked) {
+    $scope.updateChart = function(symbol, checked) {
         if (symbol == null) return;
         if (checked && highStockService.duplicatedSeries(symbol) === false) {
             var h = stockAnalysisService.getHistoricalDataBySymbol(symbol); // get series data from local store.

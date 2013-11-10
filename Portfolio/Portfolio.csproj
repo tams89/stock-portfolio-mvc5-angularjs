@@ -213,6 +213,777 @@
     <Content Include="Scripts\HighStock\Themes\grid.min.js.map">
       <DependentUpon>grid.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\Angular\angular-mocks.min.js.map">
+      <DependentUpon>angular-mocks.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_af-na.min.js.map">
+      <DependentUpon>angular-locale_af-na.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_af-za.min.js.map">
+      <DependentUpon>angular-locale_af-za.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_af.min.js.map">
+      <DependentUpon>angular-locale_af.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_am-et.min.js.map">
+      <DependentUpon>angular-locale_am-et.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_am.min.js.map">
+      <DependentUpon>angular-locale_am.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ar-001.min.js.map">
+      <DependentUpon>angular-locale_ar-001.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ar-ae.min.js.map">
+      <DependentUpon>angular-locale_ar-ae.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ar-bh.min.js.map">
+      <DependentUpon>angular-locale_ar-bh.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ar-dz.min.js.map">
+      <DependentUpon>angular-locale_ar-dz.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ar-eg.min.js.map">
+      <DependentUpon>angular-locale_ar-eg.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ar-iq.min.js.map">
+      <DependentUpon>angular-locale_ar-iq.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ar-jo.min.js.map">
+      <DependentUpon>angular-locale_ar-jo.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ar-kw.min.js.map">
+      <DependentUpon>angular-locale_ar-kw.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ar-lb.min.js.map">
+      <DependentUpon>angular-locale_ar-lb.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ar-ly.min.js.map">
+      <DependentUpon>angular-locale_ar-ly.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ar-ma.min.js.map">
+      <DependentUpon>angular-locale_ar-ma.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ar-om.min.js.map">
+      <DependentUpon>angular-locale_ar-om.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ar-qa.min.js.map">
+      <DependentUpon>angular-locale_ar-qa.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ar-sa.min.js.map">
+      <DependentUpon>angular-locale_ar-sa.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ar-sd.min.js.map">
+      <DependentUpon>angular-locale_ar-sd.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ar-sy.min.js.map">
+      <DependentUpon>angular-locale_ar-sy.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ar-tn.min.js.map">
+      <DependentUpon>angular-locale_ar-tn.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ar-ye.min.js.map">
+      <DependentUpon>angular-locale_ar-ye.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ar.min.js.map">
+      <DependentUpon>angular-locale_ar.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_bg-bg.min.js.map">
+      <DependentUpon>angular-locale_bg-bg.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_bg.min.js.map">
+      <DependentUpon>angular-locale_bg.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_bn-bd.min.js.map">
+      <DependentUpon>angular-locale_bn-bd.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_bn-in.min.js.map">
+      <DependentUpon>angular-locale_bn-in.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_bn.min.js.map">
+      <DependentUpon>angular-locale_bn.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ca-ad.min.js.map">
+      <DependentUpon>angular-locale_ca-ad.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ca-es.min.js.map">
+      <DependentUpon>angular-locale_ca-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ca.min.js.map">
+      <DependentUpon>angular-locale_ca.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_cs-cz.min.js.map">
+      <DependentUpon>angular-locale_cs-cz.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_cs.min.js.map">
+      <DependentUpon>angular-locale_cs.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_da-dk.min.js.map">
+      <DependentUpon>angular-locale_da-dk.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_da.min.js.map">
+      <DependentUpon>angular-locale_da.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_de-at.min.js.map">
+      <DependentUpon>angular-locale_de-at.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_de-be.min.js.map">
+      <DependentUpon>angular-locale_de-be.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_de-ch.min.js.map">
+      <DependentUpon>angular-locale_de-ch.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_de-de.min.js.map">
+      <DependentUpon>angular-locale_de-de.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_de-li.min.js.map">
+      <DependentUpon>angular-locale_de-li.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_de-lu.min.js.map">
+      <DependentUpon>angular-locale_de-lu.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_de.min.js.map">
+      <DependentUpon>angular-locale_de.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_el-cy.min.js.map">
+      <DependentUpon>angular-locale_el-cy.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_el-gr.min.js.map">
+      <DependentUpon>angular-locale_el-gr.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_el.min.js.map">
+      <DependentUpon>angular-locale_el.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-as.min.js.map">
+      <DependentUpon>angular-locale_en-as.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-au.min.js.map">
+      <DependentUpon>angular-locale_en-au.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-bb.min.js.map">
+      <DependentUpon>angular-locale_en-bb.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-be.min.js.map">
+      <DependentUpon>angular-locale_en-be.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-bm.min.js.map">
+      <DependentUpon>angular-locale_en-bm.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-bw.min.js.map">
+      <DependentUpon>angular-locale_en-bw.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-bz.min.js.map">
+      <DependentUpon>angular-locale_en-bz.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-ca.min.js.map">
+      <DependentUpon>angular-locale_en-ca.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-dsrt-us.min.js.map">
+      <DependentUpon>angular-locale_en-dsrt-us.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-dsrt.min.js.map">
+      <DependentUpon>angular-locale_en-dsrt.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-fm.min.js.map">
+      <DependentUpon>angular-locale_en-fm.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-gb.min.js.map">
+      <DependentUpon>angular-locale_en-gb.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-gu.min.js.map">
+      <DependentUpon>angular-locale_en-gu.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-gy.min.js.map">
+      <DependentUpon>angular-locale_en-gy.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-hk.min.js.map">
+      <DependentUpon>angular-locale_en-hk.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-ie.min.js.map">
+      <DependentUpon>angular-locale_en-ie.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-in.min.js.map">
+      <DependentUpon>angular-locale_en-in.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-iso.min.js.map">
+      <DependentUpon>angular-locale_en-iso.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-jm.min.js.map">
+      <DependentUpon>angular-locale_en-jm.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-mh.min.js.map">
+      <DependentUpon>angular-locale_en-mh.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-mp.min.js.map">
+      <DependentUpon>angular-locale_en-mp.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-mt.min.js.map">
+      <DependentUpon>angular-locale_en-mt.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-mu.min.js.map">
+      <DependentUpon>angular-locale_en-mu.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-na.min.js.map">
+      <DependentUpon>angular-locale_en-na.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-nz.min.js.map">
+      <DependentUpon>angular-locale_en-nz.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-ph.min.js.map">
+      <DependentUpon>angular-locale_en-ph.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-pk.min.js.map">
+      <DependentUpon>angular-locale_en-pk.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-pr.min.js.map">
+      <DependentUpon>angular-locale_en-pr.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-pw.min.js.map">
+      <DependentUpon>angular-locale_en-pw.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-sg.min.js.map">
+      <DependentUpon>angular-locale_en-sg.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-tc.min.js.map">
+      <DependentUpon>angular-locale_en-tc.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-tt.min.js.map">
+      <DependentUpon>angular-locale_en-tt.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-um.min.js.map">
+      <DependentUpon>angular-locale_en-um.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-us.min.js.map">
+      <DependentUpon>angular-locale_en-us.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-vg.min.js.map">
+      <DependentUpon>angular-locale_en-vg.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-vi.min.js.map">
+      <DependentUpon>angular-locale_en-vi.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-za.min.js.map">
+      <DependentUpon>angular-locale_en-za.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en-zw.min.js.map">
+      <DependentUpon>angular-locale_en-zw.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_en.min.js.map">
+      <DependentUpon>angular-locale_en.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_es-419.min.js.map">
+      <DependentUpon>angular-locale_es-419.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_es-ar.min.js.map">
+      <DependentUpon>angular-locale_es-ar.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_es-bo.min.js.map">
+      <DependentUpon>angular-locale_es-bo.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_es-cl.min.js.map">
+      <DependentUpon>angular-locale_es-cl.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_es-co.min.js.map">
+      <DependentUpon>angular-locale_es-co.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_es-cr.min.js.map">
+      <DependentUpon>angular-locale_es-cr.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_es-do.min.js.map">
+      <DependentUpon>angular-locale_es-do.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_es-ea.min.js.map">
+      <DependentUpon>angular-locale_es-ea.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_es-ec.min.js.map">
+      <DependentUpon>angular-locale_es-ec.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_es-es.min.js.map">
+      <DependentUpon>angular-locale_es-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_es-gq.min.js.map">
+      <DependentUpon>angular-locale_es-gq.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_es-gt.min.js.map">
+      <DependentUpon>angular-locale_es-gt.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_es-hn.min.js.map">
+      <DependentUpon>angular-locale_es-hn.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_es-ic.min.js.map">
+      <DependentUpon>angular-locale_es-ic.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_es-mx.min.js.map">
+      <DependentUpon>angular-locale_es-mx.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_es-ni.min.js.map">
+      <DependentUpon>angular-locale_es-ni.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_es-pa.min.js.map">
+      <DependentUpon>angular-locale_es-pa.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_es-pe.min.js.map">
+      <DependentUpon>angular-locale_es-pe.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_es-pr.min.js.map">
+      <DependentUpon>angular-locale_es-pr.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_es-py.min.js.map">
+      <DependentUpon>angular-locale_es-py.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_es-sv.min.js.map">
+      <DependentUpon>angular-locale_es-sv.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_es-us.min.js.map">
+      <DependentUpon>angular-locale_es-us.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_es-uy.min.js.map">
+      <DependentUpon>angular-locale_es-uy.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_es-ve.min.js.map">
+      <DependentUpon>angular-locale_es-ve.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_es.min.js.map">
+      <DependentUpon>angular-locale_es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_et-ee.min.js.map">
+      <DependentUpon>angular-locale_et-ee.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_et.min.js.map">
+      <DependentUpon>angular-locale_et.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_eu-es.min.js.map">
+      <DependentUpon>angular-locale_eu-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_eu.min.js.map">
+      <DependentUpon>angular-locale_eu.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_fa-af.min.js.map">
+      <DependentUpon>angular-locale_fa-af.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_fa-ir.min.js.map">
+      <DependentUpon>angular-locale_fa-ir.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_fa.min.js.map">
+      <DependentUpon>angular-locale_fa.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_fi-fi.min.js.map">
+      <DependentUpon>angular-locale_fi-fi.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_fi.min.js.map">
+      <DependentUpon>angular-locale_fi.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_fil-ph.min.js.map">
+      <DependentUpon>angular-locale_fil-ph.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_fil.min.js.map">
+      <DependentUpon>angular-locale_fil.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_fr-be.min.js.map">
+      <DependentUpon>angular-locale_fr-be.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_fr-bf.min.js.map">
+      <DependentUpon>angular-locale_fr-bf.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_fr-bi.min.js.map">
+      <DependentUpon>angular-locale_fr-bi.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_fr-bj.min.js.map">
+      <DependentUpon>angular-locale_fr-bj.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_fr-bl.min.js.map">
+      <DependentUpon>angular-locale_fr-bl.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_fr-ca.min.js.map">
+      <DependentUpon>angular-locale_fr-ca.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_fr-cd.min.js.map">
+      <DependentUpon>angular-locale_fr-cd.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_fr-cf.min.js.map">
+      <DependentUpon>angular-locale_fr-cf.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_fr-cg.min.js.map">
+      <DependentUpon>angular-locale_fr-cg.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_fr-ch.min.js.map">
+      <DependentUpon>angular-locale_fr-ch.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_fr-ci.min.js.map">
+      <DependentUpon>angular-locale_fr-ci.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_fr-cm.min.js.map">
+      <DependentUpon>angular-locale_fr-cm.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_fr-dj.min.js.map">
+      <DependentUpon>angular-locale_fr-dj.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_fr-fr.min.js.map">
+      <DependentUpon>angular-locale_fr-fr.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_fr-ga.min.js.map">
+      <DependentUpon>angular-locale_fr-ga.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_fr-gf.min.js.map">
+      <DependentUpon>angular-locale_fr-gf.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_fr-gn.min.js.map">
+      <DependentUpon>angular-locale_fr-gn.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_fr-gp.min.js.map">
+      <DependentUpon>angular-locale_fr-gp.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_fr-gq.min.js.map">
+      <DependentUpon>angular-locale_fr-gq.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_fr-km.min.js.map">
+      <DependentUpon>angular-locale_fr-km.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_fr-lu.min.js.map">
+      <DependentUpon>angular-locale_fr-lu.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_fr-mc.min.js.map">
+      <DependentUpon>angular-locale_fr-mc.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_fr-mf.min.js.map">
+      <DependentUpon>angular-locale_fr-mf.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_fr-mg.min.js.map">
+      <DependentUpon>angular-locale_fr-mg.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_fr-ml.min.js.map">
+      <DependentUpon>angular-locale_fr-ml.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_fr-mq.min.js.map">
+      <DependentUpon>angular-locale_fr-mq.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_fr-ne.min.js.map">
+      <DependentUpon>angular-locale_fr-ne.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_fr-re.min.js.map">
+      <DependentUpon>angular-locale_fr-re.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_fr-yt.min.js.map">
+      <DependentUpon>angular-locale_fr-yt.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_fr.min.js.map">
+      <DependentUpon>angular-locale_fr.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_gl-es.min.js.map">
+      <DependentUpon>angular-locale_gl-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_gl.min.js.map">
+      <DependentUpon>angular-locale_gl.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_gsw-ch.min.js.map">
+      <DependentUpon>angular-locale_gsw-ch.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_gsw.min.js.map">
+      <DependentUpon>angular-locale_gsw.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_gu-in.min.js.map">
+      <DependentUpon>angular-locale_gu-in.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_gu.min.js.map">
+      <DependentUpon>angular-locale_gu.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_he-il.min.js.map">
+      <DependentUpon>angular-locale_he-il.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_he.min.js.map">
+      <DependentUpon>angular-locale_he.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_hi-in.min.js.map">
+      <DependentUpon>angular-locale_hi-in.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_hi.min.js.map">
+      <DependentUpon>angular-locale_hi.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_hr-hr.min.js.map">
+      <DependentUpon>angular-locale_hr-hr.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_hr.min.js.map">
+      <DependentUpon>angular-locale_hr.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_hu-hu.min.js.map">
+      <DependentUpon>angular-locale_hu-hu.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_hu.min.js.map">
+      <DependentUpon>angular-locale_hu.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_id-id.min.js.map">
+      <DependentUpon>angular-locale_id-id.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_id.min.js.map">
+      <DependentUpon>angular-locale_id.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_in.min.js.map">
+      <DependentUpon>angular-locale_in.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_is-is.min.js.map">
+      <DependentUpon>angular-locale_is-is.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_is.min.js.map">
+      <DependentUpon>angular-locale_is.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_it-it.min.js.map">
+      <DependentUpon>angular-locale_it-it.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_it-sm.min.js.map">
+      <DependentUpon>angular-locale_it-sm.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_it.min.js.map">
+      <DependentUpon>angular-locale_it.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_iw.min.js.map">
+      <DependentUpon>angular-locale_iw.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ja-jp.min.js.map">
+      <DependentUpon>angular-locale_ja-jp.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ja.min.js.map">
+      <DependentUpon>angular-locale_ja.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_kn-in.min.js.map">
+      <DependentUpon>angular-locale_kn-in.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_kn.min.js.map">
+      <DependentUpon>angular-locale_kn.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ko-kr.min.js.map">
+      <DependentUpon>angular-locale_ko-kr.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ko.min.js.map">
+      <DependentUpon>angular-locale_ko.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ln-cd.min.js.map">
+      <DependentUpon>angular-locale_ln-cd.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ln.min.js.map">
+      <DependentUpon>angular-locale_ln.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_lt-lt.min.js.map">
+      <DependentUpon>angular-locale_lt-lt.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_lt.min.js.map">
+      <DependentUpon>angular-locale_lt.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_lv-lv.min.js.map">
+      <DependentUpon>angular-locale_lv-lv.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_lv.min.js.map">
+      <DependentUpon>angular-locale_lv.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ml-in.min.js.map">
+      <DependentUpon>angular-locale_ml-in.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ml.min.js.map">
+      <DependentUpon>angular-locale_ml.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_mr-in.min.js.map">
+      <DependentUpon>angular-locale_mr-in.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_mr.min.js.map">
+      <DependentUpon>angular-locale_mr.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ms-my.min.js.map">
+      <DependentUpon>angular-locale_ms-my.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ms.min.js.map">
+      <DependentUpon>angular-locale_ms.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_mt-mt.min.js.map">
+      <DependentUpon>angular-locale_mt-mt.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_mt.min.js.map">
+      <DependentUpon>angular-locale_mt.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_nl-cw.min.js.map">
+      <DependentUpon>angular-locale_nl-cw.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_nl-nl.min.js.map">
+      <DependentUpon>angular-locale_nl-nl.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_nl-sx.min.js.map">
+      <DependentUpon>angular-locale_nl-sx.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_nl.min.js.map">
+      <DependentUpon>angular-locale_nl.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_no.min.js.map">
+      <DependentUpon>angular-locale_no.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_or-in.min.js.map">
+      <DependentUpon>angular-locale_or-in.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_or.min.js.map">
+      <DependentUpon>angular-locale_or.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_pl-pl.min.js.map">
+      <DependentUpon>angular-locale_pl-pl.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_pl.min.js.map">
+      <DependentUpon>angular-locale_pl.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_pt-br.min.js.map">
+      <DependentUpon>angular-locale_pt-br.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_pt-pt.min.js.map">
+      <DependentUpon>angular-locale_pt-pt.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_pt.min.js.map">
+      <DependentUpon>angular-locale_pt.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ro-ro.min.js.map">
+      <DependentUpon>angular-locale_ro-ro.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ro.min.js.map">
+      <DependentUpon>angular-locale_ro.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ru-ru.min.js.map">
+      <DependentUpon>angular-locale_ru-ru.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ru.min.js.map">
+      <DependentUpon>angular-locale_ru.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_sk-sk.min.js.map">
+      <DependentUpon>angular-locale_sk-sk.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_sk.min.js.map">
+      <DependentUpon>angular-locale_sk.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_sl-si.min.js.map">
+      <DependentUpon>angular-locale_sl-si.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_sl.min.js.map">
+      <DependentUpon>angular-locale_sl.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_sq-al.min.js.map">
+      <DependentUpon>angular-locale_sq-al.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_sq.min.js.map">
+      <DependentUpon>angular-locale_sq.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_sr-cyrl-rs.min.js.map">
+      <DependentUpon>angular-locale_sr-cyrl-rs.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_sr-latn-rs.min.js.map">
+      <DependentUpon>angular-locale_sr-latn-rs.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_sr.min.js.map">
+      <DependentUpon>angular-locale_sr.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_sv-se.min.js.map">
+      <DependentUpon>angular-locale_sv-se.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_sv.min.js.map">
+      <DependentUpon>angular-locale_sv.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_sw-tz.min.js.map">
+      <DependentUpon>angular-locale_sw-tz.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_sw.min.js.map">
+      <DependentUpon>angular-locale_sw.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ta-in.min.js.map">
+      <DependentUpon>angular-locale_ta-in.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ta.min.js.map">
+      <DependentUpon>angular-locale_ta.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_te-in.min.js.map">
+      <DependentUpon>angular-locale_te-in.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_te.min.js.map">
+      <DependentUpon>angular-locale_te.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_th-th.min.js.map">
+      <DependentUpon>angular-locale_th-th.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_th.min.js.map">
+      <DependentUpon>angular-locale_th.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_tl.min.js.map">
+      <DependentUpon>angular-locale_tl.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_tr-tr.min.js.map">
+      <DependentUpon>angular-locale_tr-tr.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_tr.min.js.map">
+      <DependentUpon>angular-locale_tr.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_uk-ua.min.js.map">
+      <DependentUpon>angular-locale_uk-ua.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_uk.min.js.map">
+      <DependentUpon>angular-locale_uk.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ur-pk.min.js.map">
+      <DependentUpon>angular-locale_ur-pk.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_ur.min.js.map">
+      <DependentUpon>angular-locale_ur.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_vi-vn.min.js.map">
+      <DependentUpon>angular-locale_vi-vn.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_vi.min.js.map">
+      <DependentUpon>angular-locale_vi.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_zh-cn.min.js.map">
+      <DependentUpon>angular-locale_zh-cn.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_zh-hans-cn.min.js.map">
+      <DependentUpon>angular-locale_zh-hans-cn.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_zh-hk.min.js.map">
+      <DependentUpon>angular-locale_zh-hk.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_zh-tw.min.js.map">
+      <DependentUpon>angular-locale_zh-tw.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_zh.min.js.map">
+      <DependentUpon>angular-locale_zh.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_zu-za.min.js.map">
+      <DependentUpon>angular-locale_zu-za.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\i8n\angular-locale_zu.min.js.map">
+      <DependentUpon>angular-locale_zu.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\ui-bootstrap-0.6.0.min.js.map">
+      <DependentUpon>ui-bootstrap-0.6.0.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\ui-bootstrap-tpls-0.6.0.min.js.map">
+      <DependentUpon>ui-bootstrap-tpls-0.6.0.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\App\Directives\ng-grid.min.js.map">
+      <DependentUpon>ng-grid.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\HighStock\highstock.min.js.map">
+      <DependentUpon>highstock.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\HighStock\Modules\exporting.min.js.map">
+      <DependentUpon>exporting.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Jquery\jquery-2.0.3.min.js.map">
+      <DependentUpon>jquery-2.0.3.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Modernizer\modernizr-2.6.2.min.js.map">
+      <DependentUpon>modernizr-2.6.2.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Respond\respond.min.js.map">
+      <DependentUpon>respond.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Toast\toaster.min.js.map">
+      <DependentUpon>toaster.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\UnderScore\underscore-min.min.js.map">
+      <DependentUpon>underscore-min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\angular-scenario.min.js.map">
+      <DependentUpon>angular-scenario.js</DependentUpon>
+    </Content>
     <None Include="Views\Main\About.cshtml" />
     <None Include="Views\Main\Home.cshtml" />
     <None Include="Views\Portfolio\Options.cshtml" />
@@ -239,13 +1010,27 @@
     <Content Include="Scripts\App\Services\AutocompleteService.min.js.map">
       <DependentUpon>autocompleteService.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\Angular\angular-animate.min.js.map" />
-    <Content Include="Scripts\Angular\angular-cookies.min.js.map" />
-    <Content Include="Scripts\Angular\angular-loader.min.js.map" />
-    <Content Include="Scripts\Angular\angular-resource.min.js.map" />
-    <Content Include="Scripts\Angular\angular-route.min.js.map" />
-    <Content Include="Scripts\Angular\angular-sanitize.min.js.map" />
-    <Content Include="Scripts\Angular\angular-touch.min.js.map" />
+    <Content Include="Scripts\Angular\angular-animate.min.js.map">
+      <DependentUpon>angular-animate.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\angular-cookies.min.js.map">
+      <DependentUpon>angular-cookies.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\angular-loader.min.js.map">
+      <DependentUpon>angular-loader.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\angular-resource.min.js.map">
+      <DependentUpon>angular-resource.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\angular-route.min.js.map">
+      <DependentUpon>angular-route.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\angular-sanitize.min.js.map">
+      <DependentUpon>angular-sanitize.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Angular\angular-touch.min.js.map">
+      <DependentUpon>angular-touch.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\Angular\angular.min.js.map">
       <DependentUpon>angular.js</DependentUpon>
     </Content>

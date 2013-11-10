@@ -57,6 +57,8 @@
             },
             series: seriesOptions
         });
+
+        var t = Highcharts.getOptions();
     };
 
     function getRandomColor() {

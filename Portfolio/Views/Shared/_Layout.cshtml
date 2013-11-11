@@ -1,12 +1,39 @@
 ﻿<!DOCTYPE html>
-<html ng-app="AlgoTrader">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portfolio</title>
-        <meta name="description" content="S.E. Enterprises algorithmic trading API." />
-    </head>
-    <body>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <title>Portfolio</title>
+    <meta name="description" content="S.E. Enterprises algorithmic trading API." />
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/SiteCss")
+</head>
+<body>
+    <div id="userSettings">
+        @Html.Partial("_UserSettings")
+    </div>
+    <div id="body">
         @RenderBody()
-    </body>
+    </div>
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - S.E. Plc.</p>
+    </footer>
+    <div id="scripts">
+        <!-- Angular and other libraries/frameworks. -->
+        @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/bundles/ajaxLogin")
+        @Scripts.Render("~/bundles/Angular")
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jqueryVal")
+        @Scripts.Render("~/bundles/respond")
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/toast")
+        @Scripts.Render("~/bundles/highStock")
+        @Scripts.Render("~/bundles/underScore")
+        @RenderSection("scripts", false)
+    </div>
+</body>
 </html>

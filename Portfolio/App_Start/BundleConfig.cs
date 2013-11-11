@@ -24,6 +24,9 @@ namespace Portfolio.App_Start
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                 "~/Scripts/Modernizer/modernizr-*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/ajaxLogin").Include(
+                "~/Scripts/App/ajaxLogin.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/highStock")
                 .IncludeDirectory("~/Scripts/HighStock", "*.js", true));
 

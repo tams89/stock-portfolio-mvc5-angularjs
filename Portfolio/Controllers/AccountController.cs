@@ -52,7 +52,6 @@ namespace Portfolio.Controllers
         public ActionResult LogOff()
         {
             WebSecurity.Logout();
-
             return RedirectToAction("Index", "Main");
         }
 

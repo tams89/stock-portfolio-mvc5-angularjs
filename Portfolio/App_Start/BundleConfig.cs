@@ -40,6 +40,10 @@ namespace Portfolio.App_Start
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                 "~/Scripts/Jquery/jquery-*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/jqueryVal").Include(
+                        "~/Scripts/Jquery/Validate/jquery.unobtrusive*",
+                        "~/Scripts/Jquery/Validate/jquery.validate*"));
+
             bundles.Add(new ScriptBundle("~/bundles/toast").Include(
                 "~/Scripts/Toast/toaster.js"));
 

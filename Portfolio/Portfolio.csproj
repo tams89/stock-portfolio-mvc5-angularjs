@@ -236,6 +236,13 @@
     <Content Include="Scripts\HighStock\highstock.js" />
     <Content Include="Scripts\HighStock\Modules\exporting.js" />
     <Content Include="Scripts\HighStock\Themes\grid.js" />
+    <None Include="Scripts\Jquery\Validate\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\Jquery\Validate\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\Jquery\Validate\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\Jquery\Validate\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\Jquery\Validate\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Jquery\Validate\jquery.validate.js" />
+    <Content Include="Scripts\Jquery\Validate\jquery.validate.min.js" />
     <Content Include="Views\Main\Index.cshtml" />
     <Content Include="Scripts\App\Controllers\OptionGridController.min.js.map">
       <DependentUpon>OptionGridController.js</DependentUpon>

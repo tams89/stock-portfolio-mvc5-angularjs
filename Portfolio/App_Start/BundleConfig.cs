@@ -7,6 +7,7 @@ namespace Portfolio.App_Start
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new StyleBundle("~/Content/css").Include(
+                "~/Content/Styles/angular-csp.css",
                 "~/Content/Styles/bootstrap.css",
                 "~/Content/Styles/bootstrap-buttons.css",
                 "~/Content/Styles/toaster.css",

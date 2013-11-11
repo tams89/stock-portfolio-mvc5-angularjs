@@ -162,6 +162,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Directives\circle.html" />
+    <Content Include="Content\Styles\angular-csp.css" />
     <Content Include="Content\Styles\circle.css" />
     <Content Include="Content\Styles\bootstrap-buttons.css" />
     <Content Include="Content\Styles\bootstrap.css" />

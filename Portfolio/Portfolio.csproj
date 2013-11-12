@@ -183,11 +183,13 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Scripts\App\ajaxLogin.js" />
     <Content Include="Scripts\App\AlgoTrader.js" />
+    <Content Include="Scripts\App\Controllers\ModalLoginController.js" />
     <Content Include="Scripts\App\Controllers\OptionController.js" />
     <Content Include="Scripts\App\Controllers\OptionGridController.js" />
     <Content Include="Scripts\App\Directives\circle.js" />
     <Content Include="Scripts\App\Directives\ng-grid.js" />
     <Content Include="Scripts\App\Directives\spinner.js" />
+    <Content Include="Scripts\App\NoAuth.js" />
     <Content Include="Scripts\App\Services\highChartService.js" />
     <Content Include="Scripts\App\Controllers\NavigationController.js" />
     <Content Include="Scripts\App\Controllers\StockController.js" />

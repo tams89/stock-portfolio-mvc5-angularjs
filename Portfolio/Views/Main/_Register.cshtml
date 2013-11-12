@@ -5,24 +5,22 @@
     @Html.AntiForgeryToken()
 
     <fieldset>
-        <legend>Registration Form</legend>
-        <ol>
-            <li>
+            <div>
                 @Html.LabelFor(m => m.UserName)
-                @Html.TextBoxFor(m => m.UserName, new { id = "registerName" })
-            </li>
-            <li>
-                @Html.LabelFor(m => m.Password)
-                @Html.PasswordFor(m => m.Password)
-            </li>
-            <li>
-                @Html.LabelFor(m => m.ConfirmPassword)
-                @Html.PasswordFor(m => m.ConfirmPassword)
-            </li>
-            <li>
-                <input type="submit" value="Sign up" />
-            </li>
-        </ol>
+                @Html.TextBoxFor(m => m.UserName, new { id = "registerName", @class = "form-control" })
+            </div>
+        <div>
+            @Html.LabelFor(m => m.Password)
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+        </div>
+        <div>
+            @Html.LabelFor(m => m.ConfirmPassword)
+            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+        </div>
+        <br />
+        <div>
+            <input type="submit" value="Sign up" class="btn btn-primary" />
+        </div>
         @Html.ValidationSummary()
     </fieldset>
 }

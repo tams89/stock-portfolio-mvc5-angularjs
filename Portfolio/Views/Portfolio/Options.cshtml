@@ -6,7 +6,7 @@
 <div>
     <form>
         <span>Search:</span>
-        <input class="form-control" type="text" placeholder="Press Enter to Add"
+        <input class="form-control-autocomplete" type="text" placeholder="Press Enter to Add"
                ng-change="OnInputChange()" ng-enter="SelectSymbol()" ng-model="selected"
                typeahead="symbol as symbol.Name + ' - ' + symbol.Symbol for symbol in symbols | limitTo: 5" autofocus />
     </form>

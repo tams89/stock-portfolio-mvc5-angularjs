@@ -11,29 +11,65 @@
     @Styles.Render("~/Content/SiteCss")
 </head>
 <body>
-    <div id="userSettings">
-        @Html.Partial("_UserSettings")
-    </div>
-    <div id="body">
-        @RenderBody()
-    </div>
-    <hr />
-    <footer>
-        <p>&copy; @DateTime.Now.Year - S.E. Plc.</p>
-    </footer>
-    <div id="scripts">
-        <!-- Angular and other libraries/frameworks. -->
-        @Scripts.Render("~/bundles/modernizr")
-        @Scripts.Render("~/bundles/ajaxLogin")
-        @Scripts.Render("~/bundles/Angular")
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/jqueryVal")
-        @Scripts.Render("~/bundles/respond")
-        @Scripts.Render("~/bundles/bootstrap")
-        @Scripts.Render("~/bundles/toast")
-        @Scripts.Render("~/bundles/highStock")
-        @Scripts.Render("~/bundles/underScore")
-        @RenderSection("scripts", false)
-    </div>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div ng-app="AlgoTrader">
+            <div id="userSettings">
+                @Html.Partial("_UserSettings")
+            </div>
+            <div id="body">
+                @RenderBody()
+            </div>
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - S.E. Plc.</p>
+            </footer>
+            <div id="scripts">
+                <!-- Angular and other libraries/frameworks. -->
+                @Scripts.Render("~/bundles/modernizr")
+                @Scripts.Render("~/bundles/Angular")
+                @Scripts.Render("~/bundles/jquery")
+                @Scripts.Render("~/bundles/jqueryVal")
+                @Scripts.Render("~/bundles/respond")
+                @Scripts.Render("~/bundles/bootstrap")
+                @Scripts.Render("~/bundles/toast")
+                @Scripts.Render("~/bundles/highStock")
+                @Scripts.Render("~/bundles/underScore")
+                @Scripts.Render("~/bundles/ajaxLogin")
+                @RenderSection("scripts", false)
+            </div>
+        </div>
+    }
+    else
+    {
+        <div ng-app="NoAuth">
+            <div id="userSettings">
+                @Html.Partial("_UserSettings")
+            </div>
+            <div id="body">
+                @RenderBody()
+            </div>
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - S.E. Plc.</p>
+            </footer>
+            <div id="scripts">
+                <!-- Angular and other libraries/frameworks. -->
+                @Scripts.Render("~/bundles/modernizr")
+                @Scripts.Render("~/bundles/Angular")
+                @Scripts.Render("~/bundles/jquery")
+                @Scripts.Render("~/bundles/jqueryVal")
+                @Scripts.Render("~/bundles/respond")
+                @Scripts.Render("~/bundles/bootstrap")
+                @Scripts.Render("~/bundles/toast")
+                @Scripts.Render("~/bundles/highStock")
+                @Scripts.Render("~/bundles/underScore")
+                @Scripts.Render("~/bundles/ajaxLogin")
+                @Scripts.Render("~/Scripts/App/NoAuth.js")
+                @Scripts.Render("~/Scripts/App/Controllers/NavigationController.js")
+                @RenderSection("scripts", false)
+            </div>
+        </div>
+    }
 </body>
 </html>

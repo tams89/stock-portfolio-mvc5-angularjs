@@ -19,8 +19,8 @@
             </button>
             <a class="navbar-brand" href="#">AlgoTrader</a>
         </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav" ng-controller="NavigationController">
+        <div class="navbar-collapse collapse" ng-controller="NavigationController">
+            <ul class="nav navbar-nav">
                 <li class="dropdown" ng-class="{'active':getClass('/Main')}">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Main <b class="caret"></b></a>
                     <ul class="dropdown-menu">
@@ -46,7 +46,7 @@
                 }
                 else
                 {
-                    <li><a role="button" href="#">Sign in</a></li>
+                    <li><a href="#/Main/Login">Sign in</a></li>
                 }
             </ul>
         </div>

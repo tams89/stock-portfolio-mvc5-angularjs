@@ -1,9 +1,9 @@
 ﻿@model Portfolio.Models.LoginModel
 
-@using (Html.BeginForm("JsonLogin", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { id = "loginForm" }))
+@using (Html.BeginForm("JsonLogin", "Account", new { ReturnUrl = "#/Main/Home" }, FormMethod.Post, new { id = "loginForm" }))
 {
     @Html.AntiForgeryToken()
-    <div class="form-group">
+    <div>
         <div>
             @Html.LabelFor(m => m.UserName)
             @Html.TextBoxFor(m => m.UserName, new { autofocus = "autofocus", id = "loginName", @class = "form-control" })

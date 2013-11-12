@@ -8,6 +8,14 @@ app.config(["$routeProvider", function ($routeProvider) {
             {
                 templateUrl: "/Main/Home"
             })
-        .when()
+        .when("/Main/About",
+            {
+                templateUrl: "/Main/About"
+            })
+        .when("/Main/Login",
+            {
+                templateUrl: "/Main/Login",
+                controller: "ModalLoginController"
+            })
         .otherwise({ redirectTo: "/Main/Home" });
 }]);

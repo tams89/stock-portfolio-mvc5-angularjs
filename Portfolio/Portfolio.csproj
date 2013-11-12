@@ -183,7 +183,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Scripts\App\ajaxLogin.js" />
     <Content Include="Scripts\App\AlgoTrader.js" />
-    <Content Include="Scripts\App\Controllers\ModalLoginController.js" />
+    <Content Include="Scripts\App\Controllers\AuthController.js" />
     <Content Include="Scripts\App\Controllers\OptionController.js" />
     <Content Include="Scripts\App\Controllers\OptionGridController.js" />
     <Content Include="Scripts\App\Directives\circle.js" />
@@ -1013,7 +1013,6 @@
     <Content Include="Scripts\App\Directives\circle.min.js.map">
       <DependentUpon>circle.js</DependentUpon>
     </Content>
-    <Content Include="Views\Main\_Login.cshtml" />
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Main\_Register.cshtml" />
     <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />

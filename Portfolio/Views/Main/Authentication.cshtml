@@ -1,9 +1,25 @@
-﻿<div>
-    <div id="loginPanel">
-        <section id="localLoginPanel">
-            <h2>Log in</h2>
-            @Html.Partial("_Login")
-        </section>
-        <p>First time here? <a id="showRegister">Sign up</a></p>
+﻿@functions{
+    public string GetAntiForgeryToken()
+    {
+        string cookieToken, formToken;
+        AntiForgery.GetTokens(null, out cookieToken, out formToken);
+        return cookieToken + ":" + formToken;
+    }
+}
+<h2>Log in</h2>
+<form ng-submit="login()" ng-controller="AuthController">
+    <input id="antiForgeryToken" ng-model="antiForgeryToken" type="hidden" ng-init='antiForgeryToken="@GetAntiForgeryToken()"' />
+    <pre>{{antiForgeryToken}}</pre>
+    <div>
+        <label>Username:</label>
+        <input type="text" name="UserName" ng-model="formData.UserName" class="form-control" />
     </div>
-</div>
+    <div style="padding-top: 1%; padding-bottom: 2%">
+        <label>Password:</label>
+        <input type="text" name="Password" ng-model="formData.Password" class="form-control" />
+    </div>
+    <div style="padding-bottom: 2%">
+        <input type="submit" value="Log in" class="btn btn-primary" />
+    </div>
+</form>
+<p>First time here? <a id="showRegister">Sign up</a></p>

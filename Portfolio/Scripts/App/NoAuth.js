@@ -15,7 +15,7 @@ app.config(["$routeProvider", function ($routeProvider) {
         .when("/Main/Login",
             {
                 templateUrl: "/Main/Login",
-                controller: "ModalLoginController"
+                controller: "AuthController"
             })
         .otherwise({ redirectTo: "/Main/Home" });
 }]);

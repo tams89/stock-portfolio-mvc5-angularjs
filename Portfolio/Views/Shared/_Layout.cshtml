@@ -35,7 +35,6 @@
                 @Scripts.Render("~/bundles/toast")
                 @Scripts.Render("~/bundles/highStock")
                 @Scripts.Render("~/bundles/underScore")
-                @Scripts.Render("~/bundles/ajaxLogin")
                 @RenderSection("scripts", false)
             </div>
         </div>
@@ -64,10 +63,10 @@
                 @Scripts.Render("~/bundles/toast")
                 @Scripts.Render("~/bundles/highStock")
                 @Scripts.Render("~/bundles/underScore")
-                @Scripts.Render("~/bundles/ajaxLogin")
                 @Scripts.Render("~/Scripts/App/NoAuth.js")
                 @Scripts.Render("~/Scripts/App/Controllers/NavigationController.js")
-                @Scripts.Render("~/Scripts/App/Controllers/ModalLoginController.js")
+                @Scripts.Render("~/Scripts/App/Services/authenticationService.js")
+                @Scripts.Render("~/Scripts/App/Controllers/AuthController.js")
                 @RenderSection("scripts", false)
             </div>
         </div>

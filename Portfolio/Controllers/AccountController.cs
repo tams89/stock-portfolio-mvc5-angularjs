@@ -4,7 +4,6 @@ using System.Linq;
 using System.Transactions;
 using System.Web.Mvc;
 using System.Web.Security;
-using DotNetOpenAuth.AspNet;
 using Microsoft.Web.WebPages.OAuth;
 using Portfolio.Filters;
 using Portfolio.Models;
@@ -16,27 +15,21 @@ namespace Portfolio.Controllers
     [InitializeSimpleMembership]
     public class AccountController : Controller
     {
+
+        // TODO:
+        // http://techbrij.com/angularjs-antiforgerytoken-asp-net-mvc
+        // http://techbrij.com/angularjs-asp-net-mvc-username-check
         //
         // POST: /Account/JsonLogin
         [AllowAnonymous]
         [HttpPost]
-        public JsonResult JsonLogin(LoginModel model, string returnUrl)
+        public JsonResult JsonLogin(LoginModel model)
         {
-            if (ModelState.IsValid)
-            {
-                if (WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
-                {
-                    FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
-                    return Json(new { success = true, redirect = returnUrl });
-                }
-                else
-                {
-                    ModelState.AddModelError("", "The user name or password provided is incorrect.");
-                }
-            }
+            if (!WebSecurity.Login(model.UserName, model.Password))
+                return Json(new { error = "The user name or password provided is incorrect." });
 
-            // If we got this far, something failed
-            return Json(new { errors = GetErrorsFromModelState() });
+            FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
+            return Json(new { success = true });
         }
 
         //

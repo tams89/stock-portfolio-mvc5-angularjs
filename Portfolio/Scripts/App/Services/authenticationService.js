@@ -1,25 +1,15 @@
 ﻿app.service("authenticationService", function ($http, $q) {
 
     this.Login = function (formData, token) {
-        $http.post("/Account/JsonLogin", {
+        var deferred = $q.defer();
+        $http({
             method: "POST",
-            headers: { "auth-token": token },
-            data: formData
-        }).success(function (data, status, headers, config) {
-            var defer = $q.defer();
-            var result = defer.resolve(data);
-            if (result.status) {
-                // Successful login
-                return true;
-            } else {
-                console.log(data.error);
-                // Unsuccessful login
-                return false;
-            }
-        }).error(function (data, status, headers, config) {
-            // error
-            return false;
+            url: "Account/JsonLogin",
+            data: formData,
+            headers: { "RequestVerificationToken": token },
+        }).success(function (data) {
+            deferred.resolve(data);
         });
+        return deferred.promise;
     };
-
 });

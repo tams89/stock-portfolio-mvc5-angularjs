@@ -1,4 +1,6 @@
-﻿@functions{
+﻿@model Portfolio.Models.LoginModel
+
+@functions{
     public string GetAntiForgeryToken()
     {
         string cookieToken, formToken;
@@ -7,19 +9,23 @@
     }
 }
 <h2>Log in</h2>
-<form ng-submit="login()" ng-controller="AuthController">
+<hr />
+<form ng-submit="login()" ng-controller="AuthController" novalidate>
     <input id="antiForgeryToken" ng-model="antiForgeryToken" type="hidden" ng-init='antiForgeryToken="@GetAntiForgeryToken()"' />
+    <h4>Token</h4>
     <pre>{{antiForgeryToken}}</pre>
     <div>
-        <label>Username:</label>
+        <h4>Username:</h4>
         <input type="text" name="UserName" ng-model="formData.UserName" class="form-control" />
     </div>
-    <div style="padding-top: 1%; padding-bottom: 2%">
-        <label>Password:</label>
-        <input type="text" name="Password" ng-model="formData.Password" class="form-control" />
+    <div>
+        <h4>Password:</h4>
+        <input type="password" name="Password" ng-model="formData.Password" class="form-control" />
     </div>
-    <div style="padding-bottom: 2%">
+    <br />
+    <div>
         <input type="submit" value="Log in" class="btn btn-primary" />
     </div>
+    <br />
 </form>
 <p>First time here? <a id="showRegister">Sign up</a></p>

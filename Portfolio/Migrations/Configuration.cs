@@ -24,7 +24,7 @@ namespace Portfolio.Migrations
                 Roles.CreateRole("Administrator");
 
             if (!WebSecurity.UserExists("tamesiva89"))
-                WebSecurity.CreateUserAndAccount("tamesiva89", "password");
+                WebSecurity.CreateUserAndAccount("tamesiva89", "password", true);
 
             if (!Roles.GetRolesForUser("tamesiva89").Contains("Administrator"))
                 Roles.AddUsersToRoles(new[] { "tamesiva89" }, new[] { "Administrator" });

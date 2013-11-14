@@ -3,9 +3,13 @@ using System.Data.Entity.Infrastructure;
 using System.Threading;
 using System.Web.Mvc;
 using Portfolio.Models;
+using WebMatrix.WebData;
 
 namespace Portfolio.Filters
 {
+    // See for implementation.
+    // http://techbrij.com/angularjs-antiforgerytoken-asp-net-mvc
+    // http://techbrij.com/angularjs-asp-net-mvc-username-check
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
     public sealed class InitializeSimpleMembershipAttribute : ActionFilterAttribute
     {
@@ -36,7 +40,7 @@ namespace Portfolio.Filters
                         }
                     }
 
-                    //WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+                    WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
                 }
                 catch (Exception ex)
                 {

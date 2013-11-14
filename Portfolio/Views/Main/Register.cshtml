@@ -5,10 +5,10 @@
     @Html.AntiForgeryToken()
 
     <fieldset>
-            <div>
-                @Html.LabelFor(m => m.UserName)
-                @Html.TextBoxFor(m => m.UserName, new { id = "registerName", @class = "form-control" })
-            </div>
+        <div>
+            @Html.LabelFor(m => m.UserName)
+            @Html.TextBoxFor(m => m.UserName, new { id = "registerName", @class = "form-control" })
+        </div>
         <div>
             @Html.LabelFor(m => m.Password)
             @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
@@ -21,6 +21,5 @@
         <div>
             <input type="submit" value="Sign up" class="btn btn-primary" />
         </div>
-        @Html.ValidationSummary()
     </fieldset>
 }

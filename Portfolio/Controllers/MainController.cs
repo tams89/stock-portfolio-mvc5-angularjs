@@ -23,5 +23,10 @@ namespace Portfolio.Controllers
         {
             return View("Authentication");
         }
+
+        public ActionResult Register()
+        {
+            return View("Register");
+        }
     }
 }

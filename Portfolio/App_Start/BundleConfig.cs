@@ -44,8 +44,8 @@ namespace Portfolio.App_Start
                 "~/Scripts/Jquery/jquery-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryVal").Include(
-                        "~/Scripts/Jquery/Validate/jquery.unobtrusive*",
-                        "~/Scripts/Jquery/Validate/jquery.validate*"));
+                "~/Scripts/Jquery/Validate/jquery.unobtrusive*",
+                "~/Scripts/Jquery/Validate/jquery.validate*"));
 
             bundles.Add(new ScriptBundle("~/bundles/toast").Include(
                 "~/Scripts/Toast/toaster.js"));
@@ -57,7 +57,7 @@ namespace Portfolio.App_Start
                 "~/Scripts/UnderScore/underscore-min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/angularApp")
-                .IncludeDirectory("~/Scripts/App", "*.js"));
+                .IncludeDirectory("~/Scripts/App", "AlgoTrader.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/angularModules")
                 .IncludeDirectory("~/Scripts/App/Modules", "*.js"));

@@ -1,25 +1,32 @@
 ﻿@model Portfolio.Models.RegisterModel
-
-@using (Html.BeginForm("JsonRegister", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { Id = "registerForm" }))
-{
-    @Html.AntiForgeryToken()
-
-    <fieldset>
-        <div>
-            @Html.LabelFor(m => m.UserName)
-            @Html.TextBoxFor(m => m.UserName, new { id = "registerName", @class = "form-control" })
-        </div>
-        <div>
-            @Html.LabelFor(m => m.Password)
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-        </div>
-        <div>
-            @Html.LabelFor(m => m.ConfirmPassword)
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-        </div>
-        <br />
-        <div>
-            <input type="submit" value="Sign up" class="btn btn-primary" />
-        </div>
-    </fieldset>
+@functions{
+    public string GetAntiForgeryToken()
+    {
+        string cookieToken, formToken;
+        AntiForgery.GetTokens(null, out cookieToken, out formToken);
+        return cookieToken + ":" + formToken;
+    }
 }
+<h2>Register</h2>
+<hr />
+<form ng-submit="register()" ng-controller="RegistrationController" novalidate>
+    <input id="antiForgeryToken" ng-model="antiForgeryToken" type="hidden" ng-init='antiForgeryToken="@GetAntiForgeryToken()"' />
+    <h4>Token</h4>
+    <pre>{{antiForgeryToken}}</pre>
+    <div>
+        @Html.LabelFor(m => m.UserName)
+        <input type="text" name="UserName" ng-model="formData.UserName" class="form-control" />
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Password)
+        <input type="password" name="Password" ng-model="formData.Password" class="form-control" />
+    </div>
+    <div>
+        @Html.LabelFor(m => m.ConfirmPassword)
+        <input type="password" name="ConfirmPassword" ng-model="formData.ConfirmPassword" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <input type="submit" value="Sign up" class="btn btn-primary" />
+    </div>
+</form>

@@ -15,24 +15,30 @@ namespace Portfolio.Controllers
         /// <summary>
         /// POST: /Account/JsonLogin
         /// </summary>
-        /// <seealso cref="InitializeSimpleMembershipAttribute" /> for details.
+        /// <seealso cref="InitializeSimpleMembershipAttribute" /> for implementation details.
         [HttpPost]
         [AllowAnonymous]
         [ValidateAngularPostHeader]
-        public JsonResult JsonLogin(LoginModel model)
+        public ActionResult JsonLogin(LoginModel model)
         {
             if (!WebSecurity.Login(model.UserName, model.Password)) return Json("The user name or password provided is incorrect.");
             FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
-            return Json(new { success = true });
+            return Json(true);
         }
 
         //
         // POST: /Account/LogOff
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        [ValidateAngularPostHeader]
         public ActionResult LogOff()
         {
             WebSecurity.Logout();
+            if (HttpContext.Session != null)
+            {
+                HttpContext.Session.Abandon();
+                HttpContext.Session.Clear();
+            }
+
             return RedirectToAction("Index", "Main");
         }
 
@@ -40,28 +46,23 @@ namespace Portfolio.Controllers
         // POST: /Account/JsonRegister
         [HttpPost]
         [AllowAnonymous]
-        [ValidateAntiForgeryToken]
+        [ValidateAngularPostHeader]
         public ActionResult JsonRegister(RegisterModel model, string returnUrl)
         {
-            if (ModelState.IsValid)
+            // Attempt to register the user
+            try
             {
-                // Attempt to register the user
-                try
-                {
-                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
-                    WebSecurity.Login(model.UserName, model.Password);
-
-                    FormsAuthentication.SetAuthCookie(model.UserName, createPersistentCookie: false);
-                    return Json(new { success = true, redirect = returnUrl });
-                }
-                catch (MembershipCreateUserException e)
-                {
-                    ModelState.AddModelError("", ErrorCodeToString(e.StatusCode));
-                }
+                WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
+                WebSecurity.Login(model.UserName, model.Password);
+                FormsAuthentication.SetAuthCookie(model.UserName, createPersistentCookie: false);
+                return Json(new { success = true, redirect = returnUrl });
             }
-
+            catch (MembershipCreateUserException e)
+            {
+                ModelState.AddModelError("", ErrorCodeToString(e.StatusCode));
+            }
             // If we got this far, something failed
-            return Json(new { errors = GetErrorsFromModelState() });
+            return Json(GetErrorsFromModelState());
         }
 
         #region Helpers

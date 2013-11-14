@@ -41,7 +41,12 @@
             <ul class="nav navbar-nav navbar-right">
                 @if (User.Identity.IsAuthenticated)
                 {
-                    <li class="navbar-text">Welcome, @User.Identity.Name!</li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">Welcome, @User.Identity.Name!<b class="caret"></b></a>
+                        <ul class="dropdown-menu" ng-controller="AuthController">
+                            <li><a class="text-right" role="button" ng-model="antiForgeryToken" ng-init='antiForgeryToken="@GetAntiForgeryToken()"' ng-click="logOut()">Sign Out</a></li>
+                        </ul>
+                    </li>
                 }
                 else
                 {
@@ -54,16 +59,3 @@
 <div class="container body-content overlay">
     <div class="page-change" ng-view></div>
 </div>
-
-@if (@User.Identity.IsAuthenticated)
-{
-    <input id="antiForgeryToken" type="hidden" value="@GetAntiForgeryToken()" />
-    @section scripts {
-        <!--User scripts-->
-        @Scripts.Render("~/bundles/angularApp")
-        @Scripts.Render("~/bundles/angularModules")
-        @Scripts.Render("~/bundles/angularDirectives")
-        @Scripts.Render("~/bundles/angularServices")
-        @Scripts.Render("~/bundles/angularControllers")
-    }
-}

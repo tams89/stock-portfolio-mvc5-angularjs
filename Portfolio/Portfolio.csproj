@@ -184,11 +184,11 @@
     <Content Include="Content\Styles\animate.css" />
     <Content Include="Content\Styles\toaster.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Scripts\App\ajaxLogin.js" />
     <Content Include="Scripts\App\AlgoTrader.js" />
     <Content Include="Scripts\App\Controllers\AuthController.js" />
     <Content Include="Scripts\App\Controllers\OptionController.js" />
     <Content Include="Scripts\App\Controllers\OptionGridController.js" />
+    <Content Include="Scripts\App\Controllers\RegistrationController.js" />
     <Content Include="Scripts\App\Directives\circle.js" />
     <Content Include="Scripts\App\Directives\ng-grid.js" />
     <Content Include="Scripts\App\Directives\spinner.js" />
@@ -208,9 +208,6 @@
     <Content Include="Scripts\HighStock\highstock.js" />
     <Content Include="Scripts\HighStock\Modules\exporting.js" />
     <Content Include="Scripts\HighStock\Themes\grid.js" />
-    <Content Include="Scripts\App\ajaxLogin.min.js.map">
-      <DependentUpon>ajaxLogin.js</DependentUpon>
-    </Content>
     <None Include="Scripts\Jquery\Validate\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\Jquery\Validate\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\Jquery\Validate\jquery.unobtrusive-ajax.min.js" />
@@ -1023,7 +1020,6 @@
     <None Include="Views\Main\About.cshtml" />
     <Content Include="Views\Main\Authentication.cshtml" />
     <None Include="Views\Main\Home.cshtml" />
-    <Content Include="Views\Main\Registration.cshtml" />
     <None Include="Views\Portfolio\Options.cshtml" />
     <None Include="Views\Portfolio\Stocks.cshtml" />
     <Content Include="Content\Images\2_billion_gold_price_bet.jpg" />
@@ -1383,7 +1379,6 @@
       <DependentUpon>_references.js</DependentUpon>
     </Content>
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\_UserSettings.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
   </ItemGroup>
   <ItemGroup>

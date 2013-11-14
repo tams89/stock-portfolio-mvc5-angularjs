@@ -17,5 +17,10 @@ app.config(["$routeProvider", function ($routeProvider) {
                 templateUrl: "/Main/Login",
                 controller: "AuthController"
             })
+        .when("/Main/Register",
+            {
+                templateUrl: "/Main/Register",
+                controller: "AuthController"
+            })
         .otherwise({ redirectTo: "/Main/Home" });
 }]);

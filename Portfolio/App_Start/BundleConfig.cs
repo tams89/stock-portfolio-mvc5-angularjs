@@ -70,6 +70,8 @@ namespace Portfolio.App_Start
 
             bundles.Add(new ScriptBundle("~/bundles/angularControllers")
                 .IncludeDirectory("~/Scripts/App/Controllers", "*.js"));
+
+            BundleTable.EnableOptimizations = false;
         }
     }
 }

@@ -150,7 +150,9 @@
       <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.3.0.0\lib\net45\WebMatrix.WebData.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -171,10 +173,6 @@
     <Compile Include="ValidateAntiForgeryToken.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\aspnet-Portfolio.mdf" />
-    <Content Include="App_Data\aspnet-Portfolio_log.ldf">
-      <DependentUpon>aspnet-Portfolio.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\Directives\circle.html" />
     <Content Include="Content\Styles\angular-csp.css" />
     <Content Include="Content\Styles\circle.css" />

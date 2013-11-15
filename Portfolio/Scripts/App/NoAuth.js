@@ -4,23 +4,23 @@
 // Note the controller set here does not need to be explicitly set in the page itself.
 app.config(["$routeProvider", function ($routeProvider) {
     $routeProvider
-        .when("/Main/Home",
+        .when("/Home",
             {
                 templateUrl: "/Main/Home"
             })
-        .when("/Main/About",
+        .when("/About",
             {
                 templateUrl: "/Main/About"
             })
-        .when("/Main/Login",
+        .when("/Login",
             {
                 templateUrl: "/Main/Login",
                 controller: "AuthController"
             })
-        .when("/Main/Register",
+        .when("/Register",
             {
                 templateUrl: "/Main/Register",
-                controller: "AuthController"
+                controller: "RegistrationController"
             })
-        .otherwise({ redirectTo: "/Main/Home" });
+        .otherwise({ redirectTo: "/Home" });
 }]);

@@ -1,5 +1,5 @@
 ﻿@functions{
-    public string GetAntiForgeryToken()
+    private static string GetAntiForgeryToken()
     {
         string cookieToken, formToken;
         AntiForgery.GetTokens(null, out cookieToken, out formToken);
@@ -23,8 +23,8 @@
                 <li class="dropdown" ng-class="{'active':getClass('/Main')}">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Main <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li ng-class="{'active':getClass('/Main/Home')}"><a href="#/Main/Home">Home</a></li>
-                        <li ng-class="{'active':getClass('/Main/About')}"><a href="#/Main/About">About</a></li>
+                        <li ng-class="{'active':getClass('/Home')}"><a href="/#/Home">Home</a></li>
+                        <li ng-class="{'active':getClass('/About')}"><a href="/#/About">About</a></li>
                     </ul>
                 </li>
                 @if (User.Identity.IsAuthenticated)
@@ -32,8 +32,8 @@
                     <li class="dropdown" ng-class="{'active':getClass('/Portfolio')}">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Portfolio <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li ng-class="{'active':getClass('/Portfolio/Stocks')}"><a href="#/Portfolio/Stocks">Stock Analysis</a></li>
-                            <li ng-class="{'active':getClass('/Portfolio/Options')}"><a href="#/Portfolio/Options">Option Analysis</a></li>
+                            <li ng-class="{'active':getClass('/Stocks')}"><a href="/#/Stocks">Stock Analysis</a></li>
+                            <li ng-class="{'active':getClass('/Options')}"><a href="/#/Options">Option Analysis</a></li>
                         </ul>
                     </li>
                 }
@@ -50,7 +50,7 @@
                 }
                 else
                 {
-                    <li><a href="#/Main/Login">Sign in</a></li>
+                    <li><a ng-class="{'active':getClass('/Login')}" href="/#/Login">Sign in</a></li>
                 }
             </ul>
         </div>
@@ -58,4 +58,8 @@
 </div>
 <div class="container body-content overlay">
     <div class="page-change" ng-view></div>
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - S.E. Plc.</p>
+    </footer>
 </div>

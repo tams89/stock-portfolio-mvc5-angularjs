@@ -1,6 +1,6 @@
 ﻿@model Portfolio.Models.RegisterModel
 @functions{
-    public string GetAntiForgeryToken()
+    private static string GetAntiForgeryToken()
     {
         string cookieToken, formToken;
         AntiForgery.GetTokens(null, out cookieToken, out formToken);
@@ -15,15 +15,15 @@
     <pre>{{antiForgeryToken}}</pre>
     <div>
         @Html.LabelFor(m => m.UserName)
-        <input type="text" name="UserName" ng-model="formData.UserName" class="form-control" />
+        <input type="text" name="UserName" ng-model="registerModel.UserName" class="form-control" />
     </div>
     <div>
         @Html.LabelFor(m => m.Password)
-        <input type="password" name="Password" ng-model="formData.Password" class="form-control" />
+        <input type="password" name="Password" ng-model="registerModel.Password" class="form-control" />
     </div>
     <div>
         @Html.LabelFor(m => m.ConfirmPassword)
-        <input type="password" name="ConfirmPassword" ng-model="formData.ConfirmPassword" class="form-control" />
+        <input type="password" name="ConfirmPassword" ng-model="registerModel.ConfirmPassword" class="form-control" />
     </div>
     <br />
     <div>

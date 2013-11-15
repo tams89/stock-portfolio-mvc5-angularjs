@@ -1,11 +1,11 @@
-﻿app.controller("RegistrationController", function (authenticationService, toaster) {
+﻿app.controller("RegistrationController", function ($scope, authenticationService, toaster) {
 
-    $scope.formData = {};
+    $scope.registerModel = {};
     $scope.antiForgeryToken = undefined;
     $scope.isLoggedIn = false;
 
     $scope.register = function () {
-        var validatedPromise = authenticationService.Register($scope.formData, $scope.antiForgeryToken);
+        var validatedPromise = authenticationService.Register($scope.registerModel, $scope.antiForgeryToken);
         validatedPromise.then(function (data) {
             if (data != undefined && data.success != undefined) {
                 return true;

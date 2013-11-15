@@ -1,12 +1,12 @@
 ﻿app.controller("AuthController", function ($scope, authenticationService, toaster) {
 
-    $scope.formData = {};
+    $scope.registerModel = {};
     $scope.antiForgeryToken = undefined;
 
     $scope.login = function () {
-        var validatedPromise = authenticationService.Login($scope.formData, $scope.antiForgeryToken);
+        var validatedPromise = authenticationService.Login($scope.registerModel, $scope.antiForgeryToken);
         validatedPromise.then(function (data) {
-            if (data != undefined) {
+            if (data == true) {
                 window.location.href = "/Main";
             }
             toaster.pop("error", data);

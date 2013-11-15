@@ -5,7 +5,7 @@ using Newtonsoft.Json.Serialization;
 
 namespace Portfolio.App_Start
 {
-    public class WebApiConfig
+    public static class WebApiConfig
     {
         public static void Register(HttpConfiguration config)
         {

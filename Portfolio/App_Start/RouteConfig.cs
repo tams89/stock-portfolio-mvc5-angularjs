@@ -12,10 +12,6 @@ namespace Portfolio.App_Start
             routes.MapRoute("Default", "{controller}/{action}",
                 new { controller = "Main", action = "Index" }
                 );
-
-            routes.MapRoute("AlgoTrader", "AlgoTrader/{controller}/{action}",
-                new { controller = "Main", action = "Index" }
-                );
         }
     }
 }

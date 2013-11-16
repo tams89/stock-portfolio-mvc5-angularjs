@@ -6,21 +6,21 @@ app.config(["$routeProvider", function ($routeProvider) {
     $routeProvider
         .when('/Home', // This URL is just what the links href is set to can be anything, angular will hijack this.
             {
-                templateUrl: "/Main/Home" // actual URL triggering MVC controller.
+                templateUrl: "Main/Home" // actual URL triggering MVC controller.
             })
         .when("/About",
             {
-                templateUrl: "/Main/About"
+                templateUrl: "Main/About"
             })
         .when("/Stocks",
             {
                 controller: "StockController",
-                templateUrl: "/Portfolio/Stocks"
+                templateUrl: "Portfolio/Stocks"
             })
         .when("/Options",
             {
                 controller: "OptionController",
-                templateUrl: "/Portfolio/Options"
+                templateUrl: "Portfolio/Options"
             })
         .otherwise({ redirectTo: "/Home" });
 }]);

@@ -34,7 +34,9 @@ namespace Portfolio.App_Start
                 "~/Scripts/Angular/angular.js",
                 "~/Scripts/Angular/angular-route.js",
                 "~/Scripts/Angular/angular-animate.js",
-                "~/Scripts/Angular/angular-resource.js"
+                "~/Scripts/Angular/angular-resource.js",
+                "~/Scripts/Angular/angular-scenario.js",
+                "~/Scripts/Angular/angular-loader.js"
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(

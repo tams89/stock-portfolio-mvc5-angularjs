@@ -7,9 +7,7 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <title>Portfolio</title>
     <meta name="description" content="S.E. Enterprises algorithmic trading API." />
-    <base href="/" />
-    @Styles.Render("~/Content/css")
-    @Styles.Render("~/Content/SiteCss")
+    @Html.Partial("_Dependencies")
 </head>
 <body>
     @if (User.Identity.IsAuthenticated)
@@ -17,43 +15,11 @@
         <div ng-app="AlgoTrader" ng-cloak>
             @RenderBody()
         </div>
-        <div>
-            @Scripts.Render("~/bundles/modernizr")
-            @Scripts.Render("~/bundles/Angular")
-            @Scripts.Render("~/bundles/jquery")
-            @Scripts.Render("~/bundles/jqueryVal")
-            @Scripts.Render("~/bundles/respond")
-            @Scripts.Render("~/bundles/bootstrap")
-            @Scripts.Render("~/bundles/toast")
-            @Scripts.Render("~/bundles/highStock")
-            @Scripts.Render("~/bundles/underScore")
-            @Scripts.Render("~/bundles/angularApp")
-            @Scripts.Render("~/bundles/angularModules")
-            @Scripts.Render("~/bundles/angularDirectives")
-            @Scripts.Render("~/bundles/angularServices")
-            @Scripts.Render("~/bundles/angularControllers")
-        </div>
     }
     else
     {
         <div ng-app="NoAuth" ng-cloak>
             @RenderBody()
-        </div>
-        <div>
-            @Scripts.Render("~/bundles/modernizr")
-            @Scripts.Render("~/bundles/Angular")
-            @Scripts.Render("~/bundles/jquery")
-            @Scripts.Render("~/bundles/jqueryVal")
-            @Scripts.Render("~/bundles/respond")
-            @Scripts.Render("~/bundles/bootstrap")
-            @Scripts.Render("~/bundles/toast")
-            @Scripts.Render("~/bundles/highStock")
-            @Scripts.Render("~/bundles/underScore")
-            @Scripts.Render("~/Scripts/App/NoAuth.js")
-            @Scripts.Render("~/Scripts/App/Controllers/NavigationController.js")
-            @Scripts.Render("~/Scripts/App/Services/authenticationService.js")
-            @Scripts.Render("~/Scripts/App/Controllers/AuthController.js")
-            @Scripts.Render("~/Scripts/App/Controllers/RegistrationController.js")
         </div>
     }
 </body>

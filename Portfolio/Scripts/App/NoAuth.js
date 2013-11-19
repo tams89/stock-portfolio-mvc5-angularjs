@@ -16,7 +16,7 @@ app.config(["$routeProvider", function ($routeProvider) {
         .when("/Login",
             {
                 templateUrl: "Main/Login",
-                controller: "AuthController"
+                controller: "LoginController"
             })
         .when("/Register",
             {

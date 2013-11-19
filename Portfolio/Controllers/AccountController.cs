@@ -36,17 +36,17 @@ namespace Portfolio.Controllers
             /// <summary>
             /// The change password success.
             /// </summary>
-            ChangePasswordSuccess, 
+            ChangePasswordSuccess,
 
             /// <summary>
             /// The set password success.
             /// </summary>
-            SetPasswordSuccess, 
+            SetPasswordSuccess,
 
             /// <summary>
             /// The remove login success.
             /// </summary>
-            RemoveLoginSuccess, 
+            RemoveLoginSuccess,
         }
 
         #endregion
@@ -84,24 +84,31 @@ namespace Portfolio.Controllers
         /// <param name="model">
         /// The model.
         /// </param>
-        /// <param name="returnUrl">
-        /// The return url.
-        /// </param>
         /// <returns>
         /// The <see cref="ActionResult"/>.
         /// </returns>
         [HttpPost]
         [AllowAnonymous]
         [ValidateAngularPostHeader]
-        public ActionResult JsonRegister(RegisterModel model, string returnUrl)
+        public ActionResult JsonRegister(RegisterModel model)
         {
+            if (string.IsNullOrEmpty(model.UserName) && string.IsNullOrEmpty(model.Password) && string.IsNullOrEmpty(model.ConfirmPassword))
+            {
+                return this.Json(this.GetErrorsFromModelState());
+            }
+            if (model.Password != model.ConfirmPassword)
+            {
+                return this.Json(this.GetErrorsFromModelState());
+            }
+
             // Attempt to register the user
             try
             {
+
                 WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
                 WebSecurity.Login(model.UserName, model.Password);
                 FormsAuthentication.SetAuthCookie(model.UserName, false);
-                return this.Json(new { success = true, redirect = returnUrl });
+                return this.Json(new { success = true });
             }
             catch (MembershipCreateUserException e)
             {

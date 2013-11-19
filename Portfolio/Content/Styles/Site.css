@@ -1,4 +1,6 @@
-﻿html { font-family: sans-serif; }
+﻿html {
+    font-family: sans-serif;
+}
 
 body {
     -moz-background-size: cover;
@@ -13,7 +15,9 @@ body {
     color: whitesmoke;
 }
 
-footer { color: whitesmoke; }
+footer {
+    color: whitesmoke;
+}
 
 /* Set padding to keep content from hitting the edges */
 
@@ -26,7 +30,9 @@ footer { color: whitesmoke; }
 
 input,
 select,
-textarea { max-width: 280px; }
+textarea {
+    max-width: 280px;
+}
 
 .jumbotron {
     background-color: transparent;
@@ -34,9 +40,13 @@ textarea { max-width: 280px; }
     max-height: 180px;
 }
 
-.home { color: antiquewhite; }
+.home {
+    color: antiquewhite;
+}
 
-.navbar-inverse { background-color: #000000; }
+.navbar-inverse {
+    background-color: #000000;
+}
 
 .overlay {
     background-color: rgba(0, 0, 0, 0.60);
@@ -46,21 +56,27 @@ textarea { max-width: 280px; }
     position: inherit;
 }
 
-.nav, .pagination, .carousel a { cursor: pointer; }
-
-.dropdown-menu { background-color: black; }
-
-.dropdown-menu > li > a { color: grey; }
-
-.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
-    background-color: #000000;
-    color: white;
+.nav, .pagination, .carousel a {
+    cursor: pointer;
 }
 
-.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+.dropdown-menu {
     background-color: black;
-    background-image: none;
 }
+
+    .dropdown-menu > li > a {
+        color: grey;
+    }
+
+    .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+        background-color: #000000;
+        color: white;
+    }
+
+        .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+            background-color: black;
+            background-image: none;
+        }
 
 .form-control-autocomplete {
     -ms-border-radius: 4px;
@@ -75,20 +91,19 @@ textarea { max-width: 280px; }
     width: auto;
 }
 
-.form-control-autocomplete:focus {
-    -ms-box-shadow: inset 0 1px 1px #000000, 0 0 8px rgb(255, 106, 0);
-    -webkit-box-shadow: inset 0 1px 1px #000000, 0 0 8px rgb(255, 106, 0);
-    border-color: rgb(255, 106, 0);
-    box-shadow: inset 0 1px 1px #000000, 0 0 8px rgb(255, 106, 0);
-    box-shadow: inset 0 1px 1px #000000, 0 0 8px rgb(255, 106, 0);
-    outline: 0;
-}
+    .form-control-autocomplete:focus {
+        -ms-box-shadow: inset 0 1px 1px #000000, 0 0 8px rgb(255, 106, 0);
+        -webkit-box-shadow: inset 0 1px 1px #000000, 0 0 8px rgb(255, 106, 0);
+        border-color: rgb(255, 106, 0);
+        box-shadow: inset 0 1px 1px #000000, 0 0 8px rgb(255, 106, 0);
+        box-shadow: inset 0 1px 1px #000000, 0 0 8px rgb(255, 106, 0);
+        outline: 0;
+    }
 
 /* Animations */
 
 /* N.B. The ng-enter is what allows angular to recognise the style
    and process it accordingly. */
-
 .page-change.ng-enter {
     -moz-animation: fadeInLeft 1s;
     -ms-animation: fadeInLeft 1s;
@@ -106,13 +121,21 @@ textarea { max-width: 280px; }
     transition: 0.2s linear all;
 }
 
-.show-hide-animation.ng-hide-remove { opacity: 0; }
+.show-hide-animation.ng-hide-remove {
+    opacity: 0;
+}
 
-.show-hide-animation.ng-hide-remove.ng-hide-remove-active { opacity: 1; }
+    .show-hide-animation.ng-hide-remove.ng-hide-remove-active {
+        opacity: 1;
+    }
 
-.show-hide-animation.ng-hide-add { opacity: 1; }
+.show-hide-animation.ng-hide-add {
+    opacity: 1;
+}
 
-.show-hide-animation.ng-hide-add.ng-hide-add-active { opacity: 0; }
+    .show-hide-animation.ng-hide-add.ng-hide-add-active {
+        opacity: 0;
+    }
 
 .table {
     background-color: #000000;
@@ -152,7 +175,9 @@ textarea { max-width: 280px; }
     overflow-y: hidden;
 }
 
-.ngVerticalBarVisible { background-color: transparent; }
+.ngVerticalBarVisible {
+    background-color: transparent;
+}
 
 .spinner {
     background-image: url(/Content/Images/ajax-loader.gif);
@@ -160,4 +185,12 @@ textarea { max-width: 280px; }
     background-position-y: center;
     background-repeat: no-repeat;
     height: 30px;
+}
+
+input.ng-invalid {
+    border: 2px solid red;
+}
+
+input.ng-valid {
+    border: 2px solid green;
 }

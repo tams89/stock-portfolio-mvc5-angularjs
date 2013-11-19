@@ -1,4 +1,4 @@
-﻿app.controller("AuthController", function ($scope, authenticationService, toaster) {
+﻿app.controller("LoginController", function ($scope, authenticationService, toaster) {
 
     $scope.registerModel = {};
     $scope.antiForgeryToken = undefined;

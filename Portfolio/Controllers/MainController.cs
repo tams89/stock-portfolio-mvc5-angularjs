@@ -58,7 +58,7 @@ namespace Portfolio.Controllers
         /// </returns>
         public ActionResult Login()
         {
-            return this.View("Authentication");
+            return this.View("Login");
         }
 
         /// <summary>

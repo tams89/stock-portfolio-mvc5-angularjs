@@ -43,7 +43,7 @@
                 {
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown">Welcome, @User.Identity.Name!<b class="caret"></b></a>
-                        <ul class="dropdown-menu" ng-controller="AuthController">
+                        <ul class="dropdown-menu" ng-controller="LoginController">
                             <li><a class="text-right" role="button" ng-model="antiForgeryToken" ng-init='antiForgeryToken="@GetAntiForgeryToken()"' ng-click="logOut()">Sign Out</a></li>
                         </ul>
                     </li>

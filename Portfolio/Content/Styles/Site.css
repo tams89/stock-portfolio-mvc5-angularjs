@@ -187,10 +187,10 @@ textarea {
     height: 30px;
 }
 
-input.ng-invalid {
+form-control.ng-invalid {
     border: 2px solid red;
 }
 
-input.ng-valid {
+form-control.ng-valid {
     border: 2px solid green;
 }

@@ -10,15 +10,15 @@
 }
 <h2>Log in</h2>
 <hr />
-<form ng-submit="login()" ng-controller="LoginController" novalidate>
+<form name="loginForm" ng-submit="login()" ng-controller="LoginController" novalidate>
     <input id="antiForgeryToken" ng-model="antiForgeryToken" type="hidden" ng-init='antiForgeryToken="@GetAntiForgeryToken()"' />
     <div>
         <h4>Username:</h4>
-        <input type="text" name="UserName" ng-model="registerModel.UserName" class="form-control" />
+        <input type="text" name="UserName" ng-model="loginModel.UserName" class="form-control" />
     </div>
     <div>
         <h4>Password:</h4>
-        <input type="password" name="Password" ng-model="registerModel.Password" class="form-control" />
+        <input type="password" name="Password" ng-model="loginModel.Password" class="form-control" />
     </div>
     <br />
     <div>

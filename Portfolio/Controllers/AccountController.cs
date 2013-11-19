@@ -69,12 +69,18 @@ namespace Portfolio.Controllers
         [ValidateAngularPostHeader]
         public ActionResult JsonLogin(LoginModel model)
         {
+            // Check validation attributes.
+            if (!this.ModelState.IsValid)
+            {
+                return this.Json(this.GetErrorsFromModelState());
+            }
+
             if (!WebSecurity.Login(model.UserName, model.Password))
             {
                 return this.Json("The user name or password provided is incorrect.");
             }
-
-            FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
+            
+            FormsAuthentication.SetAuthCookie(model.UserName, false);
             return this.Json(true);
         }
 
@@ -92,19 +98,15 @@ namespace Portfolio.Controllers
         [ValidateAngularPostHeader]
         public ActionResult JsonRegister(RegisterModel model)
         {
-            if (string.IsNullOrEmpty(model.UserName) && string.IsNullOrEmpty(model.Password) && string.IsNullOrEmpty(model.ConfirmPassword))
+            // Check validation attributes.
+            if (!this.ModelState.IsValid)
             {
                 return this.Json(this.GetErrorsFromModelState());
             }
-            if (model.Password != model.ConfirmPassword)
-            {
-                return this.Json(this.GetErrorsFromModelState());
-            }
-
+            
             // Attempt to register the user
             try
             {
-
                 WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
                 WebSecurity.Login(model.UserName, model.Password);
                 FormsAuthentication.SetAuthCookie(model.UserName, false);
@@ -116,7 +118,7 @@ namespace Portfolio.Controllers
             }
 
             // If we got this far, something failed
-            return this.Json(this.GetErrorsFromModelState());
+            return this.Json("Oops, this is embarrassing...");
         }
 
         /// <summary>

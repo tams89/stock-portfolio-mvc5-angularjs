@@ -9,11 +9,14 @@
 </div>
 <div ng-show="isStockListEmpty()">
     <hr />
+    <p>
+        All data here are from US Exchanges (via Yahoo Finance API) and so all prices are represented in USD.
+    </p>
     <table class="table table-condensed table-striped">
         <thead>
             <tr>
                 <td>
-                    Market Data
+                    Market Data (Informtion from Last Market Close)
                 </td>
             </tr>
             <tr>
@@ -67,5 +70,5 @@
 </div>
 <div class="show-hide-animation" ng-hide="isChartEmpty">
     <hr />
-    <div id="container" style="height: 500px; min-width: 650px"></div>
+    <div id="container" style="height: 500px; min-width: 650px;"></div>
 </div>

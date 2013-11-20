@@ -2,6 +2,8 @@
 
 namespace Core.DTOs
 {
+    using Core.DTO;
+
     public class MarketDto : DtoBase
     {
         public double AdjClose { get; set; }

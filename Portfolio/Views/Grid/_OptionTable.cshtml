@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Core.DTO.DtoBase>
+@using GridMvc.Html
+
+<div>
+    <h2>Option Table</h2>
+    <hr />
+    <div>
+        @Html.Grid(Model).Columns(columns =>
+            {
+                columns.Add(x => x.GetType().GetProperty("Symbol")).Filterable(true);
+                //columns.Add(c => c.).Filterable(true);
+            }).WithPaging(3).Sortable(true)
+    </div>
+</div>

@@ -1,9 +1,9 @@
-﻿app.controller("OptionGridController", function($scope) {
+﻿app.controller("OptionGridController", function ($scope) {
 
     $scope.optionGrid = {
         data: "optionData",
         multiSelect: false,
-        selectedItemns: $scope.selectedOptions,
+        selectedItems: [],
         columnDefs: [
             { field: "Symbol", width: "27%" },
             { field: "StrikePrice", displayName: "Strike", width: "10%" },

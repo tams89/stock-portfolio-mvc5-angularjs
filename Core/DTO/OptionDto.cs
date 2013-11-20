@@ -2,6 +2,8 @@
 
 namespace Core.DTOs
 {
+    using Core.DTO;
+
     public class OptionDto : DtoBase
     {
         public string Symbol { get; set; }

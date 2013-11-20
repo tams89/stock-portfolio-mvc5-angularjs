@@ -1,13 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="DtoBase.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   The dto base.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
-namespace Core.DTOs
+namespace Core.DTO
 {
+    /// <summary>
+    /// The dto base.
+    /// </summary>
     public abstract class DtoBase
     {
-
     }
 }

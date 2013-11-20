@@ -1,13 +1,11 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="AssemblyInfo.cs" company="">
-//   
+// <copyright file="AssemblyInfo.cs" company="Sivaguru Enterprises">
+//   Sivaguru Enterprises Plc.
 // </copyright>
 // <summary>
 //   AssemblyInfo.cs
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-
-
 
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -32,12 +30,8 @@ using System.Runtime.InteropServices;
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("22d2040e-bd3e-4953-b4d6-6ef49a544b72")]
 
-// Version information for an assembly consists of the following four values:
-//      Major Version
-//      Minor Version
-//      Build Number
-//      Revision
-// You can specify all the values or you can default the Revision and Build Numbers
-// by using the '*' as shown below:
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+// Semantic naming convention. 
+// First digit increase indicates breaking changes.
+// Second digit increase indicates additional features.
+// Third digit changes indicates fixes and tweaks.
+[assembly: AssemblyInformationalVersion("1.0.0")]

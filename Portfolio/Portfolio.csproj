@@ -27,7 +27,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>true</Optimize>
     <OutputPath>bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -66,6 +66,9 @@
     <Reference Include="FSharp.Core, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
+    <Reference Include="GridMvc">
+      <HintPath>..\packages\Grid.Mvc.3.0.0\lib\net40\GridMvc.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Data.OData, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Web.WebPages.OAuth, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -85,10 +88,18 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.18\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Net.Http.Formatting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.0.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.18\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.Entity" />
@@ -159,6 +170,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\GridController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\PortfolioController.cs" />
     <Compile Include="Controllers\SecureController.cs" />
@@ -179,16 +191,47 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Directives\circle.html" />
+    <Content Include="Content\Styles\angular-csp.min.css">
+      <DependentUpon>angular-csp.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\animate.min.css">
+      <DependentUpon>animate.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\bootstrap-buttons.min.css">
+      <DependentUpon>bootstrap-buttons.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\bootstrap.min.css">
+      <DependentUpon>bootstrap.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\circle.min.css">
+      <DependentUpon>circle.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Gridmvc.css" />
     <Content Include="Content\Styles\angular-csp.css" />
     <Content Include="Content\Styles\circle.css" />
     <Content Include="Content\Styles\bootstrap-buttons.css" />
     <Content Include="Content\Styles\bootstrap.css" />
     <Content Include="Content\Images\ajax-loader.gif" />
+    <Content Include="Content\Styles\Gridmvc.min.css">
+      <DependentUpon>Gridmvc.css</DependentUpon>
+    </Content>
     <Content Include="Content\Styles\ng-grid.css" />
+    <Content Include="Content\Styles\ng-grid.min.css">
+      <DependentUpon>ng-grid.css</DependentUpon>
+    </Content>
     <Content Include="Content\Styles\Site.css" />
+    <Content Include="Content\Styles\Site.min.css">
+      <DependentUpon>Site.css</DependentUpon>
+    </Content>
     <Content Include="Content\Styles\spinner.css" />
     <Content Include="Content\Styles\animate.css" />
+    <Content Include="Content\Styles\spinner.min.css">
+      <DependentUpon>spinner.css</DependentUpon>
+    </Content>
     <Content Include="Content\Styles\toaster.css" />
+    <Content Include="Content\Styles\toaster.min.css">
+      <DependentUpon>toaster.css</DependentUpon>
+    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Scripts\App\AlgoTrader.js" />
     <Content Include="Scripts\App\Controllers\LoginController.js" />
@@ -214,10 +257,13 @@
     <Content Include="Scripts\App\Services\stockAnalysisService.js" />
     <Content Include="Content\Directives\spinner.html" />
     <Content Include="Scripts\App\Services\utilitiesService.js" />
+    <Content Include="Scripts\Grid\gridmvc.js" />
+    <Content Include="Scripts\Grid\gridmvc.min.js" />
     <Content Include="Scripts\HighStock\highstock.js" />
     <Content Include="Scripts\HighStock\Modules\exporting.js" />
     <Content Include="Scripts\HighStock\Themes\grid.js" />
     <Content Include="algotrader.pfx" />
+    <Content Include="Grid.mvc.readme" />
     <None Include="Properties\PublishProfiles\algotrader.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Scripts\App\NoAuth.min.js.map">
@@ -1405,6 +1451,9 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Dependencies.cshtml" />
+    <Content Include="Views\Shared\_GridPager.cshtml" />
+    <Content Include="Views\Shared\_Grid.cshtml" />
+    <Content Include="Views\Grid\_OptionTable.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">
@@ -1461,10 +1510,10 @@
     </VisualStudio>
   </ProjectExtensions>
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
-  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets')" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
-    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
-    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

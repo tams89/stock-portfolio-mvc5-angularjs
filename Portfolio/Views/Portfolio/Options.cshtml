@@ -21,3 +21,8 @@
     <hr />
     <p>Please search for a company to view its option table.</p>
 </div>
+<div>
+    @{
+        Html.RenderAction("OptionGrid", "Grid");
+    }
+</div>

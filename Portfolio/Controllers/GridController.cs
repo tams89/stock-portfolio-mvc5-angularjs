@@ -27,13 +27,10 @@ namespace Portfolio.Controllers
         /// <param name="data">
         /// Collection containing data.
         /// </param>
-        /// <typeparam name="T">
-        /// The DTO.
-        /// </typeparam>
         /// <returns>
         /// The <see cref="ActionResult"/>.
         /// </returns>
-        public ActionResult Grid<T>(IEnumerable<T> data) where T : DtoBase
+        public ActionResult Grid(IEnumerable<OptionDto> data) 
         {
             return this.PartialView("_OptionTable", data);
         }

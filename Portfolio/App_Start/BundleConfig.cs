@@ -31,11 +31,9 @@ namespace Portfolio.App_Start
                 new StyleBundle("~/Content/css").Include(
                     "~/Content/Styles/angular-csp.css",
                     "~/Content/Styles/bootstrap.css",
-                    "~/Content/Styles/bootstrap-buttons.css",
                     "~/Content/Styles/toaster.css",
                     "~/Content/Styles/spinner.css",
                     "~/Content/Styles/circle.css",
-                    "~/Content/Styles/ng-grid.css",
                     "~/Content/Styles/Gridmvc.css",
                     "~/Content/Styles/animate.css"));
 
@@ -44,7 +42,6 @@ namespace Portfolio.App_Start
 
             // Required libraries
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include("~/Scripts/Modernizer/modernizr-*"));
-            bundles.Add(new ScriptBundle("~/bundles/ajaxLogin").Include("~/Scripts/App/ajaxLogin.js"));
             bundles.Add(new ScriptBundle("~/bundles/highStock").IncludeDirectory("~/Scripts/HighStock", "*.js", true));
             bundles.Add(new ScriptBundle("~/bundles/angular").Include("~/Scripts/Angular/angular.js"));
             bundles.Add(new ScriptBundle("~/bundles/angularRoute").Include("~/Scripts/Angular/angular-route.js"));

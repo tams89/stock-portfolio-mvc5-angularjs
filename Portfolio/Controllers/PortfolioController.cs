@@ -9,13 +9,12 @@
 
 namespace Portfolio.Controllers
 {
-    using System.Collections.Generic;
     using System.Linq;
     using System.Web.Mvc;
 
-    using Core.DTOs;
-    using Core.Services;
     using Core.Services.Interfaces;
+
+    using Portfolio.Attributes;
 
     /// <summary>
     /// The portfolio controller.
@@ -27,7 +26,7 @@ namespace Portfolio.Controllers
         /// <summary>
         /// The _yahoo finance service.
         /// </summary>
-        private readonly IYahooFinanceService _yahooFinanceService;
+        private readonly IYahooFinanceService yahooFinanceService;
 
         #endregion
 
@@ -41,7 +40,7 @@ namespace Portfolio.Controllers
         /// </param>
         public PortfolioController(IYahooFinanceService yahooFinanceService)
         {
-            this._yahooFinanceService = yahooFinanceService;
+            this.yahooFinanceService = yahooFinanceService;
         }
 
         #endregion
@@ -60,7 +59,7 @@ namespace Portfolio.Controllers
         [HttpPost]
         public JsonResult AutoComplete(string symbol)
         {
-            YahooFinanceService.GoogleFinanceJSON[] results = this._yahooFinanceService.SymbolSearch(symbol).ToArray();
+            var results = this.yahooFinanceService.SymbolSearch(symbol).ToArray();
             if (!results.Any())
             {
                 return null;
@@ -82,7 +81,7 @@ namespace Portfolio.Controllers
         [HttpPost]
         public JsonResult MarketData(string symbol)
         {
-            IEnumerable<MarketDto> marketData = this._yahooFinanceService.GetData(symbol, null, null);
+            var marketData = this.yahooFinanceService.GetData(symbol, null, null);
             return this.Json(marketData);
         }
 
@@ -98,19 +97,24 @@ namespace Portfolio.Controllers
         [HttpPost]
         public JsonResult OptionData(string symbol)
         {
-            IEnumerable<OptionDto> optionData = this._yahooFinanceService.GetData(symbol);
+            var optionData = this.yahooFinanceService.GetData(symbol);
             return this.Json(optionData);
         }
 
         /// <summary>
         /// The options.
         /// </summary>
+        /// <param name="symbol">
+        /// The symbol.
+        /// </param>
         /// <returns>
         /// The <see cref="ActionResult"/>.
         /// </returns>
-        public ActionResult Options()
+        public ActionResult Options(string symbol)
         {
-            return this.View();
+            if (string.IsNullOrEmpty(symbol)) return this.View();
+            var optionData = this.yahooFinanceService.GetData(symbol);
+            return this.View(optionData);
         }
 
         /// <summary>

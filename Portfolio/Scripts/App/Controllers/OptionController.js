@@ -16,15 +16,21 @@ app.controller("OptionController", function($scope, autocompleteService, toaster
         $scope.symbols = autocompleteService.getSymbols($scope.selected);
     };
 
-    $scope.SelectSymbol = function() {
-        var symbol = $scope.selected.Symbol;
+    //$scope.SelectSymbol = function() {
+    //    var symbol = $scope.selected.Symbol;
+    //    $scope.loading = true;
+    //    var optionDataPromise = optionAnalysisService.getOptions(symbol);
+    //    optionDataPromise.then(function(data) {
+    //        $scope.optionData = data;
+    //        console.log("Option promise forefilled data count: " + $scope.optionData.length);
+    //        $scope.loading = false;
+    //    });
+    //};
+    
+    $scope.SelectSymbol = function () {
         $scope.loading = true;
-        var optionDataPromise = optionAnalysisService.getOptions(symbol);
-        optionDataPromise.then(function(data) {
-            $scope.optionData = data;
-            console.log("Option promise forefilled data count: " + $scope.optionData.length);
-            $scope.loading = false;
-        });
+        optionAnalysisService.postSelectedOption($scope.selected.Symbol);
+        $scope.loading = false;
     };
 
     $scope.hasOptionData = function() {

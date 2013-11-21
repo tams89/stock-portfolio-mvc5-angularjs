@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Core.DTO.DtoBase>
+﻿@model IEnumerable<Core.DTO.OptionDto>
 @using GridMvc.Html
 
 <div>
@@ -7,8 +7,13 @@
     <div>
         @Html.Grid(Model).Columns(columns =>
             {
-                columns.Add(x => x.GetType().GetProperty("Symbol")).Filterable(true);
-                //columns.Add(c => c.).Filterable(true);
-            }).WithPaging(3).Sortable(true)
+                columns.Add(c => c.Symbol).Filterable(true);
+                columns.Add(c => c.StrikePrice).Filterable(true);
+                columns.Add(c => c.LastPrice).Filterable(true);
+                columns.Add(c => c.Bid).Filterable(true);
+                columns.Add(c => c.Ask).Filterable(true);
+                columns.Add(c => c.Vol).Filterable(true);
+                columns.Add(c => c.OpenInt).Filterable(true);
+            }).WithPaging(10).Sortable(true)
     </div>
 </div>

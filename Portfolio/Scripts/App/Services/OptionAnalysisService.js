@@ -22,5 +22,10 @@
         });
         return deferred.promise;
     };
+   
+    // TODO
+    this.postSelectedOption = function (symbol) {
+        $http.get("/Portfolio/Options", { "symbol": symbol });
+    };
 
 });

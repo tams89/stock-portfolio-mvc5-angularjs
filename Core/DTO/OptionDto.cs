@@ -1,22 +1,83 @@
-﻿using System;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="OptionDto.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   The option dto.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
-namespace Core.DTOs
+namespace Core.DTO
 {
-    using Core.DTO;
+    using System;
 
+    /// <summary>
+    /// The option dto.
+    /// </summary>
     public class OptionDto : DtoBase
     {
-        public string Symbol { get; set; }
-        public DateTime ExpiryDate { get; set; }
-        public string Type { get; set; }
-        public decimal StrikePrice { get; set; }
-        public decimal LastPrice { get; set; }
-        public string ChangeDirection { get; set; }
-        public decimal Change { get; set; }
-        public decimal Bid { get; set; }
+        #region Public Properties
+
+        /// <summary>
+        /// Gets or sets the ask.
+        /// </summary>
         public decimal Ask { get; set; }
-        public int Vol { get; set; }
-        public int OpenInt { get; set; }
+
+        /// <summary>
+        /// Gets or sets the bid.
+        /// </summary>
+        public decimal Bid { get; set; }
+
+        /// <summary>
+        /// Gets or sets the change.
+        /// </summary>
+        public decimal Change { get; set; }
+
+        /// <summary>
+        /// Gets or sets the change direction.
+        /// </summary>
+        public string ChangeDirection { get; set; }
+
+        /// <summary>
+        /// Gets or sets the close.
+        /// </summary>
         public decimal Close { get; set; }
+
+        /// <summary>
+        /// Gets or sets the expiry date.
+        /// </summary>
+        public DateTime ExpiryDate { get; set; }
+
+        /// <summary>
+        /// Gets or sets the last price.
+        /// </summary>
+        public decimal LastPrice { get; set; }
+
+        /// <summary>
+        /// Gets or sets the open int.
+        /// </summary>
+        public int OpenInt { get; set; }
+
+        /// <summary>
+        /// Gets or sets the strike price.
+        /// </summary>
+        public decimal StrikePrice { get; set; }
+
+        /// <summary>
+        /// Gets or sets the symbol.
+        /// </summary>
+        public string Symbol { get; set; }
+
+        /// <summary>
+        /// Gets or sets the type.
+        /// </summary>
+        public string Type { get; set; }
+
+        /// <summary>
+        /// Gets or sets the vol.
+        /// </summary>
+        public int Vol { get; set; }
+
+        #endregion
     }
 }

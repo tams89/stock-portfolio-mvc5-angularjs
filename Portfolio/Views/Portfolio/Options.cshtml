@@ -1,7 +1,4 @@
-﻿<!--Hidden JSON result-->
-<input type="hidden" value="{{optionData}}" />
-
-<h1>Option Analysis</h1>
+﻿<h1>Option Analysis</h1>
 <p>All prices are in USD</p>
 <hr />
 <div>
@@ -13,16 +10,14 @@
     </form>
 </div>
 <circle></circle>
-<div ng-controller="OptionGridController">
-    <hr />
-    <div class="grid-style" ng-grid="optionGrid"></div>
-</div>
 <div ng-hide="hasOptionData()">
     <hr />
     <p>Please search for a company to view its option table.</p>
 </div>
 <div>
-    @{
-        Html.RenderAction("OptionGrid", "Grid");
+    <hr />
+    @if (Model != null)
+    {
+        Html.RenderAction("Grid", "Grid", new { data = Model });
     }
 </div>

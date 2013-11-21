@@ -169,6 +169,7 @@
     <Compile Include="App_Start\MunqConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Attributes\RequireRequestValueAttribute.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\GridController.cs" />
     <Compile Include="Controllers\MainController.cs" />
@@ -197,8 +198,9 @@
     <Content Include="Content\Styles\animate.min.css">
       <DependentUpon>animate.css</DependentUpon>
     </Content>
-    <Content Include="Content\Styles\bootstrap-buttons.min.css">
-      <DependentUpon>bootstrap-buttons.css</DependentUpon>
+    <Content Include="Content\Styles\bootstrap - Copy 1.css" />
+    <Content Include="Content\Styles\bootstrap.min - Copy.css">
+      <DependentUpon>bootstrap - Copy 1.css</DependentUpon>
     </Content>
     <Content Include="Content\Styles\bootstrap.min.css">
       <DependentUpon>bootstrap.css</DependentUpon>
@@ -209,20 +211,12 @@
     <Content Include="Content\Styles\Gridmvc.css" />
     <Content Include="Content\Styles\angular-csp.css" />
     <Content Include="Content\Styles\circle.css" />
-    <Content Include="Content\Styles\bootstrap-buttons.css" />
     <Content Include="Content\Styles\bootstrap.css" />
     <Content Include="Content\Images\ajax-loader.gif" />
     <Content Include="Content\Styles\Gridmvc.min.css">
       <DependentUpon>Gridmvc.css</DependentUpon>
     </Content>
-    <Content Include="Content\Styles\ng-grid.css" />
-    <Content Include="Content\Styles\ng-grid.min.css">
-      <DependentUpon>ng-grid.css</DependentUpon>
-    </Content>
     <Content Include="Content\Styles\Site.css" />
-    <Content Include="Content\Styles\Site.min.css">
-      <DependentUpon>Site.css</DependentUpon>
-    </Content>
     <Content Include="Content\Styles\spinner.css" />
     <Content Include="Content\Styles\animate.css" />
     <Content Include="Content\Styles\spinner.min.css">
@@ -239,7 +233,6 @@
       <DependentUpon>LoginController.js</DependentUpon>
     </Content>
     <Content Include="Scripts\App\Controllers\OptionController.js" />
-    <Content Include="Scripts\App\Controllers\OptionGridController.js" />
     <Content Include="Scripts\App\Controllers\RegistrationController.js" />
     <Content Include="Scripts\App\Directives\circle.js" />
     <Content Include="Scripts\App\Directives\ng-grid.js" />
@@ -285,10 +278,7 @@
     <Content Include="Scripts\Jquery\Validate\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\Jquery\Validate\jquery.validate.js" />
     <Content Include="Scripts\Jquery\Validate\jquery.validate.min.js" />
-    <Content Include="Views\Main\Index.cshtml" />
-    <Content Include="Scripts\App\Controllers\OptionGridController.min.js.map">
-      <DependentUpon>OptionGridController.js</DependentUpon>
-    </Content>
+    <None Include="Views\Main\Index.cshtml" />
     <Content Include="Scripts\App\Directives\loadSpinner.min.js.map">
       <DependentUpon>spinner.js</DependentUpon>
     </Content>
@@ -1083,13 +1073,13 @@
     <Content Include="Scripts\App\Directives\circle.min.js.map">
       <DependentUpon>circle.js</DependentUpon>
     </Content>
-    <Content Include="Views\Account\Manage.cshtml" />
-    <Content Include="Views\Main\Register.cshtml" />
-    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
-    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
-    <Content Include="Views\Main\About.cshtml" />
-    <Content Include="Views\Main\Login.cshtml" />
-    <Content Include="Views\Main\Home.cshtml" />
+    <None Include="Views\Account\Manage.cshtml" />
+    <None Include="Views\Main\Register.cshtml" />
+    <None Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <None Include="Views\Account\_SetPasswordPartial.cshtml" />
+    <None Include="Views\Main\About.cshtml" />
+    <None Include="Views\Main\Login.cshtml" />
+    <None Include="Views\Main\Home.cshtml" />
     <Content Include="Views\Portfolio\Options.cshtml" />
     <Content Include="Views\Portfolio\Stocks.cshtml" />
     <Content Include="Content\Images\2_billion_gold_price_bet.jpg" />
@@ -1444,15 +1434,15 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\_references.min.js.map">
       <DependentUpon>_references.js</DependentUpon>
     </Content>
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Dependencies.cshtml" />
-    <Content Include="Views\Shared\_GridPager.cshtml" />
-    <Content Include="Views\Shared\_Grid.cshtml" />
+    <None Include="Views\_ViewStart.cshtml" />
+    <None Include="Views\Shared\Error.cshtml" />
+    <None Include="Views\Shared\_Dependencies.cshtml" />
+    <None Include="Views\Shared\_GridPager.cshtml" />
+    <None Include="Views\Shared\_Grid.cshtml" />
     <Content Include="Views\Grid\_OptionTable.cshtml" />
   </ItemGroup>
   <ItemGroup>

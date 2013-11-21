@@ -9,9 +9,11 @@
 
 namespace Portfolio.Controllers
 {
+    using System.Collections.Generic;
     using System.Linq;
     using System.Web.Mvc;
 
+    using Core.DTO;
     using Core.Services.Interfaces;
 
     using Portfolio.Attributes;
@@ -112,9 +114,8 @@ namespace Portfolio.Controllers
         /// </returns>
         public ActionResult Options(string symbol)
         {
-            if (string.IsNullOrEmpty(symbol)) return this.View();
-            var optionData = this.yahooFinanceService.GetData(symbol);
-            return this.View(optionData);
+            var data = this.yahooFinanceService.GetData(symbol);
+            return this.View(data);
         }
 
         /// <summary>

@@ -20,6 +20,8 @@ namespace Core.Services
     using Core.Services.Interfaces;
     using Core.Utilities;
 
+    using Microsoft.FSharp.Collections;
+
     using Newtonsoft.Json.Linq;
 
     /// <summary>
@@ -62,8 +64,8 @@ namespace Core.Services
             }
 
             var marketData = VolatilityAndMarketData.getMarketData(symbol, from.Value, to.Value).Reverse();
-                
-                // old to recent.
+
+            // old to recent.
             return DtoInjector<VolatilityAndMarketData.MarketData, MarketDto>.InjectList(marketData);
         }
 
@@ -78,12 +80,7 @@ namespace Core.Services
         /// </returns>
         public IEnumerable<OptionDto> GetData(string symbol)
         {
-            if (string.IsNullOrEmpty(symbol))
-            {
-                return null;
-            }
-
-            var optionData = Options.GetOptionsData(symbol);
+            var optionData = !string.IsNullOrEmpty(symbol) ? Options.GetOptionsData(symbol) : FSharpList<Options.OptionsData>.Empty;
             return DtoInjector<Options.OptionsData, OptionDto>.InjectList(optionData);
         }
 
@@ -137,7 +134,7 @@ namespace Core.Services
                             x =>
                             new GoogleFinanceJSON
                                 {
-                                    Symbol = x["t"].ToObject<string>(), 
+                                    Symbol = x["t"].ToObject<string>(),
                                     Name = x["n"].ToObject<string>()
                                 })
                             .Where(x => !string.IsNullOrEmpty(x.Symbol) && !string.IsNullOrEmpty(x.Name));

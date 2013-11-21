@@ -1,23 +1,28 @@
-﻿<h1>Option Analysis</h1>
+﻿@using GridMvc.Html
+@model IEnumerable<Core.DTO.OptionDto>
+
+<h1>Option Tables</h1>
 <p>All prices are in USD</p>
 <hr />
 <div>
     <form>
-        <span>Search:</span>
-        <input class="form-control-autocomplete" type="text" placeholder="Press Enter to Add"
+        <label>Search:</label>
+        <input class="form-control" type="text" placeholder="Press enter to select a company - see option table below"
                ng-change="OnInputChange()" ng-enter="SelectSymbol()" ng-model="selected"
                typeahead="symbol as symbol.Name + ' - ' + symbol.Symbol for symbol in symbols | limitTo: 5" autofocus />
     </form>
 </div>
 <circle></circle>
-<div ng-hide="hasOptionData()">
-    <hr />
-    <p>Please search for a company to view its option table.</p>
-</div>
+<hr />
 <div>
-    <hr />
-    @if (Model != null)
-    {
-        Html.RenderAction("Grid", "Grid", new { data = Model });
-    }
+    @Html.Grid(Model).Columns(columns =>
+            {
+                columns.Add(c => c.Symbol).Filterable(true);
+                columns.Add(c => c.StrikePrice).Filterable(true);
+                columns.Add(c => c.LastPrice).Filterable(true);
+                columns.Add(c => c.Bid).Filterable(true);
+                columns.Add(c => c.Ask).Filterable(true);
+                columns.Add(c => c.Vol).Filterable(true);
+                columns.Add(c => c.OpenInt).Filterable(true);
+            }).WithPaging(10).Sortable(true)
 </div>

@@ -13,6 +13,9 @@ body.home {
     -webkit-background-size: cover;
     background-size: cover;
     background-repeat: no-repeat;
+    -moz-background-origin: content-box;
+    -webkit-background-origin: content-box;
+    background-origin: content-box;
 }
 
 .body-content {
@@ -21,6 +24,7 @@ body.home {
 
 .overlay {
     margin-top: 7%;
+    margin-bottom: 1%;
     background-color: #000000;
     background-color: rgba(0,0,0,0.80);
 }
@@ -73,4 +77,5 @@ body.home {
 
 .form-control.ng-invalid {
     border: 1px solid red;
+}
 }

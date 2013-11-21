@@ -171,7 +171,6 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Attributes\RequireRequestValueAttribute.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\GridController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\PortfolioController.cs" />
     <Compile Include="Controllers\SecureController.cs" />
@@ -239,7 +238,6 @@
     <Content Include="Scripts\App\Directives\spinner.js" />
     <Content Include="Scripts\App\NoAuth.js" />
     <Content Include="Scripts\App\Services\authenticationService.js" />
-    <Content Include="Scripts\App\Services\highChartService.js" />
     <Content Include="Scripts\App\Controllers\NavigationController.js" />
     <Content Include="Scripts\App\Controllers\StockController.js" />
     <Content Include="Scripts\App\Modules\highcharts-ng.js" />
@@ -1381,12 +1379,6 @@
     <Content Include="Scripts\App\Modules\highcharts-ng.min.js.map">
       <DependentUpon>highcharts-ng.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\App\Services\HighChartController.min.js.map">
-      <DependentUpon>highChartService.js</DependentUpon>
-    </Content>
-    <Content Include="Scripts\App\Services\highChartService.min.js.map">
-      <DependentUpon>highChartService.js</DependentUpon>
-    </Content>
     <Content Include="Scripts\App\Controllers\OptionController.min.js.map">
       <DependentUpon>OptionController.js</DependentUpon>
     </Content>
@@ -1443,7 +1435,6 @@
     <None Include="Views\Shared\_Dependencies.cshtml" />
     <None Include="Views\Shared\_GridPager.cshtml" />
     <None Include="Views\Shared\_Grid.cshtml" />
-    <Content Include="Views\Grid\_OptionTable.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">

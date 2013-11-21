@@ -3,7 +3,7 @@
 <div>
     <form>
         <span>Search:</span>
-        <input class="form-control-autocomplete" type="text" placeholder="Please search for a company to view its stock data. (Press Enter to Select)" ng-change="OnInputChange()" ng-enter="SelectSymbol()"
+        <input class="form-control" type="text" placeholder="Please search for a company to view its stock data. (Press Enter to Select)" ng-change="OnInputChange()" ng-enter="SelectSymbol()"
                ng-model="selected" typeahead="symbol as symbol.Name + ' - ' + symbol.Symbol for symbol in symbols | limitTo: 5" autofocus>
     </form>
 </div>
@@ -60,7 +60,7 @@
                     <input type="checkbox" ng-model="s.checked" ng-change="updateChart(s.Symbol, s.checked)" />
                 </td>
                 <td>
-                    <button class="btn btn-danger btn-mini" ng-click="RemoveFromList($index, s.Symbol)">
+                    <button class="btn btn-danger btn-xs" ng-click="RemoveFromList($index, s.Symbol)">
                         <span class="glyphicon glyphicon-remove"></span>
                     </button>
                 </td>

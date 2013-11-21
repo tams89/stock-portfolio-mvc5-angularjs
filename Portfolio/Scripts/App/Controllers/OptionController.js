@@ -29,16 +29,8 @@ app.controller("OptionController", function($scope, autocompleteService, toaster
     
     $scope.SelectSymbol = function () {
         $scope.loading = true;
-        optionAnalysisService.postSelectedOption($scope.selected.Symbol);
+        optionAnalysisService.getOptionTableData($scope.selected.Symbol);
         $scope.loading = false;
-    };
-
-    $scope.hasOptionData = function() {
-        if ($scope.optionData.length > 0) {
-            return true;
-        } else {
-            return false;
-        }
     };
 
 });

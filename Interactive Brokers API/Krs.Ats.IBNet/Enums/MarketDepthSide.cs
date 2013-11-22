@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="MarketDepthSide.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Market Depth Side
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 
 namespace Krs.Ats.IBNet
@@ -11,7 +22,8 @@ namespace Krs.Ats.IBNet
         /// <summary>
         /// Ask Price Side
         /// </summary>
-        Ask = 0,
+        Ask = 0, 
+
         /// <summary>
         /// Bid Price Side
         /// </summary>

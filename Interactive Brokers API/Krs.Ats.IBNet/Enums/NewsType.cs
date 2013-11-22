@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="NewsType.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   News Message Type
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 
 namespace Krs.Ats.IBNet
@@ -11,11 +22,13 @@ namespace Krs.Ats.IBNet
         /// <summary>
         /// Reqular news bulletin
         /// </summary>
-        Regular = 1,
+        Regular = 1, 
+
         /// <summary>
         /// Exchange no longer available for trading
         /// </summary>
-        ExchangeUnavailable = 2,
+        ExchangeUnavailable = 2, 
+
         /// <summary>
         /// Exchange is available for trading
         /// </summary>

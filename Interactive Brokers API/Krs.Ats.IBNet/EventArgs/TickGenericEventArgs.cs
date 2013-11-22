@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="TickGenericEventArgs.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Tick Generic Event Arguments
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 
 namespace Krs.Ats.IBNet
@@ -8,18 +19,34 @@ namespace Krs.Ats.IBNet
 	[Serializable()]
 	public class TickGenericEventArgs : EventArgs
 	{
-		private int tickerId;
+	    /// <summary>
+	    /// The ticker id.
+	    /// </summary>
+	    private int tickerId;
 
-		private TickType tickType;
+	    /// <summary>
+	    /// The tick type.
+	    /// </summary>
+	    private TickType tickType;
 
-		private double value;
+	    /// <summary>
+	    /// The value.
+	    /// </summary>
+	    private double value;
 
 		/// <summary>
+		/// Initializes a new instance of the <see cref="TickGenericEventArgs"/> class. 
 		/// Full Constructor
 		/// </summary>
-		/// <param name="tickerId">The ticker Id that was specified previously in the call to reqMktData().</param>
-		/// <param name="tickType">Specifies the type of price.</param>
-		/// <param name="value">The value of the specified field.</param>
+		/// <param name="tickerId">
+		/// The ticker Id that was specified previously in the call to reqMktData().
+		/// </param>
+		/// <param name="tickType">
+		/// Specifies the type of price.
+		/// </param>
+		/// <param name="value">
+		/// The value of the specified field.
+		/// </param>
 		public TickGenericEventArgs(int tickerId, TickType tickType, double value)
 		{
 			this.tickerId = tickerId;
@@ -28,6 +55,7 @@ namespace Krs.Ats.IBNet
 		}
 
 		/// <summary>
+		/// Initializes a new instance of the <see cref="TickGenericEventArgs"/> class. 
 		/// Uninitialized Constructor for Serialization
 		/// </summary>
 		public TickGenericEventArgs()

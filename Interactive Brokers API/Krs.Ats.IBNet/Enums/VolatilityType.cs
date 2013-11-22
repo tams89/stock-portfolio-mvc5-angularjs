@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="VolatilityType.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Time frame for Volatility
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 
 namespace Krs.Ats.IBNet
@@ -11,11 +22,13 @@ namespace Krs.Ats.IBNet
         /// <summary>
         /// Undefined Volatility
         /// </summary>
-        Undefined = 0,
+        Undefined = 0, 
+
         /// <summary>
         /// Daily Average Volatility
         /// </summary>
-        Daily = 1,
+        Daily = 1, 
+
         /// <summary>
         /// Annual Average Volatility
         /// </summary>

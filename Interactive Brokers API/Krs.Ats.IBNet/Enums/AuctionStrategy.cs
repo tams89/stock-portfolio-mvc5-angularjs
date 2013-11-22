@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="AuctionStrategy.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Order Auction Strategy
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 
 namespace Krs.Ats.IBNet
@@ -11,15 +22,18 @@ namespace Krs.Ats.IBNet
         /// <summary>
         /// Undefined
         /// </summary>
-        Undefined = 0,
+        Undefined = 0, 
+
         /// <summary>
         /// Auction Match
         /// </summary>
-        AuctionMatch = 1,
+        AuctionMatch = 1, 
+
         /// <summary>
         /// Auction Improvement
         /// </summary>
-        AuctionImprovement = 2,
+        AuctionImprovement = 2, 
+
         /// <summary>
         /// Auction Transparent
         /// </summary>

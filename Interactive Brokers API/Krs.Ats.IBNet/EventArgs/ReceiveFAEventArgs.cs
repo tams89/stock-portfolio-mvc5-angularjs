@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ReceiveFAEventArgs.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Receive Financial Advisor Event Arguments
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 
 namespace Krs.Ats.IBNet
@@ -8,15 +19,26 @@ namespace Krs.Ats.IBNet
     [Serializable()]
     public class ReceiveFAEventArgs : EventArgs
     {
+        /// <summary>
+        /// The fa data type.
+        /// </summary>
         private FADataType faDataType;
 
+        /// <summary>
+        /// The xml.
+        /// </summary>
         private string xml;
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ReceiveFAEventArgs"/> class. 
         /// Full Constructor
         /// </summary>
-        /// <param name="faDataType">Specifies the type of Financial Advisor configuration data being received from TWS.</param>
-        /// <param name="xml">The XML string containing the previously requested FA configuration information.</param>
+        /// <param name="faDataType">
+        /// Specifies the type of Financial Advisor configuration data being received from TWS.
+        /// </param>
+        /// <param name="xml">
+        /// The XML string containing the previously requested FA configuration information.
+        /// </param>
         public ReceiveFAEventArgs(FADataType faDataType, string xml)
         {
             this.faDataType = faDataType;
@@ -24,6 +46,7 @@ namespace Krs.Ats.IBNet
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ReceiveFAEventArgs"/> class. 
         /// Uninitialized Constructor for Serialization
         /// </summary>
         public ReceiveFAEventArgs()

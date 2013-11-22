@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="AgentDescription.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Used for Rule 80A describes the type of trader.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 using System.ComponentModel;
 
@@ -12,39 +23,48 @@ namespace Krs.Ats.IBNet
         /// <summary>
         /// An individual
         /// </summary>
-        [Description("I")] Individual,
+        [Description("I")] Individual, 
+
         /// <summary>
         /// An Agency
         /// </summary>
-        [Description("A")] Agency,
+        [Description("A")] Agency, 
+
         /// <summary>
         /// An Agent or Other Member
         /// </summary>
-        [Description("W")] AgentOtherMember,
+        [Description("W")] AgentOtherMember, 
+
         /// <summary>
         /// Individual PTIA
         /// </summary>
-        [Description("J")] IndividualPTIA,
+        [Description("J")] IndividualPTIA, 
+
         /// <summary>
         /// Agency PTIA
         /// </summary>
-        [Description("U")] AgencyPTIA,
+        [Description("U")] AgencyPTIA, 
+
         /// <summary>
         /// Agether or Other Member PTIA
         /// </summary>
-        [Description("M")] AgentOtherMemberPTIA,
+        [Description("M")] AgentOtherMemberPTIA, 
+
         /// <summary>
         /// Individual PT
         /// </summary>
-        [Description("K")] IndividualPT,
+        [Description("K")] IndividualPT, 
+
         /// <summary>
         /// Agency PT
         /// </summary>
-        [Description("Y")] AgencyPT,
+        [Description("Y")] AgencyPT, 
+
         /// <summary>
         /// Agent Other Member PT
         /// </summary>
-        [Description("N")] AgentOtherMemberPT,
+        [Description("N")] AgentOtherMemberPT, 
+
         /// <summary>
         /// No Description Provided
         /// </summary>

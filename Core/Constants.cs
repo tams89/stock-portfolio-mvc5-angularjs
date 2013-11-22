@@ -7,16 +7,13 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Core.ORM
+namespace Core.Constants
 {
     /// <summary>
     /// The constants.
     /// </summary>
-    public static class Constants
+    public class Constants
     {
-        /// <summary>
-        /// Retrieve the first connection string in the app.config.
-        /// </summary>
-        public const string AlgoTradingDbConnectionStr = "Data Source=.;Initial Catalog=AlgorithmicTrading;Integrated Security=True";
+
     }
 }

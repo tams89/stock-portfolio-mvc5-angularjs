@@ -6,11 +6,9 @@
 //   The web api config.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-
 namespace Portfolio.App_Start
 {
     using System.Web.Http;
-
     using Newtonsoft.Json.Serialization;
 
     /// <summary>

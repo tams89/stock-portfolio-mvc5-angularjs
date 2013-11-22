@@ -6,6 +6,7 @@
 //   The main controller.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
+
 namespace Portfolio.Controllers
 {
     using System.Web.Mvc;
@@ -25,7 +26,7 @@ namespace Portfolio.Controllers
         /// </returns>
         public ActionResult About()
         {
-            return this.View();
+            return View();
         }
 
         /// <summary>
@@ -36,7 +37,7 @@ namespace Portfolio.Controllers
         /// </returns>
         public ActionResult Home()
         {
-            return this.View("Home");
+            return View("Home");
         }
 
         /// <summary>
@@ -47,7 +48,7 @@ namespace Portfolio.Controllers
         /// </returns>
         public ActionResult Index()
         {
-            return this.View("Index");
+            return View("Index");
         }
 
         /// <summary>
@@ -58,7 +59,7 @@ namespace Portfolio.Controllers
         /// </returns>
         public ActionResult Login()
         {
-            return this.View("Login");
+            return View("Login");
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Portfolio.Controllers
         /// </returns>
         public ActionResult Register()
         {
-            return this.View("Register");
+            return View("Register");
         }
 
         #endregion

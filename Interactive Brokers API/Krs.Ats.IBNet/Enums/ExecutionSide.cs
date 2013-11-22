@@ -1,3 +1,15 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ExecutionSide.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Describes wether a security was bought or sold in an execution.
+//   The past tense equivalent of ActionSide.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 using System.ComponentModel;
 
@@ -13,7 +25,8 @@ namespace Krs.Ats.IBNet
         /// <summary>
         /// Securities were bought.
         /// </summary>
-        [Description("BOT")] Bought,
+        [Description("BOT")] Bought, 
+
         /// <summary>
         /// Securities were sold.
         /// </summary>

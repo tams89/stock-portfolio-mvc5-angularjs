@@ -1,4 +1,15 @@
-﻿using System;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="HFTService.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   The hft service.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -10,13 +21,22 @@ using DapperExtensions;
 
 namespace Core.Services
 {
+    /// <summary>
+    /// The hft service.
+    /// </summary>
+    /// <typeparam name="T">
+    /// </typeparam>
     public class HFTService<T> : ServiceBase<T>, IHFTService where T : class, new()
     {
         /// <summary>
         /// Gets tick data collection from db by matching symbol.
         /// </summary>
-        /// <param name="symbol">The symbol to look for.</param>
-        /// <returns>Collection of tick data.</returns>
+        /// <param name="symbol">
+        /// The symbol to look for.
+        /// </param>
+        /// <returns>
+        /// Collection of tick data.
+        /// </returns>
         public IEnumerable<Tick> BySymbol(string symbol)
         {
             using (var c = new SqlConnection(Constants.AlgoTradingDbConnectionStr))

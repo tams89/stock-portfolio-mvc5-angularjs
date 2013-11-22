@@ -6,11 +6,11 @@
 //   The portfolio controller.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
+
 namespace Portfolio.Controllers
 {
     using System.Linq;
     using System.Web.Mvc;
-
     using Core.Services.Interfaces;
 
     /// <summary>
@@ -56,14 +56,14 @@ namespace Portfolio.Controllers
         [HttpPost]
         public JsonResult AutoComplete(string symbol)
         {
-            var results = this.yahooFinanceService.SymbolSearch(symbol).ToArray();
+            var results = yahooFinanceService.SymbolSearch(symbol).ToArray();
             if (!results.Any())
             {
                 return null;
             }
 
             var json = results.Select(x => new { x.Name, x.Symbol });
-            return this.Json(json);
+            return Json(json);
         }
 
         /// <summary>
@@ -78,8 +78,8 @@ namespace Portfolio.Controllers
         [HttpPost]
         public JsonResult MarketData(string symbol)
         {
-            var marketData = this.yahooFinanceService.GetData(symbol, null, null);
-            return this.Json(marketData);
+            var marketData = yahooFinanceService.GetData(symbol, null, null);
+            return Json(marketData);
         }
 
         /// <summary>
@@ -94,8 +94,8 @@ namespace Portfolio.Controllers
         [HttpPost]
         public JsonResult OptionData(string symbol)
         {
-            var optionData = this.yahooFinanceService.GetData(symbol);
-            return this.Json(optionData);
+            var optionData = yahooFinanceService.GetData(symbol);
+            return Json(optionData);
         }
 
         /// <summary>
@@ -109,8 +109,8 @@ namespace Portfolio.Controllers
         /// </returns>
         public ActionResult Options(string symbol)
         {
-            var data = this.yahooFinanceService.GetData(symbol);
-            return this.View(data);
+            var data = yahooFinanceService.GetData(symbol);
+            return View(data);
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace Portfolio.Controllers
         /// </returns>
         public ActionResult Stocks()
         {
-            return this.View();
+            return View();
         }
 
         #endregion

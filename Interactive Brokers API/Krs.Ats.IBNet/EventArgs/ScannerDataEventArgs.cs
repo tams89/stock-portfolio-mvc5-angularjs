@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ScannerDataEventArgs.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Scanner Data Event Arguments
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 
 namespace Krs.Ats.IBNet
@@ -8,25 +19,67 @@ namespace Krs.Ats.IBNet
 	[Serializable()]
 	public class ScannerDataEventArgs : EventArgs
 	{
-		private string benchmark;
-		private ContractDetails contractDetails;
-		private string distance;
-		private string legsStr;
-		private string projection;
-		private int rank;
-		private int requestId;
+	    /// <summary>
+	    /// The benchmark.
+	    /// </summary>
+	    private string benchmark;
+
+	    /// <summary>
+	    /// The contract details.
+	    /// </summary>
+	    private ContractDetails contractDetails;
+
+	    /// <summary>
+	    /// The distance.
+	    /// </summary>
+	    private string distance;
+
+	    /// <summary>
+	    /// The legs str.
+	    /// </summary>
+	    private string legsStr;
+
+	    /// <summary>
+	    /// The projection.
+	    /// </summary>
+	    private string projection;
+
+	    /// <summary>
+	    /// The rank.
+	    /// </summary>
+	    private int rank;
+
+	    /// <summary>
+	    /// The request id.
+	    /// </summary>
+	    private int requestId;
 
 		/// <summary>
+		/// Initializes a new instance of the <see cref="ScannerDataEventArgs"/> class. 
 		/// Full Constructor
 		/// </summary>
-		/// <param name="requestId">The ticker ID of the request to which this row is responding.</param>
-		/// <param name="rank">The ranking within the response of this bar.</param>
-		/// <param name="contractDetails">This structure contains a full description of the contract that was executed.</param>
-		/// <param name="distance">Meaning varies based on query.</param>
-		/// <param name="benchmark">Meaning varies based on query.</param>
-		/// <param name="projection">Meaning varies based on query.</param>
-		/// <param name="legsStr">Describes combo legs when scan is returning EFP.</param>
-		public ScannerDataEventArgs(int requestId, int rank, ContractDetails contractDetails, string distance,
+		/// <param name="requestId">
+		/// The ticker ID of the request to which this row is responding.
+		/// </param>
+		/// <param name="rank">
+		/// The ranking within the response of this bar.
+		/// </param>
+		/// <param name="contractDetails">
+		/// This structure contains a full description of the contract that was executed.
+		/// </param>
+		/// <param name="distance">
+		/// Meaning varies based on query.
+		/// </param>
+		/// <param name="benchmark">
+		/// Meaning varies based on query.
+		/// </param>
+		/// <param name="projection">
+		/// Meaning varies based on query.
+		/// </param>
+		/// <param name="legsStr">
+		/// Describes combo legs when scan is returning EFP.
+		/// </param>
+		public ScannerDataEventArgs(int requestId, int rank, ContractDetails contractDetails, string distance, 
 									string benchmark, string projection, string legsStr)
 		{
 			this.requestId = requestId;
@@ -39,6 +92,7 @@ namespace Krs.Ats.IBNet
 		}
 
 		/// <summary>
+		/// Initializes a new instance of the <see cref="ScannerDataEventArgs"/> class. 
 		/// Uninitialized Constructor for Serialization
 		/// </summary>
 		public ScannerDataEventArgs()

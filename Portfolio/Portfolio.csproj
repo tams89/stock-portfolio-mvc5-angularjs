@@ -171,9 +171,11 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Attributes\RequireRequestValueAttribute.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\PortfolioController.cs" />
     <Compile Include="Controllers\SecureController.cs" />
+    <Compile Include="App_Start\ErrorConfig.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -253,8 +255,8 @@
     <Content Include="Scripts\HighStock\highstock.js" />
     <Content Include="Scripts\HighStock\Modules\exporting.js" />
     <Content Include="Scripts\HighStock\Themes\grid.js" />
-    <Content Include="algotrader.pfx" />
     <Content Include="Grid.mvc.readme" />
+    <Content Include="App_Code\Helpers.cshtml" />
     <None Include="Properties\PublishProfiles\algotrader.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Scripts\App\NoAuth.min.js.map">
@@ -276,6 +278,7 @@
     <Content Include="Scripts\Jquery\Validate\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\Jquery\Validate\jquery.validate.js" />
     <Content Include="Scripts\Jquery\Validate\jquery.validate.min.js" />
+    <Content Include="Views\Error\Index.cshtml" />
     <None Include="Views\Main\Index.cshtml" />
     <Content Include="Scripts\App\Directives\loadSpinner.min.js.map">
       <DependentUpon>spinner.js</DependentUpon>
@@ -1461,7 +1464,8 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>algotrader.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <DelaySign>true</DelaySign>

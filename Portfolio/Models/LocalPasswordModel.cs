@@ -6,6 +6,7 @@
 //   The local password model.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
+
 namespace Portfolio.Models
 {
     using System.ComponentModel.DataAnnotations;

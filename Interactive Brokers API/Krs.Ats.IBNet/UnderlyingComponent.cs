@@ -1,4 +1,15 @@
-﻿using System;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="UnderlyingComponent.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Underlying Component
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -11,14 +22,27 @@ namespace Krs.Ats.IBNet
     public class UnderlyingComponent
     {
         #region Private Properties
+
+        /// <summary>
+        /// The contract id.
+        /// </summary>
         private int contractId;
+
+        /// <summary>
+        /// The delta.
+        /// </summary>
         private double delta;
+
+        /// <summary>
+        /// The price.
+        /// </summary>
         private decimal price;
         #endregion
 
         #region Constructor
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="UnderlyingComponent"/> class. 
         /// Underlying Component
         /// </summary>
         public UnderlyingComponent()
@@ -27,6 +51,7 @@ namespace Krs.Ats.IBNet
             delta = 0;
             price = 0;
         }
+
         #endregion
 
         #region Public Properties
@@ -40,6 +65,7 @@ namespace Krs.Ats.IBNet
             {
                 return contractId;
             }
+
             set
             {
                 contractId = value;
@@ -55,6 +81,7 @@ namespace Krs.Ats.IBNet
             {
                 return delta;
             }
+
             set
             {
                 delta = value;
@@ -70,6 +97,7 @@ namespace Krs.Ats.IBNet
             {
                 return price;
             }
+
             set
             {
                 price = value;

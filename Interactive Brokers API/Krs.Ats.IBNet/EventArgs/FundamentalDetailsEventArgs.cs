@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="FundamentalDetailsEventArgs.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Contract Details Event Arguments
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 
 namespace Krs.Ats.IBNet
@@ -8,14 +19,26 @@ namespace Krs.Ats.IBNet
     [Serializable()]
     public class FundamentalDetailsEventArgs : EventArgs
     {
+        /// <summary>
+        /// The data.
+        /// </summary>
         private string data;
+
+        /// <summary>
+        /// The request id.
+        /// </summary>
         private int requestId;
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="FundamentalDetailsEventArgs"/> class. 
         /// Full Constructor
         /// </summary>
-        /// <param name="requestId">Request Id</param>
-        /// <param name="data">Xml Data</param>
+        /// <param name="requestId">
+        /// Request Id
+        /// </param>
+        /// <param name="data">
+        /// Xml Data
+        /// </param>
         public FundamentalDetailsEventArgs(int requestId, string data)
         {
             this.requestId = requestId;
@@ -23,6 +46,7 @@ namespace Krs.Ats.IBNet
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="FundamentalDetailsEventArgs"/> class. 
         /// Uninitialized Constructor for Serialization
         /// </summary>
         public FundamentalDetailsEventArgs()

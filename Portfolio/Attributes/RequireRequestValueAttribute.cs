@@ -6,6 +6,7 @@
 //   The require request value attribute.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
+
 namespace Portfolio.Attributes
 {
     using System.Reflection;
@@ -26,7 +27,7 @@ namespace Portfolio.Attributes
         /// </param>
         public RequireRequestValueAttribute(string valueName)
         {
-            this.ValueName = valueName;
+            ValueName = valueName;
         }
 
         #endregion
@@ -56,7 +57,7 @@ namespace Portfolio.Attributes
         /// </returns>
         public override bool IsValidForRequest(ControllerContext controllerContext, MethodInfo methodInfo)
         {
-            return controllerContext.HttpContext.Request[this.ValueName] != null;
+            return controllerContext.HttpContext.Request[ValueName] != null;
         }
 
         #endregion

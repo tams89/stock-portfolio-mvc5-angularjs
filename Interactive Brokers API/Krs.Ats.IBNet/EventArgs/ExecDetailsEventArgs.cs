@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ExecDetailsEventArgs.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Exec Details Event Arguments
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 
 namespace Krs.Ats.IBNet
@@ -8,18 +19,42 @@ namespace Krs.Ats.IBNet
     [Serializable()]
     public class ExecDetailsEventArgs : EventArgs
     {
+        /// <summary>
+        /// The contract.
+        /// </summary>
         private Contract contract;
+
+        /// <summary>
+        /// The execution.
+        /// </summary>
         private Execution execution;
+
+        /// <summary>
+        /// The order id.
+        /// </summary>
         private int orderId;
+
+        /// <summary>
+        /// The request id.
+        /// </summary>
         private int requestId;
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ExecDetailsEventArgs"/> class. 
         /// Full Constructor
         /// </summary>
-        /// <param name="requestId">The request Id for the Execution Details.</param>
-        /// <param name="orderId">The order Id that was specified previously in the call to placeOrder().</param>
-        /// <param name="contract">This structure contains a full description of the contract that was executed.</param>
-        /// <param name="execution">This structure contains addition order execution details.</param>
+        /// <param name="requestId">
+        /// The request Id for the Execution Details.
+        /// </param>
+        /// <param name="orderId">
+        /// The order Id that was specified previously in the call to placeOrder().
+        /// </param>
+        /// <param name="contract">
+        /// This structure contains a full description of the contract that was executed.
+        /// </param>
+        /// <param name="execution">
+        /// This structure contains addition order execution details.
+        /// </param>
         public ExecDetailsEventArgs(int requestId, int orderId, Contract contract, Execution execution)
         {
             this.requestId = requestId;
@@ -29,6 +64,7 @@ namespace Krs.Ats.IBNet
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ExecDetailsEventArgs"/> class. 
         /// Uninitialized Constructor for Serialization
         /// </summary>
         public ExecDetailsEventArgs()

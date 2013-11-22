@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Equity.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Equity Class - uses default constructors for creating an equity contract.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 
 namespace Krs.Ats.IBNet.Contracts
@@ -10,19 +21,27 @@ namespace Krs.Ats.IBNet.Contracts
     public class Equity : Contract
     {
         /// <summary>
+        /// Initializes a new instance of the <see cref="Equity"/> class. 
         /// Create an Equity Contract for Smart Exchanges
         /// </summary>
-        /// <param name="symbol">Symbol of the equity contract. See <see cref="Contract.Symbol"/>.</param>
+        /// <param name="symbol">
+        /// Symbol of the equity contract. See <see cref="Contract.Symbol"/>.
+        /// </param>
         public Equity(string symbol)
             : base(symbol, "Smart", SecurityType.Stock, "USD")
         {
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="Equity"/> class. 
         /// Create an Equity Contract for a specific exchange
         /// </summary>
-        /// <param name="symbol">Symbol for the equity contract. See <see cref="Contract.Symbol"/>.</param>
-        /// <param name="exchange">Exchange for the equity contract. See <see cref="Contract.Exchange"/></param>
+        /// <param name="symbol">
+        /// Symbol for the equity contract. See <see cref="Contract.Symbol"/>.
+        /// </param>
+        /// <param name="exchange">
+        /// Exchange for the equity contract. See <see cref="Contract.Exchange"/>
+        /// </param>
         public Equity(string symbol, string exchange)
             : base(symbol, exchange, SecurityType.Stock, "USD")
         {

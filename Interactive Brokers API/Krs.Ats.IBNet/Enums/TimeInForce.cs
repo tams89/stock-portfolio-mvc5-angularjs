@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="TimeInForce.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Order Time in Force Values
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 using System.ComponentModel;
 
@@ -12,27 +23,33 @@ namespace Krs.Ats.IBNet
         /// <summary>
         /// Day
         /// </summary>
-        [Description("DAY")] Day,
+        [Description("DAY")] Day, 
+
         /// <summary>
         /// Good Till Cancel
         /// </summary>
-        [Description("GTC")] GoodTillCancel,
+        [Description("GTC")] GoodTillCancel, 
+
         /// <summary>
         /// You can set the time in force for MARKET or LIMIT orders as IOC. This dictates that any portion of the order not executed immediately after it becomes available on the market will be cancelled.
         /// </summary>
-        [Description("IOC")] ImmediateOrCancel,
+        [Description("IOC")] ImmediateOrCancel, 
+
         /// <summary>
         /// Setting FOK as the time in force dictates that the entire order must execute immediately or be canceled.
         /// </summary>
-        [Description("FOK")] FillOrKill,
+        [Description("FOK")] FillOrKill, 
+
         /// <summary>
         /// Good Till Date
         /// </summary>
-        [Description("GTD")] GoodTillDate,
+        [Description("GTD")] GoodTillDate, 
+
         /// <summary>
         /// Market On Open
         /// </summary>
-        [Description("OPG")] MarketOnOpen,
+        [Description("OPG")] MarketOnOpen, 
+
         /// <summary>
         /// Undefined
         /// </summary>

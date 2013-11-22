@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="HistoricalDataEventArgs.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Historical Data Event Arguments
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 
 namespace Krs.Ats.IBNet
@@ -8,37 +19,109 @@ namespace Krs.Ats.IBNet
     [Serializable()]
     public class HistoricalDataEventArgs : EventArgs
     {
+        /// <summary>
+        /// The close.
+        /// </summary>
         private decimal close;
+
+        /// <summary>
+        /// The trades.
+        /// </summary>
         private int trades;
+
+        /// <summary>
+        /// The date.
+        /// </summary>
         private DateTime date;
+
+        /// <summary>
+        /// The has gaps.
+        /// </summary>
         private bool hasGaps;
+
+        /// <summary>
+        /// The high.
+        /// </summary>
         private decimal high;
+
+        /// <summary>
+        /// The low.
+        /// </summary>
         private decimal low;
+
+        /// <summary>
+        /// The open.
+        /// </summary>
         private decimal open;
+
+        /// <summary>
+        /// The request id.
+        /// </summary>
         private int requestId;
+
+        /// <summary>
+        /// The volume.
+        /// </summary>
         private int volume;
+
+        /// <summary>
+        /// The wap.
+        /// </summary>
         private double wap;
+
+        /// <summary>
+        /// The record number.
+        /// </summary>
         private int recordNumber;
+
+        /// <summary>
+        /// The record total.
+        /// </summary>
         private int recordTotal;
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="HistoricalDataEventArgs"/> class. 
         /// Full Constructor
         /// </summary>
-        /// <param name="requestId">The ticker Id of the request to which this bar is responding.</param>
-        /// <param name="date">The date-time stamp of the start of the bar.
-        /// The format is determined by the reqHistoricalData() formatDate parameter.</param>
-        /// <param name="open">Bar opening price.</param>
-        /// <param name="high">High price during the time covered by the bar.</param>
-        /// <param name="low">Low price during the time covered by the bar.</param>
-        /// <param name="close">Bar closing price.</param>
-        /// <param name="volume">Volume during the time covered by the bar.</param>
-        /// <param name="trades">When TRADES historical data is returned, represents the number of trades that
-        /// occurred during the time period the bar covers.</param>
-        /// <param name="wap">Weighted average price during the time covered by the bar.</param>
-        /// <param name="hasGaps">Whether or not there are gaps in the data.</param>
-        /// <param name="recordNumber">Current Record Number out of Record Total.</param>
-        /// <param name="recordTotal">Total Records Returned by Historical Request.</param>
-        public HistoricalDataEventArgs(int requestId, DateTime date, decimal open, decimal high, decimal low, decimal close,
+        /// <param name="requestId">
+        /// The ticker Id of the request to which this bar is responding.
+        /// </param>
+        /// <param name="date">
+        /// The date-time stamp of the start of the bar.
+        /// The format is determined by the reqHistoricalData() formatDate parameter.
+        /// </param>
+        /// <param name="open">
+        /// Bar opening price.
+        /// </param>
+        /// <param name="high">
+        /// High price during the time covered by the bar.
+        /// </param>
+        /// <param name="low">
+        /// Low price during the time covered by the bar.
+        /// </param>
+        /// <param name="close">
+        /// Bar closing price.
+        /// </param>
+        /// <param name="volume">
+        /// Volume during the time covered by the bar.
+        /// </param>
+        /// <param name="trades">
+        /// When TRADES historical data is returned, represents the number of trades that
+        /// occurred during the time period the bar covers.
+        /// </param>
+        /// <param name="wap">
+        /// Weighted average price during the time covered by the bar.
+        /// </param>
+        /// <param name="hasGaps">
+        /// Whether or not there are gaps in the data.
+        /// </param>
+        /// <param name="recordNumber">
+        /// Current Record Number out of Record Total.
+        /// </param>
+        /// <param name="recordTotal">
+        /// Total Records Returned by Historical Request.
+        /// </param>
+        public HistoricalDataEventArgs(int requestId, DateTime date, decimal open, decimal high, decimal low, decimal close, 
                                        int volume, int trades, double wap, bool hasGaps, int recordNumber, int recordTotal)
         {
             this.requestId = requestId;
@@ -56,6 +139,7 @@ namespace Krs.Ats.IBNet
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="HistoricalDataEventArgs"/> class. 
         /// Uninitialized Constructor for Serialization
         /// </summary>
         public HistoricalDataEventArgs()

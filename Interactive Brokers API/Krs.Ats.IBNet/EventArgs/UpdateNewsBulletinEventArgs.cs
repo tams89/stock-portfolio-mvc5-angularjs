@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="UpdateNewsBulletinEventArgs.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Update News Bulletin Event Arguments
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 
 namespace Krs.Ats.IBNet
@@ -8,18 +19,42 @@ namespace Krs.Ats.IBNet
 	[Serializable()]
 	public class UpdateNewsBulletinEventArgs : EventArgs
 	{
-		private string message;
-		private int msgId;
-		private NewsType msgType;
-		private string originExchange;
+	    /// <summary>
+	    /// The message.
+	    /// </summary>
+	    private string message;
+
+	    /// <summary>
+	    /// The msg id.
+	    /// </summary>
+	    private int msgId;
+
+	    /// <summary>
+	    /// The msg type.
+	    /// </summary>
+	    private NewsType msgType;
+
+	    /// <summary>
+	    /// The origin exchange.
+	    /// </summary>
+	    private string originExchange;
 
 		/// <summary>
+		/// Initializes a new instance of the <see cref="UpdateNewsBulletinEventArgs"/> class. 
 		/// Full Constructor
 		/// </summary>
-		/// <param name="msgId">The bulletin ID, incrementing for each new bulletin.</param>
-		/// <param name="msgType">Specifies the type of bulletin.</param>
-		/// <param name="message">The bulletin's message text.</param>
-		/// <param name="originExchange">The exchange from which this message originated.</param>
+		/// <param name="msgId">
+		/// The bulletin ID, incrementing for each new bulletin.
+		/// </param>
+		/// <param name="msgType">
+		/// Specifies the type of bulletin.
+		/// </param>
+		/// <param name="message">
+		/// The bulletin's message text.
+		/// </param>
+		/// <param name="originExchange">
+		/// The exchange from which this message originated.
+		/// </param>
 		public UpdateNewsBulletinEventArgs(int msgId, NewsType msgType, string message, string originExchange)
 		{
 			this.msgId = msgId;
@@ -29,6 +64,7 @@ namespace Krs.Ats.IBNet
 		}
 
 		/// <summary>
+		/// Initializes a new instance of the <see cref="UpdateNewsBulletinEventArgs"/> class. 
 		/// Uninitialized Constructor for Serialization
 		/// </summary>
 		public UpdateNewsBulletinEventArgs()

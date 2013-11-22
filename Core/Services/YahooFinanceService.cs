@@ -6,22 +6,18 @@
 //   The yahoo finance service.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-
 namespace Core.Services
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Net;
-
     using AlgoTrader.YahooApi;
-
-    using Core.DTO;
-    using Core.Services.Interfaces;
-    using Core.Utilities;
-
+    using DTO;
+    using Models.Site;
+    using Interfaces;
+    using Utilities;
     using Microsoft.FSharp.Collections;
-
     using Newtonsoft.Json.Linq;
 
     /// <summary>
@@ -48,24 +44,10 @@ namespace Core.Services
         /// </returns>
         public IEnumerable<MarketDto> GetData(string symbol, DateTime? from, DateTime? to)
         {
-            if (string.IsNullOrEmpty(symbol))
-            {
-                return null;
-            }
-
-            if (!from.HasValue)
-            {
-                from = DateTime.Today.AddYears(-2);
-            }
-
-            if (!to.HasValue)
-            {
-                to = DateTime.Today;
-            }
-
-            var marketData = VolatilityAndMarketData.getMarketData(symbol, from.Value, to.Value).Reverse();
-
-            // old to recent.
+            if (string.IsNullOrEmpty(symbol)) return Enumerable.Empty<MarketDto>();
+            if (!from.HasValue) from = DateTime.Today.AddYears(-2);
+            if (!to.HasValue) to = DateTime.Today;
+            var marketData = VolatilityAndMarketData.getMarketData(symbol, from.Value, to.Value).Reverse(); // Old to new.
             return DtoInjector<VolatilityAndMarketData.MarketData, MarketDto>.InjectList(marketData);
         }
 
@@ -98,14 +80,11 @@ namespace Core.Services
         /// <returns>
         /// The <see cref="IEnumerable"/>.
         /// </returns>
-        public IEnumerable<GoogleFinanceJSON> SymbolSearch(string term)
+        public IEnumerable<GoogleFinanceJsonDto> SymbolSearch(string term)
         {
             try
             {
-                if (string.IsNullOrEmpty(term))
-                {
-                    return Enumerable.Empty<GoogleFinanceJSON>();
-                }
+                if (string.IsNullOrEmpty(term)) return Enumerable.Empty<GoogleFinanceJsonDto>();
 
                 WebRequest.DefaultWebProxy = null;
                 using (var client = new WebClient())
@@ -132,9 +111,9 @@ namespace Core.Services
                     var jsonCustomArray =
                         parsed.Select(
                             x =>
-                            new GoogleFinanceJSON
+                            new GoogleFinanceJsonDto
                                 {
-                                    Symbol = x["t"].ToObject<string>(),
+                                    Symbol = x["t"].ToObject<string>(), 
                                     Name = x["n"].ToObject<string>()
                                 })
                             .Where(x => !string.IsNullOrEmpty(x.Symbol) && !string.IsNullOrEmpty(x.Name));
@@ -150,24 +129,6 @@ namespace Core.Services
 
         #endregion
 
-        /// <summary>
-        /// The google finance json.
-        /// </summary>
-        public struct GoogleFinanceJSON
-        {
-            #region Public Properties
 
-            /// <summary>
-            /// Gets or sets the name.
-            /// </summary>
-            public string Name { get; set; }
-
-            /// <summary>
-            /// Gets or sets the symbol.
-            /// </summary>
-            public string Symbol { get; set; }
-
-            #endregion
-        }
     }
 }

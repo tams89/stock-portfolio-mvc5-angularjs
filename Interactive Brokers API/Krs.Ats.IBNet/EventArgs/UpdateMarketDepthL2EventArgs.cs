@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="UpdateMarketDepthL2EventArgs.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Update Market Depth L2 Event Arguments
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 
 namespace Krs.Ats.IBNet
@@ -8,25 +19,67 @@ namespace Krs.Ats.IBNet
 	[Serializable()]
 	public class UpdateMarketDepthL2EventArgs : EventArgs
 	{
-		private string marketMaker;
-		private MarketDepthOperation operation;
-		private int position;
-		private decimal price;
-		private MarketDepthSide side;
-		private int size;
-		private int tickerId;
+	    /// <summary>
+	    /// The market maker.
+	    /// </summary>
+	    private string marketMaker;
+
+	    /// <summary>
+	    /// The operation.
+	    /// </summary>
+	    private MarketDepthOperation operation;
+
+	    /// <summary>
+	    /// The position.
+	    /// </summary>
+	    private int position;
+
+	    /// <summary>
+	    /// The price.
+	    /// </summary>
+	    private decimal price;
+
+	    /// <summary>
+	    /// The side.
+	    /// </summary>
+	    private MarketDepthSide side;
+
+	    /// <summary>
+	    /// The size.
+	    /// </summary>
+	    private int size;
+
+	    /// <summary>
+	    /// The ticker id.
+	    /// </summary>
+	    private int tickerId;
 
 		/// <summary>
+		/// Initializes a new instance of the <see cref="UpdateMarketDepthL2EventArgs"/> class. 
 		/// Full Constructor
 		/// </summary>
-		/// <param name="tickerId">The ticker Id that was specified previously in the call to <see cref="IBClient.RequestMarketDepth"/>.</param>
-		/// <param name="position">Specifies the row id of this market depth entry.</param>
-		/// <param name="marketMaker">Specifies the exchange hosting this order.</param>
-		/// <param name="operation">Identifies the how this order should be applied to the market depth.</param>
-		/// <param name="side">Identifies the side of the book that this order belongs to.</param>
-		/// <param name="price">The order price.</param>
-		/// <param name="size">The order size.</param>
-		public UpdateMarketDepthL2EventArgs(int tickerId, int position, string marketMaker, MarketDepthOperation operation,
+		/// <param name="tickerId">
+		/// The ticker Id that was specified previously in the call to <see cref="IBClient.RequestMarketDepth"/>.
+		/// </param>
+		/// <param name="position">
+		/// Specifies the row id of this market depth entry.
+		/// </param>
+		/// <param name="marketMaker">
+		/// Specifies the exchange hosting this order.
+		/// </param>
+		/// <param name="operation">
+		/// Identifies the how this order should be applied to the market depth.
+		/// </param>
+		/// <param name="side">
+		/// Identifies the side of the book that this order belongs to.
+		/// </param>
+		/// <param name="price">
+		/// The order price.
+		/// </param>
+		/// <param name="size">
+		/// The order size.
+		/// </param>
+		public UpdateMarketDepthL2EventArgs(int tickerId, int position, string marketMaker, MarketDepthOperation operation, 
 										 MarketDepthSide side, decimal price, int size)
 		{
 			this.tickerId = tickerId;
@@ -39,6 +92,7 @@ namespace Krs.Ats.IBNet
 		}
 
 		/// <summary>
+		/// Initializes a new instance of the <see cref="UpdateMarketDepthL2EventArgs"/> class. 
 		/// Uninitialized Constructor for Serialization
 		/// </summary>
 		public UpdateMarketDepthL2EventArgs()

@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="TickEFPEventArgs.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Tick EFP Event Arguments
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 
 namespace Krs.Ats.IBNet
@@ -8,32 +19,85 @@ namespace Krs.Ats.IBNet
 	[Serializable()]
 	public class TickEfpEventArgs : EventArgs
 	{
-		private double basisPoints;
-		private double dividendImpact;
-		private double dividendsToExpiry;
-		private string formattedBasisPoints;
-		private string futureExpiry;
-		private int holdDays;
-		private double impliedFuture;
-		private int tickerId;
+	    /// <summary>
+	    /// The basis points.
+	    /// </summary>
+	    private double basisPoints;
 
-		private TickType tickType;
+	    /// <summary>
+	    /// The dividend impact.
+	    /// </summary>
+	    private double dividendImpact;
+
+	    /// <summary>
+	    /// The dividends to expiry.
+	    /// </summary>
+	    private double dividendsToExpiry;
+
+	    /// <summary>
+	    /// The formatted basis points.
+	    /// </summary>
+	    private string formattedBasisPoints;
+
+	    /// <summary>
+	    /// The future expiry.
+	    /// </summary>
+	    private string futureExpiry;
+
+	    /// <summary>
+	    /// The hold days.
+	    /// </summary>
+	    private int holdDays;
+
+	    /// <summary>
+	    /// The implied future.
+	    /// </summary>
+	    private double impliedFuture;
+
+	    /// <summary>
+	    /// The ticker id.
+	    /// </summary>
+	    private int tickerId;
+
+	    /// <summary>
+	    /// The tick type.
+	    /// </summary>
+	    private TickType tickType;
 
 		/// <summary>
+		/// Initializes a new instance of the <see cref="TickEfpEventArgs"/> class. 
 		/// Full Constructor
 		/// </summary>
-		/// <param name="tickerId">The ticker Id that was specified previously in the call to reqMktData().</param>
-		/// <param name="tickType">Specifies the type of price.</param>
-		/// <param name="basisPoints">Annualized basis points, which is representative of the
-		/// financing rate that can be directly compared to broker rates.</param>
-		/// <param name="formattedBasisPoints">Annualized basis points as a formatted string that depicts them in percentage form.</param>
-		/// <param name="impliedFuture">Implied futures price.</param>
-		/// <param name="holdDays">Number of “hold days” until the expiry of the EFP.</param>
-		/// <param name="futureExpiry">Expiration date of the single stock future.</param>
-		/// <param name="dividendImpact">The “dividend impact” upon the annualized basis points interest rate.</param>
-		/// <param name="dividendsToExpiry">The dividends expected until the expiration of the single stock future.</param>
-		public TickEfpEventArgs(int tickerId, TickType tickType, double basisPoints, string formattedBasisPoints,
-								double impliedFuture, int holdDays, string futureExpiry, double dividendImpact,
+		/// <param name="tickerId">
+		/// The ticker Id that was specified previously in the call to reqMktData().
+		/// </param>
+		/// <param name="tickType">
+		/// Specifies the type of price.
+		/// </param>
+		/// <param name="basisPoints">
+		/// Annualized basis points, which is representative of the
+		/// financing rate that can be directly compared to broker rates.
+		/// </param>
+		/// <param name="formattedBasisPoints">
+		/// Annualized basis points as a formatted string that depicts them in percentage form.
+		/// </param>
+		/// <param name="impliedFuture">
+		/// Implied futures price.
+		/// </param>
+		/// <param name="holdDays">
+		/// Number of “hold days” until the expiry of the EFP.
+		/// </param>
+		/// <param name="futureExpiry">
+		/// Expiration date of the single stock future.
+		/// </param>
+		/// <param name="dividendImpact">
+		/// The “dividend impact” upon the annualized basis points interest rate.
+		/// </param>
+		/// <param name="dividendsToExpiry">
+		/// The dividends expected until the expiration of the single stock future.
+		/// </param>
+		public TickEfpEventArgs(int tickerId, TickType tickType, double basisPoints, string formattedBasisPoints, 
+								double impliedFuture, int holdDays, string futureExpiry, double dividendImpact, 
 								double dividendsToExpiry)
 		{
 			this.tickerId = tickerId;
@@ -48,6 +112,7 @@ namespace Krs.Ats.IBNet
 		}
 
 		/// <summary>
+		/// Initializes a new instance of the <see cref="TickEfpEventArgs"/> class. 
 		/// Uninitialized Constructor for Serialization
 		/// </summary>
 		public TickEfpEventArgs()

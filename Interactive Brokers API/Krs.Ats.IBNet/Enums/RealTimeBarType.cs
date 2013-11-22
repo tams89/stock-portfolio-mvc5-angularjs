@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="RealTimeBarType.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Real Time Bar Type - "What to Show"
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 using System.ComponentModel;
 
@@ -13,17 +24,20 @@ namespace Krs.Ats.IBNet
         /// Trades
         /// </summary>
         [Description("TRADES")]
-        Trades,
+        Trades, 
+
         /// <summary>
         /// Bid
         /// </summary>
         [Description("BID")]
-        Bid,
+        Bid, 
+
         /// <summary>
         /// Ask
         /// </summary>
         [Description("ASK")]
-        Ask,
+        Ask, 
+
         /// <summary>
         /// Mid Point
         /// </summary>

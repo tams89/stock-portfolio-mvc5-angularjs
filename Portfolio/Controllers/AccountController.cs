@@ -6,16 +6,15 @@
 //   The account controller.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
+
 namespace Portfolio.Controllers
 {
     using System.Collections.Generic;
     using System.Linq;
     using System.Web.Mvc;
     using System.Web.Security;
-
-    using Portfolio.Filters;
-    using Portfolio.Models;
-
+    using Filters;
+    using Models;
     using WebMatrix.WebData;
 
     /// <summary>
@@ -69,18 +68,18 @@ namespace Portfolio.Controllers
         public ActionResult JsonLogin(LoginModel model)
         {
             // Check validation attributes.
-            if (!this.ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                return this.Json(this.GetErrorsFromModelState());
+                return Json(GetErrorsFromModelState());
             }
 
             if (!WebSecurity.Login(model.UserName, model.Password))
             {
-                return this.Json("The user name or password provided is incorrect.");
+                return Json("The user name or password provided is incorrect.");
             }
 
             FormsAuthentication.SetAuthCookie(model.UserName, false);
-            return this.Json(true);
+            return Json(true);
         }
 
         /// <summary>
@@ -98,9 +97,9 @@ namespace Portfolio.Controllers
         public ActionResult JsonRegister(RegisterModel model)
         {
             // Check validation attributes.
-            if (!this.ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                return this.Json(this.GetErrorsFromModelState());
+                return Json(GetErrorsFromModelState());
             }
 
             // Attempt to register the user
@@ -109,15 +108,15 @@ namespace Portfolio.Controllers
                 WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
                 WebSecurity.Login(model.UserName, model.Password);
                 FormsAuthentication.SetAuthCookie(model.UserName, false);
-                return this.Json(new { success = true });
+                return Json(new { success = true });
             }
             catch (MembershipCreateUserException e)
             {
-                this.ModelState.AddModelError(string.Empty, ErrorCodeToString(e.StatusCode));
+                ModelState.AddModelError(string.Empty, ErrorCodeToString(e.StatusCode));
             }
 
             // If we got this far, something failed
-            return this.Json("Oops, this is embarrassing...");
+            return Json("Oops, this is embarrassing...");
         }
 
         /// <summary>
@@ -131,13 +130,13 @@ namespace Portfolio.Controllers
         public ActionResult LogOff()
         {
             WebSecurity.Logout();
-            if (this.HttpContext.Session != null)
+            if (HttpContext.Session != null)
             {
-                this.HttpContext.Session.Abandon();
-                this.HttpContext.Session.Clear();
+                HttpContext.Session.Abandon();
+                HttpContext.Session.Clear();
             }
 
-            return this.RedirectToAction("Index", "Main");
+            return RedirectToAction("Index", "Main");
         }
 
         #endregion
@@ -203,7 +202,7 @@ namespace Portfolio.Controllers
         /// </returns>
         private IEnumerable<string> GetErrorsFromModelState()
         {
-            return this.ModelState.SelectMany(x => x.Value.Errors.Select(error => error.ErrorMessage));
+            return ModelState.SelectMany(x => x.Value.Errors.Select(error => error.ErrorMessage));
         }
 
         #endregion

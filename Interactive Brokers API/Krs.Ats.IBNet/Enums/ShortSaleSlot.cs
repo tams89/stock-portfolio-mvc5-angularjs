@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ShortSaleSlot.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Used in a combination leg for Short Sale Orders.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 
 namespace Krs.Ats.IBNet
@@ -11,11 +22,13 @@ namespace Krs.Ats.IBNet
         /// <summary>
         /// e.g. retail customer or not SSHORT leg
         /// </summary>
-        Unapplicable = 0,
+        Unapplicable = 0, 
+
         /// <summary>
         /// Clearing Broker
         /// </summary>
-        ClearingBroker = 1,
+        ClearingBroker = 1, 
+
         /// <summary>
         /// Third Party
         /// </summary>

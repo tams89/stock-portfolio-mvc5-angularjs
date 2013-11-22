@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ScannerParametersEventArgs.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Scanner Parameters Event Arguments
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 
 namespace Krs.Ats.IBNet
@@ -8,18 +19,25 @@ namespace Krs.Ats.IBNet
 	[Serializable()]
 	public class ScannerParametersEventArgs : EventArgs
 	{
-		private string xml;
+	    /// <summary>
+	    /// The xml.
+	    /// </summary>
+	    private string xml;
 
 		/// <summary>
+		/// Initializes a new instance of the <see cref="ScannerParametersEventArgs"/> class. 
 		/// Full Constructor
 		/// </summary>
-		/// <param name="xml">Document describing available scanner subscription parameters.</param>
+		/// <param name="xml">
+		/// Document describing available scanner subscription parameters.
+		/// </param>
 		public ScannerParametersEventArgs(string xml)
 		{
 			this.xml = xml;
 		}
 
 		/// <summary>
+		/// Initializes a new instance of the <see cref="ScannerParametersEventArgs"/> class. 
 		/// Uninitialized Constructor for Serialization
 		/// </summary>
 		public ScannerParametersEventArgs()

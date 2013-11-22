@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="TickOptionComputationEventArgs.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Tick Option Computation Event Arguments
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 
 namespace Krs.Ats.IBNet
@@ -8,31 +19,90 @@ namespace Krs.Ats.IBNet
 	[Serializable()]
 	public class TickOptionComputationEventArgs : EventArgs
 	{
-		private double delta;
-		private double impliedVol;
-		private double optionPrice;
-		private double pvDividend;
-		private int tickerId;
-		private double gamma;
-		private double vega;
-		private double theta;
-		private double underlyingPrice;
+	    /// <summary>
+	    /// The delta.
+	    /// </summary>
+	    private double delta;
 
-		private TickType tickType;
+	    /// <summary>
+	    /// The implied vol.
+	    /// </summary>
+	    private double impliedVol;
+
+	    /// <summary>
+	    /// The option price.
+	    /// </summary>
+	    private double optionPrice;
+
+	    /// <summary>
+	    /// The pv dividend.
+	    /// </summary>
+	    private double pvDividend;
+
+	    /// <summary>
+	    /// The ticker id.
+	    /// </summary>
+	    private int tickerId;
+
+	    /// <summary>
+	    /// The gamma.
+	    /// </summary>
+	    private double gamma;
+
+	    /// <summary>
+	    /// The vega.
+	    /// </summary>
+	    private double vega;
+
+	    /// <summary>
+	    /// The theta.
+	    /// </summary>
+	    private double theta;
+
+	    /// <summary>
+	    /// The underlying price.
+	    /// </summary>
+	    private double underlyingPrice;
+
+	    /// <summary>
+	    /// The tick type.
+	    /// </summary>
+	    private TickType tickType;
 
 		/// <summary>
+		/// Initializes a new instance of the <see cref="TickOptionComputationEventArgs"/> class. 
 		/// Full Constructor
 		/// </summary>
-		/// <param name="tickerId">The ticker Id that was specified previously in the call to reqMktData().</param>
-		/// <param name="tickType">Specifies the type of option computation.</param>
-		/// <param name="impliedVol">The implied volatility calculated by the TWS option modeler, using the specificed ticktype value.</param>
-		/// <param name="delta">The option delta calculated by the TWS option modeler.</param>
-		/// <param name="optionPrice">The model price.</param>
-		/// <param name="pvDividend">Present value of dividends expected on the option’s underlier.</param>
-		/// <param name="gamma">Gamma</param>
-		/// <param name="vega">Vega</param>
-		/// <param name="theta">Theta</param>
-		/// <param name="undPrice">Underlying Price</param>
+		/// <param name="tickerId">
+		/// The ticker Id that was specified previously in the call to reqMktData().
+		/// </param>
+		/// <param name="tickType">
+		/// Specifies the type of option computation.
+		/// </param>
+		/// <param name="impliedVol">
+		/// The implied volatility calculated by the TWS option modeler, using the specificed ticktype value.
+		/// </param>
+		/// <param name="delta">
+		/// The option delta calculated by the TWS option modeler.
+		/// </param>
+		/// <param name="optionPrice">
+		/// The model price.
+		/// </param>
+		/// <param name="pvDividend">
+		/// Present value of dividends expected on the option’s underlier.
+		/// </param>
+		/// <param name="gamma">
+		/// Gamma
+		/// </param>
+		/// <param name="vega">
+		/// Vega
+		/// </param>
+		/// <param name="theta">
+		/// Theta
+		/// </param>
+		/// <param name="undPrice">
+		/// Underlying Price
+		/// </param>
 		public TickOptionComputationEventArgs(int tickerId, TickType tickType, double impliedVol, double delta, double optionPrice, double pvDividend, double gamma, double vega, double theta, double undPrice)
 		{
 			this.tickerId = tickerId;
@@ -44,10 +114,11 @@ namespace Krs.Ats.IBNet
 			this.gamma = gamma;
 			this.vega = vega;
 			this.theta = theta;
-			this.underlyingPrice = undPrice;
+			underlyingPrice = undPrice;
 		}
 
 		/// <summary>
+		/// Initializes a new instance of the <see cref="TickOptionComputationEventArgs"/> class. 
 		/// Uninitialized Constructor for Serialization
 		/// </summary>
 		public TickOptionComputationEventArgs()

@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="RealTimeBarEventArgs.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Real Time Bar Event Arguments
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 
 namespace Krs.Ats.IBNet
@@ -8,30 +19,84 @@ namespace Krs.Ats.IBNet
     [Serializable()]
     public class RealTimeBarEventArgs : EventArgs
     {
+        /// <summary>
+        /// The close.
+        /// </summary>
         private decimal close;
+
+        /// <summary>
+        /// The count.
+        /// </summary>
         private int count;
+
+        /// <summary>
+        /// The high.
+        /// </summary>
         private decimal high;
+
+        /// <summary>
+        /// The low.
+        /// </summary>
         private decimal low;
+
+        /// <summary>
+        /// The open.
+        /// </summary>
         private decimal open;
+
+        /// <summary>
+        /// The request id.
+        /// </summary>
         private int requestId;
+
+        /// <summary>
+        /// The time.
+        /// </summary>
         private long time;
+
+        /// <summary>
+        /// The volume.
+        /// </summary>
         private long volume;
+
+        /// <summary>
+        /// The wap.
+        /// </summary>
         private double wap;
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="RealTimeBarEventArgs"/> class. 
         /// Real Time Bar Event Arguments
         /// </summary>
-        /// <param name="requestId">The ticker Id of the request to which this bar is responding.</param>
-        /// <param name="time">The date-time stamp of the start of the bar.
-        /// The format is determined by the reqHistoricalData() formatDate parameter.</param>
-        /// <param name="open">Bar opening price.</param>
-        /// <param name="high">High price during the time covered by the bar.</param>
-        /// <param name="low">Low price during the time covered by the bar.</param>
-        /// <param name="close">Bar closing price.</param>
-        /// <param name="volume">Volume during the time covered by the bar.</param>
-        /// <param name="wap">Weighted average price during the time covered by the bar.</param>
-        /// <param name="count">When TRADES historical data is returned, represents the number of trades that occurred during the time period the bar covers.</param>
-        public RealTimeBarEventArgs(int requestId, long time, decimal open, decimal high, decimal low, decimal close,
+        /// <param name="requestId">
+        /// The ticker Id of the request to which this bar is responding.
+        /// </param>
+        /// <param name="time">
+        /// The date-time stamp of the start of the bar.
+        /// The format is determined by the reqHistoricalData() formatDate parameter.
+        /// </param>
+        /// <param name="open">
+        /// Bar opening price.
+        /// </param>
+        /// <param name="high">
+        /// High price during the time covered by the bar.
+        /// </param>
+        /// <param name="low">
+        /// Low price during the time covered by the bar.
+        /// </param>
+        /// <param name="close">
+        /// Bar closing price.
+        /// </param>
+        /// <param name="volume">
+        /// Volume during the time covered by the bar.
+        /// </param>
+        /// <param name="wap">
+        /// Weighted average price during the time covered by the bar.
+        /// </param>
+        /// <param name="count">
+        /// When TRADES historical data is returned, represents the number of trades that occurred during the time period the bar covers.
+        /// </param>
+        public RealTimeBarEventArgs(int requestId, long time, decimal open, decimal high, decimal low, decimal close, 
                                     long volume, double wap, int count)
         {
             this.requestId = requestId;
@@ -46,6 +111,7 @@ namespace Krs.Ats.IBNet
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="RealTimeBarEventArgs"/> class. 
         /// Uninitialized Constructor for Serialization
         /// </summary>
         public RealTimeBarEventArgs()

@@ -1,4 +1,13 @@
-﻿namespace Krs.Ats.IBNet
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="MarketDataType.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Market Data Type.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace Krs.Ats.IBNet
 {
     /// <summary>
     /// Market Data Type.
@@ -8,12 +17,12 @@
         /// <summary>
         /// Unknown
         /// </summary>
-        Unknown = 0,
+        Unknown = 0, 
 
         /// <summary>
         /// Real-time streaming data.
         /// </summary>
-        RealTime = 1,
+        RealTime = 1, 
 
         /// <summary>
         /// Last data recorded. Frozen data will automatically switch to real-time market data during trading hours.

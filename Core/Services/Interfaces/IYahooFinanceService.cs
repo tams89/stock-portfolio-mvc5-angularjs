@@ -6,13 +6,12 @@
 //   The YahooFinanceService interface.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-
 namespace Core.Services.Interfaces
 {
     using System;
     using System.Collections.Generic;
-
-    using Core.DTO;
+    using DTO;
+    using Models.Site;
 
     /// <summary>
     /// The YahooFinanceService interface.
@@ -63,7 +62,7 @@ namespace Core.Services.Interfaces
         /// <returns>
         /// The <see cref="IEnumerable"/>.
         /// </returns>
-        IEnumerable<YahooFinanceService.GoogleFinanceJSON> SymbolSearch(string term);
+        IEnumerable<GoogleFinanceJsonDto> SymbolSearch(string term);
 
         #endregion
     }

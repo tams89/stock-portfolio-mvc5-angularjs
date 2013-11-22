@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="UpdateAccountValueEventArgs.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Update Account Value Event Arguments
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 
 namespace Krs.Ats.IBNet
@@ -8,19 +19,42 @@ namespace Krs.Ats.IBNet
 	[Serializable()]
 	public class UpdateAccountValueEventArgs : EventArgs
 	{
-		private string accountName;
-		private string currency;
-		private string key;
+	    /// <summary>
+	    /// The account name.
+	    /// </summary>
+	    private string accountName;
 
-		private string value;
+	    /// <summary>
+	    /// The currency.
+	    /// </summary>
+	    private string currency;
+
+	    /// <summary>
+	    /// The key.
+	    /// </summary>
+	    private string key;
+
+	    /// <summary>
+	    /// The value.
+	    /// </summary>
+	    private string value;
 
 		/// <summary>
+		/// Initializes a new instance of the <see cref="UpdateAccountValueEventArgs"/> class. 
 		/// Full Constructor
 		/// </summary>
-		/// <param name="key">A string that indicates one type of account value.</param>
-		/// <param name="value">The value associated with the key.</param>
-		/// <param name="currency">Defines the currency type, in case the value is a currency type.</param>
-		/// <param name="accountName">States the account the message applies to. Useful for Financial Advisor sub-account messages.</param>
+		/// <param name="key">
+		/// A string that indicates one type of account value.
+		/// </param>
+		/// <param name="value">
+		/// The value associated with the key.
+		/// </param>
+		/// <param name="currency">
+		/// Defines the currency type, in case the value is a currency type.
+		/// </param>
+		/// <param name="accountName">
+		/// States the account the message applies to. Useful for Financial Advisor sub-account messages.
+		/// </param>
 		public UpdateAccountValueEventArgs(string key, string value, string currency, string accountName)
 		{
 			this.key = key;
@@ -30,6 +64,7 @@ namespace Krs.Ats.IBNet
 		}
 
 		/// <summary>
+		/// Initializes a new instance of the <see cref="UpdateAccountValueEventArgs"/> class. 
 		/// Uninitialized Constructor for Serialization
 		/// </summary>
 		public UpdateAccountValueEventArgs()

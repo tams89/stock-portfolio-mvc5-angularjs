@@ -1,15 +1,12 @@
-/*****************************************************************
- * Module: EnumDescConverter.cs
- * Type: C# Source Code
- * Version: 1.0
- * Description: Enum Converter using Description Attributes
- * 
- * Revisions
- * ------------------------------------------------
- * [F] 24/02/2004, Jcl - Shaping up
- * [B] 25/02/2004, Jcl - Made it much easier :-)
- * 
- *****************************************************************/
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright company="" file="EnumDescConverter.cs">
+//   
+// </copyright>
+// <summary>
+//   EnumConverter supporting System.ComponentModel.DescriptionAttribute
+// </summary>
+// 
+// --------------------------------------------------------------------------------------------------------------------
 
 using System;
 using System.Collections.Generic;
@@ -59,6 +56,7 @@ namespace Krs.Ats.IBNet
         #endregion
 
         /// <summary>
+        /// Initializes static members of the <see cref="EnumDescConverter"/> class. 
         /// Constructor to create caches
         /// </summary>
         static EnumDescConverter()
@@ -70,7 +68,7 @@ namespace Krs.Ats.IBNet
             {
                 if (type.IsEnum)
                 {
-                    //Add to cache
+                    // Add to cache
                     enums.Add(type);
                 }
             }
@@ -95,15 +93,21 @@ namespace Krs.Ats.IBNet
                         et.NameToEnum.Add(val.ToString(), val);
                     }
                 }
+
                 enumLookup.Add(e, et);
             }
         }
         
+
         /// <summary>
         /// Gets Enum Value's Description Attribute
         /// </summary>
-        /// <param name="value">The value you want the description attribute for</param>
-        /// <returns>The description, if any, else it's .ToString()</returns>
+        /// <param name="value">
+        /// The value you want the description attribute for
+        /// </param>
+        /// <returns>
+        /// The description, if any, else it's .ToString()
+        /// </returns>
         public static string GetEnumDescription(Enum value)
         {
             if (value == null)
@@ -128,9 +132,15 @@ namespace Krs.Ats.IBNet
         /// <summary>
         /// Gets the value of an Enum, based on it's Description Attribute or named value
         /// </summary>
-        /// <param name="value">The Enum type</param>
-        /// <param name="description">The description or name of the element</param>
-        /// <returns>The value, or the passed in description, if it was not found</returns>
+        /// <param name="value">
+        /// The Enum type
+        /// </param>
+        /// <param name="description">
+        /// The description or name of the element
+        /// </param>
+        /// <returns>
+        /// The value, or the passed in description, if it was not found
+        /// </returns>
         public static object GetEnumValue(Type value, string description)
         {
             if (value == null)
@@ -160,6 +170,7 @@ namespace Krs.Ats.IBNet
                         return fi.GetValue(fi.Name);
                     }
                 }
+
                 if (fi.Name == description)
                 {
                     return fi.GetValue(fi.Name);

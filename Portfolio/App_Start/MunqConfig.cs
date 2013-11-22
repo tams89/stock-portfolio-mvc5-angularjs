@@ -8,9 +8,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 
-
 using Portfolio.App_Start;
-
 using WebActivator;
 
 [assembly: PreApplicationStartMethod(typeof(MunqConfig), "PreStart")]
@@ -18,10 +16,8 @@ using WebActivator;
 namespace Portfolio.App_Start
 {
     using System.Web.Mvc;
-
     using Core.Services;
     using Core.Services.Interfaces;
-
     using Munq.MVC3;
 
     /// <summary>

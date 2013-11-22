@@ -1,14 +1,31 @@
-﻿using Core.Models.HFT;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="PortfolioMap.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   The portfolio map.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
+using Core.Models.HFT;
 using DapperExtensions.Mapper;
 
 namespace Core.ORM.Mappings.Portfolio
 {
+    /// <summary>
+    /// The portfolio map.
+    /// </summary>
     public class PortfolioMap : ClassMapper<Models.Portfolio.Portfolio>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PortfolioMap"/> class.
+        /// </summary>
         public PortfolioMap()
         {
-            base.Schema("Portfolio");
-            base.Table("Portfolio");
+            this.Schema("Portfolio");
+            this.Table("Portfolio");
             Map(f => f.PortfolioId).Key(KeyType.Guid);
             Map(f => f.UserId).Column("UserId");
         }

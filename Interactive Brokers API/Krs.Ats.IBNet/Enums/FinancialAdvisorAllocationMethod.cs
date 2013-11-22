@@ -1,4 +1,15 @@
-﻿using System;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="FinancialAdvisorAllocationMethod.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Financial Advisor Allocation Method
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
+using System;
 using System.ComponentModel;
 
 namespace Krs.Ats.IBNet
@@ -12,19 +23,23 @@ namespace Krs.Ats.IBNet
         /// <summary>
         /// Percent Change
         /// </summary>
-        [Description("PctChange")] PercentChange,
+        [Description("PctChange")] PercentChange, 
+
         /// <summary>
         /// Available Equity
         /// </summary>
-        [Description("AvailableEquity")] AvailableEquity,
+        [Description("AvailableEquity")] AvailableEquity, 
+
         /// <summary>
         /// Net Liquidity
         /// </summary>
-        [Description("NetLiq")] NetLiquidity,
+        [Description("NetLiq")] NetLiquidity, 
+
         /// <summary>
         /// Equal Quantity
         /// </summary>
-        [Description("EqualQuantity")] EqualQuantity,
+        [Description("EqualQuantity")] EqualQuantity, 
+
         /// <summary>
         /// No Allocation Method
         /// </summary>

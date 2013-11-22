@@ -6,6 +6,7 @@
 //   The filter config.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
+
 namespace Portfolio.App_Start
 {
     using System.Web.Mvc;

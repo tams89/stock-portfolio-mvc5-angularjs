@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="DeltaNuetralValidationEventArgs.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Execution Data End Event Arguments
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 
 namespace Krs.Ats.IBNet
@@ -8,14 +19,26 @@ namespace Krs.Ats.IBNet
     [Serializable()]
     public class DeltaNuetralValidationEventArgs : EventArgs
     {
+        /// <summary>
+        /// The request id.
+        /// </summary>
         private int requestId;
+
+        /// <summary>
+        /// The under comp.
+        /// </summary>
         private UnderComp underComp;
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="DeltaNuetralValidationEventArgs"/> class. 
         /// Full Constructor
         /// </summary>
-        /// <param name="requestId">Request Id</param>
-        /// <param name="underComp">Underlying Component</param>
+        /// <param name="requestId">
+        /// Request Id
+        /// </param>
+        /// <param name="underComp">
+        /// Underlying Component
+        /// </param>
         public DeltaNuetralValidationEventArgs(int requestId, UnderComp underComp)
         {
             this.requestId = requestId;
@@ -23,6 +46,7 @@ namespace Krs.Ats.IBNet
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="DeltaNuetralValidationEventArgs"/> class. 
         /// Uninitialized Constructor for Serialization
         /// </summary>
         public DeltaNuetralValidationEventArgs()

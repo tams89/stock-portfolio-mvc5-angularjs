@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ScannerSubscription.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Scanner Subscription details to pass to Interactive Brokers
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 
 namespace Krs.Ats.IBNet
@@ -10,27 +21,110 @@ namespace Krs.Ats.IBNet
     {
         #region Private Variables
 
-        private double abovePrice = Double.MaxValue;
-        private int aboveVolume = Int32.MaxValue;
-        private int averageOptionVolumeAbove = Int32.MaxValue;
-        private double belowPrice = Double.MaxValue;
-        private double couponRateAbove = Double.MaxValue;
-        private double couponRateBelow = Double.MaxValue;
-        private String excludeConvertible;
-        private String instrument;
-        private String locationCode;
-        private double marketCapAbove = Double.MaxValue;
-        private double marketCapBelow = Double.MaxValue;
-        private String maturityDateAbove;
-        private String maturityDateBelow;
-        private String moodyRatingAbove;
-        private String moodyRatingBelow;
-        private int numberOfRows = -1; //No row number specified
-        private String scanCode;
-        private String scannerSettingPairs;
-        private String spRatingAbove;
-        private String spRatingBelow;
-        private String stockTypeFilter;
+        /// <summary>
+        /// The above price.
+        /// </summary>
+        private double abovePrice = double.MaxValue;
+
+        /// <summary>
+        /// The above volume.
+        /// </summary>
+        private int aboveVolume = int.MaxValue;
+
+        /// <summary>
+        /// The average option volume above.
+        /// </summary>
+        private int averageOptionVolumeAbove = int.MaxValue;
+
+        /// <summary>
+        /// The below price.
+        /// </summary>
+        private double belowPrice = double.MaxValue;
+
+        /// <summary>
+        /// The coupon rate above.
+        /// </summary>
+        private double couponRateAbove = double.MaxValue;
+
+        /// <summary>
+        /// The coupon rate below.
+        /// </summary>
+        private double couponRateBelow = double.MaxValue;
+
+        /// <summary>
+        /// The exclude convertible.
+        /// </summary>
+        private string excludeConvertible;
+
+        /// <summary>
+        /// The instrument.
+        /// </summary>
+        private string instrument;
+
+        /// <summary>
+        /// The location code.
+        /// </summary>
+        private string locationCode;
+
+        /// <summary>
+        /// The market cap above.
+        /// </summary>
+        private double marketCapAbove = double.MaxValue;
+
+        /// <summary>
+        /// The market cap below.
+        /// </summary>
+        private double marketCapBelow = double.MaxValue;
+
+        /// <summary>
+        /// The maturity date above.
+        /// </summary>
+        private string maturityDateAbove;
+
+        /// <summary>
+        /// The maturity date below.
+        /// </summary>
+        private string maturityDateBelow;
+
+        /// <summary>
+        /// The moody rating above.
+        /// </summary>
+        private string moodyRatingAbove;
+
+        /// <summary>
+        /// The moody rating below.
+        /// </summary>
+        private string moodyRatingBelow;
+
+        /// <summary>
+        /// The number of rows.
+        /// </summary>
+        private int numberOfRows = -1; // No row number specified
+
+        /// <summary>
+        /// The scan code.
+        /// </summary>
+        private string scanCode;
+
+        /// <summary>
+        /// The scanner setting pairs.
+        /// </summary>
+        private string scannerSettingPairs;
+
+        /// <summary>
+        /// The sp rating above.
+        /// </summary>
+        private string spRatingAbove;
+
+        /// <summary>
+        /// The sp rating below.
+        /// </summary>
+        private string spRatingBelow;
+
+        /// <summary>
+        /// The stock type filter.
+        /// </summary>
+        private string stockTypeFilter;
 
         #endregion
 

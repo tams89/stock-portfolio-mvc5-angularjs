@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Execution.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Execution details returned by Interactive Brokers
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 
 namespace Krs.Ats.IBNet
@@ -10,26 +21,82 @@ namespace Krs.Ats.IBNet
     {
         #region Private Variables
 
-        private String accountNumber;
+        /// <summary>
+        /// The account number.
+        /// </summary>
+        private string accountNumber;
+
+        /// <summary>
+        /// The client id.
+        /// </summary>
         private int clientId;
-        private String exchange;
-        private String executionId;
+
+        /// <summary>
+        /// The exchange.
+        /// </summary>
+        private string exchange;
+
+        /// <summary>
+        /// The execution id.
+        /// </summary>
+        private string executionId;
+
+        /// <summary>
+        /// The liquidation.
+        /// </summary>
         private int liquidation;
+
+        /// <summary>
+        /// The order id.
+        /// </summary>
         private int orderId;
+
+        /// <summary>
+        /// The perm id.
+        /// </summary>
         private int permId;
+
+        /// <summary>
+        /// The price.
+        /// </summary>
         private double price;
+
+        /// <summary>
+        /// The shares.
+        /// </summary>
         private int shares;
+
+        /// <summary>
+        /// The side.
+        /// </summary>
         private ExecutionSide side;
-        private String time;
+
+        /// <summary>
+        /// The time.
+        /// </summary>
+        private string time;
+
+        /// <summary>
+        /// The cum quantity.
+        /// </summary>
         private int cumQuantity;
+
+        /// <summary>
+        /// The avg price.
+        /// </summary>
         private decimal avgPrice;
-        private String orderRef;
+
+        /// <summary>
+        /// The order ref.
+        /// </summary>
+        private string orderRef;
 
         #endregion
 
         #region Constructors
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="Execution"/> class. 
         /// Default Constructor
         /// </summary>
         public Execution()
@@ -37,24 +104,53 @@ namespace Krs.Ats.IBNet
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="Execution"/> class. 
         /// Full Constructor
         /// </summary>
-        /// <param name="orderId">The order id.</param>
-        /// <param name="clientId">TWS orders have a fixed client id of "0."</param>
-        /// <param name="executionId">Unique order execution id.</param>
-        /// <param name="time">The order execution time.</param>
-        /// <param name="accountNumber">The customer account number.</param>
-        /// <param name="exchange">Exchange that executed the order.</param>
-        /// <param name="side">Specifies if the transaction was a sale or a purchase.</param>
-        /// <param name="shares">The number of shares filled.</param>
-        /// <param name="price">The order execution price.</param>
-        /// <param name="permId">The TWS id used to identify orders, remains the same over TWS sessions.</param>
-        /// <param name="liquidation">Identifies the position as one to be liquidated last should the need arise.</param>
-        /// <param name="cumQuantity">Cumulative quantity. Used in regular trades, combo trades and legs of the combo.</param>
-        /// <param name="avgPrice">Average price. Used in regular trades, combo trades and legs of the combo.</param>
-        /// <param name="orderRef">Order Reference</param>
-        public Execution(int orderId, int clientId, String executionId, String time, String accountNumber,
-                         String exchange, ExecutionSide side, int shares, double price, int permId, int liquidation,
+        /// <param name="orderId">
+        /// The order id.
+        /// </param>
+        /// <param name="clientId">
+        /// TWS orders have a fixed client id of "0."
+        /// </param>
+        /// <param name="executionId">
+        /// Unique order execution id.
+        /// </param>
+        /// <param name="time">
+        /// The order execution time.
+        /// </param>
+        /// <param name="accountNumber">
+        /// The customer account number.
+        /// </param>
+        /// <param name="exchange">
+        /// Exchange that executed the order.
+        /// </param>
+        /// <param name="side">
+        /// Specifies if the transaction was a sale or a purchase.
+        /// </param>
+        /// <param name="shares">
+        /// The number of shares filled.
+        /// </param>
+        /// <param name="price">
+        /// The order execution price.
+        /// </param>
+        /// <param name="permId">
+        /// The TWS id used to identify orders, remains the same over TWS sessions.
+        /// </param>
+        /// <param name="liquidation">
+        /// Identifies the position as one to be liquidated last should the need arise.
+        /// </param>
+        /// <param name="cumQuantity">
+        /// Cumulative quantity. Used in regular trades, combo trades and legs of the combo.
+        /// </param>
+        /// <param name="avgPrice">
+        /// Average price. Used in regular trades, combo trades and legs of the combo.
+        /// </param>
+        /// <param name="orderRef">
+        /// Order Reference
+        /// </param>
+        public Execution(int orderId, int clientId, string executionId, string time, string accountNumber, 
+                         string exchange, ExecutionSide side, int shares, double price, int permId, int liquidation, 
                          int cumQuantity, decimal avgPrice, string orderRef)
         {
             this.orderId = orderId;

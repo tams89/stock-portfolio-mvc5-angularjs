@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ExecutionFilter.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Argument passed to interactive brokers when requesting execution history.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 
 namespace Krs.Ats.IBNet
@@ -10,12 +21,39 @@ namespace Krs.Ats.IBNet
     {
         #region Private Variables
 
-        private String acctCode;
+        /// <summary>
+        /// The acct code.
+        /// </summary>
+        private string acctCode;
+
+        /// <summary>
+        /// The client id.
+        /// </summary>
         private int clientId;
-        private String exchange;
+
+        /// <summary>
+        /// The exchange.
+        /// </summary>
+        private string exchange;
+
+        /// <summary>
+        /// The security type.
+        /// </summary>
         private SecurityType securityType;
+
+        /// <summary>
+        /// The side.
+        /// </summary>
         private ActionSide side;
-        private String symbol;
+
+        /// <summary>
+        /// The symbol.
+        /// </summary>
+        private string symbol;
+
+        /// <summary>
+        /// The time.
+        /// </summary>
         private DateTime time;
 
         #endregion
@@ -23,6 +61,7 @@ namespace Krs.Ats.IBNet
         #region Constructors
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ExecutionFilter"/> class. 
         /// Default Constructor
         /// </summary>
         public ExecutionFilter()
@@ -32,17 +71,32 @@ namespace Krs.Ats.IBNet
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ExecutionFilter"/> class. 
         /// Full Constructor
         /// </summary>
-        /// <param name="clientId">Filter the results of the ReqExecutions() method based on the clientId.</param>
-        /// <param name="acctCode">Filter the results of the ReqExecutions() method based on an account code.</param>
-        /// <param name="time">Filter the results of the ReqExecutions() method based on execution reports received after the specified time.</param>
-        /// <param name="symbol">Filter the results of the ReqExecutions() method based on the order symbol.</param>
-        /// <param name="securityType">Refer to the Contract struct for the list of valid security types.</param>
-        /// <param name="exchange">Filter the results of the ReqExecutions() method based on the order exchange.</param>
-        /// <param name="side">Filter the results of the ReqExecutions() method based on the order action.</param>
-        public ExecutionFilter(int clientId, String acctCode, DateTime time, String symbol, SecurityType securityType,
-                               String exchange, ActionSide side)
+        /// <param name="clientId">
+        /// Filter the results of the ReqExecutions() method based on the clientId.
+        /// </param>
+        /// <param name="acctCode">
+        /// Filter the results of the ReqExecutions() method based on an account code.
+        /// </param>
+        /// <param name="time">
+        /// Filter the results of the ReqExecutions() method based on execution reports received after the specified time.
+        /// </param>
+        /// <param name="symbol">
+        /// Filter the results of the ReqExecutions() method based on the order symbol.
+        /// </param>
+        /// <param name="securityType">
+        /// Refer to the Contract struct for the list of valid security types.
+        /// </param>
+        /// <param name="exchange">
+        /// Filter the results of the ReqExecutions() method based on the order exchange.
+        /// </param>
+        /// <param name="side">
+        /// Filter the results of the ReqExecutions() method based on the order action.
+        /// </param>
+        public ExecutionFilter(int clientId, string acctCode, DateTime time, string symbol, SecurityType securityType, 
+                               string exchange, ActionSide side)
         {
             this.clientId = clientId;
             this.acctCode = acctCode;

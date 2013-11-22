@@ -1,17 +1,18 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="DtoBase.cs" company="">
+// <copyright file="GoogleFinanceService.cs" company="">
 //   
 // </copyright>
 // <summary>
-//   The dto base.
+//   The google finance service.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-namespace Core.DTO
+namespace Core.Services
 {
     /// <summary>
-    /// The dto base.
+    /// The google finance service.
     /// </summary>
-    public abstract class DtoBase
+    public class GoogleFinanceService
     {
+
     }
 }

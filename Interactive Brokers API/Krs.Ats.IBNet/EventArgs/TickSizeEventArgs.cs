@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="TickSizeEventArgs.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Tick Size Event Arguments
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 
 namespace Krs.Ats.IBNet
@@ -8,17 +19,34 @@ namespace Krs.Ats.IBNet
 	[Serializable()]
 	public class TickSizeEventArgs : EventArgs
 	{
-		private int size;
-		private int tickerId;
+	    /// <summary>
+	    /// The size.
+	    /// </summary>
+	    private int size;
 
-		private TickType tickType;
+	    /// <summary>
+	    /// The ticker id.
+	    /// </summary>
+	    private int tickerId;
+
+	    /// <summary>
+	    /// The tick type.
+	    /// </summary>
+	    private TickType tickType;
 
 		/// <summary>
+		/// Initializes a new instance of the <see cref="TickSizeEventArgs"/> class. 
 		/// Full Constructor
 		/// </summary>
-		/// <param name="tickerId">The ticker Id that was specified previously in the call to reqMktData().</param>
-		/// <param name="tickType">Specifies the type of price.</param>
-		/// <param name="size">Specifies the size for the specified field.</param>
+		/// <param name="tickerId">
+		/// The ticker Id that was specified previously in the call to reqMktData().
+		/// </param>
+		/// <param name="tickType">
+		/// Specifies the type of price.
+		/// </param>
+		/// <param name="size">
+		/// Specifies the size for the specified field.
+		/// </param>
 		public TickSizeEventArgs(int tickerId, TickType tickType, int size)
 		{
 			this.tickerId = tickerId;
@@ -27,6 +55,7 @@ namespace Krs.Ats.IBNet
 		}
 
 		/// <summary>
+		/// Initializes a new instance of the <see cref="TickSizeEventArgs"/> class. 
 		/// Uninitialized Constructor for Serialization
 		/// </summary>
 		public TickSizeEventArgs()

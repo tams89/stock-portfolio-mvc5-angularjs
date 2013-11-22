@@ -9,16 +9,16 @@
         <meta name="description" content="S.E. Enterprises algorithmic trading API." />
     </head>
     <body class="home">
-        @if (this.User.Identity.IsAuthenticated)
+        @if (User.Identity.IsAuthenticated)
         {
             <div ng-app="AlgoTrader" ng-cloak>
-                @(this.RenderBody())
+                @RenderBody()
             </div>
         }
         else
         {
             <div ng-app="NoAuth" ng-cloak>
-                @(this.RenderBody())
+                @RenderBody()
             </div>
         }
     </body>

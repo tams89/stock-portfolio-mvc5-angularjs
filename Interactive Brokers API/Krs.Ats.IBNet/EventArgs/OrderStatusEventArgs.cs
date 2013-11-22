@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="OrderStatusEventArgs.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Order Status Event Arguments
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 
 namespace Krs.Ats.IBNet
@@ -8,37 +19,96 @@ namespace Krs.Ats.IBNet
     [Serializable()]
     public class OrderStatusEventArgs : EventArgs
     {
+        /// <summary>
+        /// The average fill price.
+        /// </summary>
         private decimal averageFillPrice;
+
+        /// <summary>
+        /// The client id.
+        /// </summary>
         private int clientId;
+
+        /// <summary>
+        /// The filled.
+        /// </summary>
         private int filled;
+
+        /// <summary>
+        /// The last fill price.
+        /// </summary>
         private decimal lastFillPrice;
+
+        /// <summary>
+        /// The order id.
+        /// </summary>
         private int orderId;
+
+        /// <summary>
+        /// The parent id.
+        /// </summary>
         private int parentId;
+
+        /// <summary>
+        /// The perm id.
+        /// </summary>
         private int permId;
+
+        /// <summary>
+        /// The remaining.
+        /// </summary>
         private int remaining;
+
+        /// <summary>
+        /// The why held.
+        /// </summary>
         private string whyHeld;
 
+        /// <summary>
+        /// The status.
+        /// </summary>
         private OrderStatus status;
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="OrderStatusEventArgs"/> class. 
         /// Full Constructor
         /// </summary>
-        /// <param name="orderId">The order Id that was specified previously in the call to placeOrder().</param>
-        /// <param name="status">The order status.</param>
-        /// <param name="filled">Specifies the number of shares that have been executed.</param>
-        /// <param name="remaining">Specifies the number of shares still outstanding.</param>
-        /// <param name="averageFillPrice">The average price of the shares that have been executed.
+        /// <param name="orderId">
+        /// The order Id that was specified previously in the call to placeOrder().
+        /// </param>
+        /// <param name="status">
+        /// The order status.
+        /// </param>
+        /// <param name="filled">
+        /// Specifies the number of shares that have been executed.
+        /// </param>
+        /// <param name="remaining">
+        /// Specifies the number of shares still outstanding.
+        /// </param>
+        /// <param name="averageFillPrice">
+        /// The average price of the shares that have been executed.
         /// This parameter is valid only if the filled parameter value
-        /// is greater than zero. Otherwise, the price parameter will be zero.</param>
-        /// <param name="permId">The TWS id used to identify orders. Remains the same over TWS sessions.</param>
-        /// <param name="parentId">The order ID of the parent order, used for bracket and auto trailing stop orders.</param>
-        /// <param name="lastFillPrice">The last price of the shares that have been executed. This parameter is valid
-        /// only if the filled parameter value is greater than zero. Otherwise, the price parameter will be zero.</param>
-        /// <param name="clientId">The ID of the client (or TWS) that placed the order.
-        /// The TWS orders have a fixed clientId and orderId of 0 that distinguishes them from API orders.</param>
-        /// <param name="whyHeld">This field is used to identify an order held when TWS is trying to locate shares for a short sell.
-        /// The value used to indicate this is 'locate'.</param>
-        public OrderStatusEventArgs(int orderId, OrderStatus status, int filled, int remaining, decimal averageFillPrice,
+        /// is greater than zero. Otherwise, the price parameter will be zero.
+        /// </param>
+        /// <param name="permId">
+        /// The TWS id used to identify orders. Remains the same over TWS sessions.
+        /// </param>
+        /// <param name="parentId">
+        /// The order ID of the parent order, used for bracket and auto trailing stop orders.
+        /// </param>
+        /// <param name="lastFillPrice">
+        /// The last price of the shares that have been executed. This parameter is valid
+        /// only if the filled parameter value is greater than zero. Otherwise, the price parameter will be zero.
+        /// </param>
+        /// <param name="clientId">
+        /// The ID of the client (or TWS) that placed the order.
+        /// The TWS orders have a fixed clientId and orderId of 0 that distinguishes them from API orders.
+        /// </param>
+        /// <param name="whyHeld">
+        /// This field is used to identify an order held when TWS is trying to locate shares for a short sell.
+        /// The value used to indicate this is 'locate'.
+        /// </param>
+        public OrderStatusEventArgs(int orderId, OrderStatus status, int filled, int remaining, decimal averageFillPrice, 
                                     int permId, int parentId, decimal lastFillPrice, int clientId, string whyHeld)
         {
             this.orderId = orderId;
@@ -53,23 +123,25 @@ namespace Krs.Ats.IBNet
             this.whyHeld = whyHeld;
         }
 
-        ///<summary>
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrderStatusEventArgs"/> class. 
         /// Parameterless OrderStatusEventArgs Constructor for serialization
-        ///</summary>
+        /// </summary>
         public OrderStatusEventArgs()
         {
-            this.orderId = -1;
-            this.clientId = -1;
-            this.lastFillPrice = -1;
-            this.parentId = -1;
-            this.permId = -1;
-            this.averageFillPrice = -1;
-            this.remaining = -1;
-            this.filled = -1;
-            this.status = OrderStatus.Error; //OrderStatus.None;
-            this.whyHeld = "";
+            orderId = -1;
+            clientId = -1;
+            lastFillPrice = -1;
+            parentId = -1;
+            permId = -1;
+            averageFillPrice = -1;
+            remaining = -1;
+            filled = -1;
+            status = OrderStatus.Error; // OrderStatus.None;
+            whyHeld = string.Empty;
         }
         
+
         /// <summary>
         /// The order Id that was specified previously in the call to placeOrder().
         /// </summary>

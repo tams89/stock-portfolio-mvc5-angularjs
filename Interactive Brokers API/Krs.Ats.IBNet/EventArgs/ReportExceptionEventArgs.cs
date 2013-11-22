@@ -1,4 +1,15 @@
-﻿using System;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ReportExceptionEventArgs.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Update News Bulletin Event Arguments
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
+using System;
 
 namespace Krs.Ats.IBNet
 {
@@ -8,18 +19,26 @@ namespace Krs.Ats.IBNet
 	[Serializable()]
 	public class ReportExceptionEventArgs : EventArgs
 	{
-		private Exception error;
+	    /// <summary>
+	    /// The error.
+	    /// </summary>
+	    private Exception error;
 		
+
 		/// <summary>
+		/// Initializes a new instance of the <see cref="ReportExceptionEventArgs"/> class. 
 		/// Full constructor.
 		/// </summary>
-		/// <param name="error">The exception that was thrown.</param>
+		/// <param name="error">
+		/// The exception that was thrown.
+		/// </param>
 		public ReportExceptionEventArgs(Exception error)
 		{
 				this.error = error;
 		}
 
 		/// <summary>
+		/// Initializes a new instance of the <see cref="ReportExceptionEventArgs"/> class. 
 		/// Uninitialized Constructor for Serialization
 		/// </summary>
 		public ReportExceptionEventArgs()
@@ -27,6 +46,7 @@ namespace Krs.Ats.IBNet
 			
 		}
 	
+
 		/// <summary>
 		/// The exception that was thrown.
 		/// </summary>

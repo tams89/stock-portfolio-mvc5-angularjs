@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="UpdatePortfolioEventArgs.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Update Portfolio Event Arguments
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 
 namespace Krs.Ats.IBNet
@@ -8,32 +19,79 @@ namespace Krs.Ats.IBNet
 	[Serializable()]
 	public class UpdatePortfolioEventArgs : EventArgs
 	{
-		private string accountName;
-		private decimal averageCost;
-		private Contract contract;
-		private decimal marketPrice;
-		private decimal marketValue;
+	    /// <summary>
+	    /// The account name.
+	    /// </summary>
+	    private string accountName;
 
-		private int position;
-		private decimal realizedPnl;
-		private decimal unrealizedPnl;
+	    /// <summary>
+	    /// The average cost.
+	    /// </summary>
+	    private decimal averageCost;
+
+	    /// <summary>
+	    /// The contract.
+	    /// </summary>
+	    private Contract contract;
+
+	    /// <summary>
+	    /// The market price.
+	    /// </summary>
+	    private decimal marketPrice;
+
+	    /// <summary>
+	    /// The market value.
+	    /// </summary>
+	    private decimal marketValue;
+
+	    /// <summary>
+	    /// The position.
+	    /// </summary>
+	    private int position;
+
+	    /// <summary>
+	    /// The realized pnl.
+	    /// </summary>
+	    private decimal realizedPnl;
+
+	    /// <summary>
+	    /// The unrealized pnl.
+	    /// </summary>
+	    private decimal unrealizedPnl;
 
 		/// <summary>
+		/// Initializes a new instance of the <see cref="UpdatePortfolioEventArgs"/> class. 
 		/// Full Constructor
 		/// </summary>
-		/// <param name="contract">This structure contains a description of the contract which is being traded.
-		/// The exchange field in a contract is not set for portfolio update.</param>
-		/// <param name="position">This integer indicates the position on the contract.
-		/// If the position is 0, it means the position has just cleared.</param>
-		/// <param name="marketPrice">Unit price of the instrument.</param>
-		/// <param name="marketValue">The total market value of the instrument.</param>
-		/// <param name="averageCost">The average cost per share is calculated by dividing your cost
-		/// (execution price + commission) by the quantity of your position.</param>
-		/// <param name="unrealizedPnl">The difference between the current market value of your open positions and the average cost, or Value - Average Cost.</param>
-		/// <param name="realizedPnl">Shows your profit on closed positions, which is the difference between your entry execution cost
-		/// (execution price + commissions to open the position) and exit execution cost ((execution price + commissions to close the position)</param>
-		/// <param name="accountName">The name of the account the message applies to.  Useful for Financial Advisor sub-account messages.</param>
-		public UpdatePortfolioEventArgs(Contract contract, int position, decimal marketPrice, decimal marketValue,
+		/// <param name="contract">
+		/// This structure contains a description of the contract which is being traded.
+		/// The exchange field in a contract is not set for portfolio update.
+		/// </param>
+		/// <param name="position">
+		/// This integer indicates the position on the contract.
+		/// If the position is 0, it means the position has just cleared.
+		/// </param>
+		/// <param name="marketPrice">
+		/// Unit price of the instrument.
+		/// </param>
+		/// <param name="marketValue">
+		/// The total market value of the instrument.
+		/// </param>
+		/// <param name="averageCost">
+		/// The average cost per share is calculated by dividing your cost
+		/// (execution price + commission) by the quantity of your position.
+		/// </param>
+		/// <param name="unrealizedPnl">
+		/// The difference between the current market value of your open positions and the average cost, or Value - Average Cost.
+		/// </param>
+		/// <param name="realizedPnl">
+		/// Shows your profit on closed positions, which is the difference between your entry execution cost
+		/// (execution price + commissions to open the position) and exit execution cost ((execution price + commissions to close the position)
+		/// </param>
+		/// <param name="accountName">
+		/// The name of the account the message applies to.  Useful for Financial Advisor sub-account messages.
+		/// </param>
+		public UpdatePortfolioEventArgs(Contract contract, int position, decimal marketPrice, decimal marketValue, 
 										decimal averageCost, decimal unrealizedPnl, decimal realizedPnl, string accountName)
 		{
 			this.contract = contract;
@@ -47,6 +105,7 @@ namespace Krs.Ats.IBNet
 		}
 
 		/// <summary>
+		/// Initializes a new instance of the <see cref="UpdatePortfolioEventArgs"/> class. 
 		/// Uninitialized Constructor for Serialization
 		/// </summary>
 		public UpdatePortfolioEventArgs()

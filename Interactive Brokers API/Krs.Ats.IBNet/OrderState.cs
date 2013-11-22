@@ -1,3 +1,15 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="OrderState.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   The openOrder() callback with the new OrderState() object will now be invoked
+//   each time TWS receives commission information for a trade.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 
 namespace Krs.Ats.IBNet
@@ -11,43 +23,90 @@ namespace Krs.Ats.IBNet
 	{
 		#region Private Variables
 
-		private OrderStatus status;
+	    /// <summary>
+	    /// The status.
+	    /// </summary>
+	    private OrderStatus status;
 
-		private String initMargin;
-		private String maintMargin;
-		private String equityWithLoan;
+	    /// <summary>
+	    /// The init margin.
+	    /// </summary>
+	    private string initMargin;
 
-		private double commission;
-		private double minCommission;
-		private double maxCommission;
-		private String commissionCurrency;
+	    /// <summary>
+	    /// The maint margin.
+	    /// </summary>
+	    private string maintMargin;
 
-		private String warningText;
+	    /// <summary>
+	    /// The equity with loan.
+	    /// </summary>
+	    private string equityWithLoan;
+
+	    /// <summary>
+	    /// The commission.
+	    /// </summary>
+	    private double commission;
+
+	    /// <summary>
+	    /// The min commission.
+	    /// </summary>
+	    private double minCommission;
+
+	    /// <summary>
+	    /// The max commission.
+	    /// </summary>
+	    private double maxCommission;
+
+	    /// <summary>
+	    /// The commission currency.
+	    /// </summary>
+	    private string commissionCurrency;
+
+	    /// <summary>
+	    /// The warning text.
+	    /// </summary>
+	    private string warningText;
 
 		#endregion
 
 		#region Constructors
 
 		/// <summary>
+		/// Initializes a new instance of the <see cref="OrderState"/> class. 
 		/// Default Constructor
 		/// </summary>
 		public OrderState():this(OrderStatus.None, null, null, null, 0.0, 0.0, 0.0, null, null)
 		{
 		}
 		
+
 		/// <summary>
+		/// Initializes a new instance of the <see cref="OrderState"/> class. 
 		/// Fully Specified Constructor
 		/// </summary>
-		/// <param name="status">Order Status</param>
-		/// <param name="initMargin">Initial margin requirement for the order.</param>
-		/// <param name="maintMargin">Maintenance margin requirement for the order.</param>
-		/// <param name="equityWithLoan"></param>
-		/// <param name="commission"></param>
-		/// <param name="minCommission"></param>
-		/// <param name="maxCommission"></param>
-		/// <param name="commissionCurrency"></param>
-		/// <param name="warningText"></param>
-		public OrderState(OrderStatus status, String initMargin, String maintMargin, String equityWithLoan, double commission, double minCommission, double maxCommission, String commissionCurrency, String warningText)
+		/// <param name="status">
+		/// Order Status
+		/// </param>
+		/// <param name="initMargin">
+		/// Initial margin requirement for the order.
+		/// </param>
+		/// <param name="maintMargin">
+		/// Maintenance margin requirement for the order.
+		/// </param>
+		/// <param name="equityWithLoan">
+		/// </param>
+		/// <param name="commission">
+		/// </param>
+		/// <param name="minCommission">
+		/// </param>
+		/// <param name="maxCommission">
+		/// </param>
+		/// <param name="commissionCurrency">
+		/// </param>
+		/// <param name="warningText">
+		/// </param>
+		public OrderState(OrderStatus status, string initMargin, string maintMargin, string equityWithLoan, double commission, double minCommission, double maxCommission, string commissionCurrency, string warningText)
 		{
 			this.status = status;
 			this.initMargin = initMargin;

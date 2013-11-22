@@ -6,15 +6,12 @@
 //   The configuration.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-
 namespace Portfolio.Migrations
 {
     using System.Data.Entity.Migrations;
     using System.Linq;
     using System.Web.Security;
-
-    using Portfolio.Models;
-
+    using Models;
     using WebMatrix.WebData;
 
     /// <summary>
@@ -29,7 +26,7 @@ namespace Portfolio.Migrations
         /// </summary>
         public Configuration()
         {
-            this.AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = true;
         }
 
         #endregion

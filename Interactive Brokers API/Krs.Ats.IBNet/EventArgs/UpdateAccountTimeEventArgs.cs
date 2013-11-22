@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="UpdateAccountTimeEventArgs.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Update Account Time Event Arguments
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 
 namespace Krs.Ats.IBNet
@@ -8,18 +19,25 @@ namespace Krs.Ats.IBNet
 	[Serializable()]
 	public class UpdateAccountTimeEventArgs : EventArgs
 	{
-		private string timestamp;
+	    /// <summary>
+	    /// The timestamp.
+	    /// </summary>
+	    private string timestamp;
 
 		/// <summary>
+		/// Initializes a new instance of the <see cref="UpdateAccountTimeEventArgs"/> class. 
 		/// Full Constructor
 		/// </summary>
-		/// <param name="timestamp">Current system time on the server side.</param>
+		/// <param name="timestamp">
+		/// Current system time on the server side.
+		/// </param>
 		public UpdateAccountTimeEventArgs(string timestamp)
 		{
 			this.timestamp = timestamp;
 		}
 
 		/// <summary>
+		/// Initializes a new instance of the <see cref="UpdateAccountTimeEventArgs"/> class. 
 		/// Uninitialized Constructor for Serialization
 		/// </summary>
 		public UpdateAccountTimeEventArgs()

@@ -6,6 +6,7 @@
 //   The validate angular post header.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
+
 namespace Portfolio
 {
     using System;

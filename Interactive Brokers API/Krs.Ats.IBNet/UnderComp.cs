@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="UnderComp.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Underlying Component Class
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 using System.Collections.ObjectModel;
 
@@ -11,17 +22,29 @@ namespace Krs.Ats.IBNet
 	{
 	    #region Private Variables
 
+	    /// <summary>
+	    /// The con id.
+	    /// </summary>
 	    private int conId;
+
+	    /// <summary>
+	    /// The delta.
+	    /// </summary>
 	    private double delta;
+
+	    /// <summary>
+	    /// The price.
+	    /// </summary>
 	    private double price;
 
 	    #endregion
 
 	    #region Constructor / Deconstructor
 
-	    ///<summary>
+	    /// <summary>
+	    /// Initializes a new instance of the <see cref="UnderComp"/> class. 
 	    /// Instantiate an UnderComp class
-	    ///</summary>
+	    /// </summary>
 	    public UnderComp()
 	    {
 	        conId = 0;

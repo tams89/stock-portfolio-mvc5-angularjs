@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="OrderOrigin.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Order Origin Fields
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 
 namespace Krs.Ats.IBNet
@@ -11,7 +22,8 @@ namespace Krs.Ats.IBNet
         /// <summary>
         /// Order originated from the customer
         /// </summary>
-        Customer = 0,
+        Customer = 0, 
+
         /// <summary>
         /// Order originated from teh firm
         /// </summary>

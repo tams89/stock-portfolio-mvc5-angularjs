@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Order.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Order class passed to Interactive Brokers to place an order.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 using System.Collections.ObjectModel;
 
@@ -12,114 +23,394 @@ namespace Krs.Ats.IBNet
         #region Private Variables
 
         // main order fields
+        /// <summary>
+        /// The action.
+        /// </summary>
         private ActionSide action;
+
+        /// <summary>
+        /// The all or none.
+        /// </summary>
         private bool allOrNone;
+
+        /// <summary>
+        /// The auction strategy.
+        /// </summary>
         private AuctionStrategy auctionStrategy; // 1=AUCTION_MATCH, 2=AUCTION_IMPROVEMENT, 3=AUCTION_TRANSPARENT
+
+        /// <summary>
+        /// The aux price.
+        /// </summary>
         private decimal auxPrice;
+
+        /// <summary>
+        /// The basis points.
+        /// </summary>
         private decimal basisPoints; // EFP orders only
+
+        /// <summary>
+        /// The basis points type.
+        /// </summary>
         private int basisPointsType; // EFP orders only
 
         // extended order fields
+        /// <summary>
+        /// The block order.
+        /// </summary>
         private bool blockOrder;
+
+        /// <summary>
+        /// The client id.
+        /// </summary>
         private int clientId;
+
+        /// <summary>
+        /// The continuous update.
+        /// </summary>
         private int continuousUpdate;
+
+        /// <summary>
+        /// The delta.
+        /// </summary>
         private double delta;
+
+        /// <summary>
+        /// The delta neutral aux price.
+        /// </summary>
         private double deltaNeutralAuxPrice;
+
+        /// <summary>
+        /// The delta neutral order type.
+        /// </summary>
         private OrderType deltaNeutralOrderType;
-        private String designatedLocation; // set when slot=2 only.
+
+        /// <summary>
+        /// The designated location.
+        /// </summary>
+        private string designatedLocation; // set when slot=2 only.
+
+        /// <summary>
+        /// The delta neutral con id.
+        /// </summary>
         private int deltaNeutralConId;
+
+        /// <summary>
+        /// The delta neutral settling firm.
+        /// </summary>
         private string deltaNeutralSettlingFirm;
+
+        /// <summary>
+        /// The delta neutral clearing account.
+        /// </summary>
         private string deltaNeutralClearingAccount;
+
+        /// <summary>
+        /// The delta neutral clearing intent.
+        /// </summary>
         private string deltaNeutralClearingIntent;
 
         // HEDGE ORDERS ONLY
+        /// <summary>
+        /// The hedge type.
+        /// </summary>
         private string hedgeType; // 'D' - delta, 'B' - beta, 'F' - FX, 'P' - pair
+
+        /// <summary>
+        /// The hedge param.
+        /// </summary>
         private string hedgeParam; // beta value for beta hedge, ratio for pair hedge
 
         // SMART routing only
+        /// <summary>
+        /// The discretionary amt.
+        /// </summary>
         private decimal discretionaryAmt;
+
+        /// <summary>
+        /// The display size.
+        /// </summary>
         private int displaySize;
+
+        /// <summary>
+        /// The e trade only.
+        /// </summary>
         private bool eTradeOnly;
+
+        /// <summary>
+        /// The opt out smart routing.
+        /// </summary>
         private bool optOutSmartRouting;
 
         // Financial advisors only 
-        private String faGroup;
+        /// <summary>
+        /// The fa group.
+        /// </summary>
+        private string faGroup;
+
+        /// <summary>
+        /// The fa method.
+        /// </summary>
         private FinancialAdvisorAllocationMethod faMethod;
-        private String faPercentage;
-        private String faProfile;
+
+        /// <summary>
+        /// The fa percentage.
+        /// </summary>
+        private string faPercentage;
+
+        /// <summary>
+        /// The fa profile.
+        /// </summary>
+        private string faProfile;
+
+        /// <summary>
+        /// The firm quote only.
+        /// </summary>
         private bool firmQuoteOnly;
-        private String goodAfterTime; // FORMAT: 20060505 08:00:00 {time zone}
-        private String goodTillDate; // FORMAT: 20060505 08:00:00 {time zone}
+
+        /// <summary>
+        /// The good after time.
+        /// </summary>
+        private string goodAfterTime; // FORMAT: 20060505 08:00:00 {time zone}
+
+        /// <summary>
+        /// The good till date.
+        /// </summary>
+        private string goodTillDate; // FORMAT: 20060505 08:00:00 {time zone}
+
+        /// <summary>
+        /// The hidden.
+        /// </summary>
         private bool hidden;
+
+        /// <summary>
+        /// The outside rth.
+        /// </summary>
         private bool? outsideRth;
+
+        /// <summary>
+        /// The limit price.
+        /// </summary>
         private decimal limitPrice;
+
+        /// <summary>
+        /// The min qty.
+        /// </summary>
         private int minQty;
+
+        /// <summary>
+        /// The nbbo price cap.
+        /// </summary>
         private decimal nbboPriceCap;
-        private String ocaGroup; // one cancels all group name
+
+        /// <summary>
+        /// The oca group.
+        /// </summary>
+        private string ocaGroup; // one cancels all group name
+
+        /// <summary>
+        /// The oca type.
+        /// </summary>
         private OcaType ocaType; // 1 = CANCEL_WITH_BLOCK, 2 = REDUCE_WITH_BLOCK, 3 = REDUCE_NON_BLOCK
 
         // Institutional orders only
-        private String openClose; // O=Open, C=Close
+        /// <summary>
+        /// The open close.
+        /// </summary>
+        private string openClose; // O=Open, C=Close
+
+        /// <summary>
+        /// The order id.
+        /// </summary>
         private int orderId;
-        private String orderRef;
+
+        /// <summary>
+        /// The order ref.
+        /// </summary>
+        private string orderRef;
+
+        /// <summary>
+        /// The order type.
+        /// </summary>
         private OrderType orderType;
+
+        /// <summary>
+        /// The origin.
+        /// </summary>
         private OrderOrigin origin; // 0=Customer, 1=Firm
+
+        /// <summary>
+        /// The override percentage constraints.
+        /// </summary>
         private bool overridePercentageConstraints;
+
+        /// <summary>
+        /// The parent id.
+        /// </summary>
         private int parentId; // Parent order Id, to associate Auto STP or TRAIL orders with the original order.
+
+        /// <summary>
+        /// The percent offset.
+        /// </summary>
         private double percentOffset; // REL orders only
+
+        /// <summary>
+        /// The perm id.
+        /// </summary>
         private int permId;
+
+        /// <summary>
+        /// The reference price type.
+        /// </summary>
         private int referencePriceType; // 1=Average, 2 = BidOrAsk
 
+        /// <summary>
+        /// The rule 80 a.
+        /// </summary>
         private AgentDescription rule80A;
-                                 // Individual = 'I', Agency = 'A', AgentOtherMember = 'W', IndividualPTIA = 'J', AgencyPTIA = 'U', AgentOtherMemberPTIA = 'M', IndividualPT = 'K', AgencyPT = 'Y', AgentOtherMemberPT = 'N'
+
+// Individual = 'I', Agency = 'A', AgentOtherMember = 'W', IndividualPTIA = 'J', AgencyPTIA = 'U', AgentOtherMemberPTIA = 'M', IndividualPT = 'K', AgencyPT = 'Y', AgentOtherMemberPT = 'N'
 
 
+        /// <summary>
+        /// The short sale slot.
+        /// </summary>
         private ShortSaleSlot shortSaleSlot;
-                    // 1 if you hold the shares, 2 if they will be delivered from elsewhere.  Only for Action="SSHORT
-        private int exemptCode; //Code for short sale exemption orders
+
+        // 1 if you hold the shares, 2 if they will be delivered from elsewhere.  Only for Action="SSHORT
+        /// <summary>
+        /// The exempt code.
+        /// </summary>
+        private int exemptCode; // Code for short sale exemption orders
 
         // BOX ORDERS ONLY
+        /// <summary>
+        /// The starting price.
+        /// </summary>
         private decimal startingPrice;
 
         // pegged to stock or VOL orders
+        /// <summary>
+        /// The stock range lower.
+        /// </summary>
         private double stockRangeLower;
+
+        /// <summary>
+        /// The stock range upper.
+        /// </summary>
         private double stockRangeUpper;
+
+        /// <summary>
+        /// The stock ref price.
+        /// </summary>
         private double stockRefPrice;
+
+        /// <summary>
+        /// The sweep to fill.
+        /// </summary>
         private bool sweepToFill;
+
+        /// <summary>
+        /// The tif.
+        /// </summary>
         private TimeInForce tif; // "Time in Force" - DAY, GTC, etc.
+
+        /// <summary>
+        /// The total quantity.
+        /// </summary>
         private int totalQuantity;
+
+        /// <summary>
+        /// The trail stop price.
+        /// </summary>
         private decimal trailStopPrice; // for TRAILLIMIT orders only
+
+        /// <summary>
+        /// The transmit.
+        /// </summary>
         private bool transmit; // if false, order will be created but not transmited
 
+        /// <summary>
+        /// The trigger method.
+        /// </summary>
         private TriggerMethod triggerMethod;
-                              // 0=Default, 1=Double_Bid_Ask, 2=Last, 3=Double_Last, 4=Bid_Ask, 7=Last_or_Bid_Ask, 8=Mid-point
+
+        // 0=Default, 1=Double_Bid_Ask, 2=Last, 3=Double_Last, 4=Bid_Ask, 7=Last_or_Bid_Ask, 8=Mid-point
 
         // VOLATILITY ORDERS ONLY
+        /// <summary>
+        /// The volatility.
+        /// </summary>
         private double volatility;
+
+        /// <summary>
+        /// The volatility type.
+        /// </summary>
         private VolatilityType volatilityType; // 1=daily, 2=annual
 
         // SCALE ORDERS ONLY
+        /// <summary>
+        /// The scale init level size.
+        /// </summary>
         private int scaleInitLevelSize;
+
+        /// <summary>
+        /// The scale subs level size.
+        /// </summary>
         private int scaleSubsLevelSize;
+
+        /// <summary>
+        /// The scale price increment.
+        /// </summary>
         private decimal scalePriceIncrement;
 
         // Clearing info
+        /// <summary>
+        /// The account.
+        /// </summary>
         private string account; // IB account
+
+        /// <summary>
+        /// The settling firm.
+        /// </summary>
         private string settlingFirm;
+
+        /// <summary>
+        /// The clearing account.
+        /// </summary>
         private string clearingAccount; // True beneficiary of the order
+
+        /// <summary>
+        /// The clearing intent.
+        /// </summary>
         private string clearingIntent; // "" (Default), "IB", "Away", "PTA" (PostTrade)
 
         // ALGO ORDERS ONLY
+        /// <summary>
+        /// The algo strategy.
+        /// </summary>
         private string algoStrategy;
+
+        /// <summary>
+        /// The algo params.
+        /// </summary>
         private Collection<TagValue> algoParams;
 
         // What-if
+        /// <summary>
+        /// The what if.
+        /// </summary>
         private bool whatIf;
 
         // Not Held
+        /// <summary>
+        /// The not held.
+        /// </summary>
         private bool notHeld;
 
         // Smart combo routing params
+        /// <summary>
+        /// The smart combo routing params.
+        /// </summary>
         private Collection<TagValue> smartComboRoutingParams;
 
         #endregion
@@ -127,6 +418,7 @@ namespace Krs.Ats.IBNet
         #region Constructor
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="Order"/> class. 
         /// Default Constructor
         /// </summary>
         public Order()
@@ -135,30 +427,30 @@ namespace Krs.Ats.IBNet
             origin = OrderOrigin.Customer;
             transmit = true;
             tif = TimeInForce.Day;
-            designatedLocation = "";
-            minQty = Int32.MaxValue;
-            percentOffset = Double.MaxValue;
+            designatedLocation = string.Empty;
+            minQty = int.MaxValue;
+            percentOffset = double.MaxValue;
             nbboPriceCap = decimal.MaxValue;
             startingPrice = decimal.MaxValue;
-            stockRefPrice = Double.MaxValue;
-            delta = Double.MaxValue;
-            stockRangeLower = Double.MaxValue;
-            stockRangeUpper = Double.MaxValue;
-            volatility = Double.MaxValue;
+            stockRefPrice = double.MaxValue;
+            delta = double.MaxValue;
+            stockRangeLower = double.MaxValue;
+            stockRangeUpper = double.MaxValue;
+            volatility = double.MaxValue;
             volatilityType = VolatilityType.Undefined;
             deltaNeutralOrderType = OrderType.Empty;
-            deltaNeutralAuxPrice = Double.MaxValue;
-            referencePriceType = Int32.MaxValue;
+            deltaNeutralAuxPrice = double.MaxValue;
+            referencePriceType = int.MaxValue;
             trailStopPrice = decimal.MaxValue;
             basisPoints = decimal.MaxValue;
-            basisPointsType = Int32.MaxValue;
-            scaleInitLevelSize = Int32.MaxValue;
-            scaleSubsLevelSize = Int32.MaxValue;
+            basisPointsType = int.MaxValue;
+            scaleInitLevelSize = int.MaxValue;
+            scaleSubsLevelSize = int.MaxValue;
             scalePriceIncrement = decimal.MaxValue;
             faMethod = FinancialAdvisorAllocationMethod.None;
             notHeld = false;
             exemptCode = -1;
-            
+
             optOutSmartRouting = false;
             deltaNeutralConId = 0;
             deltaNeutralOrderType = OrderType.Empty;

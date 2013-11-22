@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="CurrentTimeEventArgs.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Current Time Event Arguments
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 
 namespace Krs.Ats.IBNet
@@ -8,18 +19,25 @@ namespace Krs.Ats.IBNet
     [Serializable()]
     public class CurrentTimeEventArgs : EventArgs
     {
+        /// <summary>
+        /// The time.
+        /// </summary>
         private DateTime time;
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="CurrentTimeEventArgs"/> class. 
         /// Full Constructor
         /// </summary>
-        /// <param name="time">Current system time on the server side</param>
+        /// <param name="time">
+        /// Current system time on the server side
+        /// </param>
         public CurrentTimeEventArgs(DateTime time)
         {
             this.time = time;
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="CurrentTimeEventArgs"/> class. 
         /// Uninitialized Constructor for Serialization
         /// </summary>
         public CurrentTimeEventArgs()

@@ -21,7 +21,7 @@
 </div>
 
 <div id="appScripts">
-    @if (this.User.Identity.IsAuthenticated)
+    @if (User.Identity.IsAuthenticated)
     {
         @Scripts.Render("~/bundles/angularApp")
         @Scripts.Render("~/bundles/angularModules")

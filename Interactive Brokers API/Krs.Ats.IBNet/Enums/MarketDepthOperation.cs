@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="MarketDepthOperation.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Market Depth Operation
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 
 namespace Krs.Ats.IBNet
@@ -11,11 +22,13 @@ namespace Krs.Ats.IBNet
         /// <summary>
         /// Insert  (insert this new order into the row identified by 'position')
         /// </summary>
-        Insert = 0,
+        Insert = 0, 
+
         /// <summary>
         /// Update (update the existing order in the row identified by 'position')
         /// </summary>
-        Update = 1,
+        Update = 1, 
+
         /// <summary>
         /// Delete (delete the existing order at the row identified by 'position')
         /// </summary>

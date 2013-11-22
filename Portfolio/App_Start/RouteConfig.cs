@@ -6,6 +6,7 @@
 //   The route config.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
+
 namespace Portfolio.App_Start
 {
     using System.Web.Mvc;

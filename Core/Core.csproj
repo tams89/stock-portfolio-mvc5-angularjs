@@ -79,6 +79,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants.cs" />
     <Compile Include="DTO\DtoBase.cs" />
     <Compile Include="DTO\MarketDto.cs" />
     <Compile Include="DTO\OptionDto.cs" />
@@ -87,6 +88,7 @@
     <Compile Include="Models\Portfolio\PortfolioSecurity.cs" />
     <Compile Include="Models\Portfolio\User.cs" />
     <Compile Include="Models\Portfolio\Portfolio.cs" />
+    <Compile Include="Models\Site\GoogleFinanceJsonDto.cs" />
     <Compile Include="ORM\Constants.cs" />
     <Compile Include="ORM\Mappings\HFT\TickMap.cs" />
     <Compile Include="Models\HFT\Tick.cs" />
@@ -95,6 +97,7 @@
     <Compile Include="ORM\Mappings\Portfolio\SecurityMap.cs" />
     <Compile Include="ORM\Mappings\Portfolio\PortfolioMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\GoogleFinanceService.cs" />
     <Compile Include="Services\HFTService.cs" />
     <Compile Include="Services\Interfaces\IHFTService.cs" />
     <Compile Include="Services\Interfaces\IYahooFinanceService.cs" />
@@ -102,6 +105,7 @@
     <Compile Include="Services\ServiceBase.cs" />
     <Compile Include="Services\YahooFinanceService.cs" />
     <Compile Include="Utilities\DtoInjector.cs" />
+    <Compile Include="Utilities\Extensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

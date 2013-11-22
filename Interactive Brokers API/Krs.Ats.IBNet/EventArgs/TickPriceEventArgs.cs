@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="TickPriceEventArgs.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Tick Price Event Arguments
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 
 namespace Krs.Ats.IBNet
@@ -8,19 +19,42 @@ namespace Krs.Ats.IBNet
 	[Serializable()]
 	public class TickPriceEventArgs : EventArgs
 	{
-		private bool canAutoExecute;
-		private decimal price;
-		private int tickerId;
+	    /// <summary>
+	    /// The can auto execute.
+	    /// </summary>
+	    private bool canAutoExecute;
 
-		private TickType tickType;
+	    /// <summary>
+	    /// The price.
+	    /// </summary>
+	    private decimal price;
+
+	    /// <summary>
+	    /// The ticker id.
+	    /// </summary>
+	    private int tickerId;
+
+	    /// <summary>
+	    /// The tick type.
+	    /// </summary>
+	    private TickType tickType;
 
 		/// <summary>
+		/// Initializes a new instance of the <see cref="TickPriceEventArgs"/> class. 
 		/// Full Constructor
 		/// </summary>
-		/// <param name="tickerId">The ticker Id that was specified previously in the call to reqMktData().</param>
-		/// <param name="tickType">Specifies the type of price.</param>
-		/// <param name="price">Specifies the price for the specified field.</param>
-		/// <param name="canAutoExecute">specifies whether the price tick is available for automatic execution.</param>
+		/// <param name="tickerId">
+		/// The ticker Id that was specified previously in the call to reqMktData().
+		/// </param>
+		/// <param name="tickType">
+		/// Specifies the type of price.
+		/// </param>
+		/// <param name="price">
+		/// Specifies the price for the specified field.
+		/// </param>
+		/// <param name="canAutoExecute">
+		/// specifies whether the price tick is available for automatic execution.
+		/// </param>
 		public TickPriceEventArgs(int tickerId, TickType tickType, decimal price, bool canAutoExecute)
 		{
 			this.tickerId = tickerId;
@@ -30,6 +64,7 @@ namespace Krs.Ats.IBNet
 		}
 
 		/// <summary>
+		/// Initializes a new instance of the <see cref="TickPriceEventArgs"/> class. 
 		/// Uninitialized Constructor for Serialization
 		/// </summary>
 		public TickPriceEventArgs()

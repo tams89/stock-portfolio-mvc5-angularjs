@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ErrorEventArgs.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Error Event Arguments
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 
 namespace Krs.Ats.IBNet
@@ -8,16 +19,34 @@ namespace Krs.Ats.IBNet
     [Serializable()]
     public class ErrorEventArgs : EventArgs
     {
+        /// <summary>
+        /// The error code.
+        /// </summary>
         private ErrorMessage errorCode;
+
+        /// <summary>
+        /// The error msg.
+        /// </summary>
         private string errorMsg;
+
+        /// <summary>
+        /// The ticker id.
+        /// </summary>
         private int tickerId;
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ErrorEventArgs"/> class. 
         /// Full Constructor
         /// </summary>
-        /// <param name="tickerId">This is the orderId or tickerId of the request that generated the error.</param>
-        /// <param name="errorCode">Error codes are documented in the Error Codes topic.</param>
-        /// <param name="errorMsg">This is the textual description of the error, also documented in the Error Codes topic.</param>
+        /// <param name="tickerId">
+        /// This is the orderId or tickerId of the request that generated the error.
+        /// </param>
+        /// <param name="errorCode">
+        /// Error codes are documented in the Error Codes topic.
+        /// </param>
+        /// <param name="errorMsg">
+        /// This is the textual description of the error, also documented in the Error Codes topic.
+        /// </param>
         public ErrorEventArgs(int tickerId, ErrorMessage errorCode, string errorMsg)
         {
             this.tickerId = tickerId;
@@ -26,6 +55,7 @@ namespace Krs.Ats.IBNet
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ErrorEventArgs"/> class. 
         /// Uninitialized Constructor for Serialization
         /// </summary>
         public ErrorEventArgs()

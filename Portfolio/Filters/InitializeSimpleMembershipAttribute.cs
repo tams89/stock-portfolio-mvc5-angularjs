@@ -7,15 +7,15 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
+using System.Data.Entity;
+
 namespace Portfolio.Filters
 {
     using System;
     using System.Data.Entity.Infrastructure;
     using System.Threading;
     using System.Web.Mvc;
-
-    using Portfolio.Models;
-
+    using Models;
     using WebMatrix.WebData;
 
     // See for implementation.
@@ -76,7 +76,7 @@ namespace Portfolio.Filters
             /// </exception>
             public SimpleMembershipInitializer()
             {
-                System.Data.Entity.Database.SetInitializer<UsersContext>(null);
+                Database.SetInitializer<UsersContext>(null);
 
                 try
                 {

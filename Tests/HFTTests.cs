@@ -1,10 +1,24 @@
-﻿using System.Linq;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="HFTTests.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   The hft tests.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
+using System.Linq;
 using Core.Models.HFT;
 using Core.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Test
 {
+    /// <summary>
+    /// The hft tests.
+    /// </summary>
     [TestClass]
     public class HFTTests
     {

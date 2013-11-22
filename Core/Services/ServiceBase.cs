@@ -1,4 +1,15 @@
-﻿using System;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ServiceBase.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   The service base.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -10,14 +21,22 @@ using DapperExtensions;
 
 namespace Core.Services
 {
+    /// <summary>
+    /// The service base.
+    /// </summary>
+    /// <typeparam name="T">
+    /// </typeparam>
     public class ServiceBase<T> where T : class, new()
     {
+        /// <summary>
+        /// Gets the authenticated user.
+        /// </summary>
         public string AuthenticatedUser
         {
             get
             {
                 var currentIdent = WindowsIdentity.GetCurrent();
-                return currentIdent != null ? currentIdent.Name : "";
+                return currentIdent != null ? currentIdent.Name : string.Empty;
             }
         }
 
@@ -39,6 +58,12 @@ namespace Core.Services
         /// <summary>
         /// Gets all data by id.
         /// </summary>
+        /// <param name="id">
+        /// The id.
+        /// </param>
+        /// <returns>
+        /// The <see cref="T"/>.
+        /// </returns>
         public T Find(Guid id)
         {
             using (var c = new SqlConnection(Constants.AlgoTradingDbConnectionStr))

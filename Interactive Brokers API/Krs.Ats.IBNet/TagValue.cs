@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="TagValue.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Class for storing Algorithm Order Parameters
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 
 namespace Krs.Ats.IBNet
@@ -11,25 +22,39 @@ namespace Krs.Ats.IBNet
 
 	    #region Private Variables
 
+	    /// <summary>
+	    /// The tag.
+	    /// </summary>
 	    private string tag;
+
+	    /// <summary>
+	    /// The value.
+	    /// </summary>
 	    private string value;
 
 	    #endregion
 
 	    #region Constructors
 
-	    ///<summary>
+	    /// <summary>
+	    /// Initializes a new instance of the <see cref="TagValue"/> class. 
 	    /// Create a new Tag Value
-	    ///</summary>
+	    /// </summary>
 	    public TagValue()
 	    {
 	    }
 		
-	    ///<summary>
+
+	    /// <summary>
+	    /// Initializes a new instance of the <see cref="TagValue"/> class. 
 	    /// Initialize a Tag Value with values
-	    ///</summary>
-	    ///<param name="tag">Tag Name</param>
-	    ///<param name="value">String Value</param>
+	    /// </summary>
+	    /// <param name="tag">
+	    /// Tag Name
+	    /// </param>
+	    /// <param name="value">
+	    /// String Value
+	    /// </param>
 	    public TagValue(string tag, string value)
 	    {
 	        this.tag = tag;

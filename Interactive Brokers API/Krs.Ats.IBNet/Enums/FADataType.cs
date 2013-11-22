@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="FADataType.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Financial Advisor Data Message
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 using System.ComponentModel;
 
@@ -12,15 +23,18 @@ namespace Krs.Ats.IBNet
         /// <summary>
         /// Undefined FA Message Type
         /// </summary>
-        [Description("")] Undefined = 0,
+        [Description("")] Undefined = 0, 
+
         /// <summary>
         /// Financial Advisor Groups
         /// </summary>
-        [Description("GROUPS")] Groups = 1,
+        [Description("GROUPS")] Groups = 1, 
+
         /// <summary>
         /// Financial Advisor Profiles
         /// </summary>
-        [Description("PROFILES")] Profiles = 2,
+        [Description("PROFILES")] Profiles = 2, 
+
         /// <summary>
         /// Financial Advisor Aliases
         /// </summary>

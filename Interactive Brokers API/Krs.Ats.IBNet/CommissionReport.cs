@@ -1,7 +1,17 @@
-﻿using System;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="CommissionReport.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Returns the commission amount for an order execution.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
+using System;
 
 /* file created: June, 2013 - Shane Castle - shane.castle@vaultic.com */
-
 namespace Krs.Ats.IBNet
 {
     /// <summary>
@@ -12,7 +22,7 @@ namespace Krs.Ats.IBNet
         /// <summary>
         /// Execution Id.
         /// </summary>
-        public String ExecId { get; set; }
+        public string ExecId { get; set; }
 
         /// <summary>
         /// Total commission amount.
@@ -22,7 +32,7 @@ namespace Krs.Ats.IBNet
         /// <summary>
         /// Currency.
         /// </summary>
-        public String Currency { get; set; }
+        public string Currency { get; set; }
 
         /// <summary>
         /// Realized Profit and Loss.
@@ -40,6 +50,7 @@ namespace Krs.Ats.IBNet
         public DateTime? YieldRedemptionDate { get; set; }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="CommissionReport"/> class. 
         /// Default constructor.
         /// </summary>
         public CommissionReport()

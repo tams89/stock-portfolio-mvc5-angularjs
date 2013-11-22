@@ -1,6 +1,17 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Contract.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Class to describe a financial security.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
-using System.Collections.ObjectModel;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Krs.Ats.IBNet
 {
@@ -13,88 +24,206 @@ namespace Krs.Ats.IBNet
     {
         #region Private Variables
 
+        /// <summary>
+        /// The combo legs.
+        /// </summary>
         private Collection<ComboLeg> comboLegs = new Collection<ComboLeg>();
 
+        /// <summary>
+        /// The contract id.
+        /// </summary>
         private int contractId;
 
-        private String comboLegsDescription; // received in open order version 14 and up for all combos
-        private String currency;
-        private String exchange;
-        private String expiry;
+        /// <summary>
+        /// The combo legs description.
+        /// </summary>
+        private string comboLegsDescription; // received in open order version 14 and up for all combos
+
+        /// <summary>
+        /// The currency.
+        /// </summary>
+        private string currency;
+
+        /// <summary>
+        /// The exchange.
+        /// </summary>
+        private string exchange;
+
+        /// <summary>
+        /// The expiry.
+        /// </summary>
+        private string expiry;
+
+        /// <summary>
+        /// The include expired.
+        /// </summary>
         private bool includeExpired; // can not be set to true for orders.
-        private String localSymbol;
-        private String multiplier;
-        private SecurityIdType secIdType;        // CUSIP;SEDOL;ISIN;RIC
-        private String secId;
 
-        private String primaryExchange;
-                       // pick a non-aggregate (ie not the SMART exchange) exchange that the contract trades on.  DO NOT SET TO SMART.
+        /// <summary>
+        /// The local symbol.
+        /// </summary>
+        private string localSymbol;
 
+        /// <summary>
+        /// The multiplier.
+        /// </summary>
+        private string multiplier;
+
+        /// <summary>
+        /// The sec id type.
+        /// </summary>
+        private SecurityIdType secIdType; // CUSIP;SEDOL;ISIN;RIC
+
+        /// <summary>
+        /// The sec id.
+        /// </summary>
+        private string secId;
+
+        /// <summary>
+        /// The primary exchange.
+        /// </summary>
+        private string primaryExchange;
+
+// pick a non-aggregate (ie not the SMART exchange) exchange that the contract trades on.  DO NOT SET TO SMART.
+
+        /// <summary>
+        /// The right.
+        /// </summary>
         private RightType right;
-        private SecurityType securityType;
-        private double strike;
-        private String symbol;
 
+        /// <summary>
+        /// The security type.
+        /// </summary>
+        private SecurityType securityType;
+
+        /// <summary>
+        /// The strike.
+        /// </summary>
+        private double strike;
+
+        /// <summary>
+        /// The symbol.
+        /// </summary>
+        private string symbol;
+
+        /// <summary>
+        /// The underlying component.
+        /// </summary>
         private UnderlyingComponent underlyingComponent;
 
         #endregion
 
         #region Constructors
 
-        ///<summary>
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Contract"/> class. 
         /// Undefined Contract Constructor
-        ///</summary>
+        /// </summary>
         public Contract() :
-            this(0, null, SecurityType.Undefined, null, 0, RightType.Undefined, null, null, null, null, null, SecurityIdType.None, string.Empty)
+            this(
+            0, null, SecurityType.Undefined, null, 0, RightType.Undefined, null, null, null, null, null, 
+            SecurityIdType.None, string.Empty)
         {
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="Contract"/> class. 
         /// Futures Contract Constructor
         /// </summary>
-        /// <param name="symbol">This is the symbol of the underlying asset.</param>
-        /// <param name="exchange">The order destination, such as Smart.</param>
-        /// <param name="securityType">This is the security type.</param>
-        /// <param name="currency">Specifies the currency.</param>
-        /// <param name="expiry">The expiration date. Use the format YYYYMM.</param>
+        /// <param name="symbol">
+        /// This is the symbol of the underlying asset.
+        /// </param>
+        /// <param name="exchange">
+        /// The order destination, such as Smart.
+        /// </param>
+        /// <param name="securityType">
+        /// This is the security type.
+        /// </param>
+        /// <param name="currency">
+        /// Specifies the currency.
+        /// </param>
+        /// <param name="expiry">
+        /// The expiration date. Use the format YYYYMM.
+        /// </param>
         public Contract(string symbol, string exchange, SecurityType securityType, string currency, string expiry) :
-            this(0, symbol, securityType, expiry, 0, RightType.Undefined, null, exchange, currency, null, null, SecurityIdType.None, string.Empty)
+            this(
+            0, symbol, securityType, expiry, 0, RightType.Undefined, null, exchange, currency, null, null, 
+            SecurityIdType.None, string.Empty)
         {
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="Contract"/> class. 
         /// Indice Contract Constructor
         /// </summary>
-        /// <param name="symbol">This is the symbol of the underlying asset.</param>
-        /// <param name="exchange">The order destination, such as Smart.</param>
-        /// <param name="securityType">This is the security type.</param>
-        /// <param name="currency">Specifies the currency.</param>
+        /// <param name="symbol">
+        /// This is the symbol of the underlying asset.
+        /// </param>
+        /// <param name="exchange">
+        /// The order destination, such as Smart.
+        /// </param>
+        /// <param name="securityType">
+        /// This is the security type.
+        /// </param>
+        /// <param name="currency">
+        /// Specifies the currency.
+        /// </param>
         public Contract(string symbol, string exchange, SecurityType securityType, string currency)
             :
-            this(0, symbol, securityType, null, 0, RightType.Undefined, null, exchange, currency, null, null, SecurityIdType.None, string.Empty)
+                this(
+                0, symbol, securityType, null, 0, RightType.Undefined, null, exchange, currency, null, null, 
+                SecurityIdType.None, string.Empty)
         {
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="Contract"/> class. 
         /// Default Contract Constructor
         /// </summary>
-        /// <param name="contractId">The unique contract identifier.</param>
-        /// <param name="symbol">This is the symbol of the underlying asset.</param>
-        /// <param name="securityType">This is the security type.</param>
-        /// <param name="expiry">The expiration date. Use the format YYYYMM.</param>
-        /// <param name="strike">The strike price.</param>
-        /// <param name="right">Specifies a Put or Call.</param>
-        /// <param name="multiplier">Allows you to specify a future or option contract multiplier.
-        /// This is only necessary when multiple possibilities exist.</param>
-        /// <param name="exchange">The order destination, such as Smart.</param>
-        /// <param name="currency">Specifies the currency.</param>
-        /// <param name="localSymbol">This is the local exchange symbol of the underlying asset.</param>
-        /// <param name="primaryExchange">Identifies the listing exchange for the contract (do not list SMART).</param>
-        /// <param name="secIdType">Security identifier, when querying contract details or when placing orders.</param>
-        /// <param name="secId">Unique identifier for the secIdType.</param>
-        public Contract(int contractId, String symbol, SecurityType securityType, String expiry, double strike, RightType right,
-                        String multiplier, string exchange, string currency, string localSymbol, string primaryExchange,
-                        SecurityIdType secIdType, string secId)
+        /// <param name="contractId">
+        /// The unique contract identifier.
+        /// </param>
+        /// <param name="symbol">
+        /// This is the symbol of the underlying asset.
+        /// </param>
+        /// <param name="securityType">
+        /// This is the security type.
+        /// </param>
+        /// <param name="expiry">
+        /// The expiration date. Use the format YYYYMM.
+        /// </param>
+        /// <param name="strike">
+        /// The strike price.
+        /// </param>
+        /// <param name="right">
+        /// Specifies a Put or Call.
+        /// </param>
+        /// <param name="multiplier">
+        /// Allows you to specify a future or option contract multiplier.
+        /// This is only necessary when multiple possibilities exist.
+        /// </param>
+        /// <param name="exchange">
+        /// The order destination, such as Smart.
+        /// </param>
+        /// <param name="currency">
+        /// Specifies the currency.
+        /// </param>
+        /// <param name="localSymbol">
+        /// This is the local exchange symbol of the underlying asset.
+        /// </param>
+        /// <param name="primaryExchange">
+        /// Identifies the listing exchange for the contract (do not list SMART).
+        /// </param>
+        /// <param name="secIdType">
+        /// Security identifier, when querying contract details or when placing orders.
+        /// </param>
+        /// <param name="secId">
+        /// Unique identifier for the secIdType.
+        /// </param>
+        public Contract(int contractId, string symbol, SecurityType securityType, string expiry, double strike, 
+            RightType right, 
+            string multiplier, string exchange, string currency, string localSymbol, string primaryExchange, 
+            SecurityIdType secIdType, string secId)
         {
             this.contractId = contractId;
             this.symbol = symbol;
@@ -113,9 +242,11 @@ namespace Krs.Ats.IBNet
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="Contract"/> class. 
         /// Get a Contract by its unique contractId
         /// </summary>
-        /// <param name="contractId"></param>
+        /// <param name="contractId">
+        /// </param>
         public Contract(int contractId)
         {
             this.contractId = contractId;
@@ -303,21 +434,15 @@ namespace Krs.Ats.IBNet
         {
             get { return secIdType; }
             set { secIdType = value; }
-        } 
+        }
 
         /// <summary>
         /// Unique identifier for the secIdType.
         /// </summary>
-        public String SecId
+        public string SecId
         {
-            get
-            {
-                return secId;
-            }
-            set
-            {
-                secId = value;
-            }
+            get { return secId; }
+            set { secId = value; }
         }
 
         #endregion

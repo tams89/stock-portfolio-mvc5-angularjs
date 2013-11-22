@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="LogLevel.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Used for the set server log level
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 
 namespace Krs.Ats.IBNet
@@ -11,23 +22,28 @@ namespace Krs.Ats.IBNet
         /// <summary>
         /// Undefined Log Level
         /// </summary>
-        Undefined = 0,
+        Undefined = 0, 
+
         /// <summary>
         /// System Messages
         /// </summary>
-        System = 1,
+        System = 1, 
+
         /// <summary>
         /// Error Messages
         /// </summary>
-        Error = 2,
+        Error = 2, 
+
         /// <summary>
         /// Warning Messages
         /// </summary>
-        Warning = 3,
+        Warning = 3, 
+
         /// <summary>
         /// Information Messages
         /// </summary>
-        Information = 4,
+        Information = 4, 
+
         /// <summary>
         /// Detail Messages
         /// </summary>

@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ActionSide.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Order  Action Side. Specifies whether securities should be bought or sold.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 using System.ComponentModel;
 
@@ -12,19 +23,23 @@ namespace Krs.Ats.IBNet
         /// <summary>
         /// Security is to be bought.
         /// </summary>
-        [Description("BUY")] Buy,
+        [Description("BUY")] Buy, 
+
         /// <summary>
         /// Security is to be sold.
         /// </summary>
-        [Description("SELL")] Sell,
+        [Description("SELL")] Sell, 
+
         /// <summary>
         /// Undefined
         /// </summary>
-        [Description("")] Undefined,
+        [Description("")] Undefined, 
+
         /// <summary>
         /// Sell Short as part of a combo leg
         /// </summary>
-        [Description("SSHORT")] SShort,
+        [Description("SSHORT")] SShort, 
+
         /// <summary>
         /// Short Sale Exempt action.
         /// SSHORTX allows some orders to be marked as exempt from the new SEC Rule 201

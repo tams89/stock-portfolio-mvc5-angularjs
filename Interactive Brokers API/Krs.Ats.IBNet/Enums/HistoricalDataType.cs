@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="HistoricalDataType.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Historical Data Request Return Types
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 using System.ComponentModel;
 
@@ -13,26 +24,30 @@ namespace Krs.Ats.IBNet
         /// Return Trade data only
         /// </summary>
         [Description("TRADES")]
-        Trades,
+        Trades, 
+
         /// <summary>
         /// Return the mid point between the bid and ask
         /// </summary>
         [Description("MIDPOINT")]
-        Midpoint,
+        Midpoint, 
+
         /// <summary>
         /// Return Bid Prices only
         /// </summary>
         [Description("BID")]
-        Bid,
+        Bid, 
+
         /// <summary>
         /// Return ask prices only
         /// </summary>
         [Description("ASK")]
-        Ask,
+        Ask, 
+
         /// <summary>
         /// Return Bid / Ask price only
         /// </summary>
         [Description("BID_ASK")]
-        BidAsk,
+        BidAsk, 
     }
 }

@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ContractDetails.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Contract details returned from Interactive Brokers
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 
 namespace Krs.Ats.IBNet
@@ -10,45 +21,168 @@ namespace Krs.Ats.IBNet
     {
         #region Private Variables
 
-        private String marketName;
+        /// <summary>
+        /// The market name.
+        /// </summary>
+        private string marketName;
+
+        /// <summary>
+        /// The min tick.
+        /// </summary>
         private double minTick;
-        private String orderTypes;
+
+        /// <summary>
+        /// The order types.
+        /// </summary>
+        private string orderTypes;
+
+        /// <summary>
+        /// The price magnifier.
+        /// </summary>
         private int priceMagnifier;
+
+        /// <summary>
+        /// The summary.
+        /// </summary>
         private Contract summary;
-        private String tradingClass;
-        private String validExchanges;
+
+        /// <summary>
+        /// The trading class.
+        /// </summary>
+        private string tradingClass;
+
+        /// <summary>
+        /// The valid exchanges.
+        /// </summary>
+        private string validExchanges;
+
+        /// <summary>
+        /// The under con id.
+        /// </summary>
         private int underConId;
-        private String longName;
-        private String contractMonth;
-        private String industry;
-        private String category;
-        private String subcategory;
-        private String timeZoneId;
-        private String tradingHours;
-        private String liquidHours;
+
+        /// <summary>
+        /// The long name.
+        /// </summary>
+        private string longName;
+
+        /// <summary>
+        /// The contract month.
+        /// </summary>
+        private string contractMonth;
+
+        /// <summary>
+        /// The industry.
+        /// </summary>
+        private string industry;
+
+        /// <summary>
+        /// The category.
+        /// </summary>
+        private string category;
+
+        /// <summary>
+        /// The subcategory.
+        /// </summary>
+        private string subcategory;
+
+        /// <summary>
+        /// The time zone id.
+        /// </summary>
+        private string timeZoneId;
+
+        /// <summary>
+        /// The trading hours.
+        /// </summary>
+        private string tradingHours;
+
+        /// <summary>
+        /// The liquid hours.
+        /// </summary>
+        private string liquidHours;
 
         // BOND values
-        private String cusip;
-        private String ratings;
-        private String descriptionAppend;
-        private String bondType;
-        private String couponType;
+        /// <summary>
+        /// The cusip.
+        /// </summary>
+        private string cusip;
+
+        /// <summary>
+        /// The ratings.
+        /// </summary>
+        private string ratings;
+
+        /// <summary>
+        /// The description append.
+        /// </summary>
+        private string descriptionAppend;
+
+        /// <summary>
+        /// The bond type.
+        /// </summary>
+        private string bondType;
+
+        /// <summary>
+        /// The coupon type.
+        /// </summary>
+        private string couponType;
+
+        /// <summary>
+        /// The callable.
+        /// </summary>
         private bool callable;
+
+        /// <summary>
+        /// The putable.
+        /// </summary>
         private bool putable;
+
+        /// <summary>
+        /// The coupon.
+        /// </summary>
         private double coupon;
+
+        /// <summary>
+        /// The convertible.
+        /// </summary>
         private bool convertible;
-        private String maturity;
-        private String issueDate;
-        private String nextOptionDate;
-        private String nextOptionType;
+
+        /// <summary>
+        /// The maturity.
+        /// </summary>
+        private string maturity;
+
+        /// <summary>
+        /// The issue date.
+        /// </summary>
+        private string issueDate;
+
+        /// <summary>
+        /// The next option date.
+        /// </summary>
+        private string nextOptionDate;
+
+        /// <summary>
+        /// The next option type.
+        /// </summary>
+        private string nextOptionType;
+
+        /// <summary>
+        /// The next option partial.
+        /// </summary>
         private bool nextOptionPartial;
-        private String notes;
+
+        /// <summary>
+        /// The notes.
+        /// </summary>
+        private string notes;
         
         #endregion
 
         #region Constructors
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ContractDetails"/> class. 
         /// Default constructor
         /// </summary>
         public ContractDetails() :
@@ -57,27 +191,58 @@ namespace Krs.Ats.IBNet
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ContractDetails"/> class. 
         /// Full Constructor
         /// </summary>
-        /// <param name="summary">A contract summary.</param>
-        /// <param name="marketName">The market name for this contract.</param>
-        /// <param name="tradingClass">The trading class name for this contract.</param>
-        /// <param name="minTick">The minimum price tick.</param>
-        /// <param name="orderTypes">The list of valid order types for this contract.</param>
-        /// <param name="validExchanges">The list of exchanges this contract is traded on.</param>
-        /// <param name="underConId">The Underlying Contract Id (for derivatives only)</param>
-        /// <param name="longName">Long Name</param>
-        /// <param name="contractMonth">The contract month. Typically the contract month of the underlying for a futures contract.</param>
-        /// <param name="industry">The industry classification of the underlying/product. For example, Financial.</param>
-        /// <param name="category">The industry category of the underlying. For example, InvestmentSvc.</param>
-        /// <param name="subcategory">The industry subcategory of the underlying. For example, Brokerage.</param>
-        /// <param name="timeZoneId">The ID of the time zone for the trading hours of the product. For example, EST.</param>
-        /// <param name="tradingHours">The trading hours of the product. For example, 20090507:0700-1830,1830-2330;20090508:CLOSED.</param>
-        /// <param name="liquidHours">The liquid trading hours of the product. For example, 20090507:0930-1600;20090508:CLOSED.</param>
-        public ContractDetails(Contract summary, String marketName, String tradingClass, double minTick,
-                               String orderTypes, String validExchanges, int underConId, String longName,
-                               String contractMonth, String industry, String category, String subcategory,
-                               String timeZoneId, String tradingHours, String liquidHours)
+        /// <param name="summary">
+        /// A contract summary.
+        /// </param>
+        /// <param name="marketName">
+        /// The market name for this contract.
+        /// </param>
+        /// <param name="tradingClass">
+        /// The trading class name for this contract.
+        /// </param>
+        /// <param name="minTick">
+        /// The minimum price tick.
+        /// </param>
+        /// <param name="orderTypes">
+        /// The list of valid order types for this contract.
+        /// </param>
+        /// <param name="validExchanges">
+        /// The list of exchanges this contract is traded on.
+        /// </param>
+        /// <param name="underConId">
+        /// The Underlying Contract Id (for derivatives only)
+        /// </param>
+        /// <param name="longName">
+        /// Long Name
+        /// </param>
+        /// <param name="contractMonth">
+        /// The contract month. Typically the contract month of the underlying for a futures contract.
+        /// </param>
+        /// <param name="industry">
+        /// The industry classification of the underlying/product. For example, Financial.
+        /// </param>
+        /// <param name="category">
+        /// The industry category of the underlying. For example, InvestmentSvc.
+        /// </param>
+        /// <param name="subcategory">
+        /// The industry subcategory of the underlying. For example, Brokerage.
+        /// </param>
+        /// <param name="timeZoneId">
+        /// The ID of the time zone for the trading hours of the product. For example, EST.
+        /// </param>
+        /// <param name="tradingHours">
+        /// The trading hours of the product. For example, 20090507:0700-1830,1830-2330;20090508:CLOSED.
+        /// </param>
+        /// <param name="liquidHours">
+        /// The liquid trading hours of the product. For example, 20090507:0930-1600;20090508:CLOSED.
+        /// </param>
+        public ContractDetails(Contract summary, string marketName, string tradingClass, double minTick, 
+                               string orderTypes, string validExchanges, int underConId, string longName, 
+                               string contractMonth, string industry, string category, string subcategory, 
+                               string timeZoneId, string tradingHours, string liquidHours)
         {
             this.summary = summary;
             this.marketName = marketName;
@@ -321,7 +486,7 @@ namespace Krs.Ats.IBNet
         /// <summary>
         /// Long Name
         /// </summary>
-        public String LongName
+        public string LongName
         {
             get { return longName; }
             set { longName = value; }
@@ -330,7 +495,7 @@ namespace Krs.Ats.IBNet
         /// <summary>
         /// The contract month. Typically the contract month of the underlying for a futures contract.
         /// </summary>
-        public String ContractMonth
+        public string ContractMonth
         {
             get { return contractMonth; }
             set { contractMonth = value; }
@@ -339,7 +504,7 @@ namespace Krs.Ats.IBNet
         /// <summary>
         /// The industry classification of the underlying/product. For example, Financial.
         /// </summary>
-        public String Industry
+        public string Industry
         {
             get { return industry; }
             set { industry = value; }
@@ -348,7 +513,7 @@ namespace Krs.Ats.IBNet
         /// <summary>
         /// The industry category of the underlying. For example, InvestmentSvc.
         /// </summary>
-        public String Category
+        public string Category
         {
             get { return category; }
             set { category = value; }
@@ -357,7 +522,7 @@ namespace Krs.Ats.IBNet
         /// <summary>
         /// The industry subcategory of the underlying. For example, Brokerage.
         /// </summary>
-        public String Subcategory
+        public string Subcategory
         {
             get { return subcategory; }
             set { subcategory = value; }
@@ -366,7 +531,7 @@ namespace Krs.Ats.IBNet
         /// <summary>
         /// The ID of the time zone for the trading hours of the product. For example, EST.
         /// </summary>
-        public String TimeZoneId
+        public string TimeZoneId
         {
             get { return timeZoneId; }
             set { timeZoneId = value; }
@@ -375,7 +540,7 @@ namespace Krs.Ats.IBNet
         /// <summary>
         /// The trading hours of the product. For example, 20090507:0700-1830,1830-2330;20090508:CLOSED.
         /// </summary>
-        public String TradingHours
+        public string TradingHours
         {
             get { return tradingHours; }
             set { tradingHours = value; }
@@ -384,7 +549,7 @@ namespace Krs.Ats.IBNet
         /// <summary>
         /// The liquid trading hours of the product. For example, 20090507:0930-1600;20090508:CLOSED.
         /// </summary>
-        public String LiquidHours
+        public string LiquidHours
         {
             get { return liquidHours; }
             set { liquidHours = value; }

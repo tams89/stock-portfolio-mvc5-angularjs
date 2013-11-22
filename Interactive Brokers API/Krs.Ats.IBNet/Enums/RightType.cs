@@ -1,3 +1,14 @@
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="RightType.cs" company="">
+//   
+// </copyright>
+// <summary>
+//   Option Right Type (Put or Call)
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+
 using System;
 using System.ComponentModel;
 
@@ -13,12 +24,14 @@ namespace Krs.Ats.IBNet
         /// Option type is a Put (Right to sell)
         /// </summary>
         /// Description tag used to be "PUT"
-        [Description("P")] Put,
+        [Description("P")] Put, 
+
         /// <summary>
         /// Option type is a Call (Right to buy)
         /// </summary>
         /// Description tag used to be "CALL"
-        [Description("C")] Call,
+        [Description("C")] Call, 
+
         /// <summary>
         /// Option type is not defined (contract is not an option).
         /// </summary>

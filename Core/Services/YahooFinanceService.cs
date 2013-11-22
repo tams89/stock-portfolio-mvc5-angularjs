@@ -86,7 +86,6 @@ namespace Core.Services
             {
                 if (string.IsNullOrEmpty(term)) return Enumerable.Empty<GoogleFinanceJsonDto>();
 
-                WebRequest.DefaultWebProxy = null;
                 using (var client = new WebClient())
                 {
                     // Query string plus argument, returns json.

@@ -40,7 +40,7 @@
 //        /// </returns>
 //        public IEnumerable<Security> SecurityList()
 //        {
-//            using (var c = new SqlConnection(Constants.AlgoTradingDbConnectionStr))
+//            using (var c = new SqlConnection(Constants.AlgoTraderDbConnection))
 //            {
 //                c.Open();
 //                var symbols = c.Query<Security>

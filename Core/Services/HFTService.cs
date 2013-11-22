@@ -39,7 +39,7 @@ namespace Core.Services
         /// </returns>
         public IEnumerable<Tick> BySymbol(string symbol)
         {
-            using (var c = new SqlConnection(Constants.AlgoTradingDbConnectionStr))
+            using (var c = new SqlConnection(Constants.AlgoTraderDbConnection))
             {
                 c.Open();
                 var predicate = Predicates.Field<Tick>(x => x.Symbol, Operator.Like, symbol);

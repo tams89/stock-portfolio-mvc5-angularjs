@@ -7,8 +7,6 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-
-
 using System;
 using System.Text;
 
@@ -74,7 +72,7 @@ namespace Krs.Ats.IBNet.Contracts
             : base(0, equitySymbol, SecurityType.Option, string.Empty, (double)strike, 
         right, "100", "SMART", "USD", optionSymbol, "SMART", SecurityIdType.None, string.Empty)
         {
-            StringBuilder ExpirationString = new StringBuilder();
+            var ExpirationString = new StringBuilder();
             ExpirationString.AppendFormat("{0:0000}{1:00}", year, month);
             Expiry = ExpirationString.ToString();
         }

@@ -8,8 +8,6 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-
-
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
@@ -58,7 +56,7 @@ namespace Krs.Ats.IBNet
         static private void RaiseEvent<T>(EventHandler<T> @event, object sender, T e)
         where T : EventArgs
         {
-            EventHandler<T> handler = @event;
+            var handler = @event;
             if (handler == null) return;
             handler(sender, e);
         }
@@ -97,7 +95,7 @@ namespace Krs.Ats.IBNet
         private void tickPrice(int tickerId, TickType tickType, decimal price, bool canAutoExecute)
         {
             // GeneralTracer.WriteLineIf(ibTickTrace.TraceInfo, "IBEvent: TickPrice: tickerId: {0}, tickType: {1}, price: {2}, canAutoExecute: {3}", tickerId, tickType, price, canAutoExecute);
-            TickPriceEventArgs e = new TickPriceEventArgs(tickerId, tickType, price, canAutoExecute);
+            var e = new TickPriceEventArgs(tickerId, tickType, price, canAutoExecute);
             OnTickPrice(e);
         }
 
@@ -132,7 +130,7 @@ namespace Krs.Ats.IBNet
         private void tickSize(int tickerId, TickType tickType, int size)
         {
             // GeneralTracer.WriteLineIf(ibTickTrace.TraceInfo, "IBEvent: TickSize: tickerId: {0}, tickType: {1}, size: {2}", tickerId, tickType, size);
-            TickSizeEventArgs e = new TickSizeEventArgs(tickerId, tickType, size);
+            var e = new TickSizeEventArgs(tickerId, tickType, size);
             OnTickSize(e);
         }
 
@@ -189,7 +187,7 @@ namespace Krs.Ats.IBNet
         /// </param>
         private void tickOptionComputation(int tickerId, TickType tickType, double impliedVol, double delta, double optPrice, double pvDividend, double gamma, double vega, double theta, double undPrice)
         {
-            TickOptionComputationEventArgs e =
+            var e =
                 new TickOptionComputationEventArgs(tickerId, tickType, impliedVol, delta, optPrice, pvDividend, gamma, vega, theta, undPrice);
             OnTickOptionComputation(e);
         }
@@ -224,7 +222,7 @@ namespace Krs.Ats.IBNet
         /// </param>
         private void tickGeneric(int tickerId, TickType tickType, double value)
         {
-            TickGenericEventArgs e = new TickGenericEventArgs(tickerId, tickType, value);
+            var e = new TickGenericEventArgs(tickerId, tickType, value);
             OnTickGeneric(e);
         }
 
@@ -258,7 +256,7 @@ namespace Krs.Ats.IBNet
         /// </param>
         private void tickString(int tickerId, TickType tickType, string value)
         {
-            TickStringEventArgs e = new TickStringEventArgs(tickerId, tickType, value);
+            var e = new TickStringEventArgs(tickerId, tickType, value);
             OnTickString(e);
         }
 
@@ -312,7 +310,7 @@ namespace Krs.Ats.IBNet
                              double impliedFuture, int holdDays, string futureExpiry, double dividendImpact, 
                              double dividendsToExpiry)
         {
-            TickEfpEventArgs e =
+            var e =
                 new TickEfpEventArgs(tickerId, tickType, basisPoints, formattedBasisPoints, impliedFuture, 
                                      holdDays, futureExpiry, dividendImpact, dividendsToExpiry);
             OnTickEfp(e);
@@ -372,7 +370,7 @@ namespace Krs.Ats.IBNet
                                  int permId, 
                                  int parentId, decimal lastFillPrice, int clientId, string whyHeld)
         {
-            OrderStatusEventArgs e = new OrderStatusEventArgs(orderId, status, filled, remaining, 
+            var e = new OrderStatusEventArgs(orderId, status, filled, remaining, 
                                                               avgFillPrice, permId, parentId, lastFillPrice, clientId, whyHeld);
             OnOrderStatus(e);
         }
@@ -410,7 +408,7 @@ namespace Krs.Ats.IBNet
         /// </param>
         private void openOrder(int orderId, Contract contract, Order order, OrderState orderState)
         {
-            OpenOrderEventArgs e = new OpenOrderEventArgs(orderId, contract, order, orderState);
+            var e = new OpenOrderEventArgs(orderId, contract, order, orderState);
             OnOpenOrder(e);
         }
 
@@ -447,7 +445,7 @@ namespace Krs.Ats.IBNet
         /// </param>
         private void updateAccountValue(string key, string value, string currency, string accountName)
         {
-            UpdateAccountValueEventArgs e = new UpdateAccountValueEventArgs(key, value, currency, accountName);
+            var e = new UpdateAccountValueEventArgs(key, value, currency, accountName);
             OnUpdateAccountValue(e);
         }
 
@@ -497,7 +495,7 @@ namespace Krs.Ats.IBNet
         private void updatePortfolio(Contract contract, int position, decimal marketPrice, decimal marketValue, 
                                      decimal averageCost, decimal unrealizedPNL, decimal realizedPNL, string accountName)
         {
-            UpdatePortfolioEventArgs e =
+            var e =
                 new UpdatePortfolioEventArgs(contract, position, marketPrice, marketValue, averageCost, unrealizedPNL, 
                                              realizedPNL, accountName);
             OnUpdatePortfolio(e);
@@ -527,7 +525,7 @@ namespace Krs.Ats.IBNet
         /// </param>
         private void updateAccountTime(string timeStamp)
         {
-            UpdateAccountTimeEventArgs e = new UpdateAccountTimeEventArgs(timeStamp);
+            var e = new UpdateAccountTimeEventArgs(timeStamp);
             OnUpdateAccountTime(e);
         }
 
@@ -556,7 +554,7 @@ namespace Krs.Ats.IBNet
         private void nextValidId(int orderId)
         {
             // GeneralTracer.WriteLineIf(ibTickTrace.TraceInfo, "IBEvent: NextValidId: orderId: {0}", orderId);
-            NextValidIdEventArgs e = new NextValidIdEventArgs(orderId);
+            var e = new NextValidIdEventArgs(orderId);
             OnNextValidId(e);
         }
 
@@ -587,7 +585,7 @@ namespace Krs.Ats.IBNet
         /// </param>
         private void contractDetails(int requestId, ContractDetails contractDetails)
         {
-            ContractDetailsEventArgs e = new ContractDetailsEventArgs(requestId, contractDetails);
+            var e = new ContractDetailsEventArgs(requestId, contractDetails);
             OnContractDetails(e);
         }
 
@@ -618,7 +616,7 @@ namespace Krs.Ats.IBNet
         /// </param>
         private void bondContractDetails(int requestId, ContractDetails contractDetails)
         {
-            BondContractDetailsEventArgs e = new BondContractDetailsEventArgs(requestId, contractDetails);
+            var e = new BondContractDetailsEventArgs(requestId, contractDetails);
             OnBondContractDetails(e);
         }
 
@@ -647,7 +645,7 @@ namespace Krs.Ats.IBNet
         /// </param>
         private void contractDetailsEnd(int requestId)
         {
-            ContractDetailsEndEventArgs e = new ContractDetailsEndEventArgs(requestId);
+            var e = new ContractDetailsEndEventArgs(requestId);
             OnContractDetailsEnd(e);
         }
 
@@ -672,7 +670,7 @@ namespace Krs.Ats.IBNet
         /// </summary>
         private void openOrderEnd()
         {
-            EventArgs e = new EventArgs();
+            var e = new EventArgs();
             OnOpenOrderEnd(e);
         }
 
@@ -700,7 +698,7 @@ namespace Krs.Ats.IBNet
         /// </param>
         private void accountDownloadEnd(string accountName)
         {
-            AccountDownloadEndEventArgs e = new AccountDownloadEndEventArgs(accountName);
+            var e = new AccountDownloadEndEventArgs(accountName);
             OnAccountDownloadEnd(e);
         }
 
@@ -729,7 +727,7 @@ namespace Krs.Ats.IBNet
         /// </param>
         private void executionDataEnd(int requestId)
         {
-            ExecutionDataEndEventArgs e = new ExecutionDataEndEventArgs(requestId);
+            var e = new ExecutionDataEndEventArgs(requestId);
             OnExecutionDataEnd(e);
         }
 
@@ -760,7 +758,7 @@ namespace Krs.Ats.IBNet
         /// </param>
         private void deltaNuetralValidation(int requestId, UnderComp underComp)
         {
-            DeltaNuetralValidationEventArgs e = new DeltaNuetralValidationEventArgs(requestId, underComp);
+            var e = new DeltaNuetralValidationEventArgs(requestId, underComp);
             OnDeltaNuetralValidation(e);
         }
 
@@ -800,7 +798,7 @@ namespace Krs.Ats.IBNet
         /// </param>
         private void execDetails(int reqId, int orderId, Contract contract, Execution execution)
         {
-            ExecDetailsEventArgs e = new ExecDetailsEventArgs(reqId, orderId, contract, execution);
+            var e = new ExecDetailsEventArgs(reqId, orderId, contract, execution);
             OnExecDetails(e);
         }
 
@@ -843,7 +841,7 @@ namespace Krs.Ats.IBNet
         private void updateMktDepth(int tickerId, int position, MarketDepthOperation operation, MarketDepthSide side, 
                                     decimal price, int size)
         {
-            UpdateMarketDepthEventArgs e = new UpdateMarketDepthEventArgs(tickerId, position, operation, side, price, size);
+            var e = new UpdateMarketDepthEventArgs(tickerId, position, operation, side, price, size);
             OnUpdateMarketDepth(e);
         }
 
@@ -891,7 +889,7 @@ namespace Krs.Ats.IBNet
                                       MarketDepthSide side, 
                                       decimal price, int size)
         {
-            UpdateMarketDepthL2EventArgs e =
+            var e =
                 new UpdateMarketDepthL2EventArgs(tickerId, position, marketMaker, operation, side, price, size);
             OnUpdateMarketDepthL2(e);
         }
@@ -919,7 +917,7 @@ namespace Krs.Ats.IBNet
         /// </param>
         private void exception(Exception ex)
         {
-            ReportExceptionEventArgs e = new ReportExceptionEventArgs(ex);
+            var e = new ReportExceptionEventArgs(ex);
             OnReportException(e);
         }
 
@@ -956,7 +954,7 @@ namespace Krs.Ats.IBNet
         /// </param>
         private void updateNewsBulletin(int msgId, NewsType msgType, string message, string origExchange)
         {
-            UpdateNewsBulletinEventArgs e = new UpdateNewsBulletinEventArgs(msgId, msgType, message, origExchange);
+            var e = new UpdateNewsBulletinEventArgs(msgId, msgType, message, origExchange);
             OnUpdateNewsBulletin(e);
         }
 
@@ -985,7 +983,7 @@ namespace Krs.Ats.IBNet
         /// </param>
         private void managedAccounts(string accountsList)
         {
-            ManagedAccountsEventArgs e = new ManagedAccountsEventArgs(accountsList);
+            var e = new ManagedAccountsEventArgs(accountsList);
             OnManagedAccounts(e);
         }
 
@@ -1016,7 +1014,7 @@ namespace Krs.Ats.IBNet
         /// </param>
         private void receiveFA(FADataType faDataType, string xml)
         {
-            ReceiveFAEventArgs e = new ReceiveFAEventArgs(faDataType, xml);
+            var e = new ReceiveFAEventArgs(faDataType, xml);
             OnReceiveFA(e);
         }
 
@@ -1078,7 +1076,7 @@ namespace Krs.Ats.IBNet
         private void historicalData(int reqId, DateTime date, decimal open, decimal high, decimal low, decimal close, 
                                     int volume, int trades, double WAP, bool hasGaps, int recordNumber, int recordTotal)
         {
-            HistoricalDataEventArgs e =
+            var e =
                 new HistoricalDataEventArgs(reqId, date, open, high, low, close, volume, trades, WAP, hasGaps, recordNumber, recordTotal);
             OnHistoricalData(e);
         }
@@ -1107,7 +1105,7 @@ namespace Krs.Ats.IBNet
         /// </param>
         private void scannerParameters(string xml)
         {
-            ScannerParametersEventArgs e = new ScannerParametersEventArgs(xml);
+            var e = new ScannerParametersEventArgs(xml);
             OnScannerParameters(e);
         }
 
@@ -1154,7 +1152,7 @@ namespace Krs.Ats.IBNet
         private void scannerData(int reqId, int rank, ContractDetails contractDetails, string distance, string benchmark, 
                                  string projection, string legsStr)
         {
-            ScannerDataEventArgs e =
+            var e =
                 new ScannerDataEventArgs(reqId, rank, contractDetails, distance, benchmark, projection, legsStr);
             OnScannerData(e);
         }
@@ -1183,7 +1181,7 @@ namespace Krs.Ats.IBNet
         /// </param>
         private void scannerDataEnd(int reqId)
         {
-            ScannerDataEndEventArgs e =
+            var e =
                 new ScannerDataEndEventArgs(reqId);
             OnScannerDataEnd(e);
         }
@@ -1236,7 +1234,7 @@ namespace Krs.Ats.IBNet
         /// </param>
         private void realTimeBar(int reqId, long time, decimal open, decimal high, decimal low, decimal close, long volume, double wap, int count)
         {
-            RealTimeBarEventArgs e = new RealTimeBarEventArgs(reqId, time, open, high, low, close, volume, wap, count);
+            var e = new RealTimeBarEventArgs(reqId, time, open, high, low, close, volume, wap, count);
             OnRealTimeBar(e);
         }
 
@@ -1264,7 +1262,7 @@ namespace Krs.Ats.IBNet
         /// </param>
         private void currentTime(DateTime time)
         {
-            CurrentTimeEventArgs e = new CurrentTimeEventArgs(time);
+            var e = new CurrentTimeEventArgs(time);
             OnCurrentTime(e);
         }
 
@@ -1295,7 +1293,7 @@ namespace Krs.Ats.IBNet
         /// </param>
         private void fundamentalData(int requestId, string data)
         {
-            FundamentalDetailsEventArgs e = new FundamentalDetailsEventArgs(requestId, data);
+            var e = new FundamentalDetailsEventArgs(requestId, data);
             OnFundamentalData(e);
         }
 
@@ -1326,7 +1324,7 @@ namespace Krs.Ats.IBNet
         /// </param>
         private void marketDataType(int requestId, MarketDataType dataType)
         {
-            MarketDataTypeEventArgs e = new MarketDataTypeEventArgs(requestId, dataType);
+            var e = new MarketDataTypeEventArgs(requestId, dataType);
             OnMarketDataType(e);
         }
 
@@ -1391,7 +1389,7 @@ namespace Krs.Ats.IBNet
             lock (this)
             {
                 GeneralTracer.WriteLineIf(ibTrace.TraceError, "IBEvent: Error: tickerId: {0}, errorCode: {1}, errorMsg: {2}", tickerId, errorCode, errorMsg);
-                ErrorEventArgs e = new ErrorEventArgs(tickerId, errorCode, errorMsg);
+                var e = new ErrorEventArgs(tickerId, errorCode, errorMsg);
                 OnError(e);
             }
         }
@@ -1512,7 +1510,7 @@ namespace Krs.Ats.IBNet
         /// </summary>
         private void connectionClosed()
         {
-            ConnectionClosedEventArgs e = new ConnectionClosedEventArgs();
+            var e = new ConnectionClosedEventArgs();
             OnConnectionClosed(e);
         }
 
@@ -1540,7 +1538,7 @@ namespace Krs.Ats.IBNet
         /// </param>
         private void tickSnapshotEnd(int requestId)
         {
-            TickSnapshotEndEventArgs e = new TickSnapshotEndEventArgs(requestId);
+            var e = new TickSnapshotEndEventArgs(requestId);
             OnTickSnapshotEnd(e);
         }
 
@@ -1760,6 +1758,7 @@ namespace Krs.Ats.IBNet
                     GeneralTracer.WriteLineIf(ibTrace.TraceInfo, "IBMethod: Connect: TWS Time at connection: {0}", 
                         twsTime);
 
+
 // Let's fire the servertime event
                 }
 
@@ -1825,7 +1824,7 @@ namespace Krs.Ats.IBNet
                     return;
                 }
 
-                TcpClient socket = new TcpClient(host, port);
+                var socket = new TcpClient(host, port);
                 connect(socket, clientId);
             }
         }
@@ -1886,7 +1885,7 @@ namespace Krs.Ats.IBNet
                     return;
                 }
 
-                int version = 1;
+                var version = 1;
 
                 // send cancel mkt data msg
                 try
@@ -1926,7 +1925,7 @@ namespace Krs.Ats.IBNet
                     return;
                 }
 
-                int version = 1;
+                var version = 1;
 
                 try
                 {
@@ -1971,7 +1970,7 @@ namespace Krs.Ats.IBNet
                     return;
                 }
 
-                int version = 3;
+                var version = 3;
 
                 try
                 {
@@ -2073,7 +2072,7 @@ namespace Krs.Ats.IBNet
                     }
                 }
 
-                int version = 9;
+                var version = 9;
 
                 try
                 {
@@ -2120,7 +2119,7 @@ namespace Krs.Ats.IBNet
                             send(contract.ComboLegs.Count);
 
                             ComboLeg comboLeg;
-                            for (int i = 0; i < contract.ComboLegs.Count; i++)
+                            for (var i = 0; i < contract.ComboLegs.Count; i++)
                             {
                                 comboLeg = (ComboLeg) contract.ComboLegs[i];
                                 send(comboLeg.ConId);
@@ -2135,7 +2134,7 @@ namespace Krs.Ats.IBNet
                     {
                         if (contract.UnderlyingComponent != null)
                         {
-                            UnderlyingComponent underComp = contract.UnderlyingComponent;
+                            var underComp = contract.UnderlyingComponent;
                             send(true);
                             send(underComp.ContractId);
                             send(underComp.Delta);
@@ -2156,10 +2155,10 @@ namespace Krs.Ats.IBNet
                          *
                          * Therefore we are relying on TWS doing validation.
                          */
-                        StringBuilder genList = new StringBuilder();
+                        var genList = new StringBuilder();
                         if (genericTickList != null)
                         {
-                            for (int counter = 0; counter < genericTickList.Count; counter++)
+                            for (var counter = 0; counter < genericTickList.Count; counter++)
                                 genList.AppendFormat("{0},", 
                                     ((int) genericTickList[counter]).ToString(
                                         CultureInfo.InvariantCulture));
@@ -2170,6 +2169,7 @@ namespace Krs.Ats.IBNet
 
                         send(genList.ToString().Trim(','));
                     }
+
 
 // 35 is the minum version for SnapShot
                     if (serverVersion >= 35)
@@ -2210,7 +2210,7 @@ namespace Krs.Ats.IBNet
                     return;
                 }
 
-                int version = 1;
+                var version = 1;
 
                 // send cancel mkt data msg
                 try
@@ -2254,7 +2254,7 @@ namespace Krs.Ats.IBNet
                     return;
                 }
 
-                int version = 1;
+                var version = 1;
 
                 // send cancel mkt data msg
                 try
@@ -2381,9 +2381,9 @@ namespace Krs.Ats.IBNet
         public void RequestHistoricalData(int tickerId, Contract contract, DateTime endDateTime, TimeSpan duration, 
                                       BarSize barSizeSetting, HistoricalDataType whatToShow, int useRth)
         {
-            DateTime beginDateTime = endDateTime.Subtract(duration);
+            var beginDateTime = endDateTime.Subtract(duration);
 
-            string dur = ConvertPeriodtoIb(beginDateTime, endDateTime);
+            var dur = ConvertPeriodtoIb(beginDateTime, endDateTime);
             RequestHistoricalData(tickerId, contract, endDateTime, dur, barSizeSetting, whatToShow, useRth);
         }
 
@@ -2401,8 +2401,8 @@ namespace Krs.Ats.IBNet
         /// </returns>
         protected static string ConvertPeriodtoIb(DateTime StartTime, DateTime EndTime)
         {
-            TimeSpan period = EndTime.Subtract(StartTime);
-            double secs = period.TotalSeconds;
+            var period = EndTime.Subtract(StartTime);
+            var secs = period.TotalSeconds;
             long unit;
 
             if (secs < 1)
@@ -2413,12 +2413,12 @@ namespace Krs.Ats.IBNet
                 return string.Concat(unit, " S");
             }
 
-            double days = secs / 86400;
+            var days = secs / 86400;
 
             unit = (long)Math.Ceiling(days);
             if (unit <= 34)
                 return string.Concat(unit, " D");
-            double weeks = days / 7;
+            var weeks = days / 7;
             unit = (long)Math.Ceiling(weeks);
             if (unit > 52)
                 throw new ArgumentOutOfRangeException("Period cannot be bigger than 52 weeks.");
@@ -2543,7 +2543,7 @@ namespace Krs.Ats.IBNet
                     return;
                 }
 
-                int version = 4;
+                var version = 4;
 
                 try
                 {
@@ -2602,7 +2602,7 @@ namespace Krs.Ats.IBNet
                             send(contract.ComboLegs.Count);
 
                             ComboLeg comboLeg;
-                            for (int i = 0; i < contract.ComboLegs.Count; i++)
+                            for (var i = 0; i < contract.ComboLegs.Count; i++)
                             {
                                 comboLeg = (ComboLeg)contract.ComboLegs[i];
                                 send(comboLeg.ConId);
@@ -2750,6 +2750,7 @@ namespace Krs.Ats.IBNet
                     return;
                 }
 
+
 // 34 is the minimum version for real time bars
                 if (serverVersion < MinServerVersion.RealTimeBars)
                 {
@@ -2757,7 +2758,7 @@ namespace Krs.Ats.IBNet
                     return;
                 }
 
-                int version = 1;
+                var version = 1;
 
                 try
                 {
@@ -2823,7 +2824,7 @@ namespace Krs.Ats.IBNet
                     return;
                 }
 
-                int version = 3;
+                var version = 3;
 
                 try
                 {
@@ -2881,7 +2882,7 @@ namespace Krs.Ats.IBNet
                     return;
                 }
 
-                int version = 1;
+                var version = 1;
 
                 // send cancel mkt data msg
                 try
@@ -2925,7 +2926,7 @@ namespace Krs.Ats.IBNet
                     return;
                 }
 
-                int version = 1;
+                var version = 1;
 
                 // send cancel mkt data msg
                 try
@@ -2987,7 +2988,7 @@ namespace Krs.Ats.IBNet
                     return;
                 }
 
-                int version = 1;
+                var version = 1;
 
                 try
                 {
@@ -3000,6 +3001,7 @@ namespace Krs.Ats.IBNet
                     send((int) OutgoingMessage.ExerciseOptions);
                     send(version);
                     send(tickerId);
+
 
 // Send Contract Fields
                     send(contract.Symbol);
@@ -3073,7 +3075,7 @@ namespace Krs.Ats.IBNet
                     if (!(contract.ComboLegs.Count == 0))
                     {
                         ComboLeg comboLeg;
-                        for (int i = 0; i < contract.ComboLegs.Count; ++i)
+                        for (var i = 0; i < contract.ComboLegs.Count; ++i)
                         {
                             comboLeg = (ComboLeg)contract.ComboLegs[i];
                             if (comboLeg.ShortSaleSlot != 0 || (!string.IsNullOrEmpty(comboLeg.DesignatedLocation)))
@@ -3203,7 +3205,7 @@ namespace Krs.Ats.IBNet
                     }
                 }
 
-                int version = (serverVersion < MinServerVersion.NotHeld) ? 27 : 35;
+                var version = (serverVersion < MinServerVersion.NotHeld) ? 27 : 35;
 
                 // send place order msg
                 try
@@ -3299,7 +3301,7 @@ namespace Krs.Ats.IBNet
                             send(contract.ComboLegs.Count);
 
                             ComboLeg comboLeg;
-                            for (int i = 0; i < contract.ComboLegs.Count; i++)
+                            for (var i = 0; i < contract.ComboLegs.Count; i++)
                             {
                                 comboLeg = (ComboLeg) contract.ComboLegs[i];
                                 send(comboLeg.ConId);
@@ -3307,6 +3309,7 @@ namespace Krs.Ats.IBNet
                                 send(EnumDescConverter.GetEnumDescription(comboLeg.Action));
                                 send(comboLeg.Exchange);
                                 send((int) comboLeg.OpenClose);
+
 
 // Min Combo Leg Short Sale Server Version is 35
                                 if (serverVersion >= 35)
@@ -3323,14 +3326,14 @@ namespace Krs.Ats.IBNet
 
                     if (serverVersion >= MinServerVersion.SmartComboRoutingParams && contract.SecurityType == SecurityType.Bag)
                     {
-                        Collection<TagValue> smartComboRoutingParams = order.SmartComboRoutingParams;
-                        int smartComboRoutingParamsCount = smartComboRoutingParams == null ? 0 : smartComboRoutingParams.Count;
+                        var smartComboRoutingParams = order.SmartComboRoutingParams;
+                        var smartComboRoutingParamsCount = smartComboRoutingParams == null ? 0 : smartComboRoutingParams.Count;
                         send(smartComboRoutingParamsCount);
                         if (smartComboRoutingParamsCount > 0)
                         {
-                            for (int i = 0; i < smartComboRoutingParamsCount; ++i)
+                            for (var i = 0; i < smartComboRoutingParamsCount; ++i)
                             {
-                                TagValue tagValue = (TagValue)smartComboRoutingParams[i];
+                                var tagValue = (TagValue)smartComboRoutingParams[i];
                                 send(tagValue.Tag);
                                 send(tagValue.Value);
                             }
@@ -3397,11 +3400,12 @@ namespace Krs.Ats.IBNet
                         sendMax(order.StockRefPrice);
                         sendMax(order.Delta);
 
+
 // Volatility orders had specific watermark price attribs in server version 26
-                        double lower = (serverVersion == 26 && order.OrderType.Equals(OrderType.Volatility))
+                        var lower = (serverVersion == 26 && order.OrderType.Equals(OrderType.Volatility))
                             ? double.MaxValue
                             : order.StockRangeLower;
-                        double upper = (serverVersion == 26 && order.OrderType.Equals(OrderType.Volatility))
+                        var upper = (serverVersion == 26 && order.OrderType.Equals(OrderType.Volatility))
                             ? double.MaxValue
                             : order.StockRangeUpper;
                         sendMax(lower);
@@ -3440,10 +3444,10 @@ namespace Krs.Ats.IBNet
                         if (serverVersion == 26)
                         {
                             // Volatility orders had specific watermark price attribs in server version 26
-                            double lower = order.OrderType.Equals(OrderType.Volatility)
+                            var lower = order.OrderType.Equals(OrderType.Volatility)
                                                ? order.StockRangeLower
                                                : double.MaxValue;
-                            double upper = order.OrderType.Equals(OrderType.Volatility)
+                            var upper = order.OrderType.Equals(OrderType.Volatility)
                                                ? order.StockRangeUpper
                                                : double.MaxValue;
                             sendMax(lower);
@@ -3503,7 +3507,7 @@ namespace Krs.Ats.IBNet
                     {
                         if (contract.UnderlyingComponent != null)
                         {
-                            UnderlyingComponent underComp = contract.UnderlyingComponent;
+                            var underComp = contract.UnderlyingComponent;
                             send(true);
                             send(underComp.ContractId);
                             send(underComp.Delta);
@@ -3527,7 +3531,7 @@ namespace Krs.Ats.IBNet
                             else
                             {
                                 send(order.AlgoParams.Count);
-                                foreach (TagValue tagValue in order.AlgoParams)
+                                foreach (var tagValue in order.AlgoParams)
                                 {
                                     send(tagValue.Tag);
                                     send(tagValue.Value);
@@ -3572,7 +3576,7 @@ namespace Krs.Ats.IBNet
                     return;
                 }
 
-                int version = 2;
+                var version = 2;
 
                 // send cancel order msg
                 try
@@ -3620,7 +3624,7 @@ namespace Krs.Ats.IBNet
                     return;
                 }
 
-                int version = 3;
+                var version = 3;
 
                 // send cancel order msg
                 try
@@ -3674,7 +3678,7 @@ namespace Krs.Ats.IBNet
                     return;
                 }
 
-                int version = 1;
+                var version = 1;
 
                 // send cancel order msg
                 try
@@ -3709,7 +3713,7 @@ namespace Krs.Ats.IBNet
                     return;
                 }
 
-                int version = 1;
+                var version = 1;
 
                 // send cancel order msg
                 try
@@ -3745,7 +3749,7 @@ namespace Krs.Ats.IBNet
                     return;
                 }
 
-                int version = 1;
+                var version = 1;
 
                 try
                 {
@@ -3781,7 +3785,7 @@ namespace Krs.Ats.IBNet
                     return;
                 }
 
-                int version = 1;
+                var version = 1;
 
                 try
                 {
@@ -3814,7 +3818,7 @@ namespace Krs.Ats.IBNet
                     return;
                 }
 
-                int version = 1;
+                var version = 1;
 
                 // send cancel order msg
                 try
@@ -3852,7 +3856,7 @@ namespace Krs.Ats.IBNet
                     return;
                 }
 
-                int version = 1;
+                var version = 1;
 
                 // send req open orders msg
                 try
@@ -3888,7 +3892,7 @@ namespace Krs.Ats.IBNet
                     return;
                 }
 
-                int version = 1;
+                var version = 1;
 
                 // send req all open orders msg
                 try
@@ -3923,7 +3927,7 @@ namespace Krs.Ats.IBNet
                     return;
                 }
 
-                int version = 1;
+                var version = 1;
 
                 // send req FA managed accounts msg
                 try
@@ -3969,7 +3973,7 @@ namespace Krs.Ats.IBNet
                     return;
                 }
 
-                int version = 1;
+                var version = 1;
 
                 try
                 {
@@ -4018,7 +4022,7 @@ namespace Krs.Ats.IBNet
                     return;
                 }
 
-                int version = 1;
+                var version = 1;
 
                 try
                 {
@@ -4059,7 +4063,7 @@ namespace Krs.Ats.IBNet
                     return;
                 }
 
-                int version = 1;
+                var version = 1;
 
                 try
                 {
@@ -4105,7 +4109,7 @@ namespace Krs.Ats.IBNet
                     return;
                 }
 
-                int version = 1;
+                var version = 1;
 
                 try
                 {
@@ -4154,7 +4158,7 @@ namespace Krs.Ats.IBNet
                     return;
                 }
 
-                int version = 1;
+                var version = 1;
 
                 try
                 {
@@ -4471,7 +4475,7 @@ namespace Krs.Ats.IBNet
                     return;
                 }
 
-                int version = 1;
+                var version = 1;
 
                 // send the set server logging level message
                 try
@@ -4815,17 +4819,17 @@ namespace Krs.Ats.IBNet
             {
                 case IncomingMessage.TickPrice:
                     {
-                        int version = ReadInt();
-                        int tickerId = ReadInt();
-                        int tickType = ReadInt();
-                        decimal price = ReadDecimal();
-                        int size = 0;
+                        var version = ReadInt();
+                        var tickerId = ReadInt();
+                        var tickType = ReadInt();
+                        var price = ReadDecimal();
+                        var size = 0;
                         if (version >= 2)
                         {
                             size = ReadInt();
                         }
 
-                        int canAutoExecute = 0;
+                        var canAutoExecute = 0;
                         if (version >= 3)
                         {
                             canAutoExecute = ReadInt();
@@ -4835,7 +4839,7 @@ namespace Krs.Ats.IBNet
 
                         if (version >= 2)
                         {
-                            int sizeTickType = -1; // not a tick
+                            var sizeTickType = -1; // not a tick
                             switch (tickType)
                             {
                                 case 1: // BID
@@ -4862,10 +4866,10 @@ namespace Krs.Ats.IBNet
 
                 case IncomingMessage.TickSize:
                     {
-                        int version = ReadInt();
-                        int tickerId = ReadInt();
-                        int tickType = ReadInt();
-                        int size = ReadInt();
+                        var version = ReadInt();
+                        var tickerId = ReadInt();
+                        var tickType = ReadInt();
+                        var size = ReadInt();
 
                         tickSize(tickerId, (TickType)tickType, size);
                         break;
@@ -4873,29 +4877,29 @@ namespace Krs.Ats.IBNet
 
                 case IncomingMessage.TickOptionComputation:
                     {
-                        int version = ReadInt();
-                        int tickerId = ReadInt();
-                        TickType tickType = (TickType)ReadInt();
-                        double impliedVol = ReadDouble();
+                        var version = ReadInt();
+                        var tickerId = ReadInt();
+                        var tickType = (TickType)ReadInt();
+                        var impliedVol = ReadDouble();
                         if (impliedVol < 0)
                         {
                             // -1 is the "not yet computed" indicator
                             impliedVol = double.MaxValue;
                         }
 
-                        double delta = ReadDouble();
+                        var delta = ReadDouble();
                         if (Math.Abs(delta) > 1)
                         {
                             // -2 is the "not yet computed" indicator
                             delta = double.MaxValue;
                         }
 
-                        double optPrice = double.MaxValue;
-                        double pvDividend = double.MaxValue;
-                        double gamma = double.MaxValue;
-                        double vega = double.MaxValue;
-                        double theta = double.MaxValue;
-                        double undPrice = double.MaxValue;
+                        var optPrice = double.MaxValue;
+                        var pvDividend = double.MaxValue;
+                        var gamma = double.MaxValue;
+                        var vega = double.MaxValue;
+                        var theta = double.MaxValue;
+                        var undPrice = double.MaxValue;
                         if (version >= 6 || tickType == TickType.ModelOption)
                         { // introduced in version == 5
                             optPrice = ReadDouble();
@@ -4944,10 +4948,10 @@ namespace Krs.Ats.IBNet
 
                 case IncomingMessage.TickGeneric:
                     {
-                        int version = ReadInt();
-                        int tickerId = ReadInt();
-                        int tickType = ReadInt();
-                        double value_Renamed = ReadDouble();
+                        var version = ReadInt();
+                        var tickerId = ReadInt();
+                        var tickType = ReadInt();
+                        var value_Renamed = ReadDouble();
 
                         tickGeneric(tickerId, (TickType)tickType, value_Renamed);
                         break;
@@ -4955,10 +4959,10 @@ namespace Krs.Ats.IBNet
 
                 case IncomingMessage.TickString:
                     {
-                        int version = ReadInt();
-                        int tickerId = ReadInt();
-                        int tickType = ReadInt();
-                        string value_Renamed = ReadStr();
+                        var version = ReadInt();
+                        var tickerId = ReadInt();
+                        var tickType = ReadInt();
+                        var value_Renamed = ReadStr();
 
                         tickString(tickerId, (TickType)tickType, value_Renamed);
                         break;
@@ -4966,16 +4970,16 @@ namespace Krs.Ats.IBNet
 
                 case IncomingMessage.TickEfp:
                     {
-                        int version = ReadInt();
-                        int tickerId = ReadInt();
-                        int tickType = ReadInt();
-                        double basisPoints = ReadDouble();
-                        string formattedBasisPoints = ReadStr();
-                        double impliedFuturesPrice = ReadDouble();
-                        int holdDays = ReadInt();
-                        string futureExpiry = ReadStr();
-                        double dividendImpact = ReadDouble();
-                        double dividendsToExpiry = ReadDouble();
+                        var version = ReadInt();
+                        var tickerId = ReadInt();
+                        var tickType = ReadInt();
+                        var basisPoints = ReadDouble();
+                        var formattedBasisPoints = ReadStr();
+                        var impliedFuturesPrice = ReadDouble();
+                        var holdDays = ReadInt();
+                        var futureExpiry = ReadStr();
+                        var dividendImpact = ReadDouble();
+                        var dividendsToExpiry = ReadDouble();
                         tickEfp(tickerId, (TickType)tickType, basisPoints, formattedBasisPoints, impliedFuturesPrice, 
                                 holdDays, futureExpiry, dividendImpact, dividendsToExpiry);
                         break;
@@ -4983,22 +4987,22 @@ namespace Krs.Ats.IBNet
 
                 case IncomingMessage.OrderStatus:
                     {
-                        int version = ReadInt();
-                        int id = ReadInt();
-                        string orderstat = ReadStr();
-                        OrderStatus status = string.IsNullOrEmpty(orderstat) ? IBNet.OrderStatus.None :
+                        var version = ReadInt();
+                        var id = ReadInt();
+                        var orderstat = ReadStr();
+                        var status = string.IsNullOrEmpty(orderstat) ? IBNet.OrderStatus.None :
                             (OrderStatus)EnumDescConverter.GetEnumValue(typeof(OrderStatus), orderstat);
-                        int filled = ReadInt();
-                        int remaining = ReadInt();
-                        decimal avgFillPrice = ReadDecimal();
+                        var filled = ReadInt();
+                        var remaining = ReadInt();
+                        var avgFillPrice = ReadDecimal();
 
-                        int permId = 0;
+                        var permId = 0;
                         if (version >= 2)
                         {
                             permId = ReadInt();
                         }
 
-                        int parentId = 0;
+                        var parentId = 0;
                         if (version >= 3)
                         {
                             parentId = ReadInt();
@@ -5010,7 +5014,7 @@ namespace Krs.Ats.IBNet
                             lastFillPrice = ReadDecimal();
                         }
 
-                        int clientId = 0;
+                        var clientId = 0;
                         if (version >= 5)
                         {
                             clientId = ReadInt();
@@ -5029,10 +5033,10 @@ namespace Krs.Ats.IBNet
 
                 case IncomingMessage.AccountValue:
                     {
-                        int version = ReadInt();
-                        string key = ReadStr();
-                        string val = ReadStr();
-                        string cur = ReadStr();
+                        var version = ReadInt();
+                        var key = ReadStr();
+                        var val = ReadStr();
+                        var cur = ReadStr();
                         string accountName = null;
                         if (version >= 2)
                         {
@@ -5045,8 +5049,8 @@ namespace Krs.Ats.IBNet
 
                 case IncomingMessage.PortfolioValue:
                     {
-                        int version = ReadInt();
-                        Contract contract = new Contract();
+                        var version = ReadInt();
+                        var contract = new Contract();
                         if (version >= 6)
                         {
                             contract.ContractId = ReadInt();
@@ -5057,7 +5061,7 @@ namespace Krs.Ats.IBNet
                             (SecurityType)EnumDescConverter.GetEnumValue(typeof(SecurityType), ReadStr());
                         contract.Expiry = ReadStr();
                         contract.Strike = ReadDouble();
-                        string rstr = ReadStr();
+                        var rstr = ReadStr();
                         contract.Right = rstr == null || rstr.Length <= 0 || rstr.Equals("?") || rstr.Equals("0")
                                               ? RightType.Undefined
                                               : (RightType)EnumDescConverter.GetEnumValue(typeof(RightType), rstr);
@@ -5074,12 +5078,12 @@ namespace Krs.Ats.IBNet
                             contract.LocalSymbol = ReadStr();
                         }
 
-                        int position = ReadInt();
-                        decimal marketPrice = ReadDecimal();
-                        decimal marketValue = ReadDecimal();
-                        decimal averageCost = 0.0m;
-                        decimal unrealizedPNL = 0.0m;
-                        decimal realizedPNL = 0.0m;
+                        var position = ReadInt();
+                        var marketPrice = ReadDecimal();
+                        var marketValue = ReadDecimal();
+                        var averageCost = 0.0m;
+                        var unrealizedPNL = 0.0m;
+                        var realizedPNL = 0.0m;
                         if (version >= 3)
                         {
                             averageCost = ReadDecimal();
@@ -5106,25 +5110,25 @@ namespace Krs.Ats.IBNet
 
                 case IncomingMessage.AccountUpdateTime:
                     {
-                        int version = ReadInt();
-                        string timeStamp = ReadStr();
+                        var version = ReadInt();
+                        var timeStamp = ReadStr();
                         updateAccountTime(timeStamp);
                         break;
                     }
 
                 case IncomingMessage.ErrorMessage:
                     {
-                        int version = ReadInt();
+                        var version = ReadInt();
                         if (version < 2)
                         {
-                            string msg = ReadStr();
+                            var msg = ReadStr();
                             error(msg);
                         }
                         else
                         {
-                            int id = ReadInt();
-                            int errorCode = ReadInt();
-                            string errorMsg = ReadStr();
+                            var id = ReadInt();
+                            var errorCode = ReadInt();
+                            var errorMsg = ReadStr();
                             error(id, (ErrorMessage)errorCode, errorMsg);
                         }
 
@@ -5134,14 +5138,14 @@ namespace Krs.Ats.IBNet
                 case IncomingMessage.OpenOrder:
                     {
                         // read version
-                        int version = ReadInt();
+                        var version = ReadInt();
 
                         // read order id
-                        Order order = new Order();
+                        var order = new Order();
                         order.OrderId = ReadInt();
 
                         // read contract fields
-                        Contract contract = new Contract();
+                        var contract = new Contract();
                         if (version >= 17)
                         {
                             contract.ContractId = ReadInt();
@@ -5152,7 +5156,7 @@ namespace Krs.Ats.IBNet
                             (SecurityType)EnumDescConverter.GetEnumValue(typeof(SecurityType), ReadStr());
                         contract.Expiry = ReadStr();
                         contract.Strike = ReadDouble();
-                        string rstr = ReadStr();
+                        var rstr = ReadStr();
                         contract.Right = string.IsNullOrEmpty(rstr) || rstr.Equals("?")
                                               ? RightType.Undefined
                                               : (RightType)EnumDescConverter.GetEnumValue(typeof(RightType), rstr);
@@ -5213,7 +5217,7 @@ namespace Krs.Ats.IBNet
                         if (version >= 7)
                         {
                             order.FAGroup = ReadStr();
-                            string fam = ReadStr();
+                            var fam = ReadStr();
                             order.FAMethod = string.IsNullOrEmpty(fam) ? FinancialAdvisorAllocationMethod.None : (FinancialAdvisorAllocationMethod)EnumDescConverter.GetEnumValue(typeof(FinancialAdvisorAllocationMethod), fam);
                             order.FAPercentage = ReadStr();
                             order.FAProfile = ReadStr();
@@ -5274,13 +5278,13 @@ namespace Krs.Ats.IBNet
                             order.VolatilityType = int.TryParse(rstr, out i) ? (VolatilityType)i : VolatilityType.Undefined;
                             if (version == 11)
                             {
-                                int receivedInt = ReadInt();
+                                var receivedInt = ReadInt();
                                 order.DeltaNeutralOrderType = (receivedInt == 0) ? OrderType.Empty : OrderType.Market;
                             }
                             else
                             {
                                 // version 12 and up
-                                string dnoa = ReadStr();
+                                var dnoa = ReadStr();
                                 order.DeltaNeutralOrderType = string.IsNullOrEmpty(dnoa) ? OrderType.Empty : (OrderType)EnumDescConverter.GetEnumValue(typeof(OrderType), dnoa);
                                 order.DeltaNeutralAuxPrice = ReadDouble();
 
@@ -5330,36 +5334,36 @@ namespace Krs.Ats.IBNet
 
                         if (version >= 29)
                         {
-                            int comboLegsCount = ReadInt();
+                            var comboLegsCount = ReadInt();
                             if (comboLegsCount > 0)
                             {
                                 contract.ComboLegs = new Collection<ComboLeg>();
-                                for (int i = 0; i < comboLegsCount; ++i)
+                                for (var i = 0; i < comboLegsCount; ++i)
                                 {
-                                    int conId = ReadInt();
-                                    int ratio = ReadInt();
-                                    ActionSide action = (ActionSide)EnumDescConverter.GetEnumValue(typeof(ActionSide), ReadStr());
-                                    string exchange = ReadStr();
-                                    ComboOpenClose openClose = (ComboOpenClose)ReadInt();
-                                    ShortSaleSlot shortSaleSlot = (ShortSaleSlot)ReadInt();
-                                    string designatedLocation = ReadStr();
-                                    int exemptCode = ReadInt();
+                                    var conId = ReadInt();
+                                    var ratio = ReadInt();
+                                    var action = (ActionSide)EnumDescConverter.GetEnumValue(typeof(ActionSide), ReadStr());
+                                    var exchange = ReadStr();
+                                    var openClose = (ComboOpenClose)ReadInt();
+                                    var shortSaleSlot = (ShortSaleSlot)ReadInt();
+                                    var designatedLocation = ReadStr();
+                                    var exemptCode = ReadInt();
 
-                                    ComboLeg comboLeg = new ComboLeg(conId, ratio, action, exchange, openClose, 
+                                    var comboLeg = new ComboLeg(conId, ratio, action, exchange, openClose, 
                                             shortSaleSlot, designatedLocation, exemptCode);
                                     contract.ComboLegs.Add(comboLeg);
                                 }
                             }
 
-                            int orderComboLegsCount = ReadInt();
+                            var orderComboLegsCount = ReadInt();
                             if (orderComboLegsCount > 0)
                             {
                                 order.OrderComboLegs = new Collection<OrderComboLeg>();
-                                for (int i = 0; i < orderComboLegsCount; ++i)
+                                for (var i = 0; i < orderComboLegsCount; ++i)
                                 {
-                                    double price = ReadDoubleMax();
+                                    var price = ReadDoubleMax();
 
-                                    OrderComboLeg orderComboLeg = new OrderComboLeg(price);
+                                    var orderComboLeg = new OrderComboLeg(price);
                                     order.OrderComboLegs.Add(orderComboLeg);
                                 }
                             }
@@ -5367,13 +5371,13 @@ namespace Krs.Ats.IBNet
 
                         if (version >= 26)
                         {
-                            int smartComboRoutingParamsCount = ReadInt();
+                            var smartComboRoutingParamsCount = ReadInt();
                             if (smartComboRoutingParamsCount > 0)
                             {
                                 order.SmartComboRoutingParams = new Collection<TagValue>();
-                                for (int i = 0; i < smartComboRoutingParamsCount; ++i)
+                                for (var i = 0; i < smartComboRoutingParamsCount; ++i)
                                 {
-                                    TagValue tagValue = new TagValue();
+                                    var tagValue = new TagValue();
                                     tagValue.Tag = ReadStr();
                                     tagValue.Value = ReadStr();
                                     order.SmartComboRoutingParams.Add(tagValue);
@@ -5437,7 +5441,7 @@ namespace Krs.Ats.IBNet
                         {
                             if (ReadBoolFromInt())
                             {
-                                UnderlyingComponent underComp = new UnderlyingComponent();
+                                var underComp = new UnderlyingComponent();
                                 underComp.ContractId = ReadInt();
                                 underComp.Delta = ReadDouble();
                                 underComp.Price = ReadDecimal();
@@ -5450,13 +5454,13 @@ namespace Krs.Ats.IBNet
                             order.AlgoStrategy = ReadStr();
                             if (!string.IsNullOrEmpty(order.AlgoStrategy))
                             {
-                                int algoParamsCount = ReadInt();
+                                var algoParamsCount = ReadInt();
                                 if (algoParamsCount > 0)
                                 {
                                     order.AlgoParams = new Collection<TagValue>();
-                                    for (int i = 0; i < algoParamsCount; i++)
+                                    for (var i = 0; i < algoParamsCount; i++)
                                     {
-                                        TagValue tagValue = new TagValue();
+                                        var tagValue = new TagValue();
                                         tagValue.Tag = ReadStr();
                                         tagValue.Value = ReadStr();
                                         order.AlgoParams.Add(tagValue);
@@ -5465,14 +5469,14 @@ namespace Krs.Ats.IBNet
                             }
                         }
 
-                        OrderState orderState = new OrderState();
+                        var orderState = new OrderState();
 
                         if (version >= 16)
                         {
                             rstr = ReadStr();
                             order.WhatIf = !(string.IsNullOrEmpty(rstr) || rstr == "0");
 
-                            string ost = ReadStr();
+                            var ost = ReadStr();
                             orderState.Status = string.IsNullOrEmpty(ost) ? IBNet.OrderStatus.None : (OrderStatus)EnumDescConverter.GetEnumValue(typeof(OrderStatus), ost);
                             orderState.InitMargin = ReadStr();
                             orderState.MaintMargin = ReadStr();
@@ -5490,21 +5494,21 @@ namespace Krs.Ats.IBNet
 
                 case IncomingMessage.NextValidId:
                     {
-                        int version = ReadInt();
-                        int orderId = ReadInt();
+                        var version = ReadInt();
+                        var orderId = ReadInt();
                         nextValidId(orderId);
                         break;
                     }
 
                 case IncomingMessage.ScannerData:
                     {
-                        ContractDetails contract = new ContractDetails();
-                        int version = ReadInt();
-                        int tickerId = ReadInt();
-                        int numberOfElements = ReadInt();
-                        for (int ctr = 0; ctr < numberOfElements; ctr++)
+                        var contract = new ContractDetails();
+                        var version = ReadInt();
+                        var tickerId = ReadInt();
+                        var numberOfElements = ReadInt();
+                        for (var ctr = 0; ctr < numberOfElements; ctr++)
                         {
-                            int rank = ReadInt();
+                            var rank = ReadInt();
                             if (version >= 3)
                             {
                                 contract.Summary.ContractId = ReadInt();
@@ -5515,7 +5519,7 @@ namespace Krs.Ats.IBNet
                                 (SecurityType)EnumDescConverter.GetEnumValue(typeof(SecurityType), ReadStr());
                             contract.Summary.Expiry = ReadStr();
                             contract.Summary.Strike = ReadDouble();
-                            string rstr = ReadStr();
+                            var rstr = ReadStr();
                             contract.Summary.Right = rstr == null || rstr.Length <= 0 || rstr.Equals("?")
                                                           ? RightType.Undefined
                                                           : (RightType)
@@ -5525,9 +5529,9 @@ namespace Krs.Ats.IBNet
                             contract.Summary.LocalSymbol = ReadStr();
                             contract.MarketName = ReadStr();
                             contract.TradingClass = ReadStr();
-                            string distance = ReadStr();
-                            string benchmark = ReadStr();
-                            string projection = ReadStr();
+                            var distance = ReadStr();
+                            var benchmark = ReadStr();
+                            var projection = ReadStr();
                             string legsStr = null;
                             if (version >= 2)
                             {
@@ -5543,21 +5547,21 @@ namespace Krs.Ats.IBNet
 
                 case IncomingMessage.ContractData:
                     {
-                        int version = ReadInt();
+                        var version = ReadInt();
 
-                        int reqId = -1;
+                        var reqId = -1;
                         if (version >= 3)
                         {
                             reqId = ReadInt();
                         }
 
-                        ContractDetails contract = new ContractDetails();
+                        var contract = new ContractDetails();
                         contract.Summary.Symbol = ReadStr();
                         contract.Summary.SecurityType =
                             (SecurityType)EnumDescConverter.GetEnumValue(typeof(SecurityType), ReadStr());
                         contract.Summary.Expiry = ReadStr();
                         contract.Summary.Strike = ReadDouble();
-                        string rstr = ReadStr();
+                        var rstr = ReadStr();
                         contract.Summary.Right = rstr == null || rstr.Length <= 0 || rstr.Equals("?")
                                                       ? RightType.Undefined
                                                       : (RightType)
@@ -5605,15 +5609,15 @@ namespace Krs.Ats.IBNet
 
                 case IncomingMessage.BondContractData:
                     {
-                        int version = ReadInt();
+                        var version = ReadInt();
 
-                        int reqId = -1;
+                        var reqId = -1;
                         if (version >= 3)
                         {
                             reqId = ReadInt();
                         }
 
-                        ContractDetails contract = new ContractDetails();
+                        var contract = new ContractDetails();
 
                         contract.Summary.Symbol = ReadStr();
                         contract.Summary.SecurityType =
@@ -5656,22 +5660,22 @@ namespace Krs.Ats.IBNet
 
                 case IncomingMessage.ExecutionData:
                     {
-                        int version = ReadInt();
+                        var version = ReadInt();
 
-                        int reqId = -1;
+                        var reqId = -1;
                         if (version >= 7)
                         {
                             reqId = ReadInt();
                         }
 
-                        int orderId = ReadInt();
+                        var orderId = ReadInt();
 
                         // Handle the 2^31-1 == 0 bug
                         if (orderId == 2147483647)
                             orderId = 0;
 
                         // Read Contract Fields
-                        Contract contract = new Contract();
+                        var contract = new Contract();
                         if (version >= 5)
                         {
                             contract.ContractId = ReadInt();
@@ -5682,7 +5686,7 @@ namespace Krs.Ats.IBNet
                             (SecurityType)EnumDescConverter.GetEnumValue(typeof(SecurityType), ReadStr());
                         contract.Expiry = ReadStr();
                         contract.Strike = ReadDouble();
-                        string rstr = ReadStr();
+                        var rstr = ReadStr();
                         contract.Right = string.IsNullOrEmpty(rstr) || rstr.Equals("?")
                                               ? RightType.Undefined
                                               : (RightType)EnumDescConverter.GetEnumValue(typeof(RightType), rstr);
@@ -5695,7 +5699,7 @@ namespace Krs.Ats.IBNet
                         contract.Currency = ReadStr();
                         contract.LocalSymbol = ReadStr();
 
-                        Execution exec = new Execution();
+                        var exec = new Execution();
                         exec.OrderId = orderId;
                         exec.ExecutionId = ReadStr();
                         exec.Time = ReadStr();
@@ -5742,14 +5746,14 @@ namespace Krs.Ats.IBNet
 
                 case IncomingMessage.MarketDepth:
                     {
-                        int version = ReadInt();
-                        int id = ReadInt();
+                        var version = ReadInt();
+                        var id = ReadInt();
 
-                        int position = ReadInt();
-                        MarketDepthOperation operation = (MarketDepthOperation)ReadInt();
-                        MarketDepthSide side = (MarketDepthSide)ReadInt();
-                        decimal price = ReadDecimal();
-                        int size = ReadInt();
+                        var position = ReadInt();
+                        var operation = (MarketDepthOperation)ReadInt();
+                        var side = (MarketDepthSide)ReadInt();
+                        var price = ReadDecimal();
+                        var size = ReadInt();
 
                         updateMktDepth(id, position, operation, side, price, size);
                         break;
@@ -5757,15 +5761,15 @@ namespace Krs.Ats.IBNet
 
                 case IncomingMessage.MarketDepthL2:
                     {
-                        int version = ReadInt();
-                        int id = ReadInt();
+                        var version = ReadInt();
+                        var id = ReadInt();
 
-                        int position = ReadInt();
-                        string marketMaker = ReadStr();
-                        MarketDepthOperation operation = (MarketDepthOperation)ReadInt();
-                        MarketDepthSide side = (MarketDepthSide)ReadInt();
-                        decimal price = ReadDecimal();
-                        int size = ReadInt();
+                        var position = ReadInt();
+                        var marketMaker = ReadStr();
+                        var operation = (MarketDepthOperation)ReadInt();
+                        var side = (MarketDepthSide)ReadInt();
+                        var price = ReadDecimal();
+                        var size = ReadInt();
 
                         updateMktDepthL2(id, position, marketMaker, operation, side, price, size);
                         break;
@@ -5773,11 +5777,11 @@ namespace Krs.Ats.IBNet
 
                 case IncomingMessage.NewsBulletins:
                     {
-                        int version = ReadInt();
-                        int newsMsgId = ReadInt();
-                        NewsType newsMsgType = (NewsType)ReadInt();
-                        string newsMessage = ReadStr();
-                        string originatingExch = ReadStr();
+                        var version = ReadInt();
+                        var newsMsgId = ReadInt();
+                        var newsMsgType = (NewsType)ReadInt();
+                        var newsMessage = ReadStr();
+                        var originatingExch = ReadStr();
 
                         updateNewsBulletin(newsMsgId, newsMsgType, newsMessage, originatingExch);
                         break;
@@ -5785,8 +5789,8 @@ namespace Krs.Ats.IBNet
 
                 case IncomingMessage.ManagedAccounts:
                     {
-                        int version = ReadInt();
-                        string accountsList = ReadStr();
+                        var version = ReadInt();
+                        var accountsList = ReadStr();
 
                         managedAccounts(accountsList);
                         break;
@@ -5794,9 +5798,9 @@ namespace Krs.Ats.IBNet
 
                 case IncomingMessage.ReceiveFA:
                     {
-                        int version = ReadInt();
-                        FADataType faDataType = (FADataType)ReadInt();
-                        string xml = ReadStr();
+                        var version = ReadInt();
+                        var faDataType = (FADataType)ReadInt();
+                        var xml = ReadStr();
 
                         receiveFA(faDataType, xml);
                         break;
@@ -5804,27 +5808,30 @@ namespace Krs.Ats.IBNet
 
                 case IncomingMessage.HistoricalData:
                     {
-                        int version = ReadInt();
-                        int reqId = ReadInt();
+                        var version = ReadInt();
+                        var reqId = ReadInt();
                         if (version >= 2)
                         {
                             // Read Start Date String
                             /*String startDateStr = */
                             ReadStr();
 
+
 /*String endDateStr   = */
                             ReadStr();
+
 
 // completedIndicator += ("-" + startDateStr + "-" + endDateStr);
                         }
 
-                        int itemCount = ReadInt();
-                        for (int ctr = 0; ctr < itemCount; ctr++)
+                        var itemCount = ReadInt();
+                        for (var ctr = 0; ctr < itemCount; ctr++)
                         {
                             // Comes in as seconds
                             // 2 - dates are returned as a long integer specifying the number of seconds since 1/1/1970 GMT.
-                            string date = ReadStr();
-                            long longDate = long.Parse(date, CultureInfo.InvariantCulture);
+                            var date = ReadStr();
+                            var longDate = long.Parse(date, CultureInfo.InvariantCulture);
+
 
 // Check if date time string or seconds
                             DateTime timeStamp;
@@ -5836,14 +5843,14 @@ namespace Krs.Ats.IBNet
                                 timeStamp =
                                     new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(longDate)
                                         .ToLocalTime();
-                            decimal open = ReadDecimal();
-                            decimal high = ReadDecimal();
-                            decimal low = ReadDecimal();
-                            decimal close = ReadDecimal();
-                            int volume = ReadInt();
-                            double WAP = ReadDouble();
-                            string hasGaps = ReadStr();
-                            int barCount = -1;
+                            var open = ReadDecimal();
+                            var high = ReadDecimal();
+                            var low = ReadDecimal();
+                            var close = ReadDecimal();
+                            var volume = ReadInt();
+                            var WAP = ReadDouble();
+                            var hasGaps = ReadStr();
+                            var barCount = -1;
                             if (version >= 3)
                             {
                                 barCount = ReadInt();
@@ -5858,8 +5865,8 @@ namespace Krs.Ats.IBNet
 
                 case IncomingMessage.ScannerParameters:
                     {
-                        int version = ReadInt();
-                        string xml = ReadStr();
+                        var version = ReadInt();
+                        var xml = ReadStr();
                         scannerParameters(xml);
                         break;
                     }
@@ -5868,8 +5875,8 @@ namespace Krs.Ats.IBNet
                     {
                         /*int version =*/
                         ReadInt();
-                        long time = ReadLong();
-                        DateTime cTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).AddSeconds(time);
+                        var time = ReadLong();
+                        var cTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).AddSeconds(time);
                         currentTime(cTime);
                         break;
                     }
@@ -5878,15 +5885,15 @@ namespace Krs.Ats.IBNet
                     {
                         /*int version =*/
                         ReadInt();
-                        int reqId = ReadInt();
-                        long time = ReadLong();
-                        decimal open = ReadDecimal();
-                        decimal high = ReadDecimal();
-                        decimal low = ReadDecimal();
-                        decimal close = ReadDecimal();
-                        long volume = ReadLong();
-                        double wap = ReadDouble();
-                        int count = ReadInt();
+                        var reqId = ReadInt();
+                        var time = ReadLong();
+                        var open = ReadDecimal();
+                        var high = ReadDecimal();
+                        var low = ReadDecimal();
+                        var close = ReadDecimal();
+                        var volume = ReadLong();
+                        var wap = ReadDouble();
+                        var count = ReadInt();
                         realTimeBar(reqId, time, open, high, low, close, volume, wap, count);
                         break;
                     }
@@ -5895,8 +5902,8 @@ namespace Krs.Ats.IBNet
                     {
                         /*int version =*/
                         ReadInt();
-                        int reqId = ReadInt();
-                        string data = ReadStr();
+                        var reqId = ReadInt();
+                        var data = ReadStr();
                         fundamentalData(reqId, data);
                         break;
                     }
@@ -5905,7 +5912,7 @@ namespace Krs.Ats.IBNet
                     {
                         /*int version =*/
                         ReadInt();
-                        int reqId = ReadInt();
+                        var reqId = ReadInt();
                         contractDetailsEnd(reqId);
                         break;
                     }
@@ -5922,7 +5929,7 @@ namespace Krs.Ats.IBNet
                     {
                         /*int version =*/
                         ReadInt();
-                        string accountName = ReadStr();
+                        var accountName = ReadStr();
                         accountDownloadEnd(accountName);
                         break;
                     }
@@ -5931,7 +5938,7 @@ namespace Krs.Ats.IBNet
                     {
                         /*int version =*/
                         ReadInt();
-                        int reqId = ReadInt();
+                        var reqId = ReadInt();
                         executionDataEnd(reqId);
                         break;
                     }
@@ -5940,9 +5947,9 @@ namespace Krs.Ats.IBNet
                     {
                         /*int version =*/
                         ReadInt();
-                        int reqId = ReadInt();
+                        var reqId = ReadInt();
 
-                        UnderComp underComp = new UnderComp();
+                        var underComp = new UnderComp();
                         underComp.ConId = ReadInt();
                         underComp.Delta = ReadDouble();
                         underComp.Price = ReadDouble();
@@ -5955,7 +5962,7 @@ namespace Krs.Ats.IBNet
                     {
                         /*int version =*/
                         ReadInt();
-                        int reqId = ReadInt();
+                        var reqId = ReadInt();
 
                         tickSnapshotEnd(reqId);
                         break;
@@ -5965,8 +5972,8 @@ namespace Krs.Ats.IBNet
                     {
                         /*int version =*/
                         ReadInt();
-                        int reqId = ReadInt();
-                        MarketDataType mdt = (MarketDataType)ReadInt();
+                        var reqId = ReadInt();
+                        var mdt = (MarketDataType)ReadInt();
 
                         marketDataType(reqId, mdt);
                         break;
@@ -6011,10 +6018,10 @@ namespace Krs.Ats.IBNet
         /// </returns>
         private string ReadStr()
         {
-            StringBuilder buf = new StringBuilder();
+            var buf = new StringBuilder();
             while (true)
             {
-                sbyte c = (sbyte)dis.ReadByte();
+                var c = (sbyte)dis.ReadByte();
                 if (c == 0)
                 {
                     break;
@@ -6023,7 +6030,7 @@ namespace Krs.Ats.IBNet
                 buf.Append((char)c);
             }
 
-            string str = buf.ToString();
+            var str = buf.ToString();
             return str.Length == 0 ? null : str;
         }
 
@@ -6035,7 +6042,7 @@ namespace Krs.Ats.IBNet
         /// </returns>
         private bool ReadBoolFromInt()
         {
-            string str = ReadStr();
+            var str = ReadStr();
             return str == null ? false : (int.Parse(str, CultureInfo.InvariantCulture) != 0);
         }
 
@@ -6047,7 +6054,7 @@ namespace Krs.Ats.IBNet
         /// </returns>
         private int ReadInt()
         {
-            string str = ReadStr();
+            var str = ReadStr();
 
             return str == null ? 0 : int.Parse(str, CultureInfo.InvariantCulture);
         }
@@ -6078,7 +6085,7 @@ namespace Krs.Ats.IBNet
         /// </returns>
         private int ReadIntMax()
         {
-            string str = ReadStr();
+            var str = ReadStr();
             return string.IsNullOrEmpty(str) ? int.MaxValue : int.Parse(str, CultureInfo.InvariantCulture);
         }
 
@@ -6090,7 +6097,7 @@ namespace Krs.Ats.IBNet
         /// </returns>
         private long ReadLong()
         {
-            string str = ReadStr();
+            var str = ReadStr();
             return str == null ? 0L : long.Parse(str, CultureInfo.InvariantCulture);
         }
 
@@ -6102,7 +6109,7 @@ namespace Krs.Ats.IBNet
         /// </returns>
         private double ReadDouble()
         {
-            string str = ReadStr();
+            var str = ReadStr();
             return str == null ? 0 : double.Parse(str, CultureInfo.InvariantCulture);
         }
 
@@ -6114,7 +6121,7 @@ namespace Krs.Ats.IBNet
         /// </returns>
         private double? ReadNullableDouble()
         {
-            string str = ReadStr();
+            var str = ReadStr();
             if (str == null || str == "1.7976931348623157E308")
             {
                 return null;
@@ -6133,7 +6140,7 @@ namespace Krs.Ats.IBNet
         /// </returns>
         private decimal ReadDecimal()
         {
-            string str = ReadStr();
+            var str = ReadStr();
             if (string.IsNullOrEmpty(str))
                 return 0;
             decimal retVal;
@@ -6148,7 +6155,7 @@ namespace Krs.Ats.IBNet
         /// </returns>
         private double ReadDoubleMax()
         {
-            string str = ReadStr();
+            var str = ReadStr();
             return string.IsNullOrEmpty(str) ? double.MaxValue : double.Parse(str, CultureInfo.InvariantCulture);
         }
 
@@ -6160,7 +6167,7 @@ namespace Krs.Ats.IBNet
         /// </returns>
         private decimal ReadDecimalMax()
         {
-            string str = ReadStr();
+            var str = ReadStr();
             decimal retVal;
             return (!string.IsNullOrEmpty(str) && decimal.TryParse(str, NumberStyles.Float, CultureInfo.InvariantCulture, out retVal)) ? retVal : decimal.MaxValue;
         }

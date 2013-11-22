@@ -7,8 +7,6 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-
-
 using System;
 using System.Collections.ObjectModel;
 
@@ -267,6 +265,7 @@ namespace Krs.Ats.IBNet
         /// The rule 80 a.
         /// </summary>
         private AgentDescription rule80A;
+
 
 // Individual = 'I', Agency = 'A', AgentOtherMember = 'W', IndividualPTIA = 'J', AgencyPTIA = 'U', AgentOtherMemberPTIA = 'M', IndividualPT = 'K', AgencyPT = 'Y', AgentOtherMemberPT = 'N'
 

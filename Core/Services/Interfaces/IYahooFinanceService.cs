@@ -11,7 +11,6 @@ namespace Core.Services.Interfaces
     using System;
     using System.Collections.Generic;
     using DTO;
-    using Models.Site;
 
     /// <summary>
     /// The YahooFinanceService interface.
@@ -47,22 +46,6 @@ namespace Core.Services.Interfaces
         /// The <see cref="IEnumerable"/>.
         /// </returns>
         IEnumerable<OptionDto> GetData(string symbol);
-
-        /// <example>
-        /// {"matches":a[{"t":"MSFT","n":"Microsoft Corporation","e":"NASDAQ","id":"358464"},
-        /// {"t":"AMD","n":"Advanced Micro Devices, Inc.","e":"NYSE","id":"327"},
-        /// {"t":"MU","n":"Micron Technology, Inc.","e":"NASDAQ","id":"12441984"}...
-        /// </example>
-        /// <summary>
-        /// Searches API for matching companies by symbol or company name.
-        /// </summary>
-        /// <param name="term">
-        /// The term.
-        /// </param>
-        /// <returns>
-        /// The <see cref="IEnumerable"/>.
-        /// </returns>
-        IEnumerable<GoogleFinanceJsonDto> SymbolSearch(string term);
 
         #endregion
     }

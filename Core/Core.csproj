@@ -103,8 +103,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\GoogleFinanceService.cs" />
     <Compile Include="Services\HFTService.cs" />
+    <Compile Include="Services\Interfaces\IGoogleFinanceService.cs" />
     <Compile Include="Services\Interfaces\IHFTService.cs" />
     <Compile Include="Services\Interfaces\IYahooFinanceService.cs" />
+    <Compile Include="Services\Interfaces\IWebRequestService.cs" />
     <Compile Include="Services\PortfolioService.cs" />
     <Compile Include="Services\ServiceBase.cs" />
     <Compile Include="Services\WebRequestService.cs" />

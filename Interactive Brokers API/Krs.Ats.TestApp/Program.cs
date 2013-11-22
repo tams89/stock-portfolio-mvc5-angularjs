@@ -7,8 +7,6 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-
-
 using System;
 using System.Threading;
 using Krs.Ats.IBNet;
@@ -141,22 +139,23 @@ namespace Krs.Ats.TestApp
             AdNyse = new Contract("AD-NYSE", "NYSE", SecurityType.Index, "USD");
 
             // New Contract Creation Features
-            Equity Google = new Equity("GOOG");
+            var Google = new Equity("GOOG");
 
             // Forex Test
-            Forex EUR = new Forex("EUR", "USD");
+            var EUR = new Forex("EUR", "USD");
 
             client.RequestMarketData(14, Google, null, false, false);
             client.RequestMarketDepth(15, Google, 5);
             client.RequestRealTimeBars(16, Google, 5, RealTimeBarType.Trades, false);
             client.RequestMarketData(17, EUR, null, false, false);
 
-            Order BuyContract = new Order();
+            var BuyContract = new Order();
             BuyContract.Action = ActionSide.Buy;
             BuyContract.OutsideRth = false;
             BuyContract.LimitPrice = 560;
             BuyContract.OrderType = OrderType.Limit;
             BuyContract.TotalQuantity = 1;
+
 
 // client.PlaceOrder(503, TF, BuyContract);
             client.RequestExecutions(34, new ExecutionFilter());

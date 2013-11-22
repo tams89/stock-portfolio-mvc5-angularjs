@@ -7,8 +7,6 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-
-
 using Core.Models.Portfolio;
 using DapperExtensions.Mapper;
 
@@ -24,8 +22,8 @@ namespace Core.ORM.Mappings.Portfolio
         /// </summary>
         public UserMap()
         {
-            this.Schema("Portfolio");
-            this.Table("User");
+            Schema("Portfolio");
+            Table("User");
             Map(f => f.UserId).Key(KeyType.Guid);
             Map(f => f.UserName).Column("UserName");
         }

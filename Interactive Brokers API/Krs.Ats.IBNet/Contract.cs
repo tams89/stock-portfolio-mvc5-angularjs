@@ -7,8 +7,6 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-
-
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -83,6 +81,7 @@ namespace Krs.Ats.IBNet
         /// The primary exchange.
         /// </summary>
         private string primaryExchange;
+
 
 // pick a non-aggregate (ie not the SMART exchange) exchange that the contract trades on.  DO NOT SET TO SMART.
 

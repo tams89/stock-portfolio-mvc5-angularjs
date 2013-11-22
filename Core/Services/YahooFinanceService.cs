@@ -66,66 +66,6 @@ namespace Core.Services
             return DtoInjector<Options.OptionsData, OptionDto>.InjectList(optionData);
         }
 
-        /// <example>
-        /// {"matches":a[{"t":"MSFT","n":"Microsoft Corporation","e":"NASDAQ","id":"358464"},
-        /// {"t":"AMD","n":"Advanced Micro Devices, Inc.","e":"NYSE","id":"327"},
-        /// {"t":"MU","n":"Micron Technology, Inc.","e":"NASDAQ","id":"12441984"}...
-        /// </example>
-        /// <summary>
-        /// Searches API for matching companies by symbol or company name.
-        /// </summary>
-        /// <param name="term">
-        /// The term.
-        /// </param>
-        /// <returns>
-        /// The <see cref="IEnumerable"/>.
-        /// </returns>
-        public IEnumerable<GoogleFinanceJsonDto> SymbolSearch(string term)
-        {
-            try
-            {
-                if (string.IsNullOrEmpty(term)) return Enumerable.Empty<GoogleFinanceJsonDto>();
-
-                using (var client = new WebClient())
-                {
-                    // Query string plus argument, returns json.
-                    var companyDetailUrl = Constants.GoogleFinanceJsonApiUrl + term.Trim();
-
-                    // Download json data as a string.
-                    var json = client.DownloadString(companyDetailUrl);
-
-                    // Useful data in Json contained within [...]
-                    var firstOccurrence = json.IndexOf('[');
-                    var secondOccurrence = json.IndexOf(']');
-
-                    // Remove invalid chars from string perfore parsing.
-                    var trimmed = json.Substring(firstOccurrence, secondOccurrence - firstOccurrence + 1);
-
-                    // Parse json array to valid json object.
-                    var parsed = JArray.Parse(trimmed);
-
-                    // This array can be customised to give the desired JSON array.
-                    var jsonCustomArray =
-                        parsed.Select(
-                            x =>
-                            new GoogleFinanceJsonDto
-                                {
-                                    Symbol = x["t"].ToObject<string>(),
-                                    Name = x["n"].ToObject<string>()
-                                })
-                            .Where(x => !string.IsNullOrEmpty(x.Symbol) && !string.IsNullOrEmpty(x.Name));
-
-                    return jsonCustomArray;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-
         #endregion
-
-
     }
 }

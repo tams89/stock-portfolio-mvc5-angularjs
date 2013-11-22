@@ -29,7 +29,7 @@ namespace Core.Services
         {
             get
             {
-                WindowsIdentity currentIdent = WindowsIdentity.GetCurrent();
+                var currentIdent = WindowsIdentity.GetCurrent();
                 return currentIdent != null ? currentIdent.Name : string.Empty;
             }
         }
@@ -43,7 +43,7 @@ namespace Core.Services
             using (var c = new SqlConnection(Constants.AlgoTraderDbConnection))
             {
                 c.Open();
-                IEnumerable<T> entity = c.GetList<T>(buffered: true);
+                var entity = c.GetList<T>(buffered: true);
                 c.Close();
                 return entity;
             }

@@ -7,8 +7,6 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-
-
 using Core.Models.Portfolio;
 using DapperExtensions.Mapper;
 
@@ -24,8 +22,8 @@ namespace Core.ORM.Mappings.Portfolio
         /// </summary>
         public SecurityMap()
         {
-            this.Schema("Portfolio");
-            this.Table("Security");
+            Schema("Portfolio");
+            Table("Security");
             Map(f => f.SecurityId).Key(KeyType.Guid);
             Map(f => f.Symbol).Column("Symbol");
         }

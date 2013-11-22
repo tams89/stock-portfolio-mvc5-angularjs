@@ -7,26 +7,29 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-
-
-using Core.Models.HFT;
-using DapperExtensions.Mapper;
-
 namespace Core.ORM.Mappings.HFT
 {
+    using Core.Models.HFT;
+
+    using DapperExtensions.Mapper;
+
     /// <summary>
     /// The tick map.
     /// </summary>
-    public class TickMap : ClassMapper<Tick>
+    public sealed class TickMap : ClassMapper<Tick>
     {
+        #region Constructors and Destructors
+
         /// <summary>
-        /// Initializes a new instance of the <see cref="TickMap"/> class.
+        /// Initializes a new instance of the <see cref="TickMap" /> class.
         /// </summary>
         public TickMap()
         {
             this.Schema("HFT");
             this.Table("Tick");
-            Map(f => f.Id).Key(KeyType.Guid);
+            this.Map(f => f.Id).Key(KeyType.Guid);
         }
+
+        #endregion
     }
 }

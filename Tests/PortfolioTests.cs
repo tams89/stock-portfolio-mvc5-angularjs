@@ -7,8 +7,6 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-
-
 using System.Linq;
 using Core.Models.Portfolio;
 using Core.Services;

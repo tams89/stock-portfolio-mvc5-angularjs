@@ -14,14 +14,19 @@ namespace Portfolio.Controllers
     using Core.Services.Interfaces;
 
     /// <summary>
-    /// The portfolio controller.
+    ///     The portfolio controller.
     /// </summary>
     public class PortfolioController : Controller
     {
         #region Fields
 
         /// <summary>
-        /// The _yahoo finance service.
+        ///     The _google finance service.
+        /// </summary>
+        private readonly IGoogleFinanceService googleFinanceService;
+
+        /// <summary>
+        ///     The _yahoo finance service.
         /// </summary>
         private readonly IYahooFinanceService yahooFinanceService;
 
@@ -35,9 +40,12 @@ namespace Portfolio.Controllers
         /// <param name="yahooFinanceService">
         /// The yahoo finance service.
         /// </param>
-        public PortfolioController(IYahooFinanceService yahooFinanceService)
+        /// <param name="googleFinanceService">
+        /// </param>
+        public PortfolioController(IYahooFinanceService yahooFinanceService, IGoogleFinanceService googleFinanceService)
         {
             this.yahooFinanceService = yahooFinanceService;
+            this.googleFinanceService = googleFinanceService;
         }
 
         #endregion
@@ -56,14 +64,8 @@ namespace Portfolio.Controllers
         [HttpPost]
         public JsonResult AutoComplete(string symbol)
         {
-            var results = yahooFinanceService.SymbolSearch(symbol).ToArray();
-            if (!results.Any())
-            {
-                return null;
-            }
-
-            var json = results.Select(x => new { x.Name, x.Symbol });
-            return Json(json);
+            var results = googleFinanceService.SymbolSearch(symbol).ToArray();
+            return results.Any() ? Json(results.Select(x => new { x.Name, x.Symbol })) : null;
         }
 
         /// <summary>
@@ -114,10 +116,10 @@ namespace Portfolio.Controllers
         }
 
         /// <summary>
-        /// The stocks.
+        ///     The stocks.
         /// </summary>
         /// <returns>
-        /// The <see cref="ActionResult"/>.
+        ///     The <see cref="ActionResult" />.
         /// </returns>
         public ActionResult Stocks()
         {

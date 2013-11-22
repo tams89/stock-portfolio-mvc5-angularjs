@@ -14,7 +14,7 @@
     <RootNamespace>Portfolio</RootNamespace>
     <AssemblyName>Portfolio</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
-    <MvcBuildViews>false</MvcBuildViews>
+    <MvcBuildViews>true</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
@@ -280,7 +280,7 @@
     <Content Include="Scripts\Jquery\Validate\jquery.validate.js" />
     <Content Include="Scripts\Jquery\Validate\jquery.validate.min.js" />
     <Content Include="Views\Error\Index.cshtml" />
-    <None Include="Views\Main\Index.cshtml" />
+    <Content Include="Views\Main\Index.cshtml" />
     <Content Include="Scripts\App\Directives\loadSpinner.min.js.map">
       <DependentUpon>spinner.js</DependentUpon>
     </Content>
@@ -1075,13 +1075,13 @@
     <Content Include="Scripts\App\Directives\circle.min.js.map">
       <DependentUpon>circle.js</DependentUpon>
     </Content>
-    <None Include="Views\Account\Manage.cshtml" />
-    <None Include="Views\Main\Register.cshtml" />
-    <None Include="Views\Account\_ChangePasswordPartial.cshtml" />
-    <None Include="Views\Account\_SetPasswordPartial.cshtml" />
-    <None Include="Views\Main\About.cshtml" />
-    <None Include="Views\Main\Login.cshtml" />
-    <None Include="Views\Main\Home.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Main\Register.cshtml" />
+    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Main\About.cshtml" />
+    <Content Include="Views\Main\Login.cshtml" />
+    <Content Include="Views\Main\Home.cshtml" />
     <Content Include="Views\Portfolio\Options.cshtml" />
     <Content Include="Views\Portfolio\Stocks.cshtml" />
     <Content Include="Content\Images\2_billion_gold_price_bet.jpg" />
@@ -1430,15 +1430,15 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <None Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\_references.min.js.map">
       <DependentUpon>_references.js</DependentUpon>
     </Content>
-    <None Include="Views\_ViewStart.cshtml" />
-    <None Include="Views\Shared\Error.cshtml" />
-    <None Include="Views\Shared\_Dependencies.cshtml" />
-    <None Include="Views\Shared\_GridPager.cshtml" />
-    <None Include="Views\Shared\_Grid.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Dependencies.cshtml" />
+    <Content Include="Views\Shared\_GridPager.cshtml" />
+    <Content Include="Views\Shared\_Grid.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">

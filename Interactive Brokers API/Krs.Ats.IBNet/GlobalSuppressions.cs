@@ -5,7 +5,6 @@
 // <summary>
 //   GlobalSuppressions.cs
 // </summary>
-// 
 // --------------------------------------------------------------------------------------------------------------------
 
 using System.Diagnostics.CodeAnalysis;

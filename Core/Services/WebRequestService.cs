@@ -7,14 +7,16 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
+using System;
 using System.Net;
+using Core.Services.Interfaces;
 
 namespace Core.Services
 {
     /// <summary>
-    ///     The web request service.
+    /// The web request service.
     /// </summary>
-    public class WebRequestService
+    public class WebRequestService : IWebRequestService
     {
         /// <summary>
         ///     The create web client.
@@ -40,10 +42,21 @@ namespace Core.Services
         /// <returns>
         /// The <see cref="T"/>.
         /// </returns>
-        public T GetResponse<T>(string url)
-            where T : new()
+        public string GetResponse(string url)
         {
-
+            if (string.IsNullOrEmpty(url)) return null;
+            using (var client = CreateWebClient())
+            {
+                try
+                {
+                    var response = client.DownloadString(url);
+                    return response;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
         }
     }
 }

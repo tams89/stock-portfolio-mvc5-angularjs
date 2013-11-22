@@ -7,7 +7,6 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-
 using Portfolio.App_Start;
 using WebActivator;
 
@@ -36,6 +35,8 @@ namespace Portfolio.App_Start
             var c = MunqDependencyResolver.Container;
 
             c.Register<IYahooFinanceService, YahooFinanceService>();
+            c.Register<IGoogleFinanceService, GoogleFinanceService>();
+            c.Register<IWebRequestService, WebRequestService>();
         }
 
         #endregion

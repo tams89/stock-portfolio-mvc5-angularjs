@@ -5,7 +5,6 @@
 // <summary>
 //   EnumConverter supporting System.ComponentModel.DescriptionAttribute
 // </summary>
-// 
 // --------------------------------------------------------------------------------------------------------------------
 
 using System;
@@ -61,8 +60,8 @@ namespace Krs.Ats.IBNet
         /// </summary>
         static EnumDescConverter()
         {
-            Type[] types = Assembly.GetExecutingAssembly().GetTypes();
-            List<Type> enums = new List<Type>();
+            var types = Assembly.GetExecutingAssembly().GetTypes();
+            var enums = new List<Type>();
             
             foreach(var type in types)
             {
@@ -75,18 +74,18 @@ namespace Krs.Ats.IBNet
 
             foreach (var e in enums)
             {
-                EnumTuple et = new EnumTuple();
+                var et = new EnumTuple();
                 et.EnumType = e;
-                FieldInfo[] fields = e.GetFields();
+                var fields = e.GetFields();
 
                 foreach (var fi in fields)
                 {
                     if (fi.FieldType == e)
                     {
-                        DescriptionAttribute[] attributes =
+                        var attributes =
                             (DescriptionAttribute[]) fi.GetCustomAttributes(typeof (DescriptionAttribute), false);
-                        Enum val = (Enum) fi.GetValue(fi.Name);
-                        string strVal = attributes.Length > 0 ? attributes[0].Description : val.ToString();
+                        var val = (Enum) fi.GetValue(fi.Name);
+                        var strVal = attributes.Length > 0 ? attributes[0].Description : val.ToString();
                         et.EnumToString.Add(val, strVal);
                         if(attributes.Length > 0)
                             et.DescriptionToEnum.Add(attributes[0].Description, val);
@@ -113,17 +112,17 @@ namespace Krs.Ats.IBNet
             if (value == null)
                 throw new ArgumentNullException("value");
 
-            Type t = value.GetType();
+            var t = value.GetType();
 
             if (enumLookup.ContainsKey(t))
             {
-                EnumTuple et = enumLookup[t];
+                var et = enumLookup[t];
                 if(et.EnumToString.ContainsKey(value))
                     return et.EnumToString[value];
             }
 
-            FieldInfo fi = t.GetField(value.ToString());
-            DescriptionAttribute[] attributes =
+            var fi = t.GetField(value.ToString());
+            var attributes =
                 (DescriptionAttribute[]) fi.GetCustomAttributes(
                     typeof (DescriptionAttribute), false);
             return (attributes.Length > 0) ? attributes[0].Description : value.ToString();
@@ -150,17 +149,17 @@ namespace Krs.Ats.IBNet
 
             if (enumLookup.ContainsKey(value))
             {
-                EnumTuple et = enumLookup[value];
+                var et = enumLookup[value];
                 if (et.DescriptionToEnum.ContainsKey(description))
                     return (object)et.DescriptionToEnum[description];
                 if (et.NameToEnum.ContainsKey(description))
                     return (object)et.NameToEnum[description];
             }
 
-            FieldInfo[] fis = value.GetFields();
-            foreach (FieldInfo fi in fis)
+            var fis = value.GetFields();
+            foreach (var fi in fis)
             {
-                DescriptionAttribute[] attributes =
+                var attributes =
                     (DescriptionAttribute[]) fi.GetCustomAttributes(
                         typeof (DescriptionAttribute), false);
                 if (attributes.Length > 0)

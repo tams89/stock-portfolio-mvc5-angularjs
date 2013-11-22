@@ -1,21 +1,5 @@
 ﻿@model Portfolio.Models.LoginModel
 
-@functions{
-
-    /// <summary>
-    /// The get anti forgery token.
-    /// </summary>
-    /// <returns>
-    /// The <see cref="string"/>.
-    /// </returns>
-    public string GetAntiForgeryToken()
-    {
-        string cookieToken, formToken;
-        AntiForgery.GetTokens(null, out cookieToken, out formToken);
-        return cookieToken + ":" + formToken;
-    }
-
-}
 <h2>Log in</h2>
 <hr />
 <form name="loginForm" ng-submit="login()" ng-controller="LoginController" novalidate>

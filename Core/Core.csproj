@@ -102,10 +102,9 @@
     <Compile Include="Services\Interfaces\IHFTService.cs" />
     <Compile Include="Services\Interfaces\IYahooFinanceService.cs" />
     <Compile Include="Services\PortfolioService.cs" />
-    <Compile Include="Services\ServiceBase.cs" />
+    <Compile Include="Services\WebRequestService.cs" />
     <Compile Include="Services\YahooFinanceService.cs" />
     <Compile Include="Utilities\DtoInjector.cs" />
-    <Compile Include="Utilities\Extensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -89,13 +89,11 @@ namespace Core.Services
                 WebRequest.DefaultWebProxy = null;
                 using (var client = new WebClient())
                 {
-                    // Query string plus argument, returns json string.
-                    var googleFinanceJson =
-                        @"http://www.google.com/finance/match?matchtype=matchall&ei=zhbaUIDlCKSWiAL8zwE&q="
-                        + term.Trim();
+                    // Query string plus argument, returns json.
+                    var companyDetailUrl = Constants.GoogleFinanceJsonApiUrl + term.Trim();
 
                     // Download json data as a string.
-                    var json = client.DownloadString(googleFinanceJson);
+                    var json = client.DownloadString(companyDetailUrl);
 
                     // Useful data in Json contained within [...]
                     var firstOccurrence = json.IndexOf('[');
@@ -113,7 +111,7 @@ namespace Core.Services
                             x =>
                             new GoogleFinanceJsonDto
                                 {
-                                    Symbol = x["t"].ToObject<string>(), 
+                                    Symbol = x["t"].ToObject<string>(),
                                     Name = x["n"].ToObject<string>()
                                 })
                             .Where(x => !string.IsNullOrEmpty(x.Symbol) && !string.IsNullOrEmpty(x.Name));

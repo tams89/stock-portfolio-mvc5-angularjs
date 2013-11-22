@@ -1,25 +1,4 @@
-﻿@functions{
-
-    /// <summary>
-    /// The get anti forgery token.
-    /// </summary>
-    /// <returns>
-    /// The <see cref="string"/>.
-    /// </returns>
-    private static string GetAntiForgeryToken()
-    {
-        string cookieToken, formToken;
-        AntiForgery.GetTokens(null, out cookieToken, out formToken);
-        return cookieToken + ":" + formToken;
-    }
-
-}
-
-
-
-
-
-@Html.Partial("_Dependencies")
+﻿@Html.Partial("_Dependencies")
 <div class="navbar navbar-inverse navbar-fixed-top">
     <toaster-container></toaster-container>
     <div class="container">

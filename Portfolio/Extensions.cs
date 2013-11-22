@@ -7,12 +7,9 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-using System.Collections.Generic;
-using System.Linq;
-
-namespace Core.Utilities
+namespace Portfolio
 {
-    using Roslyn.Compilers.CSharp;
+    using System.Web.Helpers;
 
     /// <summary>
     /// The extensions.
@@ -20,19 +17,16 @@ namespace Core.Utilities
     public class Extensions
     {
         /// <summary>
-        /// The empty collection if null or empty.
+        /// The get anti forgery token.
         /// </summary>
-        /// <param name="str">
-        /// The str.
-        /// </param>
-        /// <typeparam name="T">
-        /// </typeparam>
         /// <returns>
-        /// The <see cref="IEnumerable"/>.
+        /// The <see cref="string"/>.
         /// </returns>
-        public static IEnumerable<T> EmptyCollectionIfNullOrEmpty<T>(this string str) where T : class, new()
+        public static string GetAntiForgeryToken()
         {
-            return string.IsNullOrEmpty(str) ? Enumerable.Empty<T>() : false;
+            string cookieToken, formToken;
+            AntiForgery.GetTokens(null, out cookieToken, out formToken);
+            return cookieToken + ":" + formToken;
         }
     }
 }

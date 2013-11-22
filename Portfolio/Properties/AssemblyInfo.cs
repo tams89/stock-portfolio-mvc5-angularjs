@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="AssemblyInfo.cs" company="Sivaguru Enterprises">
-//   Sivaguru Enterprises Plc.
+// <copyright file="AssemblyInfo.cs" company="">
+//   
 // </copyright>
 // <summary>
 //   AssemblyInfo.cs

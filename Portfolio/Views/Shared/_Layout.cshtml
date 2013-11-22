@@ -1,25 +1,25 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-    <meta name="viewport" content="width=device-width" />
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <title>Portfolio</title>
-    <meta name="description" content="S.E. Enterprises algorithmic trading API." />
-</head>
-<body class="home">
-    @if (User.Identity.IsAuthenticated)
-    {
-        <div ng-app="AlgoTrader" ng-cloak>
-            @RenderBody()
-        </div>
-    }
-    else
-    {
-        <div ng-app="NoAuth" ng-cloak>
-            @RenderBody()
-        </div>
-    }
-</body>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+        <meta name="viewport" content="width=device-width" />
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <title>Portfolio</title>
+        <meta name="description" content="S.E. Enterprises algorithmic trading API." />
+    </head>
+    <body class="home">
+        @if (this.User.Identity.IsAuthenticated)
+        {
+            <div ng-app="AlgoTrader" ng-cloak>
+                @(this.RenderBody())
+            </div>
+        }
+        else
+        {
+            <div ng-app="NoAuth" ng-cloak>
+                @(this.RenderBody())
+            </div>
+        }
+    </body>
 </html>

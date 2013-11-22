@@ -6,7 +6,6 @@
 //   The user profile.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-
 namespace Portfolio.Models
 {
     using System.ComponentModel.DataAnnotations;

@@ -6,17 +6,12 @@
 //   The portfolio controller.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-
 namespace Portfolio.Controllers
 {
-    using System.Collections.Generic;
     using System.Linq;
     using System.Web.Mvc;
 
-    using Core.DTO;
     using Core.Services.Interfaces;
-
-    using Portfolio.Attributes;
 
     /// <summary>
     /// The portfolio controller.

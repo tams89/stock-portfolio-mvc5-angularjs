@@ -30,10 +30,7 @@ namespace Portfolio.App_Start
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             routes.MapRoute("Default", "{controller}/{action}", new { controller = "Main", action = "Index" });
 
-            routes.MapRoute(
-            "MainRoute",
-            "Main/{*all}",
-            new { controller = "Home", all = UrlParameter.Optional });
+            routes.MapRoute("MainRoute", "Main/{*all}", new { controller = "Home", all = UrlParameter.Optional });
         }
 
         #endregion

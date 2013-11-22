@@ -6,7 +6,6 @@
 //   The register external login model.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-
 namespace Portfolio.Models
 {
     using System.ComponentModel.DataAnnotations;

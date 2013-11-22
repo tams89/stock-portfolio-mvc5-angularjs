@@ -1,13 +1,23 @@
 ﻿@functions{
+
+    /// <summary>
+    /// The get anti forgery token.
+    /// </summary>
+    /// <returns>
+    /// The <see cref="string"/>.
+    /// </returns>
     private static string GetAntiForgeryToken()
     {
         string cookieToken, formToken;
         AntiForgery.GetTokens(null, out cookieToken, out formToken);
         return cookieToken + ":" + formToken;
     }
+
 }
 
-@Html.Partial("_Dependencies")
+
+
+@(this.Html.Partial("_Dependencies"))
 <div class="navbar navbar-inverse navbar-fixed-top">
     <toaster-container></toaster-container>
     <div class="container">
@@ -28,7 +38,7 @@
                         <li ng-class="{'active':getClass('/About')}"><a href="/#/About">About</a></li>
                     </ul>
                 </li>
-                @if (User.Identity.IsAuthenticated)
+                @if (this.User.Identity.IsAuthenticated)
                 {
                     <li class="dropdown" ng-class="{'active':getClass('/Portfolio')}">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Portfolio <b class="caret"></b></a>
@@ -40,10 +50,10 @@
                 }
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                @if (User.Identity.IsAuthenticated)
+                @if (this.User.Identity.IsAuthenticated)
                 {
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown">Welcome, @User.Identity.Name!<b class="caret"></b></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown">Welcome, @(this.User.Identity.Name)!<b class="caret"></b></a>
                         <ul class="dropdown-menu" ng-controller="LoginController">
                             <li><a class="text-right" role="button" ng-model="antiForgeryToken" ng-init='antiForgeryToken="@GetAntiForgeryToken()"' ng-click="logOut()">Sign Out</a></li>
                         </ul>

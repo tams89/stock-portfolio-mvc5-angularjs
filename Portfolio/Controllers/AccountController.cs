@@ -6,7 +6,6 @@
 //   The account controller.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-
 namespace Portfolio.Controllers
 {
     using System.Collections.Generic;
@@ -36,17 +35,17 @@ namespace Portfolio.Controllers
             /// <summary>
             /// The change password success.
             /// </summary>
-            ChangePasswordSuccess,
+            ChangePasswordSuccess, 
 
             /// <summary>
             /// The set password success.
             /// </summary>
-            SetPasswordSuccess,
+            SetPasswordSuccess, 
 
             /// <summary>
             /// The remove login success.
             /// </summary>
-            RemoveLoginSuccess,
+            RemoveLoginSuccess, 
         }
 
         #endregion
@@ -79,7 +78,7 @@ namespace Portfolio.Controllers
             {
                 return this.Json("The user name or password provided is incorrect.");
             }
-            
+
             FormsAuthentication.SetAuthCookie(model.UserName, false);
             return this.Json(true);
         }
@@ -103,7 +102,7 @@ namespace Portfolio.Controllers
             {
                 return this.Json(this.GetErrorsFromModelState());
             }
-            
+
             // Attempt to register the user
             try
             {

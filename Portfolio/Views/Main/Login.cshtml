@@ -1,17 +1,25 @@
 ﻿@model Portfolio.Models.LoginModel
 
 @functions{
+
+    /// <summary>
+    /// The get anti forgery token.
+    /// </summary>
+    /// <returns>
+    /// The <see cref="string"/>.
+    /// </returns>
     public string GetAntiForgeryToken()
     {
         string cookieToken, formToken;
         AntiForgery.GetTokens(null, out cookieToken, out formToken);
         return cookieToken + ":" + formToken;
     }
+
 }
 <h2>Log in</h2>
 <hr />
 <form name="loginForm" ng-submit="login()" ng-controller="LoginController" novalidate>
-    <input id="antiForgeryToken" ng-model="antiForgeryToken" type="hidden" ng-init='antiForgeryToken="@GetAntiForgeryToken()"' />
+    <input id="antiForgeryToken" ng-model="antiForgeryToken" type="hidden" ng-init='antiForgeryToken="@(this.GetAntiForgeryToken())"' />
     <div>
         <h4>Username:</h4>
         <input type="text" name="UserName" ng-model="loginModel.UserName" class="form-control" />

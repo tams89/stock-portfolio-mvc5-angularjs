@@ -6,7 +6,6 @@
 //   The users context.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-
 namespace Portfolio.Models
 {
     using System.Data.Entity;

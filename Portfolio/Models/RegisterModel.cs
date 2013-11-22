@@ -6,7 +6,6 @@
 //   The register model.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-
 namespace Portfolio.Models
 {
     using System.ComponentModel.DataAnnotations;

@@ -1,0 +1,9 @@
+﻿@model HandleErrorInfo
+
+<div>
+    <h2>@Model.Exception.Message</h2>
+    <hr />
+    <div>
+        @Model.Exception.InnerException
+    </div>
+</div>

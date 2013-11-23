@@ -3,7 +3,7 @@
 <div>
     <form>
         <span>Search:</span>
-        <input class="form-control" type="text" placeholder="Please search for a company to view its stock data. (Press Enter to Select)" ng-change="OnInputChange()" ng-enter="SelectSymbol()"
+        <input class="form-control" type="text" placeholder="Search for a company to view its stock data. (Press Enter to Select)" ng-change="OnInputChange()" ng-enter="SelectSymbol()"
                ng-model="selected" typeahead="symbol as symbol.Name + ' - ' + symbol.Symbol for symbol in symbols | limitTo: 5" autofocus>
     </form>
 </div>
@@ -20,6 +20,9 @@
                 </td>
             </tr>
             <tr>
+                <th>
+                    Company
+                </th>
                 <th>
                     Symbol
                 </th>
@@ -41,6 +44,9 @@
         </thead>
         <tbody>
             <tr class="page-change" ng-repeat="s in stockList">
+                <td>
+                    {{companyName(s.Symbol)}}
+                </td>
                 <td>
                     {{s.Symbol}}
                 </td>

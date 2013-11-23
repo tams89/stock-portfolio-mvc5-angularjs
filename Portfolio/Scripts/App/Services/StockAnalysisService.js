@@ -2,9 +2,18 @@
 
     var stocks = [];
     var historicalData = [];
+    var companySymbolKey = [];
 
     this.getStockList = function() {
         return stocks;
+    };
+
+    this.getCompanySymbolKey = function() {
+        return companySymbolKey;
+    };
+
+    this.persistCompanySymbolKey = function(data) {
+        companySymbolKey.push(data);
     };
 
     this.getHistoricalData = function() {
@@ -32,9 +41,5 @@
     this.removeStock = function(idx) {
         stocks.splice(idx, 1);
     };
-
-    //this.flattenData = function (flattenByProp, array) {
-    //    return _.flatten(_.pluck(array, flattenByProp.toString()));
-    //};
 
 });

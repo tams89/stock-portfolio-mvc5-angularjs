@@ -35,3 +35,4 @@ using System.Runtime.InteropServices;
 // Second digit increase indicates additional features.
 // Third digit changes indicates fixes and tweaks.
 [assembly: AssemblyInformationalVersion("1.0.0")]
+[assembly: AssemblyVersion("1.0.0")]

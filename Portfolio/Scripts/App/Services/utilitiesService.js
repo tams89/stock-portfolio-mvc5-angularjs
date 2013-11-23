@@ -1,16 +1,25 @@
-﻿app.service("utilitiesService", function() {
+﻿app.service("utilitiesService", function () {
 
-    this.isItemInArray = function(array, item) {
+    this.isItemInArray = function (array, item) {
         for (var i = 0; i <= array.length; i++) {
-            if (array[i] == item) return true;
+            if (array[i] === item) return true;
         }
         return false;
     };
 
-    this.isItemInArrayProp = function(array, arrayProp, item) {
+    this.isItemInArrayProp = function (array, arrayProp, item) {
         var flat = flattenData(arrayProp, array);
         for (var i = 0; i <= flat.length; i++) {
-            if (flat[i] == item) return true;
+            if (flat[i] === item) return true;
+        }
+        return false;
+    };
+
+    // TODO
+    this.findItem = function (array, arrayProp, item) {
+        var flat = flattenData(arrayProp, array);
+        for (var i = 0; i <= flat.length; i++) {
+            if (flat[i] === item) return flat[i];
         }
         return false;
     };
@@ -21,9 +30,9 @@
         return _.flatten(_.pluck(array, flattenByProp.toString()));
     }
 
-    this.removeFromArray = function(array, item) {
+    this.removeFromArray = function (array, item) {
         for (var i = 0; i <= array.length; i++) {
-            if (array[i] == item) {
+            if (array[i] === item) {
                 array.splice(i, 1);
             }
         }

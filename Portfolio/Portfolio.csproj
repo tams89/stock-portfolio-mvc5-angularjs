@@ -194,6 +194,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Directives\circle.html" />
+    <Content Include="Content\Directives\sort-by.html" />
     <Content Include="Content\Styles\angular-csp.min.css">
       <DependentUpon>angular-csp.css</DependentUpon>
     </Content>
@@ -229,12 +230,15 @@
       <DependentUpon>toaster.css</DependentUpon>
     </Content>
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\Angular\ui-bootstrap-tpls-0.7.0.js" />
+    <Content Include="Scripts\Angular\ui-bootstrap-tpls-0.7.0.min.js" />
     <Content Include="Scripts\App\AlgoTrader.js" />
     <Content Include="Scripts\App\Controllers\LoginController.js" />
     <Content Include="Scripts\App\Controllers\LoginController.min.js">
       <DependentUpon>LoginController.js</DependentUpon>
     </Content>
     <Content Include="Scripts\App\Controllers\OptionController.js" />
+    <Content Include="Scripts\App\Controllers\OptionTableController.js" />
     <Content Include="Scripts\App\Controllers\RegistrationController.js" />
     <Content Include="Scripts\App\Directives\circle.js" />
     <Content Include="Scripts\App\Directives\ng-grid.js" />
@@ -1039,12 +1043,6 @@
     <Content Include="Scripts\Angular\i8n\angular-locale_zu.min.js.map">
       <DependentUpon>angular-locale_zu.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\Angular\ui-bootstrap-0.6.0.min.js.map">
-      <DependentUpon>ui-bootstrap-0.6.0.js</DependentUpon>
-    </Content>
-    <Content Include="Scripts\Angular\ui-bootstrap-tpls-0.6.0.min.js.map">
-      <DependentUpon>ui-bootstrap-tpls-0.6.0.js</DependentUpon>
-    </Content>
     <Content Include="Scripts\App\Directives\ng-grid.min.js.map">
       <DependentUpon>ng-grid.js</DependentUpon>
     </Content>
@@ -1130,7 +1128,6 @@
     <Content Include="Scripts\Angular\angular.min.js.map">
       <DependentUpon>angular.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\Angular\errors.json" />
     <Content Include="Scripts\Angular\i8n\angular-locale_af-na.js" />
     <Content Include="Scripts\Angular\i8n\angular-locale_af-za.js" />
     <Content Include="Scripts\Angular\i8n\angular-locale_af.js" />
@@ -1376,7 +1373,6 @@
     <Content Include="Scripts\Angular\i8n\angular-locale_zh.js" />
     <Content Include="Scripts\Angular\i8n\angular-locale_zu-za.js" />
     <Content Include="Scripts\Angular\i8n\angular-locale_zu.js" />
-    <Content Include="Scripts\Angular\version.json" />
     <Content Include="Scripts\App\Directives\ngEnter.min.js.map">
       <DependentUpon>ngEnter.js</DependentUpon>
     </Content>
@@ -1407,16 +1403,11 @@
     <Content Include="Scripts\Angular\angular-touch.min.js" />
     <Content Include="Scripts\Angular\angular.js" />
     <Content Include="Scripts\Angular\angular.min.js" />
-    <Content Include="Scripts\Angular\version.txt" />
     <Content Include="Scripts\Jquery\jquery-2.0.3.js" />
     <Content Include="Scripts\Jquery\jquery-2.0.3.min.js" />
     <Content Include="Scripts\Modernizer\modernizr-2.6.2.js" />
     <Content Include="Scripts\Respond\respond.js" />
     <Content Include="Scripts\Respond\respond.min.js" />
-    <Content Include="Scripts\Angular\ui-bootstrap-0.6.0.js" />
-    <Content Include="Scripts\Angular\ui-bootstrap-0.6.0.min.js" />
-    <Content Include="Scripts\Angular\ui-bootstrap-tpls-0.6.0.js" />
-    <Content Include="Scripts\Angular\ui-bootstrap-tpls-0.6.0.min.js" />
     <Content Include="Scripts\Toast\toaster.js" />
     <Content Include="Scripts\UnderScore\underscore-min.js" />
     <Content Include="Scripts\_references.js" />
@@ -1439,6 +1430,7 @@
     <Content Include="Views\Shared\_Dependencies.cshtml" />
     <Content Include="Views\Shared\_GridPager.cshtml" />
     <Content Include="Views\Shared\_Grid.cshtml" />
+    <Content Include="Views\Portfolio\_OptionTable.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">

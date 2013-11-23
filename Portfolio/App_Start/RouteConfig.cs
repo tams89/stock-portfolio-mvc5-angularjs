@@ -7,7 +7,7 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Portfolio.App_Start
+namespace Portfolio
 {
     using System.Web.Mvc;
     using System.Web.Routing;

@@ -578,7 +578,7 @@ namespace Krs.Ats.IBNet
         }
 
         /// <summary>
-        /// The order reference. For institutional customers only.
+        /// The order reference. For institutional options only.
         /// </summary>
         public string OrderRef
         {
@@ -792,7 +792,7 @@ namespace Krs.Ats.IBNet
 
         /// <summary>
         /// Specifies whether the order is an open or close order.
-        /// For institutional customers only. Valid values are O, C.
+        /// For institutional options only. Valid values are O, C.
         /// </summary>
         public string OpenClose
         {
@@ -803,7 +803,7 @@ namespace Krs.Ats.IBNet
         /// <summary>
         /// The order origin.
         /// </summary>
-        /// <remarks>For institutional customers only.</remarks>
+        /// <remarks>For institutional options only.</remarks>
         public OrderOrigin Origin
         {
             get { return origin; }
@@ -1040,7 +1040,7 @@ namespace Krs.Ats.IBNet
         }
 
         /// <summary>
-        /// The account. For institutional customers only.
+        /// The account. For institutional options only.
         /// </summary>
         public string Account
         {
@@ -1067,7 +1067,7 @@ namespace Krs.Ats.IBNet
         }
 
         /// <summary>
-        /// For IBExecution customers: Valid values are: 
+        /// For IBExecution options: Valid values are: 
         /// IB, Away, and PTA (post trade allocation).
         /// </summary>
         public string ClearingIntent
@@ -1106,7 +1106,7 @@ namespace Krs.Ats.IBNet
 
         /// <summary>
         /// For IBDARK orders only. Orders routed to IBDARK are tagged as "post only" and 
-        /// are held in IB's order book, where incoming SmartRouted orders from other IB customers 
+        /// are held in IB's order book, where incoming SmartRouted orders from other IB options 
         /// are eligible to trade against them.
         /// </summary>
         public bool NotHeld
@@ -1152,7 +1152,7 @@ namespace Krs.Ats.IBNet
         }
 
         /// <summary>
-        /// For IBExecution customers: Specifies the true beneficiary of the order. 
+        /// For IBExecution options: Specifies the true beneficiary of the order. 
         /// This value is required for FUT/FOP orders for reporting to the exchange.
         /// </summary>
         public string DeltaNeutralClearingAccount
@@ -1162,7 +1162,7 @@ namespace Krs.Ats.IBNet
         }
 
         /// <summary>
-        /// For IBExecution customers: Valid values are: 
+        /// For IBExecution options: Valid values are: 
         /// IB, Away, and PTA (post trade allocation).
         /// </summary>
         public string DeltaNeutralClearingIntent

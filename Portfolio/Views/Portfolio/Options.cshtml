@@ -1,28 +1,25 @@
-﻿@using GridMvc.Html
-@model IEnumerable<Core.DTO.OptionDto>
-
-<h1>Option Tables</h1>
+﻿<h1>Option Tables</h1>
 <p>All prices are in USD</p>
 <hr />
-<div>
-    <form>
-        <label>Search:</label>
-        <input class="form-control" type="text" placeholder="Press enter to select a company - see option table below"
-               ng-change="OnInputChange()" ng-enter="SelectSymbol()" ng-model="selected"
-               typeahead="symbol as symbol.Name + ' - ' + symbol.Symbol for symbol in symbols | limitTo: 5" autofocus />
-    </form>
-</div>
-<circle></circle>
-<hr />
-<div>
-    @Html.Grid(Model).Columns(columns =>
-    {
-        columns.Add(c => c.Symbol).Filterable(true);
-        columns.Add(c => c.StrikePrice).Filterable(true);
-        columns.Add(c => c.LastPrice).Filterable(true);
-        columns.Add(c => c.Bid).Filterable(true);
-        columns.Add(c => c.Ask).Filterable(true);
-        columns.Add(c => c.Vol).Filterable(true);
-        columns.Add(c => c.OpenInt).Filterable(true);
-    }).WithPaging(10).Sortable(true)
+<div ng-controller="OptionController">
+    <div>
+        @*@using (Ajax.BeginForm("OptionTableUpdate", "Portfolio", new AjaxOptions { UpdateTargetId = "optionTable" }))
+        {*@
+            <input type="hidden" name="symbol" value='{{selected.Symbol}}' />
+            <form>
+                <label>Search:</label>
+                <input class="form-control" type="text" placeholder="Press enter to select a company - see option table below"
+                       ng-change="OnInputChange()" ng-model="selected" ng-enter="SelectSymbol()"
+                       typeahead="symbol as symbol.Name + ' - ' + symbol.Symbol for symbol in symbols | limitTo: 5" autofocus />
+            </form>
+        @*}*@
+    </div>
+    <hr />
+    <circle></circle>
+    <div id="optionTable">
+        @*@{ Html.RenderAction("OptionTableUpdate", "Portfolio"); }*@
+    </div>
+    <div>
+        @Html.Partial("_OptionTable")
+    </div>
 </div>

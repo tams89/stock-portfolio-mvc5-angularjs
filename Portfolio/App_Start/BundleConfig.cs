@@ -49,6 +49,7 @@ namespace Portfolio.App_Start
             bundles.Add(new ScriptBundle("~/bundles/angularResource").Include("~/Scripts/Angular/angular-resource.js"));
             bundles.Add(new ScriptBundle("~/bundles/angularScenario").Include("~/Scripts/Angular/angular-scenario.js"));
             bundles.Add(new ScriptBundle("~/bundles/angularLoader").Include("~/Scripts/Angular/angular-loader.js"));
+            bundles.Add(new ScriptBundle("~/bundles/angularSanitize").Include("~/Scripts/Angular/angular-sanitize.js"));
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include("~/Scripts/Angular/ui-bootstrap-*"));
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include("~/Scripts/Jquery/jquery-*"));
             bundles.Add(

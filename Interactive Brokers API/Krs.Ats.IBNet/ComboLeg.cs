@@ -91,7 +91,7 @@ namespace Krs.Ats.IBNet
 		/// The exchange to which the complete combination order will be routed. See property <see cref="ComboLeg.Exchange"/>.
 		/// </param>
 		/// <param name="openClose">
-		/// Specifies whether the order is an open or close order. Retail customers must use <see cref="ComboOpenClose.Same"/>. See property <see cref="ComboLeg.OpenClose"/>
+		/// Specifies whether the order is an open or close order. Retail options must use <see cref="ComboOpenClose.Same"/>. See property <see cref="ComboLeg.OpenClose"/>
 		/// </param>
 		/// <param name="shortSaleSlot">
 		/// ShortSaleSlot of Third Party requires DesignatedLocation to be specified. Non-empty DesignatedLocation values for all other cases will cause orders to be rejected. See Property <see cref="ComboLeg.ShortSaleSlot"/>
@@ -120,7 +120,7 @@ namespace Krs.Ats.IBNet
 		/// The exchange to which the complete combination order will be routed. See property <see cref="ComboLeg.Exchange"/>.
 		/// </param>
 		/// <param name="openClose">
-		/// Specifies whether the order is an open or close order. Retail customers must use <see cref="ComboOpenClose.Same"/>. See property <see cref="ComboLeg.OpenClose"/>
+		/// Specifies whether the order is an open or close order. Retail options must use <see cref="ComboOpenClose.Same"/>. See property <see cref="ComboLeg.OpenClose"/>
 		/// </param>
 		/// <param name="shortSaleSlot">
 		/// ShortSaleSlot of Third Party requires DesignatedLocation to be specified. Non-empty DesignatedLocation values for all other cases will cause orders to be rejected. See Property <see cref="ComboLeg.ShortSaleSlot"/>
@@ -187,7 +187,7 @@ namespace Krs.Ats.IBNet
 
 		/// <summary>
 		/// Specifies whether the order is an open or close order.
-		/// Retail customers must use <see cref="ComboOpenClose.Same"/>.
+		/// Retail options must use <see cref="ComboOpenClose.Same"/>.
 		/// </summary>
 		/// <seealso cref="ComboOpenClose"/>
 		public ComboOpenClose OpenClose

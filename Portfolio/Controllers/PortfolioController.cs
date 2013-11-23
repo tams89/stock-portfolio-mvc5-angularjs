@@ -11,22 +11,24 @@ namespace Portfolio.Controllers
 {
     using System.Linq;
     using System.Web.Mvc;
+
+    using Core.DTO;
     using Core.Services.Interfaces;
 
     /// <summary>
-    ///     The portfolio controller.
+    /// The portfolio controller.
     /// </summary>
     public class PortfolioController : Controller
     {
         #region Fields
 
         /// <summary>
-        ///     The _google finance service.
+        /// The google finance service.
         /// </summary>
         private readonly IGoogleFinanceService googleFinanceService;
 
         /// <summary>
-        ///     The _yahoo finance service.
+        /// The yahoo finance service.
         /// </summary>
         private readonly IYahooFinanceService yahooFinanceService;
 
@@ -103,16 +105,23 @@ namespace Portfolio.Controllers
         /// <summary>
         /// The options.
         /// </summary>
-        /// <param name="symbol">
-        /// The symbol.
-        /// </param>
         /// <returns>
         /// The <see cref="ActionResult"/>.
         /// </returns>
-        public ActionResult Options(string symbol)
+        public ActionResult Options()
         {
-            var data = yahooFinanceService.GetData(symbol);
-            return View(data);
+            return View();
+        }
+
+        /// <summary>
+        /// The option table update.
+        /// </summary>
+        /// <param name="symbol"></param>
+        /// <returns></returns>
+        public ActionResult OptionTableUpdate(string symbol)
+        {
+            var optionTable = yahooFinanceService.GetData(symbol);
+            return PartialView("_OptionTable", optionTable);
         }
 
         /// <summary>

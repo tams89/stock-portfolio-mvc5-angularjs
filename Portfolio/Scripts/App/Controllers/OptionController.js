@@ -1,36 +1,32 @@
 ﻿"use strict";
 
-app.controller("OptionController", function($scope, autocompleteService, toaster, optionAnalysisService) {
+app.controller("OptionController", function ($scope, autocompleteService, toaster, optionAnalysisService) {
 
-    $scope.optionData = [];
+    //$scope.optionData = [];
     $scope.selected = undefined;
+    //$scope.optionTable = undefined;
+    
+    //init();
 
-    init();
-
-    function init() {
-        $scope.optionData = optionAnalysisService.getOptionData();
-    }
+    //function init() {
+    //    $scope.optionData = optionAnalysisService.getOptionData();
+    //}
 
     $scope.symbols = [];
-    $scope.OnInputChange = function() {
+    $scope.OnInputChange = function () {
         $scope.symbols = autocompleteService.getSymbols($scope.selected);
     };
 
-    //$scope.SelectSymbol = function() {
-    //    var symbol = $scope.selected.Symbol;
-    //    $scope.loading = true;
-    //    var optionDataPromise = optionAnalysisService.getOptions(symbol);
-    //    optionDataPromise.then(function(data) {
-    //        $scope.optionData = data;
-    //        console.log("Option promise forefilled data count: " + $scope.optionData.length);
-    //        $scope.loading = false;
-    //    });
-    //};
-    
-    $scope.SelectSymbol = function () {
+    $scope.SelectSymbol = function() {
+        var symbol = $scope.selected.Symbol;
         $scope.loading = true;
-        optionAnalysisService.getOptionTableData($scope.selected.Symbol);
-        $scope.loading = false;
+        var optionDataPromise = optionAnalysisService.getOptions(symbol);
+        optionDataPromise.then(function(data) {
+            $scope.items = data;
+            console.log("Option promise forefilled data count: " + $scope.items.length);
+            $scope.selected = undefined;
+            $scope.loading = false;
+        });
     };
-
+    
 });

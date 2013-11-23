@@ -23,9 +23,4 @@
         return deferred.promise;
     };
 
-    // TODO
-    this.getOptionTableData = function (symbol) {
-        $http.post("/Portfolio/Options", { "symbol": symbol });
-    };
-
 });

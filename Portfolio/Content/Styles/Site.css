@@ -78,4 +78,12 @@ body.home {
 .form-control.ng-invalid {
     border: 1px solid red;
 }
+
+#container {
+    height: 500px;
+    -moz-min-width: 650px;
+    -ms-min-width: 650px;
+    -o-min-width: 650px;
+    -webkit-min-width: 650px;
+    min-width: 650px;
 }

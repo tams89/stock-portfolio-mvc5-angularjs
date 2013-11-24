@@ -1,4 +1,4 @@
-﻿app.service("authenticationService", function ($http, $q) {
+﻿app.service("authenticationService", ["$http", "$q", function ($http, $q) {
 
     this.Login = function (formData, token) {
         var deferred = $q.defer();
@@ -38,4 +38,4 @@
         return deferred.promise;
     };
 
-});
+}]);

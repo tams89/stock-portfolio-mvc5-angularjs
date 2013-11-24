@@ -1,6 +1,6 @@
 ﻿"use strict";
 
-app.controller("OptionController", function ($scope, autocompleteService, toaster, optionAnalysisService) {
+app.controller("OptionController", ["$scope", "autocompleteService", "toaster", "optionAnalysisService", function ($scope, autocompleteService, toaster, optionAnalysisService) {
 
     $scope.currentPage = 0;
     $scope.pageSize = 10;
@@ -36,11 +36,11 @@ app.controller("OptionController", function ($scope, autocompleteService, toaste
     $scope.numberOfPages = function () {
         return Math.ceil($scope.options.length / $scope.pageSize);
     };
-    
-});
 
-app.filter("startFrom", function() {
-    return function(input, start) {
+}]);
+
+app.filter("startFrom", function () {
+    return function (input, start) {
         start = +start;
         return input.slice(start);
     };

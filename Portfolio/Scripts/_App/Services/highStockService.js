@@ -1,10 +1,10 @@
-﻿app.service("highStockService", function (utilitiesService) {
+﻿app.service("highStockService", ["utilitiesService", function (utilitiesService) {
 
     var chart,
         seriesOptions = [],
         yAxisOptions = [],
         names = [];
-    
+
     this.addHistoricalDataSeries = function (data) {
         try {
             if (data == undefined) return;
@@ -89,4 +89,4 @@
         seriesOptions = [];
     };
 
-});
+}]);

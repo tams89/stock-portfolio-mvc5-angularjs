@@ -1,4 +1,5 @@
-﻿app.controller("StockController", function ($scope, utilitiesService, autocompleteService, stockAnalysisService, highStockService, toaster) {
+﻿app.controller("StockController", ["$scope", "utilitiesService", "autocompleteService", "stockAnalysisService", "highStockService", "toaster",
+    function ($scope, utilitiesService, autocompleteService, stockAnalysisService, highStockService, toaster) {
 
     var lastSymbol;
     $scope.stockList = []; // for stock watch table list
@@ -74,4 +75,4 @@
         highStockService.createChart(); // create chart after series options set.
     };
 
-});
+}]);

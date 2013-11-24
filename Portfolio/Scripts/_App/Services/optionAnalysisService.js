@@ -1,4 +1,4 @@
-﻿app.service("optionAnalysisService", function ($http, $q) {
+﻿app.service("optionAnalysisService", ["$http", "$q", function ($http, $q) {
 
     var optionData = [];
 
@@ -23,4 +23,4 @@
         return deferred.promise;
     };
 
-});
+}]);

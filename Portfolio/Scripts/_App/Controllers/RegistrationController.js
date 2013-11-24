@@ -1,11 +1,11 @@
-﻿app.controller("RegistrationController", function ($scope, authenticationService, toaster) {
+﻿app.controller("RegistrationController", ["$scope", "authenticationService", "toaster", function ($scope, authenticationService, toaster) {
 
     $scope.antiForgeryToken = undefined;
 
     $scope.register = function () {
         if ($scope.registerForm.$valid) {
             var validatedPromise = authenticationService.Register($scope.registerModel, $scope.antiForgeryToken);
-            validatedPromise.then(function(data) {
+            validatedPromise.then(function (data) {
                 if (data != undefined && data.success != undefined) {
                     toaster.pop("success", "Registration completed successfully.");
                     window.location.href = "/";
@@ -27,4 +27,4 @@
         }
     };
 
-});
+}]);

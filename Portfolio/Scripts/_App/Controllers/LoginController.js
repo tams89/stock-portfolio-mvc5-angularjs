@@ -1,11 +1,11 @@
-﻿app.controller("LoginController", function ($scope, authenticationService, toaster) {
+﻿app.controller("LoginController", ["$scope", "authenticationService", "toaster", function ($scope, authenticationService, toaster) {
 
     $scope.antiForgeryToken = undefined;
 
     $scope.login = function () {
         if ($scope.loginForm.$valid) {
             var validatedPromise = authenticationService.Login($scope.loginModel, $scope.antiForgeryToken);
-            validatedPromise.then(function(data) {
+            validatedPromise.then(function (data) {
                 if (data == "true") {
                     window.location.href = "/";
                     return true;
@@ -26,4 +26,4 @@
         });
     };
 
-});
+}]);

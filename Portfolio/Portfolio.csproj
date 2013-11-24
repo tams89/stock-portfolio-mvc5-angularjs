@@ -426,6 +426,9 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Dependencies.cshtml" />
     <Content Include="Views\Portfolio\_OptionTable.cshtml" />
+    <Content Include="Scripts\_App\Services\authenticationService.min.js.map">
+      <DependentUpon>authenticationService.js</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">

@@ -34,7 +34,6 @@ namespace Portfolio.App_Start
                     "~/Content/Styles/toaster.css",
                     "~/Content/Styles/spinner.css",
                     "~/Content/Styles/circle.css",
-                    "~/Content/Styles/Gridmvc.css",
                     "~/Content/Styles/animate.css"));
 
             // Custom CSS
@@ -75,7 +74,7 @@ namespace Portfolio.App_Start
                 .Include("~/Scripts/_App/Controllers/LoginController.js")
                 .Include("~/Scripts/_App/Controllers/RegistrationController.js"));
 
-            BundleTable.EnableOptimizations = false;
+            BundleTable.EnableOptimizations = true;
         }
 
         #endregion

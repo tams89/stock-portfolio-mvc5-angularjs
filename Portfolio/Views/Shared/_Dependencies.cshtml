@@ -5,12 +5,6 @@
 <div id="libraryBundles">
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/angular")
-    @Scripts.Render("~/bundles/angularRoute")
-    @Scripts.Render("~/bundles/angularAnimate")
-    @Scripts.Render("~/bundles/angularResource")
-    @Scripts.Render("~/bundles/angularScenario")
-    @Scripts.Render("~/bundles/angularLoader")
-    @Scripts.Render("~/bundles/angularSanitize")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryVal")
     @Scripts.Render("~/bundles/respond")
@@ -24,17 +18,9 @@
     @if (User.Identity.IsAuthenticated)
     {
         @Scripts.Render("~/bundles/angularApp")
-        @Scripts.Render("~/bundles/angularModules")
-        @Scripts.Render("~/bundles/angularDirectives")
-        @Scripts.Render("~/bundles/angularServices")
-        @Scripts.Render("~/bundles/angularControllers")
     }
     else
     {
-        @Scripts.Render("~/Scripts/App/NoAuth.js")
-        @Scripts.Render("~/Scripts/App/Services/authenticationService.js")
-        @Scripts.Render("~/Scripts/App/Controllers/NavigationController.js")
-        @Scripts.Render("~/Scripts/App/Controllers/LoginController.js")
-        @Scripts.Render("~/Scripts/App/Controllers/RegistrationController.js")
+        @Scripts.Render("~/bundles/NoAuth")
     }
 </div>

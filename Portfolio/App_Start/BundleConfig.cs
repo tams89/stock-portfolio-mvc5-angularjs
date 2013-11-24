@@ -29,12 +29,12 @@ namespace Portfolio.App_Start
             // Library CSS
             bundles.Add(
                 new StyleBundle("~/Content/css").Include(
-                    "~/Content/Styles/angular-csp.css", 
-                    "~/Content/Styles/bootstrap.css", 
-                    "~/Content/Styles/toaster.css", 
-                    "~/Content/Styles/spinner.css", 
-                    "~/Content/Styles/circle.css", 
-                    "~/Content/Styles/Gridmvc.css", 
+                    "~/Content/Styles/angular-csp.css",
+                    "~/Content/Styles/bootstrap.css",
+                    "~/Content/Styles/toaster.css",
+                    "~/Content/Styles/spinner.css",
+                    "~/Content/Styles/circle.css",
+                    "~/Content/Styles/Gridmvc.css",
                     "~/Content/Styles/animate.css"));
 
             // Custom CSS
@@ -52,23 +52,19 @@ namespace Portfolio.App_Start
             bundles.Add(new ScriptBundle("~/bundles/angularSanitize").Include("~/Scripts/Angular/angular-sanitize.js"));
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include("~/Scripts/Angular/ui-bootstrap-*"));
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include("~/Scripts/Jquery/jquery-*"));
-            bundles.Add(
-                new ScriptBundle("~/bundles/jqueryVal").Include(
-                    "~/Scripts/Jquery/Validate/jquery.unobtrusive*", 
-                    "~/Scripts/Jquery/Validate/jquery.validate*"));
+            bundles.Add(new ScriptBundle("~/bundles/jqueryVal").Include("~/Scripts/Jquery/Validate/jquery.unobtrusive*", "~/Scripts/Jquery/Validate/jquery.validate*"));
             bundles.Add(new ScriptBundle("~/bundles/toast").Include("~/Scripts/Toast/toaster.js"));
             bundles.Add(new ScriptBundle("~/bundles/respond").Include("~/Scripts/Respond/respond.js"));
             bundles.Add(new ScriptBundle("~/bundles/underScore").Include("~/Scripts/UnderScore/underscore-min.js"));
 
             // Created SPA JS Bundles
-            bundles.Add(new ScriptBundle("~/bundles/angularApp").IncludeDirectory("~/Scripts/App", "AlgoTrader.js"));
-            bundles.Add(new ScriptBundle("~/bundles/angularModules").IncludeDirectory("~/Scripts/App/Modules", "*.js"));
-            bundles.Add(
-                new ScriptBundle("~/bundles/angularDirectives").IncludeDirectory("~/Scripts/App/Directives", "*.js"));
-            bundles.Add(
-                new ScriptBundle("~/bundles/angularServices").IncludeDirectory("~/Scripts/App/Services", "*.js"));
-            bundles.Add(
-                new ScriptBundle("~/bundles/angularControllers").IncludeDirectory("~/Scripts/App/Controllers", "*.js"));
+            bundles.Add(new ScriptBundle("~/bundles/angularApp").IncludeDirectory("~/Scripts/_App", "AlgoTrader.js"));
+            bundles.Add(new ScriptBundle("~/bundles/angularModules").IncludeDirectory("~/Scripts/_App/Modules", "*.js"));
+            bundles.Add(new ScriptBundle("~/bundles/angularDirectives").IncludeDirectory("~/Scripts/_App/Directives", "*.js"));
+            bundles.Add(new ScriptBundle("~/bundles/angularServices").IncludeDirectory("~/Scripts/_App/Services", "*.js"));
+            bundles.Add(new ScriptBundle("~/bundles/angularControllers").IncludeDirectory("~/Scripts/_App/Controllers", "*.js"));
+
+            BundleTable.EnableOptimizations = true;
         }
 
         #endregion

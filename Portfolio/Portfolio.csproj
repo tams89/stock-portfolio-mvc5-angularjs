@@ -32,6 +32,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Portfolio.XML</DocumentationFile>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -220,47 +221,49 @@
       <DependentUpon>toaster.css</DependentUpon>
     </Content>
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\Angular\angular-mocks.min.js" />
+    <Content Include="Scripts\Angular\angular-scenario.min.js" />
     <Content Include="Scripts\Angular\ui-bootstrap-tpls-0.7.0.js" />
     <Content Include="Scripts\Angular\ui-bootstrap-tpls-0.7.0.min.js" />
-    <Content Include="Scripts\App\AlgoTrader.js" />
-    <Content Include="Scripts\App\Controllers\LoginController.js" />
-    <Content Include="Scripts\App\Controllers\LoginController.min.js">
+    <Content Include="Scripts\_App\AlgoTrader.js" />
+    <Content Include="Scripts\_App\AlgoTrader.min.js" />
+    <Content Include="Scripts\_App\Controllers\LoginController.js" />
+    <Content Include="Scripts\_App\Controllers\LoginController.min.js">
       <DependentUpon>LoginController.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\App\Controllers\OptionController.js" />
-    <Content Include="Scripts\App\Controllers\OptionTableController.js" />
-    <Content Include="Scripts\App\Controllers\RegistrationController.js" />
-    <Content Include="Scripts\App\Directives\circle.js" />
-    <Content Include="Scripts\App\Directives\ng-grid.js" />
-    <Content Include="Scripts\App\Directives\spinner.js" />
-    <Content Include="Scripts\App\NoAuth.js" />
-    <Content Include="Scripts\App\Services\authenticationService.js" />
-    <Content Include="Scripts\App\Controllers\NavigationController.js" />
-    <Content Include="Scripts\App\Controllers\StockController.js" />
-    <Content Include="Scripts\App\Modules\highcharts-ng.js" />
-    <Content Include="Scripts\App\Directives\ngEnter.js" />
-    <Content Include="Scripts\App\Services\autocompleteService.js" />
-    <Content Include="Scripts\App\Services\highStockService.js" />
-    <Content Include="Scripts\App\Services\optionAnalysisService.js" />
-    <Content Include="Scripts\App\Services\stockAnalysisService.js" />
+    <Content Include="Scripts\_App\Controllers\OptionController.js" />
+    <Content Include="Scripts\_App\Controllers\RegistrationController.js" />
+    <Content Include="Scripts\_App\Directives\circle.js" />
+    <Content Include="Scripts\_App\Directives\spinner.js" />
+    <Content Include="Scripts\_App\NoAuth.js" />
+    <Content Include="Scripts\_App\NoAuth.min.js" />
+    <Content Include="Scripts\_App\Services\authenticationService.js" />
+    <Content Include="Scripts\_App\Controllers\NavigationController.js" />
+    <Content Include="Scripts\_App\Controllers\StockController.js" />
+    <Content Include="Scripts\_App\Modules\highcharts-ng.js" />
+    <Content Include="Scripts\_App\Directives\ngEnter.js" />
+    <Content Include="Scripts\_App\Services\autocompleteService.js" />
+    <Content Include="Scripts\_App\Services\highStockService.js" />
+    <Content Include="Scripts\_App\Services\optionAnalysisService.js" />
+    <Content Include="Scripts\_App\Services\stockAnalysisService.js" />
     <Content Include="Content\Directives\spinner.html" />
-    <Content Include="Scripts\App\Services\utilitiesService.js" />
+    <Content Include="Scripts\_App\Services\utilitiesService.js" />
     <Content Include="Scripts\HighStock\highstock.js" />
     <Content Include="Scripts\HighStock\Modules\exporting.js" />
     <Content Include="Scripts\HighStock\Themes\grid.js" />
     <Content Include="App_Code\Helpers.cshtml" />
     <None Include="Properties\PublishProfiles\algotrader.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
-    <Content Include="Scripts\App\NoAuth.min.js.map">
+    <Content Include="Scripts\_App\NoAuth.min.js.map">
       <DependentUpon>NoAuth.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\App\Controllers\RegistrationController.min.js.map">
+    <Content Include="Scripts\_App\Controllers\RegistrationController.min.js.map">
       <DependentUpon>RegistrationController.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\App\Controllers\AuthController.min.js.map">
+    <Content Include="Scripts\_App\Controllers\AuthController.min.js.map">
       <DependentUpon>LoginController.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\App\Controllers\LoginController.min.js.map">
+    <Content Include="Scripts\_App\Controllers\LoginController.min.js.map">
       <DependentUpon>LoginController.js</DependentUpon>
     </Content>
     <None Include="Scripts\Jquery\Validate\jquery.validate-vsdoc.js" />
@@ -272,21 +275,20 @@
     <Content Include="Scripts\Jquery\Validate\jquery.validate.min.js" />
     <Content Include="Views\Error\Index.cshtml" />
     <Content Include="Views\Main\Index.cshtml" />
-    <Content Include="Scripts\App\Directives\loadSpinner.min.js.map">
+    <Content Include="Scripts\_App\Directives\loadSpinner.min.js.map">
       <DependentUpon>spinner.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\App\Directives\spinner.min.js.map">
+    <Content Include="Scripts\_App\Directives\spinner.min.js.map">
       <DependentUpon>spinner.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\Toast\README.md" />
     <Content Include="Scripts\UnderScore\underscore-min.map" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Scripts\App\Services\highStockService.min.js.map">
+    <Content Include="Scripts\_App\Services\highStockService.min.js.map">
       <DependentUpon>highStockService.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\App\Services\utilitiesService.min.js.map">
+    <Content Include="Scripts\_App\Services\utilitiesService.min.js.map">
       <DependentUpon>utilitiesService.js</DependentUpon>
     </Content>
     <Content Include="Scripts\HighStock\Themes\grid.min.js.map">
@@ -294,12 +296,6 @@
     </Content>
     <Content Include="Scripts\Angular\angular-mocks.min.js.map">
       <DependentUpon>angular-mocks.js</DependentUpon>
-    </Content>
-    <Content Include="Scripts\Angular\i8n\angular-locale_en-gb.min.js.map">
-      <DependentUpon>angular-locale_en-gb.js</DependentUpon>
-    </Content>
-    <Content Include="Scripts\App\Directives\ng-grid.min.js.map">
-      <DependentUpon>ng-grid.js</DependentUpon>
     </Content>
     <Content Include="Scripts\HighStock\highstock.min.js.map">
       <DependentUpon>highstock.js</DependentUpon>
@@ -322,10 +318,7 @@
     <Content Include="Scripts\UnderScore\underscore-min.min.js.map">
       <DependentUpon>underscore-min.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\Angular\angular-scenario.min.js.map">
-      <DependentUpon>angular-scenario.js</DependentUpon>
-    </Content>
-    <Content Include="Scripts\App\Directives\circle.min.js.map">
+    <Content Include="Scripts\_App\Directives\circle.min.js.map">
       <DependentUpon>circle.js</DependentUpon>
     </Content>
     <Content Include="Views\Account\Manage.cshtml" />
@@ -341,22 +334,22 @@
     <Content Include="favicon.ico" />
     <Content Include="Content\Fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\App\AlgoTrader.min.js.map">
+    <Content Include="Scripts\_App\AlgoTrader.min.js.map">
       <DependentUpon>AlgoTrader.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\App\Controllers\NavigationController.min.js.map">
+    <Content Include="Scripts\_App\Controllers\NavigationController.min.js.map">
       <DependentUpon>NavigationController.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\App\Services\AjaxService.min.js.map">
+    <Content Include="Scripts\_App\Services\AjaxService.min.js.map">
       <DependentUpon>autocompleteService.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\App\Controllers\StockController.min.js.map">
+    <Content Include="Scripts\_App\Controllers\StockController.min.js.map">
       <DependentUpon>StockController.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\App\Services\StockAnalysisService.min.js.map">
+    <Content Include="Scripts\_App\Services\StockAnalysisService.min.js.map">
       <DependentUpon>stockAnalysisService.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\App\Services\AutocompleteService.min.js.map">
+    <Content Include="Scripts\_App\Services\AutocompleteService.min.js.map">
       <DependentUpon>autocompleteService.js</DependentUpon>
     </Content>
     <Content Include="Scripts\Angular\angular-animate.min.js.map">
@@ -380,20 +373,16 @@
     <Content Include="Scripts\Angular\angular-touch.min.js.map">
       <DependentUpon>angular-touch.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\Angular\angular.min.js.map">
-      <DependentUpon>angular.js</DependentUpon>
-    </Content>
-    <Content Include="Scripts\Angular\i8n\angular-locale_en-gb.js" />
-    <Content Include="Scripts\App\Directives\ngEnter.min.js.map">
+    <Content Include="Scripts\_App\Directives\ngEnter.min.js.map">
       <DependentUpon>ngEnter.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\App\Modules\highcharts-ng.min.js.map">
+    <Content Include="Scripts\_App\Modules\highcharts-ng.min.js.map">
       <DependentUpon>highcharts-ng.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\App\Controllers\OptionController.min.js.map">
+    <Content Include="Scripts\_App\Controllers\OptionController.min.js.map">
       <DependentUpon>OptionController.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\App\Services\OptionAnalysisService.min.js.map">
+    <Content Include="Scripts\_App\Services\OptionAnalysisService.min.js.map">
       <DependentUpon>optionAnalysisService.js</DependentUpon>
     </Content>
     <Content Include="Scripts\Angular\angular-animate.js" />

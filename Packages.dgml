@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="TopToBottom" Layout="Sugiyama" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="Angular.UI.Bootstrap 0.6.0" Category="Package" Bounds="0,55.9600000000002,157.606666666667,25.96" Label="Angular.UI.Bootstrap 0.6.0" />
+    <Node Id="Antlr 3.5.0.2" Category="Package" Bounds="188.481666666667,55.96,82.6433333333333,25.96" Label="Antlr 3.5.0.2" />
+    <Node Id="DotNet.Highcharts 2.0" Category="Package" Bounds="432.146666666667,55.96,137.313333333333,25.96" Label="DotNet.Highcharts 2.0" />
+    <Node Id="Portfolio" Category="Project" Bounds="318.993333333333,0,65.6200000000001,25.96" Label="Portfolio" />
+    <Node Id="angularjs 1.0.8" Category="Package" Bounds="30.885,111.92,95.8366666666667,25.96" Label="angularjs 1.0.8" />
+    <Node Id="bootstrap 3.0.2" Category="Package" Bounds="302.018333333333,55.96,99.5700000000001,25.96" Label="bootstrap 3.0.2" />
+  </Nodes>
+  <Links>
+    <Link Source="Angular.UI.Bootstrap 0.6.0" Target="angularjs 1.0.8" Category="Package Dependency" Bounds="78.803337097168,81.9199981689453,0,21" />
+    <Link Source="Portfolio" Target="Angular.UI.Bootstrap 0.6.0" Category="Installed Package" Bounds="150.942749023438,19.7054481506348,168.050598144531,34.4472923278809" />
+    <Link Source="Portfolio" Target="Antlr 3.5.0.2" Category="Installed Package" Bounds="266.281890869141,25.9599990844727,57.2233581542969,26.2477073669434" />
+    <Link Source="Portfolio" Target="DotNet.Highcharts 2.0" Category="Installed Package" Bounds="383.811676025391,25.0013904571533,74.0055236816406,27.7942867279053" />
+    <Link Source="Portfolio" Target="bootstrap 3.0.2" Category="Installed Package" Bounds="351.803344726563,25.9599990844727,0,21" />
+  </Links>
+  <Categories>
+    <Category Id="Installed Package" />
+    <Category Id="Package" />
+    <Category Id="Package Dependency" />
+    <Category Id="Project" />
+  </Categories>
+  <Properties>
+    <Property Id="Bounds" DataType="System.Windows.Rect" />
+    <Property Id="Expression" DataType="System.String" />
+    <Property Id="GraphDirection" DataType="Microsoft.VisualStudio.Diagrams.Layout.LayoutOrientation" />
+    <Property Id="GroupLabel" DataType="System.String" />
+    <Property Id="IsEnabled" DataType="System.Boolean" />
+    <Property Id="Label" Label="Label" Description="Displayable label of an Annotatable object" DataType="System.String" />
+    <Property Id="Layout" DataType="System.String" />
+    <Property Id="TargetType" DataType="System.Type" />
+    <Property Id="Value" DataType="System.String" />
+    <Property Id="ValueLabel" DataType="System.String" />
+  </Properties>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="Project" ValueLabel="True">
+      <Condition Expression="HasCategory('Project')" />
+      <Setter Property="Background" Value="Blue" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Package Dependency" ValueLabel="True">
+      <Condition Expression="HasCategory('Package Dependency')" />
+      <Setter Property="Background" Value="Yellow" />
+    </Style>
+  </Styles>
+</DirectedGraph>

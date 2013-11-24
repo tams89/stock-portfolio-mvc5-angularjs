@@ -9,7 +9,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>FinanceLibrary</RootNamespace>
     <AssemblyName>FinanceLibrary</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <Name>FinanceLibrary</Name>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
@@ -64,23 +64,12 @@
     <Compile Include="BlackScholes.fs" />
     <Compile Include="VolatilityAndMarketData.fs" />
     <Compile Include="RiskFreeInterestRate.fs" />
-    <None Include="packages.config" />
     <Compile Include="YahooApiEngineOptions.fs" />
     <Compile Include="YahooApiEngineStock.fs" />
     <Content Include="yqlstock.xml" />
-    <None Include="Samples\MathNet.Numerics.FSharp\Vectors.fsx" />
-    <None Include="Samples\MathNet.Numerics.FSharp\RandomAndDistributions.fsx" />
-    <None Include="Samples\MathNet.Numerics.FSharp\MCMC.fsx" />
-    <None Include="Samples\MathNet.Numerics.FSharp\Matrices.fsx" />
-    <None Include="Samples\MathNet.Numerics.FSharp\LinearRegression.fsx" />
-    <None Include="Samples\MathNet.Numerics.FSharp\Histogram.fsx" />
-    <None Include="Samples\MathNet.Numerics.FSharp\Apply.fsx" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Antlr3.Runtime">
-      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="FSharp.Data">
       <HintPath>..\packages\FSharp.Data.1.1.10\lib\net40\FSharp.Data.dll</HintPath>
       <Private>True</Private>
@@ -89,17 +78,8 @@
       <HintPath>..\packages\FSharp.Data.1.1.10\lib\net40\FSharp.Data.DesignTime.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="FSharp.Data.TypeProviders, Version=4.3.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-    <Reference Include="MathNet.Numerics">
-      <HintPath>..\packages\MathNet.Numerics.2.6.2\lib\net40\MathNet.Numerics.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="MathNet.Numerics.FSharp">
-      <HintPath>..\packages\MathNet.Numerics.FSharp.2.6.0\lib\net40\MathNet.Numerics.FSharp.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="MathNet.Numerics.IO">
-      <HintPath>..\packages\MathNet.Numerics.2.6.2\lib\net40\MathNet.Numerics.IO.dll</HintPath>
+    <Reference Include="FSharpx.Core">
+      <HintPath>..\packages\FSharpx.Core.1.8.41\lib\40\FSharpx.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib" />
@@ -107,8 +87,6 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.Linq" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Numerics" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />

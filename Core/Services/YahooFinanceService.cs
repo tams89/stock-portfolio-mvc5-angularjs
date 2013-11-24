@@ -11,14 +11,11 @@ namespace Core.Services
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Net;
     using AlgoTrader.YahooApi;
     using DTO;
-    using Models.Site;
     using Interfaces;
     using Utilities;
     using Microsoft.FSharp.Collections;
-    using Newtonsoft.Json.Linq;
 
     /// <summary>
     /// The yahoo finance service.

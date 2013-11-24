@@ -3,7 +3,6 @@
   <metadata>
     <id>DapperExtensions</id>
     <version>1.4.3</version>
-    <title>DapperExtensions</title>
     <authors>Thad Smith,  Page Brooks</authors>
     <owners>Thad Smith,  Page Brooks</owners>
     <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
@@ -27,8 +26,6 @@
 			* ***BREAKNG CHANGE*** Renamed ISqlDialect.RunIdentityInsertAsBatch  to ISqlDialect.SupportsMultipleStatements
 			* Added GetMultiple method
 			* GetList, GetPage, Count, Delete will now accept an object as the Predicate for Equals predicates.</releaseNotes>
-    <copyright />
-    <language />
     <tags>orm sql micro-orm Data Dapper</tags>
     <dependencies>
       <dependency id="Dapper" version="1.12" />

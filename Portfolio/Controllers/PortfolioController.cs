@@ -12,7 +12,6 @@ namespace Portfolio.Controllers
     using System.Linq;
     using System.Web.Mvc;
 
-    using Core.DTO;
     using Core.Services.Interfaces;
 
     /// <summary>

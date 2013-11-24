@@ -34,6 +34,7 @@
             .success(function(data) {
                 historicalData.push(data);
                 stocks.push(data[data.length - 1]);
+                return data.length;
             });
     };
 

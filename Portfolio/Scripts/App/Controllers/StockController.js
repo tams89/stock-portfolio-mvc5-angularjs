@@ -33,7 +33,10 @@
     function addToList(symbol, companyName) {
         if (utilitiesService.isItemInArrayProp($scope.stockList, "Symbol", symbol) === false) {
             stockAnalysisService.persistCompanySymbolKey({ name: companyName, symbol: symbol });
-            stockAnalysisService.getStockData(symbol); // Get historical market data.
+            var dataLength = stockAnalysisService.getStockData(symbol); // Get historical market data.
+            if (dataLength === 0) {
+                toaster.pop("information", "No data obtained", "No stock data was found for the selected company.");
+            }
         } else {
             toaster.pop("warning", "", "Symbol already in watch-list");
             $scope.selected = undefined;

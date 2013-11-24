@@ -59,7 +59,6 @@ namespace Portfolio.App_Start
             bundles.Add(new ScriptBundle("~/bundles/toast").Include("~/Scripts/Toast/toaster.js"));
             bundles.Add(new ScriptBundle("~/bundles/respond").Include("~/Scripts/Respond/respond.js"));
             bundles.Add(new ScriptBundle("~/bundles/underScore").Include("~/Scripts/UnderScore/underscore-min.js"));
-            bundles.Add(new ScriptBundle("~/bundles/gridMvc").Include("~/Scripts/Grid/gridmvc.js"));
 
             // Created SPA JS Bundles
             bundles.Add(new ScriptBundle("~/bundles/angularApp").IncludeDirectory("~/Scripts/App", "AlgoTrader.js"));

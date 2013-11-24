@@ -1,7 +1,7 @@
-﻿@*@using GridMvc.Html*@
-@*@model IEnumerable<Core.DTO.OptionDto>*@
+﻿@using GridMvc.Html
+@model IEnumerable<Core.DTO.OptionDto>
 
-@*@Html.Grid(Model).Columns(columns =>
+@Html.Grid(Model).Columns(columns =>
     {
         columns.Add(c => c.Symbol).Filterable(true);
         columns.Add(c => c.StrikePrice).Filterable(true);
@@ -10,44 +10,4 @@
         columns.Add(c => c.Ask).Filterable(true);
         columns.Add(c => c.Vol).Filterable(true);
         columns.Add(c => c.OpenInt).Filterable(true);
-    }).WithPaging(10).Sortable(true)*@
-
-<div ng-controller="OptionTableController">
-    <div>
-        <input type="text" ng-model="query" ng-change="search()" class="form-control" placeholder="Search">
-        <span><i class="glyphicon glyphicon-search"></i></span>
-    </div>
-    <table class="table table-striped table-condensed table-hover">
-        <thead>
-            <tr>
-                <th class="symbol">Symbol&nbsp;<a ng-click="sort_by('symbol')"><i class="icon-sort"></i></a></th>
-                <th>Strike&nbsp;<a ng-click="sort_by('StrikePrice')"><i class="icon-sort"></i></a></th>
-            </tr>
-        </thead>
-        <tfoot>
-        <td colspan="6">
-            <div class="pagination pull-right">
-                <ul>
-                    <li ng-class="{disabled: currentPage == 0}">
-                        <a href ng-click="prevPage()">« Prev</a>
-                    </li>
-                    <li ng-repeat="n in range(pagedItems.length)"
-                        ng-class="{active: n == currentPage}"
-                        ng-click="setPage()">
-                        <a href ng-bind="n + 1">1</a>
-                    </li>
-                    <li ng-class="{disabled: currentPage == pagedItems.length - 1}">
-                        <a href ng-click="nextPage()">Next »</a>
-                    </li>
-                </ul>
-            </div>
-        </td>
-        </tfoot>
-        <tbody>
-            <tr ng-repeat="item in pagedItems[currentPage] | orderBy:sortingOrder:reverse">
-                <td>{{item.Symbol}}</td>
-                <td>{{item.StrikePrice}}</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+    }).WithPaging(10).Sortable(true)

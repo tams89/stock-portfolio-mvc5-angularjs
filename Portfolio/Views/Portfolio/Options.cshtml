@@ -3,23 +3,48 @@
 <hr />
 <div ng-controller="OptionController">
     <div>
-        @*@using (Ajax.BeginForm("OptionTableUpdate", "Portfolio", new AjaxOptions { UpdateTargetId = "optionTable" }))
-        {*@
+        <form>
             <input type="hidden" name="symbol" value='{{selected.Symbol}}' />
-            <form>
-                <label>Search:</label>
-                <input class="form-control" type="text" placeholder="Press enter to select a company - see option table below"
-                       ng-change="OnInputChange()" ng-model="selected" ng-enter="SelectSymbol()"
-                       typeahead="symbol as symbol.Name + ' - ' + symbol.Symbol for symbol in symbols | limitTo: 5" autofocus />
-            </form>
-        @*}*@
+            <label>Search:</label>
+            <input class="form-control" type="text" placeholder="Press enter to select a company - see option table below"
+                   ng-change="OnInputChange()" ng-model="selected" ng-enter="SelectSymbol()"
+                   typeahead="symbol as symbol.Name + ' - ' + symbol.Symbol for symbol in symbols | limitTo: 5" autofocus />
+        </form>
     </div>
     <hr />
     <circle></circle>
-    <div id="optionTable">
-        @*@{ Html.RenderAction("OptionTableUpdate", "Portfolio"); }*@
-    </div>
     <div>
-        @Html.Partial("_OptionTable")
+        <table class="table table-striped table-responsive">
+            <thead>
+                <tr>
+                    <th>
+                        Symbol
+                    </th>
+                    <th>
+                        Strike
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="option in options | startFrom:currentPage*pageSize | limitTo:pageSize">
+                    <td>
+                        {{option.Symbol}}
+                    </td>
+                    <td>
+                        {{option.StrikePrice}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <div>
+            <button class="pager" ng-disabled="currentPage == 0" ng-click="currentPage = currentPage - 1">
+                Previous
+            </button>
+            {{currentPage + 1}}/{{numberOfPages()}}
+            <button ng-disabled="currentPage >= options.length/pageSize - 1" ng-click="currentPage = currentPage + 1">
+                Next
+            </button>
+        </div>
     </div>
 </div>

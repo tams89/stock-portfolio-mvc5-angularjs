@@ -74,7 +74,7 @@ namespace Portfolio.App_Start
                 .Include("~/Scripts/_App/Controllers/LoginController.js")
                 .Include("~/Scripts/_App/Controllers/RegistrationController.js"));
 
-            BundleTable.EnableOptimizations = true;
+            BundleTable.EnableOptimizations = false;
         }
 
         #endregion

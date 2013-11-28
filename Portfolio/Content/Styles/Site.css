@@ -1,21 +1,27 @@
 ﻿.spinner {
     height: 30px;
     background-image: url(/Content/Images/ajax-loader.gif);
+    -moz-background-position-x: center;
+    -o-background-position-x: center;
     background-position-x: center;
+    -moz-background-position-y: center;
+    -o-background-position-y: center;
     background-position-y: center;
     background-repeat: no-repeat;
 }
 
 body.home {
     background-image: url(../Images/2_billion_gold_price_bet.jpg);
+    -moz-background-origin: content-box;
+    -webkit-background-origin: content-box;
+    -ms-background-origin: content-box;
+    background-origin: content-box;
     -moz-background-size: cover;
     -o-background-size: cover;
     -webkit-background-size: cover;
+    -ms-background-size: cover;
     background-size: cover;
     background-repeat: no-repeat;
-    -moz-background-origin: content-box;
-    -webkit-background-origin: content-box;
-    background-origin: content-box;
 }
 
 .body-content {
@@ -56,20 +62,24 @@ body.home {
 }
 
 .show-hide-animation.ng-hide-remove {
+    -ms-opacity: 0;
     opacity: 0;
 }
 
-    .show-hide-animation.ng-hide-remove.ng-hide-remove-active {
-        opacity: 1;
-    }
-
-.show-hide-animation.ng-hide-add {
+.show-hide-animation.ng-hide-remove.ng-hide-remove-active {
+    -ms-opacity: 1;
     opacity: 1;
 }
 
-    .show-hide-animation.ng-hide-add.ng-hide-add-active {
-        opacity: 0;
-    }
+.show-hide-animation.ng-hide-add {
+    -ms-opacity: 1;
+    opacity: 1;
+}
+
+.show-hide-animation.ng-hide-add.ng-hide-add-active {
+    -ms-opacity: 0;
+    opacity: 0;
+}
 
 .form-control.ng-valid {
     border: 1px solid green;
@@ -77,13 +87,4 @@ body.home {
 
 .form-control.ng-invalid {
     border: 1px solid red;
-}
-
-#container {
-    height: 500px;
-    -moz-min-width: 650px;
-    -ms-min-width: 650px;
-    -o-min-width: 650px;
-    -webkit-min-width: 650px;
-    min-width: 650px;
 }

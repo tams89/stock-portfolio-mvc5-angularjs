@@ -208,6 +208,9 @@
     <Content Include="Content\Styles\bootstrap.css" />
     <Content Include="Content\Images\ajax-loader.gif" />
     <Content Include="Content\Styles\Site.css" />
+    <Content Include="Content\Styles\Site.min.css">
+      <DependentUpon>Site.css</DependentUpon>
+    </Content>
     <Content Include="Content\Styles\spinner.css" />
     <Content Include="Content\Styles\animate.css" />
     <Content Include="Content\Styles\spinner.min.css">

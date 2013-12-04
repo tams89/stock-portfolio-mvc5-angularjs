@@ -8,14 +8,14 @@
 // --------------------------------------------------------------------------------------------------------------------
 namespace Core.Services
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
     using AlgoTrader.YahooApi;
     using DTO;
     using Interfaces;
-    using Utilities;
     using Microsoft.FSharp.Collections;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using Utilities;
 
     /// <summary>
     /// The yahoo finance service.

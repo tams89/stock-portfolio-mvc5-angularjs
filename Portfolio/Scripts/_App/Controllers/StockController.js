@@ -12,6 +12,8 @@
     function init() {
         $scope.stockList = stockAnalysisService.getStockList();
         $scope.companySymbol = stockAnalysisService.getCompanySymbolKey();
+        // if chart is empty upon moving away and then back to page then do not recreate 
+        // else do recreate using the persisted symbols.
         if (!highStockService.isChartEmpty()) {
             $scope.isChartEmpty = false;
             highStockService.createChart();

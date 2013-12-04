@@ -9,10 +9,9 @@
 
 namespace Portfolio.Controllers
 {
+    using Core.Services.Interfaces;
     using System.Linq;
     using System.Web.Mvc;
-
-    using Core.Services.Interfaces;
 
     /// <summary>
     /// The portfolio controller.
@@ -110,17 +109,6 @@ namespace Portfolio.Controllers
         public ActionResult Options()
         {
             return View();
-        }
-
-        /// <summary>
-        /// The option table update.
-        /// </summary>
-        /// <param name="symbol"></param>
-        /// <returns></returns>
-        public ActionResult OptionTableUpdate(string symbol)
-        {
-            var optionTable = yahooFinanceService.GetData(symbol);
-            return PartialView("_OptionTable", optionTable);
         }
 
         /// <summary>

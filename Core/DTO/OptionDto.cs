@@ -77,6 +77,21 @@ namespace Core.DTO
         /// </summary>
         public int Vol { get; set; }
 
+        /// <summary>
+        /// Is the option in the money? 
+        /// </summary>
+        public bool InTheMoney { get; set; }
+
+        /// <summary>
+        /// Is the option at the money?
+        /// </summary>
+        public bool AtTheMoney { get; set; }
+
+        /// <summary>
+        /// The number of days (fractional) until the option expires.
+        /// </summary>
+        public string DaysToExpiry { get; set; }
+
         #endregion
     }
 }

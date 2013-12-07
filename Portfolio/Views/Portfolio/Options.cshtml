@@ -13,64 +13,11 @@
     </div>
     <hr />
     <circle></circle>
-    @*<div>
-        <table class="table table-striped table-responsive">
-            <thead>
-                <tr>
-                    <th>
-                        Symbol
-                    </th>
-                    <th>
-                        Strike
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="option in options | startFrom:currentPage*pageSize | limitTo:pageSize">
-                    <td>
-                        {{option.Symbol}}
-                    </td>
-                    <td>
-                        {{option.StrikePrice}}
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <br />
-        <div>
-            <button class="pager" ng-disabled="currentPage == 0" ng-click="currentPage = currentPage - 1">
-                Previous
-            </button>
-            {{currentPage + 1}}/{{numberOfPages()}}
-            <button ng-disabled="currentPage >= options.length/pageSize - 1" ng-click="currentPage = currentPage + 1">
-                Next
-            </button>
-        </div>
-    </div>*@
     <div>
         <div>
-            <table class="table table-striped table-responsive" style="overflow: auto">
-                <thead>
-                    <tr>
-                        <th>
-                            Symbol
-                        </th>
-                        <th>
-                            Strike
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="option in options">
-                        <td>
-                            {{option.Symbol}}
-                        </td>
-                        <td>
-                            {{option.StrikePrice}}
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <strong>Filter:</strong></string><input class="form-control smallWidth" type="text" ng-model="filterOptions.filterText" placeholder="Type here to filter grid" />
         </div>
+        <br />
+        <div class="optionGrid" ng-grid="gridOptions"></div>
     </div>
 </div>

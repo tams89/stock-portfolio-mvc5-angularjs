@@ -207,6 +207,8 @@
     <Content Include="Content\Styles\circle.css" />
     <Content Include="Content\Styles\bootstrap.css" />
     <Content Include="Content\Images\ajax-loader.gif" />
+    <Content Include="Content\Styles\ng-grid.css" />
+    <Content Include="Content\Styles\ng-grid.min.css" />
     <Content Include="Content\Styles\Site.css" />
     <Content Include="Content\Styles\Site.min.css">
       <DependentUpon>Site.css</DependentUpon>
@@ -234,6 +236,8 @@
     <Content Include="Scripts\_App\Controllers\OptionController.js" />
     <Content Include="Scripts\_App\Controllers\RegistrationController.js" />
     <Content Include="Scripts\_App\Directives\circle.js" />
+    <Content Include="Scripts\_App\Directives\ng-grid-2.0.7.debug.js" />
+    <Content Include="Scripts\_App\Directives\ng-grid-2.0.7.min.js" />
     <Content Include="Scripts\_App\Directives\spinner.js" />
     <Content Include="Scripts\_App\NoAuth.js" />
     <Content Include="Scripts\_App\NoAuth.min.js" />

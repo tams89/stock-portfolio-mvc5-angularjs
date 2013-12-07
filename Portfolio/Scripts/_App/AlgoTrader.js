@@ -1,4 +1,4 @@
-﻿var app = angular.module("AlgoTrader", ["ui.bootstrap", "ngRoute", "ngAnimate", "toaster", "highcharts-ng", "ngResource", "ngSanitize"]);
+﻿var app = angular.module("AlgoTrader", ["ui.bootstrap", "ngRoute", "ngAnimate", "toaster", "highcharts-ng", "ngResource", "ngSanitize", "ngGrid"]);
 
 // Route config
 // Note the controller set here does not need to be explicitly set in the page itself.

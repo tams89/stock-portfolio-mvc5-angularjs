@@ -34,6 +34,7 @@ namespace Portfolio.App_Start
                     "~/Content/Styles/toaster.css",
                     "~/Content/Styles/spinner.css",
                     "~/Content/Styles/circle.css",
+                    "~/Content/Styles/ng-grid.css",
                     "~/Content/Styles/animate.css"));
 
             // Custom CSS

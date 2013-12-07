@@ -60,10 +60,7 @@ app.controller("OptionController", ["$scope", "autocompleteService", "toaster", 
                 field: "StrikePrice",
                 displayName: "Strike",
                 width: "10%",
-                cellTemplate:
-                    '<div ng-class="{optionGridRowInTheMoney: row.getProperty(\'InTheMoney\'), optionGridRowAtTheMoney: row.getProperty(\'AtTheMoney\')}">' +
-                        '<div class="ngCellText">{{row.getProperty(col.field)}}</div' +
-                        '></div>'
+                cellTemplate: '<div ng-class="{optionGridRowInTheMoney: row.getProperty(\'InTheMoney\'), optionGridRowAtTheMoney: row.getProperty(\'AtTheMoney\')}"><div class="ngCellText">{{row.getProperty(col.field)}}</div></div>'
             },
             { field: "Symbol", width: "18%" },
             { field: "LastPrice", displayName: "Last", width: "5%" },

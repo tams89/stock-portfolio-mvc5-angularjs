@@ -9,10 +9,12 @@
 
 namespace Portfolio.Controllers
 {
-
+    using Core.DTO;
     using Core.Services.Interfaces;
+    using System.Collections.Generic;
     using System.Linq;
     using System.Web.Mvc;
+
 
     /// <summary>
     /// The portfolio controller.
@@ -106,13 +108,8 @@ namespace Portfolio.Controllers
         [HttpPost]
         public JsonResult OptionData(string symbol)
         {
-            var optionData = yahooFinanceService.GetData(symbol);
-            foreach (var optionDto in optionData)
-            {
-                var blackScholes = financialCalculationService.BlackScholes(optionDto, null, null);
-                optionDto.BlackScholes = blackScholes;
-            }
-
+            var optionData = (List<OptionDto>)yahooFinanceService.GetData(symbol);
+            foreach (var optionDto in optionData) optionDto.BlackScholes = financialCalculationService.BlackScholes(optionDto, null, null);
             return Json(optionData);
         }
 

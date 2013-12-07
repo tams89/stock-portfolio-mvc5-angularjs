@@ -37,14 +37,19 @@ namespace Core.Services
             {
                 // If volatility already calculated for this symbol/option use the stored value.
                 double volatility = 0;
-                if (symbolVolatility.Key != option.Symbol)
+                if (symbolVolatility.Key != option.Symbol.Substring(0, 4))
                 {
                     volatility = AlgoTrader.YahooApi.VolatilityAndMarketData.highLowVolatility(option.Symbol.Substring(0, 4), fromDate.Value, toDate.Value);
-                    symbolVolatility = new KeyValuePair<string, double>(option.Symbol, volatility);
+                    symbolVolatility = new KeyValuePair<string, double>(option.Symbol.Substring(0, 4), volatility);
                 }
-
-                if (symbolVolatility.Key == option.Symbol) volatility = symbolVolatility.Value;
-                if (Math.Abs(volatility) < double.Epsilon) throw new InvalidOperationException(string.Format("Volatility cannot be zero (tolerance double epsilson constant)'{0}'", volatility));
+                else if (symbolVolatility.Key == option.Symbol.Substring(0, 4))
+                {
+                    volatility = symbolVolatility.Value;
+                }
+                if (Math.Abs(volatility) < double.Epsilon)
+                {
+                    throw new InvalidOperationException(string.Format("Volatility cannot be zero (tolerance double epsilson constant)'{0}'", volatility));
+                }
 
                 var optionType = option.Symbol[10] == 'C' ? AlgoTrader.BlackScholes.Type.Call : AlgoTrader.BlackScholes.Type.Put;
                 var timeToExpiryInYears = float.Parse(option.DaysToExpiry) / 365;

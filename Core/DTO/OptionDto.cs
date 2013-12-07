@@ -1,12 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="OptionDto.cs" company="">
-//   
-// </copyright>
-// <summary>
-//   The option dto.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-namespace Core.DTO
+﻿namespace Core.DTO
 {
     using System;
 
@@ -96,6 +88,17 @@ namespace Core.DTO
         /// The Black Scholes price for the option.
         /// </summary>
         public double BlackScholes { get; set; }
+
+        /// <summary>
+        /// The to string.
+        /// </summary>
+        /// <returns>
+        /// The <see cref="string"/>.
+        /// </returns>
+        public override string ToString()
+        {
+            return string.Format("Strike: {0} Last: {1} BlackScholes: {2}", StrikePrice, LastPrice, BlackScholes);
+        }
 
         #endregion
     }

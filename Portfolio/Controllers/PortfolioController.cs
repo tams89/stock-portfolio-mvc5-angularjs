@@ -9,6 +9,7 @@
 
 namespace Portfolio.Controllers
 {
+
     using Core.Services.Interfaces;
     using System.Linq;
     using System.Web.Mvc;
@@ -30,6 +31,11 @@ namespace Portfolio.Controllers
         /// </summary>
         private readonly IYahooFinanceService yahooFinanceService;
 
+        /// <summary>
+        /// The financial calculation service.
+        /// </summary>
+        private readonly IFinancialCalculationService financialCalculationService;
+
         #endregion
 
         #region Constructors and Destructors
@@ -42,10 +48,14 @@ namespace Portfolio.Controllers
         /// </param>
         /// <param name="googleFinanceService">
         /// </param>
-        public PortfolioController(IYahooFinanceService yahooFinanceService, IGoogleFinanceService googleFinanceService)
+        /// <param name="financialCalculationService">
+        /// The financial Calculation Service.
+        /// </param>
+        public PortfolioController(IYahooFinanceService yahooFinanceService, IGoogleFinanceService googleFinanceService, IFinancialCalculationService financialCalculationService)
         {
             this.yahooFinanceService = yahooFinanceService;
             this.googleFinanceService = googleFinanceService;
+            this.financialCalculationService = financialCalculationService;
         }
 
         #endregion
@@ -97,6 +107,12 @@ namespace Portfolio.Controllers
         public JsonResult OptionData(string symbol)
         {
             var optionData = yahooFinanceService.GetData(symbol);
+            foreach (var optionDto in optionData)
+            {
+                var blackScholes = financialCalculationService.BlackScholes(optionDto, null, null);
+                optionDto.BlackScholes = blackScholes;
+            }
+
             return Json(optionData);
         }
 

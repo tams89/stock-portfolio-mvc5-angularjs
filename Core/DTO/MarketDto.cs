@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="MarketDto.cs" company="">
+// <copyright file="MarketEntity.cs" company="">
 //   
 // </copyright>
 // <summary>

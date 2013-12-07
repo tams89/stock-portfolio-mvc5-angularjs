@@ -14,10 +14,18 @@
     <hr />
     <circle></circle>
     <div>
-        <div>
-            <strong>Filter:</strong></string><input class="form-control smallWidth" type="text" ng-model="filterOptions.filterText" placeholder="Type here to filter grid" />
+        <div class="form-inline">
+            <strong>Filters:</strong>
+            <input class="form-control smallWidth" type="text" ng-model="filterOptions.filterText" placeholder="Type here to filter grid (global search)" />
+            <span>In the money?</span>
+            <input type="checkbox" ng-model="inTheMoney" ng-change="filterByInTheMoney()" />
         </div>
         <br />
         <div class="optionGrid" ng-grid="gridOptions"></div>
+        <footer>
+            <p>
+                *DTE - Days to expiry.
+            </p>
+        </footer>
     </div>
 </div>

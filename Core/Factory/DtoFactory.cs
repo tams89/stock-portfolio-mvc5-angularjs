@@ -1,16 +1,7 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="DtoFactory.cs" company="">
-//   
-// </copyright>
-// <summary>
-//   Factory for creating DTO objects.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-
-using System.Collections.Generic;
-
-namespace Core.Factory
+﻿namespace Core.Factory
 {
+    using System.Collections.Generic;
+
     /// <summary>
     /// Factory for creating DTO objects.
     /// </summary>

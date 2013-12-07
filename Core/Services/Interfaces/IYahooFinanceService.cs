@@ -8,9 +8,9 @@
 // --------------------------------------------------------------------------------------------------------------------
 namespace Core.Services.Interfaces
 {
+    using DTO;
     using System;
     using System.Collections.Generic;
-    using DTO;
 
     /// <summary>
     /// The YahooFinanceService interface.

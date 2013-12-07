@@ -92,6 +92,11 @@ namespace Core.DTO
         /// </summary>
         public string DaysToExpiry { get; set; }
 
+        /// <summary>
+        /// The Black Scholes price for the option.
+        /// </summary>
+        public double BlackScholes { get; set; }
+
         #endregion
     }
 }

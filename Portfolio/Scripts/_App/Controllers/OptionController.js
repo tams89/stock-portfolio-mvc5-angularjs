@@ -3,6 +3,7 @@
 app.controller("OptionController", ["$scope", "autocompleteService", "toaster", "optionAnalysisService", function ($scope, autocompleteService, toaster, optionAnalysisService) {
 
     $scope.selected = undefined;
+    $scope.options = [];
 
     init();
     function init() {
@@ -20,6 +21,7 @@ app.controller("OptionController", ["$scope", "autocompleteService", "toaster", 
         var optionDataPromise = optionAnalysisService.getOptions(symbol);
         optionDataPromise.then(function (data) {
             $scope.options = data;
+            $scope.filteredOptions = data;
             console.log("Option promise forefilled data count: " + data.length);
             $scope.selected = undefined;
             $scope.loading = false;
@@ -29,15 +31,27 @@ app.controller("OptionController", ["$scope", "autocompleteService", "toaster", 
         });
 
     };
-    
+
+    $scope.filterByInTheMoney = function () {
+        if ($scope.inTheMoney) {
+            $scope.filteredOptions = [];
+            for (var i = 0; i < $scope.options.length; i++) {
+                if ($scope.options[i].InTheMoney) {
+                    $scope.filteredOptions.push($scope.options[i]);
+                }
+            }
+        }
+        if (!$scope.inTheMoney) {
+            $scope.filteredOptions = $scope.options;
+        }
+    };
+
     $scope.filterOptions = {
         filterText: ''
     };
-    
 
-    
     $scope.gridOptions = {
-        data: "options",
+        data: "filteredOptions",
         filterOptions: $scope.filterOptions,
         enablePinning: true,
         enableColumnResize: true,
@@ -58,7 +72,7 @@ app.controller("OptionController", ["$scope", "autocompleteService", "toaster", 
             { field: "Ask", width: "5%" },
             { field: "Vol", width: "5%" },
             { field: "OpenInt", width: "8%" },
-            { field: "DaysToExpiry", width: "5%", displayName: "DoE" },
+            { field: "DaysToExpiry", width: "5%", displayName: "DTE" },
             { field: "BlackScholes", displayName: "Black Scholes", width: "15%" }
         ]
     };

@@ -34,10 +34,10 @@ namespace Core.Services.Interfaces
         /// <returns>
         /// The <see cref="IEnumerable"/>.
         /// </returns>
-        IEnumerable<MarketDto> GetData(string symbol, DateTime? @from, DateTime? to);
+        IEnumerable<MarketDto> GetStockData(string symbol, DateTime? @from, DateTime? to);
 
         /// <summary>
-        /// Obtains option table by symbol.
+        /// The get option data.
         /// </summary>
         /// <param name="symbol">
         /// The symbol.
@@ -45,7 +45,7 @@ namespace Core.Services.Interfaces
         /// <returns>
         /// The <see cref="IEnumerable"/>.
         /// </returns>
-        IEnumerable<OptionDto> GetData(string symbol);
+        IEnumerable<OptionDto> GetOptionData(string symbol);
 
         #endregion
     }

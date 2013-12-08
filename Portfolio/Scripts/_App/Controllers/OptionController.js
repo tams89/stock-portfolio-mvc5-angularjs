@@ -57,20 +57,48 @@ app.controller("OptionController", ["$scope", "autocompleteService", "toaster", 
         enableColumnResize: true,
         columnDefs: [
             {
-                field: "StrikePrice",
-                displayName: "Strike",
-                width: "10%",
+                field: "StrikePrice", displayName: "Strike", width: "10%",
                 cellTemplate: '<div ng-class="{optionGridRowInTheMoney: row.getProperty(\'InTheMoney\'), optionGridRowAtTheMoney: row.getProperty(\'AtTheMoney\')}"><div class="ngCellText">{{row.getProperty(col.field)}}</div></div>'
             },
-            { field: "Symbol", width: "18%" },
-            { field: "LastPrice", displayName: "Last", width: "5%" },
-            { field: "Change", width: "10%" },
-            { field: "Bid", width: "5%" },
-            { field: "Ask", width: "5%" },
-            { field: "Vol", width: "5%" },
-            { field: "OpenInt", width: "8%" },
-            { field: "DaysToExpiry", width: "5%", displayName: "DTE" },
-            { field: "BlackScholes", displayName: "Black Scholes", width: "15%" }
+            {
+                field: "Symbol", width: "18%", cellTemplate: '<div ng-class="{optionGridRowInTheMoney: row.getProperty(\'InTheMoney\'), optionGridRowAtTheMoney: row.getProperty(\'AtTheMoney\')}"><div class="ngCellText">{{row.getProperty(col.field)}}</div></div>'
+            },
+            {
+                field: "LastPrice", displayName: "Last", width: "5%",
+                cellTemplate: '<div ng-class="{optionGridRowInTheMoney: row.getProperty(\'InTheMoney\'), optionGridRowAtTheMoney: row.getProperty(\'AtTheMoney\')}"><div class="ngCellText">{{row.getProperty(col.field)}}</div></div>'
+            },
+            {
+                field: "Change", width: "7%",
+                cellTemplate: '<div ng-class="{optionGridRowInTheMoney: row.getProperty(\'InTheMoney\'), optionGridRowAtTheMoney: row.getProperty(\'AtTheMoney\')}"><div class="ngCellText">{{row.getProperty(col.field)}}</div></div>'
+            },
+            {
+                field: "Bid", width: "5%",
+                cellTemplate: '<div ng-class="{optionGridRowInTheMoney: row.getProperty(\'InTheMoney\'), optionGridRowAtTheMoney: row.getProperty(\'AtTheMoney\')}"><div class="ngCellText">{{row.getProperty(col.field)}}</div></div>'
+            },
+            {
+                field: "Ask", width: "5%",
+                cellTemplate: '<div ng-class="{optionGridRowInTheMoney: row.getProperty(\'InTheMoney\'), optionGridRowAtTheMoney: row.getProperty(\'AtTheMoney\')}"><div class="ngCellText">{{row.getProperty(col.field)}}</div></div>'
+            },
+            {
+                field: "Vol", width: "5%",
+                cellTemplate: '<div ng-class="{optionGridRowInTheMoney: row.getProperty(\'InTheMoney\'), optionGridRowAtTheMoney: row.getProperty(\'AtTheMoney\')}"><div class="ngCellText">{{row.getProperty(col.field)}}</div></div>'
+            },
+            {
+                field: "OpenInt", width: "8%",
+                cellTemplate: '<div ng-class="{optionGridRowInTheMoney: row.getProperty(\'InTheMoney\'), optionGridRowAtTheMoney: row.getProperty(\'AtTheMoney\')}"><div class="ngCellText">{{row.getProperty(col.field)}}</div></div>'
+            },
+            {
+                field: "DaysToExpiry", width: "4%", displayName: "DTE",
+                cellTemplate: '<div ng-class="{optionGridRowInTheMoney: row.getProperty(\'InTheMoney\'), optionGridRowAtTheMoney: row.getProperty(\'AtTheMoney\')}"><div class="ngCellText">{{row.getProperty(col.field)}}</div></div>'
+            },
+            {
+                field: "Volatility", width: "8%",
+                cellTemplate: '<div ng-class="{optionGridRowInTheMoney: row.getProperty(\'InTheMoney\'), optionGridRowAtTheMoney: row.getProperty(\'AtTheMoney\')}"><div class="ngCellText">{{row.getProperty(col.field)}}</div></div>'
+            },
+            {
+                field: "BlackScholes", displayName: "Black Scholes", width: "11%",
+                cellTemplate: '<div ng-class="{optionGridRowInTheMoney: row.getProperty(\'InTheMoney\'), optionGridRowAtTheMoney: row.getProperty(\'AtTheMoney\')}"><div class="ngCellText">{{row.getProperty(col.field)}}</div></div>'
+            }
         ]
     };
 

@@ -8,13 +8,14 @@
 // --------------------------------------------------------------------------------------------------------------------
 namespace Portfolio
 {
+    using App_Start;
+    using Core;
     using System;
     using System.Web;
     using System.Web.Http;
     using System.Web.Mvc;
     using System.Web.Optimization;
     using System.Web.Routing;
-    using App_Start;
 
     /// <summary>
     /// The mvc application.
@@ -28,13 +29,15 @@ namespace Portfolio
         /// </summary>
         protected void Application_Start()
         {
+            // This prevents mvc from searching for .aspx pages in a razor based project by removing the engine. Performance?
             ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new RazorViewEngine());
-            
-            MvcHandler.DisableMvcResponseHeader = true;
+
+            MvcHandler.DisableMvcResponseHeader = true; // Security?
 
             MunqConfig.PreStart(); // IoC
-            
+            AutoMapperConfig.Configure();
+
             AreaRegistration.RegisterAllAreas();
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

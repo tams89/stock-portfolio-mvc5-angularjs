@@ -1,20 +1,9 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="PortfolioController.cs" company="">
-//   
-// </copyright>
-// <summary>
-//   The portfolio controller.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-
-namespace Portfolio.Controllers
+﻿namespace Portfolio.Controllers
 {
-    using Core.DTO;
     using Core.Services.Interfaces;
-    using System.Collections.Generic;
+    using System;
     using System.Linq;
     using System.Web.Mvc;
-
 
     /// <summary>
     /// The portfolio controller.
@@ -92,7 +81,7 @@ namespace Portfolio.Controllers
         [HttpPost]
         public JsonResult MarketData(string symbol)
         {
-            var marketData = yahooFinanceService.GetData(symbol, null, null);
+            var marketData = yahooFinanceService.GetStockData(symbol, null, null);
             return Json(marketData);
         }
 
@@ -102,14 +91,22 @@ namespace Portfolio.Controllers
         /// <param name="symbol">
         /// The symbol.
         /// </param>
+        /// <param name="from">
+        /// </param>
+        /// <param name="to">
+        /// </param>
         /// <returns>
         /// The <see cref="JsonResult"/>.
         /// </returns>
         [HttpPost]
-        public JsonResult OptionData(string symbol)
+        public JsonResult OptionData(string symbol, DateTime? from, DateTime? to)
         {
-            var optionData = (List<OptionDto>)yahooFinanceService.GetData(symbol);
-            foreach (var optionDto in optionData) optionDto.BlackScholes = financialCalculationService.BlackScholes(optionDto, null, null);
+            var optionData = yahooFinanceService.GetOptionData(symbol);
+            foreach (var optionDto in optionData)
+            {
+                optionDto.Volatility = financialCalculationService.Volatility(optionDto, from, to);
+                optionDto.BlackScholes = financialCalculationService.BlackScholes(optionDto);
+            }
             return Json(optionData);
         }
 

@@ -1,33 +1,33 @@
 ﻿//// --------------------------------------------------------------------------------------------------------------------
-//// <copyright file="HFTTests.cs" company="">
+//// <copyright file="PortfolioServiceTests.cs" company="">
 ////   
 //// </copyright>
 //// <summary>
-////   The hft tests.
+////   The portfolio tests.
 //// </summary>
 //// --------------------------------------------------------------------------------------------------------------------
 
-//using System.Linq;
-//using Core.Models.HFT;
-//using Core.Services;
-//using Microsoft.VisualStudio.TestTools.UnitTesting;
-
 //namespace Test
 //{
+//    using Core.Models.Portfolio;
+//    using Core.Services;
+//    using Microsoft.VisualStudio.TestTools.UnitTesting;
+//    using System.Linq;
+
 //    /// <summary>
-//    /// The hft tests.
+//    /// The portfolio tests.
 //    /// </summary>
 //    [TestClass]
-//    public class HFTTests
+//    public class PortfolioServiceTests
 //    {
 //        /// <summary>
-//        /// Test to see if all tick data can be retrieved from db.
+//        /// The get symbols.
 //        /// </summary>
 //        [TestMethod]
-//        public void GetTickTest()
+//        public void GetSymbols()
 //        {
-//            var tick = new HFTService<Tick>().Get();
-//            Assert.IsNotNull(tick.Count() > 10);
+//            var service = new PortfolioService<Security>().SecurityList();
+//            Assert.IsTrue(service.Any());
 //        }
 //    }
 //}

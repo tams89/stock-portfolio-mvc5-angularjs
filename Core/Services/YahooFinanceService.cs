@@ -1,21 +1,13 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="YahooFinanceService.cs" company="">
-//   
-// </copyright>
-// <summary>
-//   The yahoo finance service.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-namespace Core.Services
+﻿namespace Core.Services
 {
     using AlgoTrader.YahooApi;
+    using AutoMapper;
     using DTO;
     using Interfaces;
-    using Microsoft.FSharp.Collections;
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
-    using Utilities;
 
     /// <summary>
     /// The yahoo finance service.
@@ -39,13 +31,13 @@ namespace Core.Services
         /// <returns>
         /// The <see cref="IEnumerable"/>.
         /// </returns>
-        public IEnumerable<MarketDto> GetData(string symbol, DateTime? from, DateTime? to)
+        public IEnumerable<MarketDto> GetStockData(string symbol, DateTime? from, DateTime? to)
         {
             if (string.IsNullOrEmpty(symbol)) return Enumerable.Empty<MarketDto>();
             if (!from.HasValue) from = DateTime.Today.AddYears(-2);
             if (!to.HasValue) to = DateTime.Today;
             var marketData = VolatilityAndMarketData.getMarketData(symbol, from.Value, to.Value).Reverse(); // Old to new.
-            return DtoInjector<VolatilityAndMarketData.MarketData, MarketDto>.InjectList(marketData);
+            return Mapper.Map<IEnumerable<VolatilityAndMarketData.MarketData>, IEnumerable<MarketDto>>(marketData);
         }
 
         /// <summary>
@@ -57,10 +49,11 @@ namespace Core.Services
         /// <returns>
         /// The <see cref="IEnumerable"/>.
         /// </returns>
-        public IEnumerable<OptionDto> GetData(string symbol)
+        public IEnumerable<OptionDto> GetOptionData(string symbol)
         {
-            var optionData = !string.IsNullOrEmpty(symbol) ? Options.GetOptionsData(symbol) : FSharpList<Options.OptionsData>.Empty;
-            return DtoInjector<Options.OptionsData, OptionDto>.InjectList(optionData);
+            if (string.IsNullOrEmpty(symbol)) return Enumerable.Empty<OptionDto>();
+            var optionData = Options.GetOptionsData(symbol);
+            return Mapper.Map<IEnumerable<Options.OptionsData>, IEnumerable<OptionDto>>(optionData);
         }
 
         #endregion

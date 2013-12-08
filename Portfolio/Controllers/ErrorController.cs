@@ -16,7 +16,6 @@ namespace Portfolio.Controllers
     /// </summary>
     public class ErrorController : Controller
     {
-        // GET: /Error/
         #region Public Methods and Operators
 
         /// <summary>
@@ -34,8 +33,8 @@ namespace Portfolio.Controllers
             var statusCode = id.HasValue ? id.Value : 500;
             var error =
                 new HandleErrorInfo(
-                    new Exception(string.Format("Wooo, this is embarrassing, a http {0} error occured.", statusCode)), 
-                    "Error", 
+                    new Exception(string.Format("Wooo, this is embarrassing, a http {0} error occured.", statusCode)),
+                    "Error",
                     "Index");
             return View("Error", error);
         }

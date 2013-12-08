@@ -1,4 +1,6 @@
-﻿namespace Core.DTO
+﻿
+
+namespace Core.DTO
 {
     using System;
 
@@ -28,11 +30,6 @@
         /// Gets or sets the change direction.
         /// </summary>
         public string ChangeDirection { get; set; }
-
-        /// <summary>
-        /// Gets or sets the close.
-        /// </summary>
-        public decimal Close { get; set; }
 
         /// <summary>
         /// Gets or sets the expiry date.
@@ -83,6 +80,11 @@
         /// The number of days (fractional) until the option expires.
         /// </summary>
         public string DaysToExpiry { get; set; }
+
+        /// <summary>
+        /// Gets or sets the volatility.
+        /// </summary>
+        public double Volatility { get; set; }
 
         /// <summary>
         /// The Black Scholes price for the option.

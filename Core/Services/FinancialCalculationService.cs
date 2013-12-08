@@ -1,8 +1,7 @@
-﻿
-namespace Core.Services
+﻿namespace Core.Services
 {
-    using Core.DTO;
-    using Core.Services.Interfaces;
+    using DTO;
+    using Interfaces;
     using System;
     using System.Collections.Generic;
 
@@ -18,38 +17,17 @@ namespace Core.Services
 
         /// <summary>
         /// Calculates the Black-Scholes price of an option.
-        /// High-Low volatility used with a range of one year if no range specified explicity.
+        /// High-Low volatility used with a range of one year, should be set in option already.
         /// </summary>
-        /// <param name="option"></param>
-        /// <param name="fromDate"></param>
-        /// <param name="toDate"></param>
-        /// <returns></returns>
-        public double BlackScholes(OptionDto option, DateTime? fromDate, DateTime? toDate)
+        /// <param name="option">
+        /// </param>
+        /// <returns>
+        /// </returns>
+        public double BlackScholes(OptionDto option)
         {
-            // Annual volatilty used as a result of these defaults.
-            if (!fromDate.HasValue || !toDate.HasValue)
-            {
-                fromDate = DateTime.Today.AddYears(-1);
-                toDate = DateTime.Today;
-            }
-
             try
             {
-                // If volatility already calculated for this symbol/option use the stored value.
-                double volatility = 0;
-                if (symbolVolatility.Key != option.Symbol.Substring(0, 4))
-                {
-                    volatility = AlgoTrader.YahooApi.VolatilityAndMarketData.highLowVolatility(option.Symbol.Substring(0, 4), fromDate.Value, toDate.Value);
-                    symbolVolatility = new KeyValuePair<string, double>(option.Symbol.Substring(0, 4), volatility);
-                }
-                else if (symbolVolatility.Key == option.Symbol.Substring(0, 4))
-                {
-                    volatility = symbolVolatility.Value;
-                }
-                if (Math.Abs(volatility) < double.Epsilon)
-                {
-                    throw new InvalidOperationException(string.Format("Volatility cannot be zero (tolerance double epsilson constant)'{0}'", volatility));
-                }
+                if (Math.Abs(option.Volatility) < double.Epsilon) return 0.0;
 
                 var optionType = option.Symbol[10] == 'C' ? AlgoTrader.BlackScholes.Type.Call : AlgoTrader.BlackScholes.Type.Put;
                 var timeToExpiryInYears = float.Parse(option.DaysToExpiry) / 365;
@@ -59,9 +37,9 @@ namespace Core.Services
                     (double)option.StrikePrice,
                     timeToExpiryInYears,
                     0.25, // U.S. Govt. Treasury Interest Rate circa.12/2013.
-                    volatility);
+                    option.Volatility);
 
-                return blackScholesPrice;
+                return Math.Round(blackScholesPrice, 2);
             }
             catch (Exception ex)
             {
@@ -69,5 +47,48 @@ namespace Core.Services
             }
         }
 
+
+        /// <summary>
+        /// The volatility.
+        /// </summary>
+        /// <param name="option">
+        /// The option.
+        /// </param>
+        /// <param name="fromDate">
+        /// </param>
+        /// <param name="toDate">
+        /// The to Date.
+        /// </param>
+        /// <returns>
+        /// The <see cref="double"/>.
+        /// </returns>
+        public double Volatility(OptionDto option, DateTime? fromDate, DateTime? toDate)
+        {
+            try
+            {
+                var companyTicker = option.Symbol.Substring(0, 4);
+
+                // Annual volatilty by default.
+                fromDate = fromDate.HasValue ? fromDate.Value : DateTime.Today.AddYears(-1);
+                toDate = toDate.HasValue ? toDate.Value : DateTime.Today;
+
+                // If volatility already calculated for this symbol/option use the stored value.
+                double volatility = 0;
+                if (symbolVolatility.Key != companyTicker)
+                {
+                    volatility = AlgoTrader.YahooApi.VolatilityAndMarketData.highLowVolatility(companyTicker, fromDate.Value, toDate.Value);
+                    symbolVolatility = new KeyValuePair<string, double>(companyTicker, volatility);
+                }
+                else if (symbolVolatility.Key == companyTicker) volatility = symbolVolatility.Value;
+                if (Math.Abs(volatility) < double.Epsilon) throw new InvalidOperationException(
+                    string.Format("Volatility cannot be zero (tolerance double epsilson constant)'{0}'", volatility));
+
+                return volatility;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

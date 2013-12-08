@@ -228,7 +228,9 @@
     <Content Include="Scripts\Angular\ui-bootstrap-tpls-0.7.0.js" />
     <Content Include="Scripts\Angular\ui-bootstrap-tpls-0.7.0.min.js" />
     <Content Include="Scripts\_App\AlgoTrader.js" />
-    <Content Include="Scripts\_App\AlgoTrader.min.js" />
+    <Content Include="Scripts\_App\AlgoTrader.min.js">
+      <DependentUpon>AlgoTrader.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\_App\Controllers\LoginController.js" />
     <Content Include="Scripts\_App\Controllers\LoginController.min.js">
       <DependentUpon>LoginController.js</DependentUpon>
@@ -240,7 +242,9 @@
     <Content Include="Scripts\_App\Directives\ng-grid-2.0.7.min.js" />
     <Content Include="Scripts\_App\Directives\spinner.js" />
     <Content Include="Scripts\_App\NoAuth.js" />
-    <Content Include="Scripts\_App\NoAuth.min.js" />
+    <Content Include="Scripts\_App\NoAuth.min.js">
+      <DependentUpon>NoAuth.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\_App\Services\authenticationService.js" />
     <Content Include="Scripts\_App\Controllers\NavigationController.js" />
     <Content Include="Scripts\_App\Controllers\StockController.js" />
@@ -309,12 +313,6 @@
     </Content>
     <Content Include="Scripts\Jquery\jquery-2.0.3.min.js.map">
       <DependentUpon>jquery-2.0.3.js</DependentUpon>
-    </Content>
-    <Content Include="Scripts\Modernizer\modernizr-2.6.2.min.js.map">
-      <DependentUpon>modernizr-2.6.2.js</DependentUpon>
-    </Content>
-    <Content Include="Scripts\Respond\respond.min.js.map">
-      <DependentUpon>respond.js</DependentUpon>
     </Content>
     <Content Include="Scripts\Toast\toaster.min.js.map">
       <DependentUpon>toaster.js</DependentUpon>
@@ -409,9 +407,6 @@
     <Content Include="Scripts\Angular\angular.min.js" />
     <Content Include="Scripts\Jquery\jquery-2.0.3.js" />
     <Content Include="Scripts\Jquery\jquery-2.0.3.min.js" />
-    <Content Include="Scripts\Modernizer\modernizr-2.6.2.js" />
-    <Content Include="Scripts\Respond\respond.js" />
-    <Content Include="Scripts\Respond\respond.min.js" />
     <Content Include="Scripts\Toast\toaster.js" />
     <Content Include="Scripts\UnderScore\underscore-min.js" />
     <Content Include="Scripts\_references.js" />

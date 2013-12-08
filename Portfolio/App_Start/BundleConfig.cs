@@ -29,19 +29,18 @@ namespace Portfolio.App_Start
             // Library CSS
             bundles.Add(
                 new StyleBundle("~/Content/css").Include(
-                    "~/Content/Styles/angular-csp.css",
-                    "~/Content/Styles/bootstrap.css",
-                    "~/Content/Styles/toaster.css",
-                    "~/Content/Styles/spinner.css",
-                    "~/Content/Styles/circle.css",
-                    "~/Content/Styles/ng-grid.css",
-                    "~/Content/Styles/animate.css"));
+                    "~/Content/Styles/angular-csp.min.css",
+                    "~/Content/Styles/bootstrap.min.css",
+                    "~/Content/Styles/toaster.min.css",
+                    "~/Content/Styles/spinner.min.css",
+                    "~/Content/Styles/circle.min.css",
+                    "~/Content/Styles/ng-grid.min.css",
+                    "~/Content/Styles/animate.min.css"));
 
             // Custom CSS
             bundles.Add(new StyleBundle("~/Content/siteCss").Include("~/Content/Styles/Site.css"));
 
             // Required libraries
-            bundles.Add(new ScriptBundle("~/bundles/modernizr").Include("~/Scripts/Modernizer/modernizr-*"));
             bundles.Add(new ScriptBundle("~/bundles/highStock").IncludeDirectory("~/Scripts/HighStock", "*.js", true));
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
@@ -57,7 +56,6 @@ namespace Portfolio.App_Start
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include("~/Scripts/Jquery/jquery-*"));
             bundles.Add(new ScriptBundle("~/bundles/jqueryVal").Include("~/Scripts/Jquery/Validate/jquery.unobtrusive*", "~/Scripts/Jquery/Validate/jquery.validate*"));
             bundles.Add(new ScriptBundle("~/bundles/toast").Include("~/Scripts/Toast/toaster.js"));
-            bundles.Add(new ScriptBundle("~/bundles/respond").Include("~/Scripts/Respond/respond.js"));
             bundles.Add(new ScriptBundle("~/bundles/underScore").Include("~/Scripts/UnderScore/underscore-min.js"));
 
             // Created SPA JS Bundles
@@ -69,11 +67,11 @@ namespace Portfolio.App_Start
                 .IncludeDirectory("~/Scripts/_App/Controllers", "*.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/NoAuth")
-                .Include("~/Scripts/_App/NoAuth.js")
-                .Include("~/Scripts/_App/Services/authenticationService.js")
-                .Include("~/Scripts/_App/Controllers/NavigationController.js")
-                .Include("~/Scripts/_App/Controllers/LoginController.js")
-                .Include("~/Scripts/_App/Controllers/RegistrationController.js"));
+                .Include("~/Scripts/_App/NoAuth.min.js")
+                .Include("~/Scripts/_App/Services/authenticationService.min.js")
+                .Include("~/Scripts/_App/Controllers/NavigationController.min.js")
+                .Include("~/Scripts/_App/Controllers/LoginController.min.js")
+                .Include("~/Scripts/_App/Controllers/RegistrationController.min.js"));
 
             BundleTable.EnableOptimizations = false;
         }

@@ -51,11 +51,45 @@ app.controller("OptionController", ["$scope", "autocompleteService", "toaster", 
         filterText: ''
     };
 
+    $scope.isVolatilityPopulated = function () {
+        if ($scope.volatility > 0.0) return true;
+        return false;
+    };
+
+    $scope.gridDataAvailable = function() {
+        if ($scope.options.length > 0) return true;
+        return false;
+    };
+    
+    function ngGridLayoutPlugin() {
+        var self = this;
+        this.grid = null;
+        this.scope = null;
+        this.init = function (scope, grid, services) {
+            self.domUtilityService = services.DomUtilityService;
+            self.grid = grid;
+            self.scope = scope;
+        };
+
+        this.updateGridLayout = function () {
+            if (!self.scope.$$phase) {
+                self.scope.$apply(function () {
+                    self.domUtilityService.RebuildGrid(self.scope, self.grid);
+                });
+            }
+            else {
+                // $digest or $apply already in progress
+                self.domUtilityService.RebuildGrid(self.scope, self.grid);
+            }
+        };
+    }
+
     $scope.gridOptions = {
         data: "filteredOptions",
         filterOptions: $scope.filterOptions,
         enablePinning: true,
         enableColumnResize: true,
+        plugins: [new ngGridLayoutPlugin()],
         columnDefs: [
             {
                 field: "StrikePrice", displayName: "Strike", width: "10%",
@@ -89,7 +123,7 @@ app.controller("OptionController", ["$scope", "autocompleteService", "toaster", 
                 cellTemplate: '<div ng-class="{optionGridRowInTheMoney: row.getProperty(\'InTheMoney\'), optionGridRowAtTheMoney: row.getProperty(\'AtTheMoney\')}"><div class="ngCellText">{{row.getProperty(col.field)}}</div></div>'
             },
             {
-                field: "DaysToExpiry", width: "4%", displayName: "DTE",
+                field: "DaysToExpiry", width: "5%", displayName: "DTE",
                 cellTemplate: '<div ng-class="{optionGridRowInTheMoney: row.getProperty(\'InTheMoney\'), optionGridRowAtTheMoney: row.getProperty(\'AtTheMoney\')}"><div class="ngCellText">{{row.getProperty(col.field)}}</div></div>'
             },
             {

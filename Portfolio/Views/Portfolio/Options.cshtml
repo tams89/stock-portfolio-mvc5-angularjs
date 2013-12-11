@@ -11,22 +11,22 @@
                    typeahead="symbol as symbol.Name + ' - ' + symbol.Symbol for symbol in symbols | limitTo: 5" autofocus />
         </form>
     </div>
-    <hr />
     <circle></circle>
     <div>
-        <div>
-            <h4>Company Data Summary</h4>
+        <div class="show-hide-animation" ng-show="isVolatilityPopulated()">
+            <hr />
+            <h4>Company Data Summary:</h4>
             <h5>Volatility: {{volatility}}</h5>
         </div>
         <hr />
-        <div>
+        <div class="show-hide-animation" ng-show="gridDataAvailable()">
             <h4>Filters:</h4>
             @*<input class="form-control optionGridFilter" type="text" ng-model="filterOptions.filterText" placeholder="displayName: searchString / global filter" />*@
             <div>
-                <h5>In the money <input type="checkbox" ng-model="inTheMoney" ng-change="filterByInTheMoney()" /></h5>
+                <h5>In the money?  <input type="checkbox" ng-model="inTheMoney" ng-change="filterByInTheMoney()" /></h5>
             </div>
+            <hr />
         </div>
-        <br />
         <div class="optionGrid" ng-grid="gridOptions"></div>
         <footer>
             <p>

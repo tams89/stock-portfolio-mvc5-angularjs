@@ -1,18 +1,9 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Global.asax.cs" company="">
-//   
-// </copyright>
-// <summary>
-//   The mvc application.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-namespace Portfolio
+﻿namespace Portfolio
 {
     using App_Start;
     using Core;
     using System;
     using System.Web;
-    using System.Web.Http;
     using System.Web.Mvc;
     using System.Web.Optimization;
     using System.Web.Routing;
@@ -38,8 +29,9 @@ namespace Portfolio
             MunqConfig.PreStart(); // IoC
             AutoMapperConfig.Configure();
 
+            // Disabled doesnt support Munq IoC
+            // WebApiConfig.Register(GlobalConfiguration.Configuration); 
             AreaRegistration.RegisterAllAreas();
-            WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);

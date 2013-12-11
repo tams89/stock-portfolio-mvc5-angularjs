@@ -32,6 +32,6 @@ namespace Core.Services.Interfaces
         /// <returns>
         /// The <see cref="IEnumerable{T}"/>.
         /// </returns>
-        IEnumerable<GoogleFinanceJsonDto> SymbolSearch(string term);
+        IEnumerable<GoogleFinanceAutoCompleteDto> SymbolSearch(string term);
     }
 }

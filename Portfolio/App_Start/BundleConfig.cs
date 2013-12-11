@@ -1,13 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="BundleConfig.cs" company="">
-//   
-// </copyright>
-// <summary>
-//   The bundle config.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-
-namespace Portfolio.App_Start
+﻿namespace Portfolio.App_Start
 {
     using System.Web.Optimization;
 

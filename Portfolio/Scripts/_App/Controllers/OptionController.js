@@ -21,6 +21,7 @@ app.controller("OptionController", ["$scope", "autocompleteService", "toaster", 
         var optionDataPromise = optionAnalysisService.getOptions(symbol);
         optionDataPromise.then(function (data) {
             $scope.options = data;
+            $scope.volatility = data[0].Volatility;
             $scope.filteredOptions = data;
             console.log("Option promise forefilled data count: " + data.length);
             $scope.selected = undefined;
@@ -89,10 +90,6 @@ app.controller("OptionController", ["$scope", "autocompleteService", "toaster", 
             },
             {
                 field: "DaysToExpiry", width: "4%", displayName: "DTE",
-                cellTemplate: '<div ng-class="{optionGridRowInTheMoney: row.getProperty(\'InTheMoney\'), optionGridRowAtTheMoney: row.getProperty(\'AtTheMoney\')}"><div class="ngCellText">{{row.getProperty(col.field)}}</div></div>'
-            },
-            {
-                field: "Volatility", width: "8%",
                 cellTemplate: '<div ng-class="{optionGridRowInTheMoney: row.getProperty(\'InTheMoney\'), optionGridRowAtTheMoney: row.getProperty(\'AtTheMoney\')}"><div class="ngCellText">{{row.getProperty(col.field)}}</div></div>'
             },
             {

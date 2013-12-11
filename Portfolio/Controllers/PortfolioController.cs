@@ -44,6 +44,10 @@
         /// </param>
         public PortfolioController(IYahooFinanceService yahooFinanceService, IGoogleFinanceService googleFinanceService, IFinancialCalculationService financialCalculationService)
         {
+            if (googleFinanceService == null) throw new ArgumentNullException("googleFinanceService");
+            if (yahooFinanceService == null) throw new ArgumentNullException("yahooFinanceService");
+            if (financialCalculationService == null) throw new ArgumentNullException("financialCalculationService");
+
             this.yahooFinanceService = yahooFinanceService;
             this.googleFinanceService = googleFinanceService;
             this.financialCalculationService = financialCalculationService;

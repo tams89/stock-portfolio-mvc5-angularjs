@@ -1,13 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="RouteConfig.cs" company="">
-//   
-// </copyright>
-// <summary>
-//   The route config.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-
-namespace Portfolio
+﻿namespace Portfolio.App_Start
 {
     using System.Web.Mvc;
     using System.Web.Routing;
@@ -29,6 +20,7 @@ namespace Portfolio
         {
             routes.LowercaseUrls = true;
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
             routes.MapRoute("Default", "{controller}/{action}", new { controller = "Main", action = "Index" });
         }
 

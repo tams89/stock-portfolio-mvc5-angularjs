@@ -1,4 +1,6 @@
-﻿namespace Core.Services
+﻿using System.Net;
+
+namespace Core.Services
 {
     using DTO;
     using Interfaces;
@@ -66,7 +68,13 @@
         {
             try
             {
-                var companyTicker = option.Symbol.Substring(0, 4);
+                var companyTicker = string.Empty;
+                for (var i = 0; i <= 4; i++)
+                {
+                    int res;
+                    var isNum = int.TryParse(option.Symbol[i].ToString(), out res);
+                    if (!isNum) companyTicker += option.Symbol[i];
+                }
 
                 // Annual volatilty by default.
                 fromDate = fromDate.HasValue ? fromDate.Value : DateTime.Today.AddYears(-1);
@@ -80,10 +88,16 @@
                     symbolVolatility = new KeyValuePair<string, double>(companyTicker, volatility);
                 }
                 else if (symbolVolatility.Key == companyTicker) volatility = symbolVolatility.Value;
-                if (Math.Abs(volatility) < double.Epsilon) throw new InvalidOperationException(
-                    string.Format("Volatility cannot be zero (tolerance double epsilson constant)'{0}'", volatility));
+                if (Math.Abs(volatility) < double.Epsilon)
+                    throw new InvalidOperationException(
+                        string.Format("Volatility cannot be zero (tolerance double epsilson constant)'{0}'", volatility));
 
                 return volatility;
+            }
+            catch (WebException ex)
+            {
+                // Log http exception and carry on.
+                return 0.0;
             }
             catch (Exception ex)
             {

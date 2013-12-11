@@ -1,22 +1,12 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="GoogleFinanceService.cs" company="">
-//   
-// </copyright>
-// <summary>
-//   The google finance service.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using Core.Models.Site;
-using Core.Services.Interfaces;
-using Newtonsoft.Json.Linq;
-
-namespace Core.Services
+﻿namespace Core.Services
 {
+    using Interfaces;
+    using Models.Site;
+    using Newtonsoft.Json.Linq;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     /// <summary>
     /// The google finance service.
     /// </summary>
@@ -25,7 +15,7 @@ namespace Core.Services
         /// <summary>
         /// The _web request service.
         /// </summary>
-        private readonly IWebRequestService _webRequestService;
+        private readonly IWebRequestService webRequestService;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GoogleFinanceService"/> class. 
@@ -35,7 +25,7 @@ namespace Core.Services
         /// </param>
         public GoogleFinanceService(IWebRequestService webRequestService)
         {
-            _webRequestService = webRequestService;
+            this.webRequestService = webRequestService;
         }
 
         /// <example>
@@ -52,17 +42,17 @@ namespace Core.Services
         /// <returns>
         /// The <see cref="IEnumerable{T}"/>.
         /// </returns>
-        public IEnumerable<GoogleFinanceJsonDto> SymbolSearch(string term)
+        public IEnumerable<GoogleFinanceAutoCompleteDto> SymbolSearch(string term)
         {
             try
             {
-                if (string.IsNullOrEmpty(term)) return Enumerable.Empty<GoogleFinanceJsonDto>();
+                if (string.IsNullOrEmpty(term)) return Enumerable.Empty<GoogleFinanceAutoCompleteDto>();
 
                 // Query string plus argument, returns json.
                 var url = Constants.GoogleFinanceJsonApiUrl + term.Trim();
 
                 // Download json data as a string.
-                var json = _webRequestService.GetResponse(url);
+                var json = webRequestService.GetResponse(url);
 
                 // Useful data in Json contained within [...]
                 var firstOccurrence = json.IndexOf('[');
@@ -78,9 +68,9 @@ namespace Core.Services
                 var jsonCustomArray =
                     parsed.Select(
                         x =>
-                        new GoogleFinanceJsonDto
+                        new GoogleFinanceAutoCompleteDto
                         {
-                            Symbol = x["t"].ToObject<string>(), 
+                            Symbol = x["t"].ToObject<string>(),
                             Name = x["n"].ToObject<string>()
                         })
                         .Where(x => !string.IsNullOrEmpty(x.Symbol) && !string.IsNullOrEmpty(x.Name));

@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="GoogleFinanceJsonDto.cs" company="">
+// <copyright file="GoogleFinanceAutoCompleteDto.cs" company="">
 //   
 // </copyright>
 // <summary>
@@ -11,7 +11,7 @@ namespace Core.Models.Site
     /// <summary>
     /// The google finance json.
     /// </summary>
-    public struct GoogleFinanceJsonDto
+    public struct GoogleFinanceAutoCompleteDto
     {
         #region Public Properties
 

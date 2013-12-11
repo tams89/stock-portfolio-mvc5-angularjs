@@ -60,6 +60,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -77,7 +78,7 @@
     <Compile Include="Models\Portfolio\PortfolioSecurity.cs" />
     <Compile Include="Models\Portfolio\User.cs" />
     <Compile Include="Models\Portfolio\Portfolio.cs" />
-    <Compile Include="Models\Site\GoogleFinanceJsonDto.cs" />
+    <Compile Include="Models\Site\GoogleFinanceAutoCompleteDto.cs" />
     <Compile Include="ORM\Constants.cs" />
     <Compile Include="ORM\Mappings\HFT\TickMap.cs" />
     <Compile Include="Models\HFT\Tick.cs" />

@@ -14,11 +14,17 @@
     <hr />
     <circle></circle>
     <div>
-        <div class="form-inline">
-            <strong>Filters:</strong>
-            <input class="form-control optionGridFilter" type="text" ng-model="filterOptions.filterText" placeholder="displayName: searchString / global filter" />
-            <span>In the money?</span>
-            <input type="checkbox" ng-model="inTheMoney" ng-change="filterByInTheMoney()" />
+        <div>
+            <h4>Company Data Summary</h4>
+            <h5>Volatility: {{volatility}}</h5>
+        </div>
+        <hr />
+        <div>
+            <h4>Filters:</h4>
+            @*<input class="form-control optionGridFilter" type="text" ng-model="filterOptions.filterText" placeholder="displayName: searchString / global filter" />*@
+            <div>
+                <h5>In the money <input type="checkbox" ng-model="inTheMoney" ng-change="filterByInTheMoney()" /></h5>
+            </div>
         </div>
         <br />
         <div class="optionGrid" ng-grid="gridOptions"></div>

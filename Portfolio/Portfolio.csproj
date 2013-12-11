@@ -170,7 +170,6 @@
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\PortfolioController.cs" />
-    <Compile Include="Controllers\SecureController.cs" />
     <Compile Include="App_Start\ErrorConfig.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />

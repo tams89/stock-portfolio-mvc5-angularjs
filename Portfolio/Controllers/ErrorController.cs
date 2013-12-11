@@ -27,7 +27,6 @@ namespace Portfolio.Controllers
         /// <returns>
         /// The <see cref="ActionResult"/>.
         /// </returns>
-        [HttpGet]
         public ActionResult Index(int? id)
         {
             var statusCode = id.HasValue ? id.Value : 500;

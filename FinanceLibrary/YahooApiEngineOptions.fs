@@ -31,10 +31,12 @@ let ci value =
 
 /// Calculates expiry date by whether option is mini-option or ordinary.
 let expiryDate (optionTicker:string) =
-    if optionTicker.Substring(4,1) = "7" then
+    if optionTicker.Substring(4,1) = "7" then // mini-option ticker.
        DateTime.ParseExact(String.Format("{0}/{1}/{2}", optionTicker.Substring(8 + 1, 2), optionTicker.Substring(6 + 1, 2), optionTicker.Substring(4 + 1, 2)), "dd/MM/yy", CultureInfo.InvariantCulture)
-    else
+    elif optionTicker.Length = 19 then // standard 4 char symbol
        DateTime.ParseExact(String.Format("{0}/{1}/{2}", optionTicker.Substring(8, 2), optionTicker.Substring(6, 2), optionTicker.Substring(4, 2)), "dd/MM/yy", CultureInfo.InvariantCulture)
+    else // 3 char symbol
+       DateTime.ParseExact(String.Format("{0}/{1}/{2}", optionTicker.Substring(8-1, 2), optionTicker.Substring(6-1, 2), optionTicker.Substring(4-1, 2)), "dd/MM/yy", CultureInfo.InvariantCulture) 
 
 let daysToExpiry (expiryDate:DateTime) : string = 
     (expiryDate- DateTime.Today).TotalDays.ToString()

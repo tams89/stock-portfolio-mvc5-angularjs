@@ -2,11 +2,8 @@
 
 app.controller("OptionController", ["$scope", "autocompleteService", "toaster", "optionAnalysisService", "utilitiesService", function ($scope, autocompleteService, toaster, optionAnalysisService, utilitiesService) {
 
-    $scope.selected = undefined;
-
-    // Collection (symbol:string, data:[])
-    $scope.options = {};
-    $scope.btnRadioData = { selectedOpton: undefined };
+    $scope.options = {}; // Collection (symbol:string, data:[])
+    $scope.btnRadioData = { selectedOpton: undefined }; // Allows single radio button only functionality.
 
     init();
     function init() {
@@ -25,6 +22,7 @@ app.controller("OptionController", ["$scope", "autocompleteService", "toaster", 
         // First check if data already present in $scope.options else fire query.
         if (utilitiesService.isItemInArrayByProperty($scope.options, "symbol", symbol)) {
             toaster.pop("warning", "The options table for this symbol has already been retrieved.");
+            $scope.loading = false;
         } else {
             // Option data for symbol not already persisted, so request data from service.
             getOptionData(symbol);
@@ -35,14 +33,15 @@ app.controller("OptionController", ["$scope", "autocompleteService", "toaster", 
     $scope.viewOptionData = function (symbol) {
         var persistedData = utilitiesService.findObjByKey($scope.options, "symbol", symbol);
         $scope.volatility = persistedData["data"][0].Volatility;
+        $scope.currentOptionSet = persistedData["data"];
         $scope.filteredOptions = persistedData["data"];
+        $(window).resize();
     };
 
     // Get option data from service and persist. 
     function getOptionData(symbol) {
         var optionDataPromise = optionAnalysisService.getOptions(symbol);
         optionDataPromise.then(function (data) {
-            // $scope.options = data;
             $scope.options.push({ symbol: symbol, data: data });
             console.log("Option promise forefilled data count: " + data.length);
             $scope.selected = undefined;
@@ -56,14 +55,14 @@ app.controller("OptionController", ["$scope", "autocompleteService", "toaster", 
     $scope.filterByInTheMoney = function () {
         if ($scope.inTheMoney) {
             $scope.filteredOptions = [];
-            for (var i = 0; i < $scope.options.length; i++) {
-                if ($scope.options[i].InTheMoney) {
-                    $scope.filteredOptions.push($scope.options[i]);
+            for (var i = 0; i < $scope.currentOptionSet.length; i++) {
+                if ($scope.currentOptionSet[i].InTheMoney) {
+                    $scope.filteredOptions.push($scope.currentOptionSet[i]);
                 }
             }
         }
         if (!$scope.inTheMoney) {
-            $scope.filteredOptions = $scope.options;
+            $scope.filteredOptions = $scope.currentOptionSet;
         }
     };
 

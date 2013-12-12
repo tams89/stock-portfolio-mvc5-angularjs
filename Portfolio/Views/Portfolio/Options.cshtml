@@ -1,7 +1,7 @@
 ﻿<h1>Option Tables</h1>
 <p>All prices are in USD</p>
 <hr />
-<div ng-controller="OptionController">
+<div class="ng-cloak" ng-controller="OptionController">
     <div>
         <form>
             <input type="hidden" name="symbol" value='{{selected.Symbol}}' />
@@ -12,8 +12,8 @@
         </form>
     </div>
     <circle></circle>
-    <div>
-        <div>
+    <div ng-show="gridDataAvailable()">
+        <div class="show-hide-animation">
             <hr />
             <h4>Watch List</h4>
             <div>
@@ -46,20 +46,22 @@
                     </tbody>
                 </table>
             </div>
+            <hr />
         </div>
-        <hr />
-        <div class="show-hide-animation" ng-show="gridDataAvailable()">
+        <div class="show-hide-animation">
             <h4>Filters:</h4>
             <div>
                 <h5>In the money?  <input type="checkbox" ng-model="inTheMoney" ng-change="filterByInTheMoney()" /></h5>
             </div>
             <hr />
         </div>
-        <div class="optionGrid" ng-grid="gridOptions"></div>
-        <footer>
-            <h5>
-                *DTE - Days to expiry.
-            </h5>
-        </footer>
+        <div class="show-hide-animation">
+            <div class="optionGrid" ng-grid="gridOptions"></div>
+            <footer>
+                <h5>
+                    *DTE - Days to expiry.
+                </h5>
+            </footer>
+        </div>
     </div>
 </div>

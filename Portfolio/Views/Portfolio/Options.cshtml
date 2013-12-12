@@ -5,7 +5,7 @@
     <div>
         <form>
             <input type="hidden" name="symbol" value='{{selected.Symbol}}' />
-            <label>Search:</label>
+            <h4>Search:</h4>
             <input class="form-control" type="text" placeholder="Press enter to select a company - see option table below"
                    ng-change="OnInputChange()" ng-model="selected" ng-enter="SelectSymbol()"
                    typeahead="symbol as symbol.Name + ' - ' + symbol.Symbol for symbol in symbols | limitTo: 5" autofocus />
@@ -13,15 +13,43 @@
     </div>
     <circle></circle>
     <div>
-        <div class="show-hide-animation" ng-show="isVolatilityPopulated()">
+        <div>
             <hr />
-            <h4>Company Data Summary:</h4>
-            <h5>Volatility: {{volatility}}</h5>
+            <h4>Watch List</h4>
+            <div>
+                <table class="table table-condensed table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                Symbol
+                            </th>
+                            <th>
+                                Volatility
+                            </th>
+                            <th>
+                                View
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="page-change" ng-repeat="option in options">
+                            <td>
+                                {{option.symbol}}
+                            </td>
+                            <td>
+                                {{option.data[0].Volatility}}
+                            </td>
+                            <td>
+                                <input type="radio" ng-model="btnRadioData.selectedOption" value="{{option.symbol}}" ng-change="viewOptionData(option.symbol)" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
         <hr />
         <div class="show-hide-animation" ng-show="gridDataAvailable()">
             <h4>Filters:</h4>
-            @*<input class="form-control optionGridFilter" type="text" ng-model="filterOptions.filterText" placeholder="displayName: searchString / global filter" />*@
             <div>
                 <h5>In the money?  <input type="checkbox" ng-model="inTheMoney" ng-change="filterByInTheMoney()" /></h5>
             </div>
@@ -29,9 +57,9 @@
         </div>
         <div class="optionGrid" ng-grid="gridOptions"></div>
         <footer>
-            <p>
+            <h5>
                 *DTE - Days to expiry.
-            </p>
+            </h5>
         </footer>
     </div>
 </div>

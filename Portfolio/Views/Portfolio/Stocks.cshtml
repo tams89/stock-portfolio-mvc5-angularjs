@@ -1,9 +1,9 @@
-﻿<h1>Stock Data</h1>
+﻿<h1>Historical Stock Data</h1>
 <hr />
 <div ng-controller="StockController">
     <div>
         <form>
-            <span>Search:</span>
+            <h4>Search:</h4>
             <input class="form-control" type="text" placeholder="Search for a company to view its stock data. (Press Enter to Select)" ng-change="OnInputChange()" ng-enter="SelectSymbol()"
                    ng-model="selected" typeahead="symbol as symbol.Name + ' - ' + symbol.Symbol for symbol in symbols | limitTo: 5" autofocus>
         </form>

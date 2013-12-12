@@ -72,7 +72,7 @@
 
     // Check for if the series already exists using the same symbol.
     this.duplicatedSeries = function (symbol) {
-        return utilitiesService.isItemInArrayProp(seriesOptions, "name", symbol);
+        return utilitiesService.isItemInArrayByProperty(seriesOptions, "name", symbol);
     };
 
     // Remove Series by name i.e. the symbol.

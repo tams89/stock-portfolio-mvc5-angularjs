@@ -34,7 +34,7 @@
     };
 
     function addToList(symbol, companyName) {
-        if (utilitiesService.isItemInArrayProp($scope.stockList, "Symbol", symbol) === false) {
+        if (utilitiesService.isItemInArrayByProperty($scope.stockList, "Symbol", symbol) === false) {
             stockAnalysisService.persistCompanySymbolKey({ name: companyName, symbol: symbol });
             var dataLength = stockAnalysisService.getStockData(symbol); // Get historical market data.
             if (dataLength === 0) {

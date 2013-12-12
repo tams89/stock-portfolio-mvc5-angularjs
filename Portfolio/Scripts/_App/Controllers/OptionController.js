@@ -1,15 +1,19 @@
 ﻿"use strict";
 
-app.controller("OptionController", ["$scope", "autocompleteService", "toaster", "optionAnalysisService", function ($scope, autocompleteService, toaster, optionAnalysisService) {
+app.controller("OptionController", ["$scope", "autocompleteService", "toaster", "optionAnalysisService", "utilitiesService", function ($scope, autocompleteService, toaster, optionAnalysisService, utilitiesService) {
 
     $scope.selected = undefined;
-    $scope.options = [];
+
+    // Collection (symbol:string, data:[])
+    $scope.options = {};
+    $scope.btnRadioData = { selectedOpton: undefined };
 
     init();
     function init() {
         $scope.options = optionAnalysisService.getOptionData();
     }
 
+    // Autocomplete
     $scope.symbols = [];
     $scope.OnInputChange = function () {
         $scope.symbols = autocompleteService.getSymbols($scope.selected);
@@ -18,11 +22,28 @@ app.controller("OptionController", ["$scope", "autocompleteService", "toaster", 
     $scope.SelectSymbol = function () {
         var symbol = $scope.selected.Symbol;
         $scope.loading = true;
+        // First check if data already present in $scope.options else fire query.
+        if (utilitiesService.isItemInArrayByProperty($scope.options, "symbol", symbol)) {
+            toaster.pop("warning", "The options table for this symbol has already been retrieved.");
+        } else {
+            // Option data for symbol not already persisted, so request data from service.
+            getOptionData(symbol);
+        }
+    };
+
+    // On select of dom radio button populate dom elements with option data for matching symbol.
+    $scope.viewOptionData = function (symbol) {
+        var persistedData = utilitiesService.findObjByKey($scope.options, "symbol", symbol);
+        $scope.volatility = persistedData["data"][0].Volatility;
+        $scope.filteredOptions = persistedData["data"];
+    };
+
+    // Get option data from service and persist. 
+    function getOptionData(symbol) {
         var optionDataPromise = optionAnalysisService.getOptions(symbol);
         optionDataPromise.then(function (data) {
-            $scope.options = data;
-            $scope.volatility = data[0].Volatility;
-            $scope.filteredOptions = data;
+            // $scope.options = data;
+            $scope.options.push({ symbol: symbol, data: data });
             console.log("Option promise forefilled data count: " + data.length);
             $scope.selected = undefined;
             $scope.loading = false;
@@ -30,8 +51,7 @@ app.controller("OptionController", ["$scope", "autocompleteService", "toaster", 
                 toaster.pop("information", "No options found.", "Please try another symbol/company as not all companies have option listings");
             }
         });
-
-    };
+    }
 
     $scope.filterByInTheMoney = function () {
         if ($scope.inTheMoney) {
@@ -56,40 +76,16 @@ app.controller("OptionController", ["$scope", "autocompleteService", "toaster", 
         return false;
     };
 
-    $scope.gridDataAvailable = function() {
+    $scope.gridDataAvailable = function () {
         if ($scope.options.length > 0) return true;
         return false;
     };
-    
-    function ngGridLayoutPlugin() {
-        var self = this;
-        this.grid = null;
-        this.scope = null;
-        this.init = function (scope, grid, services) {
-            self.domUtilityService = services.DomUtilityService;
-            self.grid = grid;
-            self.scope = scope;
-        };
-
-        this.updateGridLayout = function () {
-            if (!self.scope.$$phase) {
-                self.scope.$apply(function () {
-                    self.domUtilityService.RebuildGrid(self.scope, self.grid);
-                });
-            }
-            else {
-                // $digest or $apply already in progress
-                self.domUtilityService.RebuildGrid(self.scope, self.grid);
-            }
-        };
-    }
 
     $scope.gridOptions = {
         data: "filteredOptions",
         filterOptions: $scope.filterOptions,
         enablePinning: true,
         enableColumnResize: true,
-        plugins: [new ngGridLayoutPlugin()],
         columnDefs: [
             {
                 field: "StrikePrice", displayName: "Strike", width: "10%",
@@ -132,15 +128,5 @@ app.controller("OptionController", ["$scope", "autocompleteService", "toaster", 
             }
         ]
     };
-
-    // Example - custom filter by name    
-    //$scope.filterNephi = function () {
-    //    var filterText = 'name:Nephi';
-    //    if ($scope.filterOptions.filterText === '') {
-    //        $scope.filterOptions.filterText = filterText;
-    //    } else if ($scope.filterOptions.filterText === filterText) {
-    //        $scope.filterOptions.filterText = '';
-    //    }
-    //};
 
 }]);

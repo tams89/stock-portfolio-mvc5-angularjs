@@ -112,8 +112,3 @@ body.home {
 .optionGridFilter {
     width: 26%;
 }
-
-input[type="radio"] + span { /*the span element that immediately follow the radio button */
-    visibility: hidden; /*temporarily hide the "YES" label*/
-    background: #6EB558;
-}

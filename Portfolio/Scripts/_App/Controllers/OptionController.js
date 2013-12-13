@@ -1,6 +1,4 @@
-﻿"use strict";
-
-app.controller("OptionController", ["$scope", "autocompleteService", "toaster", "optionAnalysisService", "utilitiesService", function ($scope, autocompleteService, toaster, optionAnalysisService, utilitiesService) {
+﻿app.controller("OptionController", ["$scope", "autocompleteService", "toaster", "optionAnalysisService", "utilitiesService", function ($scope, autocompleteService, toaster, optionAnalysisService, utilitiesService) {
 
     $scope.btnRadioData = { selectedOpton: undefined }; // Allows single radio button only functionality.
 

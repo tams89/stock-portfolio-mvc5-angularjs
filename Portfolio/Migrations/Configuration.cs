@@ -1,17 +1,9 @@
-// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Configuration.cs" company="">
-//   
-// </copyright>
-// <summary>
-//   The configuration.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
 namespace Portfolio.Migrations
 {
+    using Models;
     using System.Data.Entity.Migrations;
     using System.Linq;
     using System.Web.Security;
-    using Models;
     using WebMatrix.WebData;
 
     /// <summary>
@@ -42,10 +34,10 @@ namespace Portfolio.Migrations
         protected override void Seed(UsersContext context)
         {
             WebSecurity.InitializeDatabaseConnection(
-                "DefaultConnection", 
-                "UserProfile", 
-                "UserId", 
-                "UserName", 
+                "DefaultConnection",
+                "UserProfile",
+                "UserId",
+                "UserName",
                 autoCreateTables: true);
 
             if (!Roles.RoleExists("Administrator"))

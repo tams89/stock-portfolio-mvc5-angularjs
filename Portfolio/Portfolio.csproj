@@ -312,15 +312,11 @@
     <Content Include="Scripts\HighStock\Themes\grid.js" />
     <Content Include="App_Code\Helpers.cshtml" />
     <None Include="Properties\PublishProfiles\algotrader.pubxml" />
-    <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Scripts\_App\NoAuth.min.js.map">
       <DependentUpon>NoAuth.js</DependentUpon>
     </Content>
     <Content Include="Scripts\_App\Controllers\RegistrationController.min.js.map">
       <DependentUpon>RegistrationController.js</DependentUpon>
-    </Content>
-    <Content Include="Scripts\_App\Controllers\AuthController.min.js.map">
-      <DependentUpon>LoginController.js</DependentUpon>
     </Content>
     <Content Include="Scripts\_App\Controllers\LoginController.min.js.map">
       <DependentUpon>LoginController.js</DependentUpon>
@@ -395,9 +391,6 @@
     </Content>
     <Content Include="Scripts\_App\Controllers\NavigationController.min.js.map">
       <DependentUpon>NavigationController.js</DependentUpon>
-    </Content>
-    <Content Include="Scripts\_App\Services\AjaxService.min.js.map">
-      <DependentUpon>autocompleteService.js</DependentUpon>
     </Content>
     <Content Include="Scripts\_App\Controllers\StockController.min.js.map">
       <DependentUpon>StockController.js</DependentUpon>

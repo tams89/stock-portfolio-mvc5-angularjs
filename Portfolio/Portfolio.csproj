@@ -227,34 +227,85 @@
     <Content Include="Scripts\Angular\angular-scenario.min.js" />
     <Content Include="Scripts\Angular\ui-bootstrap-tpls-0.7.0.js" />
     <Content Include="Scripts\Angular\ui-bootstrap-tpls-0.7.0.min.js" />
+    <Content Include="Scripts\README Merge _App JS files using Shell.txt" />
     <Content Include="Scripts\_App\AlgoTrader.js" />
     <Content Include="Scripts\_App\AlgoTrader.min.js">
       <DependentUpon>AlgoTrader.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\_App\AlgoTraderMerged.js" />
+    <Content Include="Scripts\_App\AlgoTraderMerged.min.js">
+      <DependentUpon>AlgoTraderMerged.js</DependentUpon>
     </Content>
     <Content Include="Scripts\_App\Controllers\LoginController.js" />
     <Content Include="Scripts\_App\Controllers\LoginController.min.js">
       <DependentUpon>LoginController.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\_App\Controllers\NavigationController.min.js">
+      <DependentUpon>NavigationController.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\_App\Controllers\OptionController.js" />
+    <Content Include="Scripts\_App\Controllers\OptionController.min.js">
+      <DependentUpon>OptionController.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\_App\Controllers\RegistrationController.js" />
+    <Content Include="Scripts\_App\Controllers\RegistrationController.min.js">
+      <DependentUpon>RegistrationController.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\_App\Controllers\StockController.min.js">
+      <DependentUpon>StockController.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\_App\Directives\circle.js" />
+    <Content Include="Scripts\_App\Directives\circle.min.js">
+      <DependentUpon>circle.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\_App\Directives\ng-grid-2.0.7.debug.js" />
+    <Content Include="Scripts\_App\Directives\ng-grid-2.0.7.debug.min.js">
+      <DependentUpon>ng-grid-2.0.7.debug.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\_App\Directives\ng-grid-2.0.7.min.js" />
+    <Content Include="Scripts\_App\Directives\ngEnter.min.js">
+      <DependentUpon>ngEnter.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\_App\Directives\spinner.js" />
+    <Content Include="Scripts\_App\Directives\spinner.min.js">
+      <DependentUpon>spinner.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\_App\Modules\highcharts-ng.min.js">
+      <DependentUpon>highcharts-ng.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\_App\NoAuth.js" />
     <Content Include="Scripts\_App\NoAuth.min.js">
       <DependentUpon>NoAuth.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\_App\NoAuthMerged.js" />
+    <Content Include="Scripts\_App\NoAuthMerged.min.js">
+      <DependentUpon>NoAuthMerged.js</DependentUpon>
     </Content>
     <Content Include="Scripts\_App\Services\authenticationService.js" />
     <Content Include="Scripts\_App\Controllers\NavigationController.js" />
     <Content Include="Scripts\_App\Controllers\StockController.js" />
     <Content Include="Scripts\_App\Modules\highcharts-ng.js" />
     <Content Include="Scripts\_App\Directives\ngEnter.js" />
+    <Content Include="Scripts\_App\Services\authenticationService.min.js">
+      <DependentUpon>authenticationService.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\_App\Services\autocompleteService.js" />
+    <Content Include="Scripts\_App\Services\autocompleteService.min.js">
+      <DependentUpon>autocompleteService.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\_App\Services\highStockService.js" />
+    <Content Include="Scripts\_App\Services\highStockService.min.js">
+      <DependentUpon>highStockService.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\_App\Services\optionAnalysisService.js" />
+    <Content Include="Scripts\_App\Services\optionAnalysisService.min.js">
+      <DependentUpon>optionAnalysisService.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\_App\Services\stockAnalysisService.js" />
     <Content Include="Content\Directives\spinner.html" />
+    <Content Include="Scripts\_App\Services\stockAnalysisService.min.js">
+      <DependentUpon>stockAnalysisService.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\_App\Services\utilitiesService.js" />
     <Content Include="Scripts\HighStock\highstock.js" />
     <Content Include="Scripts\HighStock\Modules\exporting.js" />
@@ -281,6 +332,9 @@
     <Content Include="Scripts\Jquery\Validate\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\Jquery\Validate\jquery.validate.js" />
     <Content Include="Scripts\Jquery\Validate\jquery.validate.min.js" />
+    <Content Include="Scripts\_App\Services\utilitiesService.min.js">
+      <DependentUpon>utilitiesService.js</DependentUpon>
+    </Content>
     <Content Include="Views\Error\Index.cshtml" />
     <Content Include="Views\Main\Index.cshtml" />
     <Content Include="Scripts\_App\Directives\loadSpinner.min.js.map">
@@ -429,6 +483,16 @@
     <Content Include="Views\Shared\_Dependencies.cshtml" />
     <Content Include="Scripts\_App\Services\authenticationService.min.js.map">
       <DependentUpon>authenticationService.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\_App\ngmin" />
+    <Content Include="Scripts\_App\AlgoTraderMerged.min.js.map">
+      <DependentUpon>AlgoTraderMerged.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\_App\NoAuthMerged.min.js.map">
+      <DependentUpon>NoAuthMerged.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\_App\Directives\ng-grid-2.0.7.debug.min.js.map">
+      <DependentUpon>ng-grid-2.0.7.debug.js</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup>

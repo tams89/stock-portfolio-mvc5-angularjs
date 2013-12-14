@@ -39,8 +39,10 @@ let expiryDate (optionTicker:string) =
        DateTime.ParseExact(String.Format("{0}/{1}/{2}", optionTicker.Substring(8, 2), optionTicker.Substring(6, 2), optionTicker.Substring(4, 2)), "dd/MM/yy", CultureInfo.InvariantCulture)
     elif symbolLength = 3 then // 3 char symbol
        DateTime.ParseExact(String.Format("{0}/{1}/{2}", optionTicker.Substring(8 - 1, 2), optionTicker.Substring(6 - 1, 2), optionTicker.Substring(4 - 1, 2)), "dd/MM/yy", CultureInfo.InvariantCulture) 
-    elif symbolLength = 2 then // 2 char symbol.
+    elif symbolLength = 2 then // 2 char symbol
        DateTime.ParseExact(String.Format("{0}/{1}/{2}", optionTicker.Substring(8 - 2, 2), optionTicker.Substring(6 - 2, 2), optionTicker.Substring(4 - 2, 2)), "dd/MM/yy", CultureInfo.InvariantCulture) 
+    elif symbolLength = 1 then // 1 char symbol
+       DateTime.ParseExact(String.Format("{0}/{1}/{2}", optionTicker.Substring(8 - 3, 2), optionTicker.Substring(6 - 3, 2), optionTicker.Substring(4 - 3, 2)), "dd/MM/yy", CultureInfo.InvariantCulture) 
     else // unknown option ticker type.
         failwith "Invalid expiry date parsing operation..."
 

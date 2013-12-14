@@ -57,12 +57,17 @@
                 .IncludeDirectory("~/Scripts/_App/Services", "*.js")
                 .IncludeDirectory("~/Scripts/_App/Controllers", "*.js"));
 
+            //bundles.Add(new ScriptBundle("~/bundles/angularApp").Include("~/Scripts/_App/AlgoTraderMerged.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/NoAuth")
                 .Include("~/Scripts/_App/NoAuth.min.js")
                 .Include("~/Scripts/_App/Services/authenticationService.min.js")
                 .Include("~/Scripts/_App/Controllers/NavigationController.min.js")
                 .Include("~/Scripts/_App/Controllers/LoginController.min.js")
                 .Include("~/Scripts/_App/Controllers/RegistrationController.min.js"));
+
+            //bundles.Add(new ScriptBundle("~/bundles/NoAuth").Include("~/Scripts/_App/NoAuthMerged.js"));
+
 
             BundleTable.EnableOptimizations = false;
         }

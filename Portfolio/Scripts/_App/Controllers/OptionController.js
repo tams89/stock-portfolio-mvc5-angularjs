@@ -130,4 +130,8 @@
         $scope.inTheMoney = false;
     };
 
+    $scope.inTheMoneyToolTip = "1. For a call option, when the option's strike price is below the market price of the underlying asset." +
+        "2. For a put option, when the strike price is above the market price of the underlying asset." +
+        "Being in the money does not mean you will profit, it just means the option is worth exercising. This is because the option costs money to buy.";
+
 }]);

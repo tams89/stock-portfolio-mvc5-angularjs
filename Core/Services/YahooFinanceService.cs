@@ -1,4 +1,5 @@
-﻿namespace Core.Services
+﻿
+namespace Core.Services
 {
     using AlgoTrader.YahooApi;
     using AutoMapper;
@@ -33,9 +34,12 @@
         /// </returns>
         public IEnumerable<MarketDto> GetStockData(string symbol, DateTime? from, DateTime? to)
         {
-            if (string.IsNullOrEmpty(symbol)) return Enumerable.Empty<MarketDto>();
-            if (!from.HasValue) from = DateTime.Today.AddYears(-2);
-            if (!to.HasValue) to = DateTime.Today;
+            if (string.IsNullOrEmpty(symbol))
+                return Enumerable.Empty<MarketDto>();
+            if (!from.HasValue)
+                from = DateTime.Today.AddYears(-2);
+            if (!to.HasValue)
+                to = DateTime.Today;
             var marketData = VolatilityAndMarketData.getMarketData(symbol, from.Value, to.Value).Reverse(); // Old to new.
             return Mapper.Map<IEnumerable<VolatilityAndMarketData.MarketData>, IEnumerable<MarketDto>>(marketData);
         }
@@ -51,7 +55,8 @@
         /// </returns>
         public IEnumerable<OptionDto> GetOptionData(string symbol)
         {
-            if (string.IsNullOrEmpty(symbol)) return Enumerable.Empty<OptionDto>();
+            if (string.IsNullOrEmpty(symbol))
+                return Enumerable.Empty<OptionDto>();
             var optionData = Options.GetOptionsData(symbol);
             return Mapper.Map<IEnumerable<Options.OptionsData>, IEnumerable<OptionDto>>(optionData);
         }

@@ -68,7 +68,6 @@
 
             //bundles.Add(new ScriptBundle("~/bundles/NoAuth").Include("~/Scripts/_App/NoAuthMerged.js"));
 
-
             BundleTable.EnableOptimizations = false;
         }
 

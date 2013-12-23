@@ -92,6 +92,11 @@ namespace Core.DTO
         public double BlackScholes { get; set; }
 
         /// <summary>
+        /// The monte-carlo generated Black Scholes price for the option.
+        /// </summary>
+        public double BlackScholesMonteCarlo { get; set; }
+
+        /// <summary>
         /// The to string.
         /// </summary>
         /// <returns>

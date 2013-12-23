@@ -477,7 +477,6 @@
     <Content Include="Scripts\_App\Services\authenticationService.min.js.map">
       <DependentUpon>authenticationService.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\_App\ngmin" />
     <Content Include="Scripts\_App\AlgoTraderMerged.min.js.map">
       <DependentUpon>AlgoTraderMerged.js</DependentUpon>
     </Content>

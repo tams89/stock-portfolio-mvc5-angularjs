@@ -29,7 +29,8 @@ namespace Core.Services
         {
             try
             {
-                if (Math.Abs(option.Volatility) < double.Epsilon) return 0.0;
+                if (Math.Abs(option.Volatility) < double.Epsilon)
+                    return 0.0;
 
                 var optionType = option.Symbol[10] == 'C' ? AlgoTrader.BlackScholes.Type.Call : AlgoTrader.BlackScholes.Type.Put;
                 var timeToExpiryInYears = float.Parse(option.DaysToExpiry) / 365;
@@ -40,6 +41,39 @@ namespace Core.Services
                     timeToExpiryInYears,
                     0.25, // U.S. Govt. Treasury Interest Rate circa.12/2013.
                     option.Volatility);
+
+                return Math.Round(blackScholesPrice, 2);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// Calculates the Black-Scholes price of an option using a monte-carlo method.
+        /// High-Low volatility used with a range of one year, should be set in option already.
+        /// </summary>
+        /// <param name="option">
+        /// </param>
+        /// <returns>
+        /// </returns>
+        public double BlackScholesMonteCarlo(OptionDto option)
+        {
+            try
+            {
+                if (Math.Abs(option.Volatility) < double.Epsilon)
+                    return 0.0;
+
+                var optionType = option.Symbol[10] == 'C' ? AlgoTrader.BlackScholesMonteCarlo.optionType.Call : AlgoTrader.BlackScholesMonteCarlo.optionType.Put;
+                var timeToExpiryInYears = float.Parse(option.DaysToExpiry) / 365;
+                var blackScholesPrice = AlgoTrader.BlackScholesMonteCarlo.europeanOptionPriceBlackScholes(
+                    optionType,
+                    (double)option.StrikePrice,
+                    (double)option.LastPrice,
+                    0.25, // U.S. Govt. Treasury Interest Rate circa.12/2013.
+                    option.Volatility,
+                    timeToExpiryInYears);
 
                 return Math.Round(blackScholesPrice, 2);
             }
@@ -73,7 +107,8 @@ namespace Core.Services
                 {
                     int res;
                     var isNum = int.TryParse(option.Symbol[i].ToString(), out res);
-                    if (!isNum) companyTicker += option.Symbol[i];
+                    if (!isNum)
+                        companyTicker += option.Symbol[i];
                 }
 
                 // Annual volatilty by default.
@@ -87,7 +122,8 @@ namespace Core.Services
                     volatility = AlgoTrader.YahooApi.VolatilityAndMarketData.highLowVolatility(companyTicker, fromDate.Value, toDate.Value);
                     symbolVolatility = new KeyValuePair<string, double>(companyTicker, volatility);
                 }
-                else if (symbolVolatility.Key == companyTicker) volatility = symbolVolatility.Value;
+                else if (symbolVolatility.Key == companyTicker)
+                    volatility = symbolVolatility.Value;
                 if (Math.Abs(volatility) < double.Epsilon)
                     throw new InvalidOperationException(
                         string.Format("Volatility cannot be zero (tolerance double epsilson constant)'{0}'", volatility));

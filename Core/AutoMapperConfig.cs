@@ -16,6 +16,7 @@
         {
             Mapper.CreateMap<Options.OptionsData, OptionDto>()
                 .ForMember(x => x.BlackScholes, r => r.Ignore())
+                .ForMember(x => x.BlackScholesMonteCarlo, r => r.Ignore())
                 .ForMember(x => x.Volatility, r => r.Ignore());
 
             Mapper.CreateMap<VolatilityAndMarketData.MarketData, MarketDto>();

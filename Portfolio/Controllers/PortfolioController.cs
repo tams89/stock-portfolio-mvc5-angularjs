@@ -1,4 +1,5 @@
-﻿namespace Portfolio.Controllers
+﻿
+namespace Portfolio.Controllers
 {
     using Core.Services.Interfaces;
     using System;
@@ -8,7 +9,7 @@
     /// <summary>
     /// The portfolio controller.
     /// </summary>
-    public class PortfolioController : Controller
+    public class PortfolioController : AsyncController
     {
         #region Fields
 
@@ -44,9 +45,12 @@
         /// </param>
         public PortfolioController(IYahooFinanceService yahooFinanceService, IGoogleFinanceService googleFinanceService, IFinancialCalculationService financialCalculationService)
         {
-            if (googleFinanceService == null) throw new ArgumentNullException("googleFinanceService");
-            if (yahooFinanceService == null) throw new ArgumentNullException("yahooFinanceService");
-            if (financialCalculationService == null) throw new ArgumentNullException("financialCalculationService");
+            if (googleFinanceService == null)
+                throw new ArgumentNullException("googleFinanceService");
+            if (yahooFinanceService == null)
+                throw new ArgumentNullException("yahooFinanceService");
+            if (financialCalculationService == null)
+                throw new ArgumentNullException("financialCalculationService");
 
             this.yahooFinanceService = yahooFinanceService;
             this.googleFinanceService = googleFinanceService;
@@ -70,7 +74,11 @@
         public JsonResult AutoComplete(string symbol)
         {
             var results = googleFinanceService.SymbolSearch(symbol).ToArray();
-            return results.Any() ? Json(results.Select(x => new { x.Name, x.Symbol })) : null;
+            return results.Any() ? Json(results.Select(x => new
+            {
+                x.Name,
+                x.Symbol
+            })) : null;
         }
 
         /// <summary>
@@ -110,7 +118,9 @@
             {
                 optionDto.Volatility = financialCalculationService.Volatility(optionDto, from, to);
                 optionDto.BlackScholes = financialCalculationService.BlackScholes(optionDto);
+                optionDto.BlackScholesMonteCarlo = financialCalculationService.BlackScholesMonteCarlo(optionDto);
             }
+
             return Json(optionData);
         }
 

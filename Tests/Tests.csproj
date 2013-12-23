@@ -94,6 +94,7 @@
   <ItemGroup>
     <Compile Include="ControllerTests.cs" />
     <Compile Include="DbSetupPortfolio.cs" />
+    <Compile Include="FinanceLibraryTests.cs" />
     <Compile Include="HFTTests.cs" />
     <Compile Include="PortfolioServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

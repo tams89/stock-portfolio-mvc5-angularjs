@@ -1,11 +1,9 @@
-﻿using System.Linq;
-
-namespace Test
+﻿namespace Test
 {
     using Core.Services;
     using Core.Services.Interfaces;
-
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using System.Linq;
 
     /// <summary>
     /// The yahoo finance service tests.

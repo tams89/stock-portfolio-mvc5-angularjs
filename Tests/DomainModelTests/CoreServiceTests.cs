@@ -1,4 +1,6 @@
-﻿namespace Test
+﻿using Core;
+
+namespace Test
 {
     using Core.Services;
     using Core.Services.Interfaces;
@@ -16,14 +18,22 @@
         /// <summary>
         /// The _yahoo finance service.
         /// </summary>
-        private readonly IYahooFinanceService yahooFinanceService = new YahooFinanceService();
+        private IYahooFinanceService yahooFinanceService;
 
         /// <summary>
         /// The financial calculation service.
         /// </summary>
-        private readonly IFinancialCalculationService financialCalculationService = new FinancialCalculationService();
+        private IFinancialCalculationService financialCalculationService;
 
         #endregion Fields
+
+        [TestInitialize]
+        public void Init()
+        {
+            AutoMapperConfig.Configure();
+            yahooFinanceService = new YahooFinanceService();
+            financialCalculationService = new FinancialCalculationService();
+        }
 
         /// <summary>
         /// The get stock data.

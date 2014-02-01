@@ -7,10 +7,10 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-using System;
-using System.Threading;
 using Krs.Ats.IBNet;
 using Krs.Ats.IBNet.Contracts;
+using System;
+using System.Threading;
 
 namespace Krs.Ats.TestApp
 {
@@ -157,7 +157,7 @@ namespace Krs.Ats.TestApp
             BuyContract.TotalQuantity = 1;
 
 
-// client.PlaceOrder(503, TF, BuyContract);
+            // client.PlaceOrder(503, TF, BuyContract);
             client.RequestExecutions(34, new ExecutionFilter());
 
             client.RequestAllOpenOrders();
@@ -179,8 +179,8 @@ namespace Krs.Ats.TestApp
         /// </param>
         private static void client_ExecDetails(object sender, ExecDetailsEventArgs e)
         {
-            Console.WriteLine("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11}", 
-                e.Contract.Symbol, e.Execution.AccountNumber, e.Execution.ClientId, e.Execution.Exchange, e.Execution.ExecutionId, 
+            Console.WriteLine("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11}",
+                e.Contract.Symbol, e.Execution.AccountNumber, e.Execution.ClientId, e.Execution.Exchange, e.Execution.ExecutionId,
                 e.Execution.Liquidation, e.Execution.OrderId, e.Execution.PermId, e.Execution.Price, e.Execution.Shares, e.Execution.Side, e.Execution.Time);
         }
 

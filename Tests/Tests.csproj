@@ -92,13 +92,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="ControllerTests.cs" />
-    <Compile Include="DbSetupPortfolio.cs" />
-    <Compile Include="FinanceLibraryTests.cs" />
-    <Compile Include="HFTTests.cs" />
-    <Compile Include="PortfolioServiceTests.cs" />
+    <Compile Include="AppTests\ControllerTests.cs" />
+    <Compile Include="ORMTests\DbSetupPortfolio.cs" />
+    <Compile Include="ORMTests\HFTTests.cs" />
+    <Compile Include="DomainModelTests\PortfolioServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CoreServiceTests.cs" />
+    <Compile Include="DomainModelTests\CoreServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">

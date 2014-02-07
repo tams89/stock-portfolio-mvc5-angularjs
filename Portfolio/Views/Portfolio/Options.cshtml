@@ -15,7 +15,7 @@
     <div ng-show="gridDataAvailable()">
         <div class="show-hide-animation">
             <hr />
-            <h4>Watch List</h4>
+            <h4>Watch List:</h4>
             <div>
                 <table class="table table-condensed table-striped">
                     <thead>
@@ -26,9 +26,13 @@
                             <th>
                                 Volatility
                             </th>
+                            <td>
+                                Date Range
+                            </td>
                             <th>
                                 View
                             </th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -40,22 +44,34 @@
                                 {{option.data[0].Volatility}}
                             </td>
                             <td>
-                                <input type="radio" ng-model="btnRadioData.selectedOption" value="{{option.symbol}}" ng-change="viewOptionData(option.symbol)" />
+                                <span>
+                                    TODO: Date range for volatility.
+                                </span>
+                            </td>
+                            <td>
+                                <input id="{{option.symbol}} + 'id'" type="radio" ng-model="btnRadioData.selectedOption" value="{{option.symbol}}" ng-change="viewOptionData(option.symbol)" />
+                                <label for="{{option.symbol}} + 'id'"><span></span></label>
+                            </td>
+                            <td>
+                                <button class="btn btn-danger btn-xs" ng-click="RemoveFromList($index, option.symbol)">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </button>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <hr />
         </div>
-        <div class="show-hide-animation">
+        <div class="show-hide-animation" ng-show="viewSelected()">
+            <hr />
             <h4>Filters:</h4>
             <div>
-                <h5>In the money?  <input type="checkbox" ng-model="inTheMoney" ng-change="filterByInTheMoney()" /></h5>
+                <button type="button" class="btn btn-default" ng-model="inTheMoney" ng-change="filterByInTheMoney()" btn-checkbox>
+                    In the Money
+                    <span class="glyphicon glyphicon-question-sign" popover="{{inTheMoneyToolTip}}" popover-trigger="mouseenter"></span>
+                </button>
             </div>
             <hr />
-        </div>
-        <div class="show-hide-animation">
             <div class="optionGrid" ng-grid="gridOptions"></div>
             <footer>
                 <h5>

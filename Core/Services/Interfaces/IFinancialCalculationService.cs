@@ -1,8 +1,7 @@
-﻿using System;
-
-namespace Core.Services.Interfaces
+﻿namespace Core.Services.Interfaces
 {
     using DTO;
+    using System;
 
     /// <summary>
     /// Interface to FinancialCalculationService contains methods to calculate properties of option & stocks.

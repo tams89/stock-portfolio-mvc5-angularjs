@@ -1,8 +1,5 @@
-﻿"use strict";
+﻿app.controller("OptionController", ["$scope", "autocompleteService", "toaster", "optionAnalysisService", "utilitiesService", function ($scope, autocompleteService, toaster, optionAnalysisService, utilitiesService) {
 
-app.controller("OptionController", ["$scope", "autocompleteService", "toaster", "optionAnalysisService", "utilitiesService", function ($scope, autocompleteService, toaster, optionAnalysisService, utilitiesService) {
-
-    $scope.options = {}; // Collection (symbol:string, data:[])
     $scope.btnRadioData = { selectedOpton: undefined }; // Allows single radio button only functionality.
 
     init();
@@ -35,6 +32,7 @@ app.controller("OptionController", ["$scope", "autocompleteService", "toaster", 
         $scope.volatility = persistedData["data"][0].Volatility;
         $scope.currentOptionSet = persistedData["data"];
         $scope.filteredOptions = persistedData["data"];
+        $scope.inTheMoney = false;
         $(window).resize();
     };
 
@@ -42,13 +40,15 @@ app.controller("OptionController", ["$scope", "autocompleteService", "toaster", 
     function getOptionData(symbol) {
         var optionDataPromise = optionAnalysisService.getOptions(symbol);
         optionDataPromise.then(function (data) {
+            if (data.length == 0) {
+                toaster.pop("information", "No options found.", "Please try another symbol/company as not all companies have option listings");
+                $scope.selected = undefined;
+                $scope.loading = false;
+                return;
+            }
             $scope.options.push({ symbol: symbol, data: data });
-            console.log("Option promise forefilled data count: " + data.length);
             $scope.selected = undefined;
             $scope.loading = false;
-            if (data.length === 0) {
-                toaster.pop("information", "No options found.", "Please try another symbol/company as not all companies have option listings");
-            }
         });
     }
 
@@ -95,37 +95,43 @@ app.controller("OptionController", ["$scope", "autocompleteService", "toaster", 
             },
             {
                 field: "LastPrice", displayName: "Last", width: "5%",
-                cellTemplate: '<div ng-class="{optionGridRowInTheMoney: row.getProperty(\'InTheMoney\'), optionGridRowAtTheMoney: row.getProperty(\'AtTheMoney\')}"><div class="ngCellText">{{row.getProperty(col.field)}}</div></div>'
             },
             {
                 field: "Change", width: "7%",
-                cellTemplate: '<div ng-class="{optionGridRowInTheMoney: row.getProperty(\'InTheMoney\'), optionGridRowAtTheMoney: row.getProperty(\'AtTheMoney\')}"><div class="ngCellText">{{row.getProperty(col.field)}}</div></div>'
             },
             {
                 field: "Bid", width: "5%",
-                cellTemplate: '<div ng-class="{optionGridRowInTheMoney: row.getProperty(\'InTheMoney\'), optionGridRowAtTheMoney: row.getProperty(\'AtTheMoney\')}"><div class="ngCellText">{{row.getProperty(col.field)}}</div></div>'
             },
             {
                 field: "Ask", width: "5%",
-                cellTemplate: '<div ng-class="{optionGridRowInTheMoney: row.getProperty(\'InTheMoney\'), optionGridRowAtTheMoney: row.getProperty(\'AtTheMoney\')}"><div class="ngCellText">{{row.getProperty(col.field)}}</div></div>'
             },
             {
                 field: "Vol", width: "5%",
-                cellTemplate: '<div ng-class="{optionGridRowInTheMoney: row.getProperty(\'InTheMoney\'), optionGridRowAtTheMoney: row.getProperty(\'AtTheMoney\')}"><div class="ngCellText">{{row.getProperty(col.field)}}</div></div>'
             },
             {
                 field: "OpenInt", width: "8%",
-                cellTemplate: '<div ng-class="{optionGridRowInTheMoney: row.getProperty(\'InTheMoney\'), optionGridRowAtTheMoney: row.getProperty(\'AtTheMoney\')}"><div class="ngCellText">{{row.getProperty(col.field)}}</div></div>'
             },
             {
                 field: "DaysToExpiry", width: "5%", displayName: "DTE",
-                cellTemplate: '<div ng-class="{optionGridRowInTheMoney: row.getProperty(\'InTheMoney\'), optionGridRowAtTheMoney: row.getProperty(\'AtTheMoney\')}"><div class="ngCellText">{{row.getProperty(col.field)}}</div></div>'
             },
             {
                 field: "BlackScholes", displayName: "Black Scholes", width: "11%",
-                cellTemplate: '<div ng-class="{optionGridRowInTheMoney: row.getProperty(\'InTheMoney\'), optionGridRowAtTheMoney: row.getProperty(\'AtTheMoney\')}"><div class="ngCellText">{{row.getProperty(col.field)}}</div></div>'
-            }
+            },
         ]
     };
+
+    $scope.viewSelected = function () {
+        if ($scope.btnRadioData.selectedOption != undefined) return true;
+        return false;
+    };
+
+    $scope.RemoveFromList = function (idx, symbol) {
+        utilitiesService.removeObjByKey($scope.options, "symbol", symbol);
+        $scope.inTheMoney = false;
+    };
+
+    $scope.inTheMoneyToolTip = "1. For a call option, when the option's strike price is below the market price of the underlying asset." +
+        "2. For a put option, when the strike price is above the market price of the underlying asset." +
+        "Being in the money does not mean you will profit, it just means the option is worth exercising. This is because the option costs money to buy.";
 
 }]);

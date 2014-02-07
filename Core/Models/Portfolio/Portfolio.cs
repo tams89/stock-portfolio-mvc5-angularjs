@@ -1,17 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Portfolio.cs" company="">
-//   
-// </copyright>
-// <summary>
-//   The portfolio.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
 namespace Core.Models.Portfolio
 {
@@ -20,14 +7,6 @@ namespace Core.Models.Portfolio
     /// </summary>
     public class Portfolio
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Portfolio"/> class.
-        /// </summary>
-        public Portfolio()
-        {
-
-        }
-
         /// <summary>
         /// Initializes a new instance of the <see cref="Portfolio"/> class.
         /// </summary>

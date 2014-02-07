@@ -7,6 +7,7 @@ open System.Net
 open System.Xml
 open System.Xml.Linq
 open System.Globalization
+open System.Text.RegularExpressions
 
 let makeUrlOptions ticker =
     new Uri("http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.options%20where%20symbol%20in%20('" + ticker + "')&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys")
@@ -31,12 +32,19 @@ let ci value =
 
 /// Calculates expiry date by whether option is mini-option or ordinary.
 let expiryDate (optionTicker:string) =
+    let symbolLength = Regex.Match(optionTicker, @"[^[0-9]*]*").Value.Length // selects symbol from the option ticker.
     if optionTicker.Substring(4,1) = "7" then // mini-option ticker.
        DateTime.ParseExact(String.Format("{0}/{1}/{2}", optionTicker.Substring(8 + 1, 2), optionTicker.Substring(6 + 1, 2), optionTicker.Substring(4 + 1, 2)), "dd/MM/yy", CultureInfo.InvariantCulture)
-    elif optionTicker.Length = 19 then // standard 4 char symbol
+    elif symbolLength = 4 then // standard 4 char symbol
        DateTime.ParseExact(String.Format("{0}/{1}/{2}", optionTicker.Substring(8, 2), optionTicker.Substring(6, 2), optionTicker.Substring(4, 2)), "dd/MM/yy", CultureInfo.InvariantCulture)
-    else // 3 char symbol
-       DateTime.ParseExact(String.Format("{0}/{1}/{2}", optionTicker.Substring(8-1, 2), optionTicker.Substring(6-1, 2), optionTicker.Substring(4-1, 2)), "dd/MM/yy", CultureInfo.InvariantCulture) 
+    elif symbolLength = 3 then // 3 char symbol
+       DateTime.ParseExact(String.Format("{0}/{1}/{2}", optionTicker.Substring(8 - 1, 2), optionTicker.Substring(6 - 1, 2), optionTicker.Substring(4 - 1, 2)), "dd/MM/yy", CultureInfo.InvariantCulture) 
+    elif symbolLength = 2 then // 2 char symbol
+       DateTime.ParseExact(String.Format("{0}/{1}/{2}", optionTicker.Substring(8 - 2, 2), optionTicker.Substring(6 - 2, 2), optionTicker.Substring(4 - 2, 2)), "dd/MM/yy", CultureInfo.InvariantCulture) 
+    elif symbolLength = 1 then // 1 char symbol
+       DateTime.ParseExact(String.Format("{0}/{1}/{2}", optionTicker.Substring(8 - 3, 2), optionTicker.Substring(6 - 3, 2), optionTicker.Substring(4 - 3, 2)), "dd/MM/yy", CultureInfo.InvariantCulture) 
+    else // unknown option ticker type.
+        failwith "Invalid expiry date parsing operation..."
 
 let daysToExpiry (expiryDate:DateTime) : string = 
     (expiryDate- DateTime.Today).TotalDays.ToString()

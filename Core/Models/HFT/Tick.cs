@@ -1,24 +1,12 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Tick.cs" company="">
-//   
-// </copyright>
-// <summary>
-//   Tick Model
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-
+﻿using Core.Repository;
 using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using Core.ORM;
-using DapperExtensions;
 
 namespace Core.Models.HFT
 {
     /// <summary>
     /// Tick Model
     /// </summary>
-    public class Tick
+    public class Tick : IEntity
     {
         /// <summary>
         /// Gets or sets the id.

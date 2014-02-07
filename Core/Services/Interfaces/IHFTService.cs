@@ -1,14 +1,5 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="IHFTService.cs" company="">
-//   
-// </copyright>
-// <summary>
-//   The HFTService interface.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-
+﻿using Core.Models.HFT;
 using System.Collections.Generic;
-using Core.Models.HFT;
 
 namespace Core.Services.Interfaces
 {

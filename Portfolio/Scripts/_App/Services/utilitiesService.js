@@ -40,4 +40,15 @@
         }
     };
 
+    // Removes the object where the matching key has been found.
+    // Searches through collection of objects to find the objects with a matching property
+    // and then checks if the properties value is equal to item.
+    this.removeObjByKey = function (array, arrayProp, item) {
+        for (var i = 0; i < array.length; i++) {
+            if (array[i][arrayProp] === item) {
+                array.splice(i, 1);
+            }
+        }
+    };
+
 });

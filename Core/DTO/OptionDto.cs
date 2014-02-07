@@ -1,6 +1,4 @@
-﻿
-
-namespace Core.DTO
+﻿namespace Core.DTO
 {
     using System;
 

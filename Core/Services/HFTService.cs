@@ -1,31 +1,27 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="HFTService.cs" company="">
-//   
-// </copyright>
-// <summary>
-//   The hft service.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-
-using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using Core.Models.HFT;
-using Core.ORM;
+﻿using Core.Models.HFT;
+using Core.Repository;
 using Core.Services.Interfaces;
-using DapperExtensions;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Core.Services
 {
     /// <summary>
     /// The hft service.
     /// </summary>
-    /// <typeparam name="T">
-    /// </typeparam>
-    public class HFTService<T> : ServiceBase<T>, IHFTService where T : class, new()
+    public class HFTService : IHFTService
     {
+        private readonly IReadOnlyRepository<Tick> tickRepository;
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="tickRepository"></param>
+        public HFTService(IReadOnlyRepository<Tick> tickRepository)
+        {
+            this.tickRepository = tickRepository;
+        }
+
         /// <summary>
         /// Gets tick data collection from db by matching symbol.
         /// </summary>
@@ -37,15 +33,10 @@ namespace Core.Services
         /// </returns>
         public IEnumerable<Tick> BySymbol(string symbol)
         {
-            using (var c = new SqlConnection(Constants.AlgoTraderDbConnection))
-            {
-                c.Open();
-                var predicate = Predicates.Field<Tick>(x => x.Symbol, Operator.Like, symbol);
-                var entity = c.GetList<Tick>(predicate);
-                c.Close();
+            var tickData = string.IsNullOrEmpty(symbol) ?
+                Enumerable.Empty<Tick>() : tickRepository.Find(x => x.Symbol.Contains(symbol));
 
-                return entity;
-            }
+            return tickData;
         }
     }
 }

@@ -66,8 +66,17 @@
     <Compile Include="RiskFreeInterestRate.fs" />
     <Compile Include="YahooApiEngineOptions.fs" />
     <Compile Include="YahooApiEngineStock.fs" />
+    <Compile Include="AmericanOptionBinomial.fs" />
+    <None Include="ReutersNewsFeed.fsx" />
     <Content Include="yqlstock.xml" />
     <None Include="packages.config" />
+    <None Include="Samples\MathNet.Numerics.FSharp\Vectors.fsx" />
+    <None Include="Samples\MathNet.Numerics.FSharp\RandomAndDistributions.fsx" />
+    <None Include="Samples\MathNet.Numerics.FSharp\MCMC.fsx" />
+    <None Include="Samples\MathNet.Numerics.FSharp\Matrices.fsx" />
+    <None Include="Samples\MathNet.Numerics.FSharp\LinearRegression.fsx" />
+    <None Include="Samples\MathNet.Numerics.FSharp\Histogram.fsx" />
+    <None Include="Samples\MathNet.Numerics.FSharp\Apply.fsx" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Data">
@@ -78,11 +87,40 @@
       <HintPath>..\packages\FSharp.Data.1.1.10\lib\net40\FSharp.Data.DesignTime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MathNet.Numerics">
+      <HintPath>..\packages\MathNet.Numerics.2.6.2\lib\net40\MathNet.Numerics.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MathNet.Numerics.FSharp">
+      <HintPath>..\packages\MathNet.Numerics.FSharp.2.6.0\lib\net40\MathNet.Numerics.FSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MathNet.Numerics.IO">
+      <HintPath>..\packages\MathNet.Numerics.2.6.2\lib\net40\MathNet.Numerics.IO.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="mscorlib" />
+    <Reference Include="RDotNet">
+      <HintPath>..\packages\R.NET.1.5.5\lib\net40\RDotNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RDotNet.FSharp">
+      <HintPath>..\packages\RDotNet.FSharp.0.1.2.1\lib\net40\RDotNet.FSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RDotNet.NativeLibrary">
+      <HintPath>..\packages\R.NET.1.5.5\lib\net40\RDotNet.NativeLibrary.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RProvider">
+      <HintPath>..\packages\RProvider.1.0.5\lib\RProvider.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />

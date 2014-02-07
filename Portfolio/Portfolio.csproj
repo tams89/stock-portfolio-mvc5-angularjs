@@ -57,19 +57,20 @@
     <Reference Include="DotNetOpenAuth.Core">
       <HintPath>..\packages\DotNetOpenAuth.Core.4.3.3.13295\lib\net45-full\DotNetOpenAuth.Core.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.0.1\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.0.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="FSharp.Core, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Data.OData, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.OAuth.3.0.0\lib\net45\Microsoft.Web.WebPages.OAuth.dll</HintPath>
+    <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
     </Reference>
     <Reference Include="Munq.IocContainer, Version=3.0.4501.20364, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -84,6 +85,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Services.Client" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Extensions">
       <HintPath>..\packages\Microsoft.Net.Http.2.2.18\lib\net45\System.Net.Http.Extensions.dll</HintPath>
@@ -96,6 +98,9 @@
       <HintPath>..\packages\Microsoft.Net.Http.2.2.18\lib\net45\System.Net.Http.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Spatial, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.Entity" />
@@ -142,6 +147,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Stack 5\Packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebActivator, Version=1.4.4.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\WebActivator.1.4.4\lib\net40\WebActivator.dll</HintPath>
     </Reference>
@@ -177,10 +184,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\ExternalLogin.cs" />
     <Compile Include="Models\LocalPasswordModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
-    <Compile Include="Models\RegisterExternalLoginModel.cs" />
     <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Models\UserProfile.cs" />
     <Compile Include="Models\UsersContext.cs" />
@@ -190,6 +195,7 @@
   <ItemGroup>
     <Content Include="Content\Directives\circle.html" />
     <Content Include="Content\Directives\sort-by.html" />
+    <Content Include="Content\Images\check_radio_sheet.png" />
     <Content Include="Content\Styles\angular-csp.min.css">
       <DependentUpon>angular-csp.css</DependentUpon>
     </Content>
@@ -226,49 +232,104 @@
     <Content Include="Scripts\Angular\angular-scenario.min.js" />
     <Content Include="Scripts\Angular\ui-bootstrap-tpls-0.7.0.js" />
     <Content Include="Scripts\Angular\ui-bootstrap-tpls-0.7.0.min.js" />
+    <Content Include="Scripts\README Merge _App JS files using Shell.txt" />
     <Content Include="Scripts\_App\AlgoTrader.js" />
     <Content Include="Scripts\_App\AlgoTrader.min.js">
       <DependentUpon>AlgoTrader.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\_App\AlgoTraderMerged.js" />
+    <Content Include="Scripts\_App\AlgoTraderMerged.min.js">
+      <DependentUpon>AlgoTraderMerged.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\_App\AlgoTraderMergedNgMin.js" />
+    <Content Include="Scripts\_App\AlgoTraderMergedNgMin.min.js">
+      <DependentUpon>AlgoTraderMergedNgMin.js</DependentUpon>
     </Content>
     <Content Include="Scripts\_App\Controllers\LoginController.js" />
     <Content Include="Scripts\_App\Controllers\LoginController.min.js">
       <DependentUpon>LoginController.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\_App\Controllers\NavigationController.min.js">
+      <DependentUpon>NavigationController.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\_App\Controllers\OptionController.js" />
+    <Content Include="Scripts\_App\Controllers\OptionController.min.js">
+      <DependentUpon>OptionController.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\_App\Controllers\RegistrationController.js" />
+    <Content Include="Scripts\_App\Controllers\RegistrationController.min.js">
+      <DependentUpon>RegistrationController.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\_App\Controllers\StockController.min.js">
+      <DependentUpon>StockController.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\_App\Directives\circle.js" />
+    <Content Include="Scripts\_App\Directives\circle.min.js">
+      <DependentUpon>circle.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\_App\Directives\ng-grid-2.0.7.debug.js" />
+    <Content Include="Scripts\_App\Directives\ng-grid-2.0.7.debug.min.js">
+      <DependentUpon>ng-grid-2.0.7.debug.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\_App\Directives\ng-grid-2.0.7.min.js" />
+    <Content Include="Scripts\_App\Directives\ngEnter.min.js">
+      <DependentUpon>ngEnter.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\_App\Directives\spinner.js" />
+    <Content Include="Scripts\_App\Directives\spinner.min.js">
+      <DependentUpon>spinner.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\_App\Modules\highcharts-ng.min.js">
+      <DependentUpon>highcharts-ng.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\_App\NoAuth.js" />
     <Content Include="Scripts\_App\NoAuth.min.js">
       <DependentUpon>NoAuth.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\_App\NoAuthMerged.js" />
+    <Content Include="Scripts\_App\NoAuthMerged.min.js">
+      <DependentUpon>NoAuthMerged.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\_App\NoAuthNgMerged.js" />
+    <Content Include="Scripts\_App\NoAuthNgMerged.min.js">
+      <DependentUpon>NoAuthNgMerged.js</DependentUpon>
     </Content>
     <Content Include="Scripts\_App\Services\authenticationService.js" />
     <Content Include="Scripts\_App\Controllers\NavigationController.js" />
     <Content Include="Scripts\_App\Controllers\StockController.js" />
     <Content Include="Scripts\_App\Modules\highcharts-ng.js" />
     <Content Include="Scripts\_App\Directives\ngEnter.js" />
+    <Content Include="Scripts\_App\Services\authenticationService.min.js">
+      <DependentUpon>authenticationService.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\_App\Services\autocompleteService.js" />
+    <Content Include="Scripts\_App\Services\autocompleteService.min.js">
+      <DependentUpon>autocompleteService.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\_App\Services\highStockService.js" />
+    <Content Include="Scripts\_App\Services\highStockService.min.js">
+      <DependentUpon>highStockService.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\_App\Services\optionAnalysisService.js" />
+    <Content Include="Scripts\_App\Services\optionAnalysisService.min.js">
+      <DependentUpon>optionAnalysisService.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\_App\Services\stockAnalysisService.js" />
     <Content Include="Content\Directives\spinner.html" />
+    <Content Include="Scripts\_App\Services\stockAnalysisService.min.js">
+      <DependentUpon>stockAnalysisService.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\_App\Services\utilitiesService.js" />
     <Content Include="Scripts\HighStock\highstock.js" />
     <Content Include="Scripts\HighStock\Modules\exporting.js" />
     <Content Include="Scripts\HighStock\Themes\grid.js" />
     <Content Include="App_Code\Helpers.cshtml" />
     <None Include="Properties\PublishProfiles\algotrader.pubxml" />
-    <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Scripts\_App\NoAuth.min.js.map">
       <DependentUpon>NoAuth.js</DependentUpon>
     </Content>
     <Content Include="Scripts\_App\Controllers\RegistrationController.min.js.map">
       <DependentUpon>RegistrationController.js</DependentUpon>
-    </Content>
-    <Content Include="Scripts\_App\Controllers\AuthController.min.js.map">
-      <DependentUpon>LoginController.js</DependentUpon>
     </Content>
     <Content Include="Scripts\_App\Controllers\LoginController.min.js.map">
       <DependentUpon>LoginController.js</DependentUpon>
@@ -280,6 +341,9 @@
     <Content Include="Scripts\Jquery\Validate\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\Jquery\Validate\jquery.validate.js" />
     <Content Include="Scripts\Jquery\Validate\jquery.validate.min.js" />
+    <Content Include="Scripts\_App\Services\utilitiesService.min.js">
+      <DependentUpon>utilitiesService.js</DependentUpon>
+    </Content>
     <Content Include="Views\Error\Index.cshtml" />
     <Content Include="Views\Main\Index.cshtml" />
     <Content Include="Scripts\_App\Directives\loadSpinner.min.js.map">
@@ -340,9 +404,6 @@
     </Content>
     <Content Include="Scripts\_App\Controllers\NavigationController.min.js.map">
       <DependentUpon>NavigationController.js</DependentUpon>
-    </Content>
-    <Content Include="Scripts\_App\Services\AjaxService.min.js.map">
-      <DependentUpon>autocompleteService.js</DependentUpon>
     </Content>
     <Content Include="Scripts\_App\Controllers\StockController.min.js.map">
       <DependentUpon>StockController.js</DependentUpon>
@@ -428,6 +489,21 @@
     <Content Include="Views\Shared\_Dependencies.cshtml" />
     <Content Include="Scripts\_App\Services\authenticationService.min.js.map">
       <DependentUpon>authenticationService.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\_App\AlgoTraderMerged.min.js.map">
+      <DependentUpon>AlgoTraderMerged.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\_App\NoAuthMerged.min.js.map">
+      <DependentUpon>NoAuthMerged.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\_App\Directives\ng-grid-2.0.7.debug.min.js.map">
+      <DependentUpon>ng-grid-2.0.7.debug.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\_App\AlgoTraderMergedNgMin.min.js.map">
+      <DependentUpon>AlgoTraderMergedNgMin.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\_App\NoAuthNgMerged.min.js.map">
+      <DependentUpon>NoAuthNgMerged.js</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup>

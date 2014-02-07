@@ -29,7 +29,8 @@ namespace Core.Services
         {
             try
             {
-                if (Math.Abs(option.Volatility) < double.Epsilon) return 0.0;
+                if (Math.Abs(option.Volatility) < double.Epsilon)
+                    return 0.0;
 
                 var optionType = option.Symbol[10] == 'C' ? AlgoTrader.BlackScholes.Type.Call : AlgoTrader.BlackScholes.Type.Put;
                 var timeToExpiryInYears = float.Parse(option.DaysToExpiry) / 365;
@@ -48,7 +49,6 @@ namespace Core.Services
                 throw ex;
             }
         }
-
 
         /// <summary>
         /// The volatility.
@@ -73,7 +73,8 @@ namespace Core.Services
                 {
                     int res;
                     var isNum = int.TryParse(option.Symbol[i].ToString(), out res);
-                    if (!isNum) companyTicker += option.Symbol[i];
+                    if (!isNum)
+                        companyTicker += option.Symbol[i];
                 }
 
                 // Annual volatilty by default.
@@ -87,7 +88,8 @@ namespace Core.Services
                     volatility = AlgoTrader.YahooApi.VolatilityAndMarketData.highLowVolatility(companyTicker, fromDate.Value, toDate.Value);
                     symbolVolatility = new KeyValuePair<string, double>(companyTicker, volatility);
                 }
-                else if (symbolVolatility.Key == companyTicker) volatility = symbolVolatility.Value;
+                else if (symbolVolatility.Key == companyTicker)
+                    volatility = symbolVolatility.Value;
                 if (Math.Abs(volatility) < double.Epsilon)
                     throw new InvalidOperationException(
                         string.Format("Volatility cannot be zero (tolerance double epsilson constant)'{0}'", volatility));

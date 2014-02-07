@@ -1,17 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Security.cs" company="">
-//   
-// </copyright>
-// <summary>
-//   The security.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
 namespace Core.Models.Portfolio
 {
@@ -25,7 +12,7 @@ namespace Core.Models.Portfolio
         /// </summary>
         public Security()
         {
-            
+
         }
 
         /// <summary>

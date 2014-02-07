@@ -1,20 +1,11 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="AccountController.cs" company="">
-//   
-// </copyright>
-// <summary>
-//   The account controller.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-
-namespace Portfolio.Controllers
+﻿namespace Portfolio.Controllers
 {
+    using Filters;
+    using Models;
     using System.Collections.Generic;
     using System.Linq;
     using System.Web.Mvc;
     using System.Web.Security;
-    using Filters;
-    using Models;
     using WebMatrix.WebData;
 
     /// <summary>
@@ -34,17 +25,17 @@ namespace Portfolio.Controllers
             /// <summary>
             /// The change password success.
             /// </summary>
-            ChangePasswordSuccess, 
+            ChangePasswordSuccess,
 
             /// <summary>
             /// The set password success.
             /// </summary>
-            SetPasswordSuccess, 
+            SetPasswordSuccess,
 
             /// <summary>
             /// The remove login success.
             /// </summary>
-            RemoveLoginSuccess, 
+            RemoveLoginSuccess,
         }
 
         #endregion
@@ -108,7 +99,10 @@ namespace Portfolio.Controllers
                 WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
                 WebSecurity.Login(model.UserName, model.Password);
                 FormsAuthentication.SetAuthCookie(model.UserName, false);
-                return Json(new { success = true });
+                return Json(new
+                {
+                    success = true
+                });
             }
             catch (MembershipCreateUserException e)
             {

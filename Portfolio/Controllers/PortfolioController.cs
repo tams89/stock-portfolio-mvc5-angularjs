@@ -1,4 +1,6 @@
-﻿namespace Portfolio.Controllers
+﻿using System.Threading.Tasks;
+
+namespace Portfolio.Controllers
 {
     using Core.Services.Interfaces;
     using System;
@@ -8,7 +10,7 @@
     /// <summary>
     /// The portfolio controller.
     /// </summary>
-    public class PortfolioController : Controller
+    public class PortfolioController : AsyncController
     {
         #region Fields
 
@@ -44,9 +46,12 @@
         /// </param>
         public PortfolioController(IYahooFinanceService yahooFinanceService, IGoogleFinanceService googleFinanceService, IFinancialCalculationService financialCalculationService)
         {
-            if (googleFinanceService == null) throw new ArgumentNullException("googleFinanceService");
-            if (yahooFinanceService == null) throw new ArgumentNullException("yahooFinanceService");
-            if (financialCalculationService == null) throw new ArgumentNullException("financialCalculationService");
+            if (googleFinanceService == null)
+                throw new ArgumentNullException("googleFinanceService");
+            if (yahooFinanceService == null)
+                throw new ArgumentNullException("yahooFinanceService");
+            if (financialCalculationService == null)
+                throw new ArgumentNullException("financialCalculationService");
 
             this.yahooFinanceService = yahooFinanceService;
             this.googleFinanceService = googleFinanceService;
@@ -106,11 +111,13 @@
         public JsonResult OptionData(string symbol, DateTime? from, DateTime? to)
         {
             var optionData = yahooFinanceService.GetOptionData(symbol);
-            foreach (var optionDto in optionData)
+
+            Parallel.ForEach(optionData, dto =>
             {
-                optionDto.Volatility = financialCalculationService.Volatility(optionDto, from, to);
-                optionDto.BlackScholes = financialCalculationService.BlackScholes(optionDto);
-            }
+                dto.Volatility = financialCalculationService.Volatility(dto, null, null);
+                dto.BlackScholes = financialCalculationService.BlackScholes(dto);
+            });
+
             return Json(optionData);
         }
 

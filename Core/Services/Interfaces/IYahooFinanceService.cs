@@ -1,12 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="IYahooFinanceService.cs" company="">
-//   
-// </copyright>
-// <summary>
-//   The YahooFinanceService interface.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-namespace Core.Services.Interfaces
+﻿namespace Core.Services.Interfaces
 {
     using DTO;
     using System;

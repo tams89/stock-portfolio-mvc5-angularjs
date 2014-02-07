@@ -1,6 +1,4 @@
-﻿
-
-namespace Core.DTO
+﻿namespace Core.DTO
 {
     using System;
 
@@ -90,11 +88,6 @@ namespace Core.DTO
         /// The Black Scholes price for the option.
         /// </summary>
         public double BlackScholes { get; set; }
-
-        /// <summary>
-        /// The monte-carlo generated Black Scholes price for the option.
-        /// </summary>
-        public double BlackScholesMonteCarlo { get; set; }
 
         /// <summary>
         /// The to string.

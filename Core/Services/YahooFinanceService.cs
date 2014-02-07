@@ -1,4 +1,7 @@
 ﻿
+using System.IO;
+using System.Net;
+
 namespace Core.Services
 {
     using AlgoTrader.YahooApi;
@@ -36,11 +39,26 @@ namespace Core.Services
         {
             if (string.IsNullOrEmpty(symbol))
                 return Enumerable.Empty<MarketDto>();
+            if (from.HasValue && to.HasValue && (to.Value > from.Value))
+                throw new InvalidDataException("'To' date must be after 'From' date.");
             if (!from.HasValue)
                 from = DateTime.Today.AddYears(-2);
             if (!to.HasValue)
                 to = DateTime.Today;
-            var marketData = VolatilityAndMarketData.getMarketData(symbol, from.Value, to.Value).Reverse(); // Old to new.
+
+            var marketData = Enumerable.Empty<VolatilityAndMarketData.MarketData>();
+
+            try
+            {
+                // Old to new.
+                marketData = VolatilityAndMarketData.getMarketData(symbol, from.Value, to.Value).Reverse();
+            }
+            catch (WebException ex)
+            {
+                // means information for symbol not found so allow execution to continue and return empty collection.
+                if (!ex.Message.Contains("404")) throw ex;
+            }
+
             return Mapper.Map<IEnumerable<VolatilityAndMarketData.MarketData>, IEnumerable<MarketDto>>(marketData);
         }
 

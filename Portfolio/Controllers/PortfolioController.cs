@@ -1,4 +1,5 @@
-﻿
+﻿using System.Threading.Tasks;
+
 namespace Portfolio.Controllers
 {
     using Core.Services.Interfaces;
@@ -74,11 +75,7 @@ namespace Portfolio.Controllers
         public JsonResult AutoComplete(string symbol)
         {
             var results = googleFinanceService.SymbolSearch(symbol).ToArray();
-            return results.Any() ? Json(results.Select(x => new
-            {
-                x.Name,
-                x.Symbol
-            })) : null;
+            return results.Any() ? Json(results.Select(x => new { x.Name, x.Symbol })) : null;
         }
 
         /// <summary>
@@ -114,12 +111,12 @@ namespace Portfolio.Controllers
         public JsonResult OptionData(string symbol, DateTime? from, DateTime? to)
         {
             var optionData = yahooFinanceService.GetOptionData(symbol);
-            foreach (var optionDto in optionData)
+
+            Parallel.ForEach(optionData, dto =>
             {
-                optionDto.Volatility = financialCalculationService.Volatility(optionDto, from, to);
-                optionDto.BlackScholes = financialCalculationService.BlackScholes(optionDto);
-                optionDto.BlackScholesMonteCarlo = financialCalculationService.BlackScholesMonteCarlo(optionDto);
-            }
+                dto.Volatility = financialCalculationService.Volatility(dto, null, null);
+                dto.BlackScholes = financialCalculationService.BlackScholes(dto);
+            });
 
             return Json(optionData);
         }

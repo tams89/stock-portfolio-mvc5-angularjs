@@ -1,20 +1,11 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Constants.cs" company="">
-//   
-// </copyright>
-// <summary>
-//   The constants.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-
-using System.Configuration;
+﻿using System.Configuration;
 
 namespace Core
 {
     /// <summary>
     /// The constants.
     /// </summary>
-    public class Constants
+    public static class Constants
     {
         /// <summary>
         /// The google finance json api url request a company name or symbol as argument for q.
@@ -24,6 +15,6 @@ namespace Core
         /// <summary>
         /// AlgoTrader database connection string.
         /// </summary>
-        public static string AlgoTraderDbConnection = ConfigurationManager.ConnectionStrings["AlgoTraderDb"].ConnectionString;
+        public static readonly string AlgoTraderDbConnection = ConfigurationManager.ConnectionStrings["AlgoTraderDb"].ConnectionString;
     }
 }

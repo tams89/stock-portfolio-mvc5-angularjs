@@ -1,16 +1,16 @@
 ﻿using Core;
+using Core.Services;
+using Core.Services.Interfaces;
+using NUnit.Framework;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace Test
+namespace Test.DomainModelTests
 {
-    using Core.Services;
-    using Core.Services.Interfaces;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using System.Linq;
-
     /// <summary>
     /// The yahoo finance service tests.
     /// </summary>
-    [TestClass]
+    [TestFixture]
     public class CoreServiceTests
     {
         #region Fields
@@ -27,7 +27,7 @@ namespace Test
 
         #endregion Fields
 
-        [TestInitialize]
+        [SetUp]
         public void Init()
         {
             AutoMapperConfig.Configure();
@@ -38,7 +38,7 @@ namespace Test
         /// <summary>
         /// The get stock data.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void GetStockData()
         {
             var marketData = yahooFinanceService.GetStockData("MSFT", null, null);
@@ -48,7 +48,7 @@ namespace Test
         /// <summary>
         /// The get option data.
         /// </summary>
-        [TestMethod]
+        [Test]
         public void GetOptionData()
         {
             var optionData = yahooFinanceService.GetOptionData("GOOG");
@@ -58,16 +58,16 @@ namespace Test
         /// <summary>
         /// The get option data with black scholes.
         /// </summary>
-        [TestMethod]
-        public void GetOptionDataWithBlackScholes()
+        [Test]
+        public void Does_BlackScholes_GetCalculated()
         {
             var optionData = yahooFinanceService.GetOptionData("MSFT").ToList();
 
-            foreach (var optionDto in optionData)
+            Parallel.ForEach(optionData, dto =>
             {
-                optionDto.Volatility = financialCalculationService.Volatility(optionDto, null, null);
-                optionDto.BlackScholes = financialCalculationService.BlackScholes(optionDto);
-            }
+                dto.Volatility = financialCalculationService.Volatility(dto, null, null);
+                dto.BlackScholes = financialCalculationService.BlackScholes(dto);
+            });
 
             Assert.IsTrue(optionData.Any(x => x.BlackScholes > 1 && x.Volatility > 0.001));
         }

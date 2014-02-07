@@ -19,16 +19,6 @@
         double BlackScholes(OptionDto option);
 
         /// <summary>
-        /// Calculates the Black-Scholes price of an option using a monte-carlo method.
-        /// High-Low volatility used with a range of one year, should be set in option already.
-        /// </summary>
-        /// <param name="option">
-        /// </param>
-        /// <returns>
-        /// </returns>
-        double BlackScholesMonteCarlo(OptionDto option);
-
-        /// <summary>
         /// The volatility.
         /// </summary>
         /// <param name="option">

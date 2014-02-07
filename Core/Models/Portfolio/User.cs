@@ -1,17 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="User.cs" company="">
-//   
-// </copyright>
-// <summary>
-//   The user.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
 namespace Core.Models.Portfolio
 {

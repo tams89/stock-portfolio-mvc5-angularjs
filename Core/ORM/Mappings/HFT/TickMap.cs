@@ -1,17 +1,7 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="TickMap.cs" company="">
-//   
-// </copyright>
-// <summary>
-//   The tick map.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-
-namespace Core.ORM.Mappings.HFT
+﻿namespace Core.ORM.Mappings.HFT
 {
-    using Core.Models.HFT;
-
     using DapperExtensions.Mapper;
+    using Models.HFT;
 
     /// <summary>
     /// The tick map.

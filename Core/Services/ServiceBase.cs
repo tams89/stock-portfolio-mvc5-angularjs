@@ -1,17 +1,8 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ServiceBase.cs" company="">
-//   
-// </copyright>
-// <summary>
-//   The service base.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-
+﻿using DapperExtensions;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Security.Principal;
-using DapperExtensions;
 
 namespace Core.Services
 {
@@ -25,7 +16,7 @@ namespace Core.Services
         /// <summary>
         ///     Gets the authenticated user.
         /// </summary>
-        public string AuthenticatedUser
+        protected string AuthenticatedUser
         {
             get
             {

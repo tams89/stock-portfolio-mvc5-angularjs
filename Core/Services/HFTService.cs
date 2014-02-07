@@ -1,21 +1,8 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="HFTService.cs" company="">
-//   
-// </copyright>
-// <summary>
-//   The hft service.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-
-using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using Core.Models.HFT;
-using Core.ORM;
+﻿using Core.Models.HFT;
 using Core.Services.Interfaces;
 using DapperExtensions;
+using System.Collections.Generic;
+using System.Data.SqlClient;
 
 namespace Core.Services
 {

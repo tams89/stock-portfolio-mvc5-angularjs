@@ -1,25 +1,9 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="PortfolioService.cs" company="">
-//   
-// </copyright>
-// <summary>
-//   The portfolio service.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-
-using System;
+﻿using Core.Models.Portfolio;
+using Dapper;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-using Core.Models.Portfolio;
-using Core.ORM;
-using Dapper;
-using DapperExtensions;
 
 namespace Core.Services
 {
@@ -43,8 +27,8 @@ namespace Core.Services
                 c.Open();
                 var symbols = c.Query<Security>
                     (
-                        "Portfolio.SelectSymbolsByUser", 
-                        new { UserName = AuthenticatedUser }, 
+                        "Portfolio.SelectSymbolsByUser",
+                        new { UserName = AuthenticatedUser },
                         commandType: CommandType.StoredProcedure
                     );
                 c.Close();

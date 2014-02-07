@@ -51,40 +51,6 @@ namespace Core.Services
         }
 
         /// <summary>
-        /// Calculates the Black-Scholes price of an option using a monte-carlo method.
-        /// High-Low volatility used with a range of one year, should be set in option already.
-        /// </summary>
-        /// <param name="option">
-        /// </param>
-        /// <returns>
-        /// </returns>
-        public double BlackScholesMonteCarlo(OptionDto option)
-        {
-            try
-            {
-                if (Math.Abs(option.Volatility) < double.Epsilon)
-                    return 0.0;
-
-                var optionType = option.Symbol[10] == 'C' ? AlgoTrader.BlackScholesMonteCarlo.optionType.Call : AlgoTrader.BlackScholesMonteCarlo.optionType.Put;
-                var timeToExpiryInYears = float.Parse(option.DaysToExpiry) / 365;
-                var blackScholesPrice = AlgoTrader.BlackScholesMonteCarlo.europeanOptionPriceBlackScholes(
-                    optionType,
-                    (double)option.StrikePrice,
-                    (double)option.LastPrice,
-                    0.25, // U.S. Govt. Treasury Interest Rate circa.12/2013.
-                    option.Volatility,
-                    timeToExpiryInYears);
-
-                return Math.Round(blackScholesPrice, 2);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-
-        /// <summary>
         /// The volatility.
         /// </summary>
         /// <param name="option">

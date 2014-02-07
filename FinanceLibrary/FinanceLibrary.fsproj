@@ -66,10 +66,8 @@
     <Compile Include="RiskFreeInterestRate.fs" />
     <Compile Include="YahooApiEngineOptions.fs" />
     <Compile Include="YahooApiEngineStock.fs" />
-    <Compile Include="BlackScholesMonteCarlo.fs" />
     <Compile Include="AmericanOptionBinomial.fs" />
     <None Include="ReutersNewsFeed.fsx" />
-    <Compile Include="Program.fs" />
     <Content Include="yqlstock.xml" />
     <None Include="packages.config" />
     <None Include="Samples\MathNet.Numerics.FSharp\Vectors.fsx" />

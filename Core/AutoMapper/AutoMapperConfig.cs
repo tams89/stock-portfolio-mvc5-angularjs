@@ -2,12 +2,12 @@
 {
     using AlgoTrader.YahooApi;
     using AutoMapper;
-    using Core.DTO;
+    using DTO;
 
     /// <summary>
     /// The auto mapper config.
     /// </summary>
-    public class AutoMapperConfig
+    public static class AutoMapperConfig
     {
         /// <summary>
         /// The configure.
@@ -16,7 +16,6 @@
         {
             Mapper.CreateMap<Options.OptionsData, OptionDto>()
                 .ForMember(x => x.BlackScholes, r => r.Ignore())
-                .ForMember(x => x.BlackScholesMonteCarlo, r => r.Ignore())
                 .ForMember(x => x.Volatility, r => r.Ignore());
 
             Mapper.CreateMap<VolatilityAndMarketData.MarketData, MarketDto>();

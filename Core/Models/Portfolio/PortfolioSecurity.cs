@@ -1,17 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="PortfolioSecurity.cs" company="">
-//   
-// </copyright>
-// <summary>
-//   The portfolio security.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
 namespace Core.Models.Portfolio
 {
@@ -25,7 +12,7 @@ namespace Core.Models.Portfolio
         /// </summary>
         public PortfolioSecurity()
         {
-            
+
         }
 
         /// <summary>

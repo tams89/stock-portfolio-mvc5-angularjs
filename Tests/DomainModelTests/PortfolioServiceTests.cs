@@ -17,13 +17,13 @@
 //    /// <summary>
 //    /// The portfolio tests.
 //    /// </summary>
-//    [TestClass]
+//    [TestFixture]
 //    public class PortfolioServiceTests
 //    {
 //        /// <summary>
 //        /// The get symbols.
 //        /// </summary>
-//        [TestMethod]
+//        [Test]
 //        public void GetSymbols()
 //        {
 //            var service = new PortfolioService<Security>().SecurityList();

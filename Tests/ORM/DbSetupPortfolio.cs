@@ -20,13 +20,13 @@
 //    /// <summary>
 //    /// The db setup portfolio.
 //    /// </summary>
-//    [TestClass]
+//    [TestFixture]
 //    public class DbSetupPortfolio
 //    {
 //        /// <summary>
 //        /// The setup db.
 //        /// </summary>
-//        [TestInitialize]
+//        [SetUp]
 //        public void SetupDb()
 //        {
 //            // var user = new User(Guid.NewGuid(), WindowsIdentity.GetCurrent().Name);
@@ -67,7 +67,7 @@
 //        /// <summary>
 //        /// The check user data.
 //        /// </summary>
-//        [TestMethod]
+//        [Test]
 //        public void CheckUserData()
 //        {
 //            var x = new PortfolioService<User>().Get();
@@ -77,7 +77,7 @@
 //        /// <summary>
 //        /// The check portfolio.
 //        /// </summary>
-//        [TestMethod]
+//        [Test]
 //        public void CheckPortfolio()
 //        {
 //            var x = new PortfolioService<Portfolio>().Get();
@@ -87,7 +87,7 @@
 //        /// <summary>
 //        /// The check security data.
 //        /// </summary>
-//        [TestMethod]
+//        [Test]
 //        public void CheckSecurityData()
 //        {
 //            var x = new PortfolioService<Security>().Get();
@@ -97,7 +97,7 @@
 //        /// <summary>
 //        /// The check portfolio security data.
 //        /// </summary>
-//        [TestMethod]
+//        [Test]
 //        public void CheckPortfolioSecurityData()
 //        {
 //            var x = new PortfolioService<PortfolioSecurity>().Get();

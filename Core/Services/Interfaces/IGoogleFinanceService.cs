@@ -1,15 +1,5 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="IGoogleFinanceService.cs" company="">
-//   
-// </copyright>
-// <summary>
-//   Interface to google finance service.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-
-
+﻿using Core.Models.Site;
 using System.Collections.Generic;
-using Core.Models.Site;
 
 namespace Core.Services.Interfaces
 {

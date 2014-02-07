@@ -1,20 +1,11 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Extensions.cs" company="">
-//   
-// </copyright>
-// <summary>
-//   The extensions.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-
-namespace Portfolio
+﻿namespace Portfolio
 {
     using System.Web.Helpers;
 
     /// <summary>
     /// The extensions.
     /// </summary>
-    public class Extensions
+    public static class Extensions
     {
         /// <summary>
         /// The get anti forgery token.

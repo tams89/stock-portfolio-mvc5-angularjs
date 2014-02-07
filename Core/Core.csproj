@@ -82,6 +82,45 @@
     <Compile Include="DTO\DtoBase.cs" />
     <Compile Include="DTO\MarketDto.cs" />
     <Compile Include="DTO\OptionDto.cs" />
+    <Compile Include="EntityFramework\AlgotradingDataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AlgotradingDataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\AlgotradingDataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AlgotradingDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\AlgotradingDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AlgotradingDataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\HistoricalStock.cs">
+      <DependentUpon>AlgotradingDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Portfolio.cs">
+      <DependentUpon>AlgotradingDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Portfolio_Security.cs">
+      <DependentUpon>AlgotradingDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Security.cs">
+      <DependentUpon>AlgotradingDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\SelectSymbolsByUser_Result.cs">
+      <DependentUpon>AlgotradingDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\sysdiagram.cs">
+      <DependentUpon>AlgotradingDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tick.cs">
+      <DependentUpon>AlgotradingDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\User.cs">
+      <DependentUpon>AlgotradingDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Factory\DtoFactory.cs" />
     <Compile Include="Models\Portfolio\Security.cs" />
     <Compile Include="Models\Portfolio\PortfolioSecurity.cs" />
@@ -111,6 +150,24 @@
     <Compile Include="Services\YahooFinanceService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EntityDeploy Include="EntityFramework\AlgotradingDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AlgotradingDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App.Config" />
+    <None Include="EntityFramework\AlgotradingDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AlgotradingDataModel.edmx</DependentUpon>
+      <LastGenOutput>AlgotradingDataModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="EntityFramework\AlgotradingDataModel.edmx.diagram">
+      <DependentUpon>AlgotradingDataModel.edmx</DependentUpon>
+    </None>
+    <None Include="EntityFramework\AlgotradingDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AlgotradingDataModel.edmx</DependentUpon>
+      <LastGenOutput>AlgotradingDataModel.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

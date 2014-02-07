@@ -2,7 +2,10 @@
 using DapperExtensions;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Linq.Expressions;
 
 namespace Core.Repository.Dapper
 {
@@ -14,7 +17,7 @@ namespace Core.Repository.Dapper
         /// <summary>
         /// Database connections.
         /// </summary>
-        public System.Data.IDbConnection Connection
+        public IDbConnection Connection
         {
             get { return new SqlConnection(Constants.AlgoTradingDbConnectionStr); }
         }
@@ -49,6 +52,26 @@ namespace Core.Repository.Dapper
             {
                 cn.Open();
                 ticks = cn.GetList<Tick>();
+            }
+
+            return ticks;
+        }
+
+
+        // TODO: Memory profile with where attached to query or seperate to initial query.
+        /// <summary>
+        /// Get all tick data by provided predicate.
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
+        public IEnumerable<Tick> Find(Expression<Func<Tick, bool>> predicate)
+        {
+            IEnumerable<Tick> ticks;
+
+            using (var cn = Connection)
+            {
+                cn.Open();
+                ticks = cn.GetList<Tick>().Where(predicate.Compile());
             }
 
             return ticks;

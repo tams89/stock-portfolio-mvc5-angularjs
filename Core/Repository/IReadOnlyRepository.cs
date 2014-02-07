@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq.Expressions;
 
 namespace Core.Repository
 {
@@ -21,6 +22,13 @@ namespace Core.Repository
         /// <param name="id"></param>
         /// <returns></returns>
         T FindById(Guid id);
+
+        /// <summary>
+        /// Find by predicated member.
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
+        IEnumerable<T> Find(Expression<Func<T, bool>> predicate);
 
         /// <summary>
         /// Select * for particular entity.

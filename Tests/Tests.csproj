@@ -46,6 +46,13 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\DapperExtensions.1.4.3\lib\net40\DapperExtensions.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -58,6 +65,7 @@
       <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web" />
@@ -99,13 +107,13 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="Core\HFTServiceTests.cs" />
     <Compile Include="PortfolioApp\BundleTests.cs" />
     <Compile Include="PortfolioApp\ControllerTests.cs" />
     <Compile Include="ORM\DbSetupPortfolio.cs" />
     <Compile Include="ORM\HFTTests.cs" />
-    <Compile Include="DomainModelTests\PortfolioServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DomainModelTests\CoreServiceTests.cs" />
+    <Compile Include="Core\CoreServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">

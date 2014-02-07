@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Test.DomainModelTests
+namespace Test.Core
 {
     /// <summary>
     /// The yahoo finance service tests.

@@ -49,7 +49,6 @@ namespace Test.PortfolioApp
             yahooFinanceService = new YahooFinanceService();
             financialCalculationService = new FinancialCalculationService();
             googleFinanceService = new GoogleFinanceService(new WebRequestService());
-
             portfolioController = new PortfolioController(yahooFinanceService, googleFinanceService, financialCalculationService);
         }
 

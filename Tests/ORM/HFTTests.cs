@@ -11,6 +11,13 @@ namespace Test.ORM
     [TestFixture]
     public class HFTTests
     {
+        [Test]
+        public void ConnectionStringPresent()
+        {
+            // Check that the connection string is available.
+            Assert.IsTrue(Core.ORM.Constants.AlgoTradingDbConnectionStr != null);
+        }
+
         /// <summary>
         /// Test to see if all tick data can be retrieved from db.
         /// </summary>

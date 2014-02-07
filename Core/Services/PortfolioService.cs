@@ -22,7 +22,7 @@ namespace Core.Services
         /// </returns>
         public IEnumerable<Security> SecurityList()
         {
-            using (var c = new SqlConnection(Constants.AlgoTraderDbConnection))
+            using (var c = new SqlConnection(Constants.AlgoTradingDbConnectionStr))
             {
                 c.Open();
                 var symbols = c.Query<Security>

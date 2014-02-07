@@ -81,7 +81,6 @@ namespace Test.PortfolioApp
         /// <summary>
         /// The option data null test.
         /// </summary>
-        [TestCase("MSFT", "2057/01/01", "2078/01/01")]
         [TestCase("", "2000/01/01", "1990/01/01")]
         public void PortfolioController_DoesntGetOptionData_FromService(string symbol, string from, string to)
         {

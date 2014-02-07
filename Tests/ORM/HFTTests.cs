@@ -1,7 +1,5 @@
-﻿using Core.Models.HFT;
-using Core.Services;
+﻿using Core;
 using NUnit.Framework;
-using System.Linq;
 
 namespace Test.ORM
 {
@@ -15,17 +13,7 @@ namespace Test.ORM
         public void ConnectionStringPresent()
         {
             // Check that the connection string is available.
-            Assert.IsTrue(Core.ORM.Constants.AlgoTradingDbConnectionStr != null);
-        }
-
-        /// <summary>
-        /// Test to see if all tick data can be retrieved from db.
-        /// </summary>
-        [Test]
-        public void GetTickTest()
-        {
-            var tick = new HFTService<Tick>().Get();
-            Assert.IsNotNull(tick.Count() > 10);
+            Assert.IsTrue(Constants.AlgoTradingDbConnectionStr != null);
         }
     }
 }

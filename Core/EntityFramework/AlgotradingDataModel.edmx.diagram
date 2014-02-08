@@ -6,8 +6,6 @@
     <edmx:Diagrams>
       <Diagram DiagramId="9be916722f724eeb89de660b3d5af403" Name="Diagram1">
         <EntityTypeShape EntityType="AlgorithmicTradingModel.sysdiagram" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AlgorithmicTradingModel.Tick" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AlgorithmicTradingModel.HistoricalStock" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="AlgorithmicTradingModel.Portfolio" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="AlgorithmicTradingModel.Portfolio_Security" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="AlgorithmicTradingModel.Security" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />

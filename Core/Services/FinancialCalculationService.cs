@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using Core.Exceptions;
+using System.Net;
 
 namespace Core.Services
 {
@@ -68,14 +69,7 @@ namespace Core.Services
         {
             try
             {
-                var companyTicker = string.Empty;
-                for (var i = 0; i <= 4; i++)
-                {
-                    int res;
-                    var isNum = int.TryParse(option.Symbol[i].ToString(), out res);
-                    if (!isNum)
-                        companyTicker += option.Symbol[i];
-                }
+                var companyTicker = CompanyTicker(option);
 
                 // Annual volatilty by default.
                 fromDate = fromDate.HasValue ? fromDate.Value : DateTime.Today.AddYears(-1);
@@ -98,13 +92,32 @@ namespace Core.Services
             }
             catch (WebException ex)
             {
-                // Log http exception and carry on.
-                return 0.0;
+                // 404 - symbol not recognised.
+                throw new InvalidSymbolException();
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+        }
+
+        /// <summary>
+        /// Extracts the ticker from an option symbol.
+        /// </summary>
+        /// <param name="option"></param>
+        /// <returns></returns>
+        private static string CompanyTicker(OptionDto option)
+        {
+            var companyTicker = string.Empty;
+            for (var i = 0; i <= 4; i++)
+            {
+                int res;
+                var isNum = int.TryParse(option.Symbol[i].ToString(), out res);
+                if (!isNum)
+                    companyTicker += option.Symbol[i];
+            }
+
+            return companyTicker;
         }
     }
 }

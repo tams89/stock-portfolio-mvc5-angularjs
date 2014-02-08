@@ -97,9 +97,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AlgotradingDataModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="EntityFramework\HistoricalStock.cs">
-      <DependentUpon>AlgotradingDataModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="EntityFramework\Portfolio.cs">
       <DependentUpon>AlgotradingDataModel.tt</DependentUpon>
     </Compile>
@@ -115,12 +112,10 @@
     <Compile Include="EntityFramework\sysdiagram.cs">
       <DependentUpon>AlgotradingDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="EntityFramework\Tick.cs">
-      <DependentUpon>AlgotradingDataModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="EntityFramework\User.cs">
       <DependentUpon>AlgotradingDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Exceptions\Exceptions.cs" />
     <Compile Include="Factory\DtoFactory.cs" />
     <Compile Include="Models\Portfolio\Security.cs" />
     <Compile Include="Models\Portfolio\PortfolioSecurity.cs" />
@@ -145,7 +140,6 @@
     <Compile Include="Services\Interfaces\IYahooFinanceService.cs" />
     <Compile Include="Services\Interfaces\IWebRequestService.cs" />
     <Compile Include="Services\PortfolioService.cs" />
-    <Compile Include="Services\Base\ServiceBase.cs" />
     <Compile Include="Services\WebRequestService.cs" />
     <Compile Include="Services\YahooFinanceService.cs" />
   </ItemGroup>

@@ -32,7 +32,7 @@
             bundles.Add(new StyleBundle("~/Content/siteCss").Include("~/Content/Styles/Site.css"));
 
             // Required libraries
-            bundles.Add(new ScriptBundle("~/bundles/highStock").IncludeDirectory("~/Scripts/HighStock", "*.min.js", true));
+            bundles.Add(new ScriptBundle("~/bundles/highStock").IncludeDirectory("~/Scripts/HighStock", "*.js", true));
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                 "~/Scripts/Angular/angular.js",
@@ -50,26 +50,19 @@
             bundles.Add(new ScriptBundle("~/bundles/underScore").Include("~/Scripts/UnderScore/underscore-min.js"));
 
             // Created SPA JS Bundles
-            //bundles.Add(new ScriptBundle("~/bundles/angularApp")
-            //    .IncludeDirectory("~/Scripts/_App", "AlgoTrader.js")
-            //    .IncludeDirectory("~/Scripts/_App/Modules", "*.js")
-            //    .IncludeDirectory("~/Scripts/_App/Directives", "*.js")
-            //    .IncludeDirectory("~/Scripts/_App/Services", "*.js")
-            //    .IncludeDirectory("~/Scripts/_App/Controllers", "*.js"));
+            bundles.Add(new ScriptBundle("~/bundles/angularApp")
+                .IncludeDirectory("~/Scripts/_App", "AlgoTrader.js")
+                .IncludeDirectory("~/Scripts/_App/Modules", "*.js")
+                .IncludeDirectory("~/Scripts/_App/Directives", "*.js")
+                .IncludeDirectory("~/Scripts/_App/Services", "*.js")
+                .IncludeDirectory("~/Scripts/_App/Controllers", "*.js"));
 
-            //bundles.Add(new ScriptBundle("~/bundles/angularApp").Include("~/Scripts/_App/AlgoTraderMerged.js"));
-            bundles.Add(new ScriptBundle("~/bundles/angularApp").Include("~/Scripts/_App/AlgoTraderMergedNgMin.min.js"));
-
-
-            //bundles.Add(new ScriptBundle("~/bundles/NoAuth")
-            //    .Include("~/Scripts/_App/NoAuth.min.js")
-            //    .Include("~/Scripts/_App/Services/authenticationService.min.js")
-            //    .Include("~/Scripts/_App/Controllers/NavigationController.min.js")
-            //    .Include("~/Scripts/_App/Controllers/LoginController.min.js")
-            //    .Include("~/Scripts/_App/Controllers/RegistrationController.min.js"));
-
-            //bundles.Add(new ScriptBundle("~/bundles/NoAuth").Include("~/Scripts/_App/NoAuthMerged.js"));
-            bundles.Add(new ScriptBundle("~/bundles/NoAuth").Include("~/Scripts/_App/NoAuthNgMerged.min.js"));
+            bundles.Add(new ScriptBundle("~/bundles/NoAuth")
+                .Include("~/Scripts/_App/NoAuth.min.js")
+                .Include("~/Scripts/_App/Services/authenticationService.min.js")
+                .Include("~/Scripts/_App/Controllers/NavigationController.min.js")
+                .Include("~/Scripts/_App/Controllers/LoginController.min.js")
+                .Include("~/Scripts/_App/Controllers/RegistrationController.min.js"));
 
             BundleTable.EnableOptimizations = false;
         }

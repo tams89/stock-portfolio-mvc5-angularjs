@@ -21,7 +21,7 @@
     <input id="antiForgeryToken" ng-model="antiForgeryToken" type="hidden" ng-init='antiForgeryToken="@GetAntiForgeryToken()"' />
     <div>
         <label>User Name:</label>
-        <input type="text" name="UserName" ng-model="registerModel.UserName" class="form-control" ng-minlength="5" ng-maxlength="20" required />
+        <input type="text" name="UserName" ng-model="registerModel.UserName" class="form-control smallWidth" ng-minlength="5" ng-maxlength="20" required autofocus/>
         <div class="field-validation-error" ng-show="registerForm.UserName.$dirty && registerForm.UserName.$invalid">
             <small class="field-validation-error" ng-show="registerForm.UserName.$error.required">
                 Your name is required.
@@ -36,7 +36,7 @@
     </div>
     <div>
         <label>Password</label>
-        <input type="password" name="Password" ng-model="registerModel.Password" class="form-control" ng-minlength="8" required />
+        <input type="password" name="Password" ng-model="registerModel.Password" class="form-control smallWidth" ng-minlength="8" required />
         <div class="field-validation-error" ng-show="registerForm.Password.$dirty && registerForm.Password.$invalid">
             <small class="field-validation-error" ng-show="registerForm.Password.$error.required">Password is required.</small>
             <small class="field-validation-error" ng-show="registerForm.Password.$error.minlength">Password must be at least 8 chars.</small>
@@ -44,7 +44,7 @@
     </div>
     <div>
         <label>Confirm Password</label>
-        <input type="password" name="ConfirmPassword" ng-model="registerModel.ConfirmPassword" class="form-control" ng-minlength="8" required />
+        <input type="password" name="ConfirmPassword" ng-model="registerModel.ConfirmPassword" class="form-control smallWidth" ng-minlength="8" required />
         <div class="field-validation-error" ng-show="registerForm.ConfirmPassword.$dirty && registerForm.ConfirmPassword.$invalid">
             <small class="field-validation-error" ng-show="registerForm.ConfirmPassword.$error.required">Password is required.</small>
             <small class="field-validation-error" ng-show="registerForm.ConfirmPassword.$error.minlength">Password must be at least 8 chars.</small>

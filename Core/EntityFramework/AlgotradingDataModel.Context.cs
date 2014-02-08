@@ -28,8 +28,6 @@ namespace Core.EntityFramework
         }
     
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<Tick> Ticks { get; set; }
-        public virtual DbSet<HistoricalStock> HistoricalStocks { get; set; }
         public virtual DbSet<Portfolio> Portfolios { get; set; }
         public virtual DbSet<Portfolio_Security> Portfolio_Security { get; set; }
         public virtual DbSet<Security> Securities { get; set; }

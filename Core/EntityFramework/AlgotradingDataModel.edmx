@@ -48,34 +48,6 @@ warning 6013: The table/view 'AlgorithmicTrading.HFT.OptionTick' does not have a
           <Property Name="UnderlyingLastAskPrice" Type="decimal" Precision="18" Scale="3" />
           <Property Name="UnderlyingLastAskSize" Type="bigint" />
         </EntityType>-->
-        <EntityType Name="Tick">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="Symbol" Type="char" MaxLength="10" />
-          <Property Name="Date" Type="datetime" Nullable="false" />
-          <Property Name="Time" Type="time" Precision="7" Nullable="false" />
-          <Property Name="Open" Type="real" Nullable="false" />
-          <Property Name="High" Type="real" Nullable="false" />
-          <Property Name="Low" Type="real" Nullable="false" />
-          <Property Name="Close" Type="real" Nullable="false" />
-          <Property Name="Volume" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="HistoricalStock">
-          <Key>
-            <PropertyRef Name="HistoricalStockId" />
-          </Key>
-          <Property Name="HistoricalStockId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="Symbol" Type="nchar" MaxLength="10" Nullable="false" />
-          <Property Name="Exchange" Type="nchar" MaxLength="10" Nullable="false" />
-          <Property Name="Date" Type="date" Nullable="false" />
-          <Property Name="Open" Type="decimal" Precision="18" Scale="4" />
-          <Property Name="High" Type="decimal" Precision="18" Scale="4" />
-          <Property Name="Low" Type="decimal" Precision="18" Scale="4" />
-          <Property Name="Close" Type="decimal" Precision="18" Scale="4" Nullable="false" />
-          <Property Name="Volume" Type="decimal" Precision="18" Scale="4" Nullable="false" />
-        </EntityType>
         <EntityType Name="Portfolio">
           <Key>
             <PropertyRef Name="PortfolioId" />
@@ -146,8 +118,6 @@ warning 6013: The table/view 'AlgorithmicTrading.HFT.OptionTick' does not have a
         </Function>
         <EntityContainer Name="AlgorithmicTradingModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Tick" EntityType="Self.Tick" Schema="HFT" store:Type="Tables" />
-          <EntitySet Name="HistoricalStock" EntityType="Self.HistoricalStock" Schema="InterDay" store:Type="Tables" />
           <EntitySet Name="Portfolio" EntityType="Self.Portfolio" Schema="Portfolio" store:Type="Tables" />
           <EntitySet Name="Portfolio_Security" EntityType="Self.Portfolio_Security" Schema="Portfolio" store:Type="Tables" />
           <EntitySet Name="Security" EntityType="Self.Security" Schema="Portfolio" store:Type="Tables" />
@@ -179,34 +149,6 @@ warning 6013: The table/view 'AlgorithmicTrading.HFT.OptionTick' does not have a
           <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
-        <EntityType Name="Tick">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Guid" Nullable="false" />
-          <Property Name="Symbol" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Time" Type="Time" Nullable="false" Precision="7" />
-          <Property Name="Open" Type="Single" Nullable="false" />
-          <Property Name="High" Type="Single" Nullable="false" />
-          <Property Name="Low" Type="Single" Nullable="false" />
-          <Property Name="Close" Type="Single" Nullable="false" />
-          <Property Name="Volume" Type="Int32" Nullable="false" />
-        </EntityType>
-        <EntityType Name="HistoricalStock">
-          <Key>
-            <PropertyRef Name="HistoricalStockId" />
-          </Key>
-          <Property Name="HistoricalStockId" Type="Guid" Nullable="false" />
-          <Property Name="Symbol" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Exchange" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Open" Type="Decimal" Precision="18" Scale="4" />
-          <Property Name="High" Type="Decimal" Precision="18" Scale="4" />
-          <Property Name="Low" Type="Decimal" Precision="18" Scale="4" />
-          <Property Name="Close" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
-          <Property Name="Volume" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
         </EntityType>
         <EntityType Name="Portfolio">
           <Key>
@@ -281,8 +223,6 @@ warning 6013: The table/view 'AlgorithmicTrading.HFT.OptionTick' does not have a
         </Association>
         <EntityContainer Name="AlgorithmicTradingEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-          <EntitySet Name="Ticks" EntityType="Self.Tick" />
-          <EntitySet Name="HistoricalStocks" EntityType="Self.HistoricalStock" />
           <EntitySet Name="Portfolios" EntityType="Self.Portfolio" />
           <EntitySet Name="Portfolio_Security" EntityType="Self.Portfolio_Security" />
           <EntitySet Name="Securities" EntityType="Self.Security" />
@@ -321,36 +261,6 @@ warning 6013: The table/view 'AlgorithmicTrading.HFT.OptionTick' does not have a
                 <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
                 <ScalarProperty Name="version" ColumnName="version" />
                 <ScalarProperty Name="definition" ColumnName="definition" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Ticks">
-            <EntityTypeMapping TypeName="AlgorithmicTradingModel.Tick">
-              <MappingFragment StoreEntitySet="Tick">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Symbol" ColumnName="Symbol" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="Time" ColumnName="Time" />
-                <ScalarProperty Name="Open" ColumnName="Open" />
-                <ScalarProperty Name="High" ColumnName="High" />
-                <ScalarProperty Name="Low" ColumnName="Low" />
-                <ScalarProperty Name="Close" ColumnName="Close" />
-                <ScalarProperty Name="Volume" ColumnName="Volume" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="HistoricalStocks">
-            <EntityTypeMapping TypeName="AlgorithmicTradingModel.HistoricalStock">
-              <MappingFragment StoreEntitySet="HistoricalStock">
-                <ScalarProperty Name="HistoricalStockId" ColumnName="HistoricalStockId" />
-                <ScalarProperty Name="Symbol" ColumnName="Symbol" />
-                <ScalarProperty Name="Exchange" ColumnName="Exchange" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="Open" ColumnName="Open" />
-                <ScalarProperty Name="High" ColumnName="High" />
-                <ScalarProperty Name="Low" ColumnName="Low" />
-                <ScalarProperty Name="Close" ColumnName="Close" />
-                <ScalarProperty Name="Volume" ColumnName="Volume" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -413,6 +323,7 @@ warning 6013: The table/view 'AlgorithmicTrading.HFT.OptionTick' does not have a
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="DefaultDatabaseSchema" Value="Portfolio" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->

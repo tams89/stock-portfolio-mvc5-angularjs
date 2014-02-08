@@ -40,7 +40,7 @@ namespace Core.Services
                     (double)option.LastPrice,
                     (double)option.StrikePrice,
                     timeToExpiryInYears,
-                    0.25, // U.S. Govt. Treasury Interest Rate circa.12/2013.
+                    Constants.FedIntRate, // U.S. Govt. Treasury Interest Rate circa.12/2013.
                     option.Volatility);
 
                 return Math.Round(blackScholesPrice, 2);

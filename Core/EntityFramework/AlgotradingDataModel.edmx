@@ -113,9 +113,6 @@ warning 6013: The table/view 'AlgorithmicTrading.HFT.OptionTick' does not have a
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="SelectSymbolsByUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Portfolio">
-          <Parameter Name="UserName" Type="nvarchar(max)" Mode="In" />
-        </Function>
         <EntityContainer Name="AlgorithmicTradingModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Portfolio" EntityType="Self.Portfolio" Schema="Portfolio" store:Type="Tables" />
@@ -297,14 +294,6 @@ warning 6013: The table/view 'AlgorithmicTrading.HFT.OptionTick' does not have a
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="SelectSymbolsByUser" FunctionName="AlgorithmicTradingModel.Store.SelectSymbolsByUser">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="AlgorithmicTradingModel.SelectSymbolsByUser_Result">
-                <ScalarProperty Name="SecurityId" ColumnName="SecurityId" />
-                <ScalarProperty Name="Symbol" ColumnName="Symbol" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

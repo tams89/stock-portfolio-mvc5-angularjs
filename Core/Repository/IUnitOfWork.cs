@@ -1,4 +1,4 @@
-﻿using Core.Models.HFT;
+﻿using Core.EntityFramework;
 using System;
 
 namespace Core.Repository
@@ -11,7 +11,7 @@ namespace Core.Repository
         /// <summary>
         /// Repository containing Tick data.
         /// </summary>
-        IRepository<Tick> TickRepository { get; }
+        IRepository<Portfolio> PortfolioRepository { get; }
 
         /// <summary>
         /// Save any changes.

@@ -1,4 +1,6 @@
-﻿namespace Core.Factory
+﻿using Core.DTO;
+
+namespace Core.Factory
 {
     using System.Collections.Generic;
 
@@ -7,7 +9,7 @@
     /// </summary>
     /// <typeparam name="T">
     /// </typeparam>
-    public class DtoFactory<T> where T : class, new()
+    public static class DtoFactory<T> where T : DtoBase, new()
     {
         /// <summary>
         /// The create.

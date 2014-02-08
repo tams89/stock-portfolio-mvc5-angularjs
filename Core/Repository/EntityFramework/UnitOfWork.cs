@@ -1,4 +1,4 @@
-﻿using Core.Models.HFT;
+﻿using Core.EntityFramework;
 using System.Data.Entity;
 
 namespace Core.Repository.EntityFramework
@@ -8,27 +8,27 @@ namespace Core.Repository.EntityFramework
     /// </summary>
     public class UnitOfWork : DbContext, IUnitOfWork
     {
-        private readonly Repository<Tick> tickRepository;
+        private readonly Repository<Portfolio> portfolioRepository;
 
         /// <summary>
         /// Tick database collection.
         /// </summary>
-        public DbSet<Tick> Ticks { get; set; }
+        private DbSet<Portfolio> Portfolios { get; set; }
 
         /// <summary>
         /// Constructs a unit of work.
         /// </summary>
         public UnitOfWork()
         {
-            tickRepository = new Repository<Tick>(Ticks);
+            portfolioRepository = new Repository<Portfolio>(Portfolios);
         }
 
         /// <summary>
         /// The Tick Repository.
         /// </summary>
-        public IRepository<Tick> TickRepository
+        public IRepository<Portfolio> PortfolioRepository
         {
-            get { return tickRepository; }
+            get { return portfolioRepository; }
         }
 
         /// <summary>

@@ -1,4 +1,5 @@
-﻿namespace Core
+﻿
+namespace Core
 {
     /// <summary>
     /// The constants.
@@ -14,5 +15,10 @@
         /// The google finance json api url request a company name or symbol as argument for q.
         /// </summary>
         internal const string GoogleFinanceJsonApiUrl = "http://www.google.com/finance/match?matchtype=matchall&ei=zhbaUIDlCKSWiAL8zwE&q=";
+
+        /// <summary>
+        /// U.S. Treasury Interest Rate (circa Feb 2014).
+        /// </summary>
+        internal const double FedIntRate = 0.25;
     }
 }

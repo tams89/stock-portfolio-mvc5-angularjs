@@ -38,5 +38,14 @@ namespace Core.Services
 
             return tickData;
         }
+
+        /// <summary>
+        /// Retrieves all ticks in DB.
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<Tick> AllTicks()
+        {
+            return tickRepository.GetAll();
+        }
     }
 }

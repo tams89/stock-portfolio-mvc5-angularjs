@@ -31,5 +31,21 @@ namespace Test.Core
             var data = hftService.BySymbol(symbol);
             Assert.IsTrue(data.Any() == expected);
         }
+
+        [Test]
+        public void GetAllTicks()
+        {
+            var data = hftService.AllTicks();
+            Assert.IsNotEmpty(data);
+        }
+
+        [Test]
+        public void TickById()
+        {
+            var tickId = hftService.BySymbol("IBM").First().Id;
+            var byId = tickRepository.FindById(tickId);
+
+            Assert.IsNotNull(byId);
+        }
     }
 }

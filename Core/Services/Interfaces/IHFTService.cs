@@ -18,5 +18,11 @@ namespace Core.Services.Interfaces
         /// Collection of tick data.
         /// </returns>
         IEnumerable<Tick> BySymbol(string symbol);
+
+        /// <summary>
+        /// ALl tick data from DB.
+        /// </summary>
+        /// <returns></returns>
+        IEnumerable<Tick> AllTicks();
     }
 }

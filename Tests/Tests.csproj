@@ -112,6 +112,7 @@
     <Compile Include="Core\EntityFrameworkTests.cs" />
     <Compile Include="Core\FinancialCalculationServiceTests.cs" />
     <Compile Include="Core\HFTServiceTests.cs" />
+    <Compile Include="FinanceLibrary\AmericanOptions.cs" />
     <Compile Include="PortfolioApp\BundleTests.cs" />
     <Compile Include="PortfolioApp\ControllerTests.cs" />
     <Compile Include="ORM\DbSetupPortfolio.cs" />
@@ -137,9 +138,7 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="FinanceLibrary\" />
-  </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

@@ -19,6 +19,6 @@ namespace Core
         /// <summary>
         /// U.S. Treasury Interest Rate (circa Feb 2014).
         /// </summary>
-        internal const double FedIntRate = 0.25;
+        public const double FedIntRate = 2.99 / 100;
     }
 }

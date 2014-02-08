@@ -1,12 +1,12 @@
 ﻿module AlgoTrader.AmericanOptionBinomial
 
-/// T, expiration time, years
-/// S, stock price
-/// K, strike price
-/// n, height of the binomial tree
-/// r, risk free rate
-/// sigma, olatility
-/// q, dividend yield
+/// T, expiration time, years.
+/// S, stock price.
+/// K, strike price.
+/// n, height of the binomial tree.
+/// r, risk free rate.
+/// sigma, volatility.
+/// q, dividend yield.
  let americanPut T S K n r sigma q = 
   let deltaT = T / float n
   let up = exp(sigma * sqrt(deltaT))

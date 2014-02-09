@@ -167,8 +167,8 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\MunqConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
@@ -307,7 +307,6 @@
     <Content Include="Scripts\HighStock\highstock.js" />
     <Content Include="Scripts\HighStock\Modules\exporting.js" />
     <Content Include="Scripts\HighStock\Themes\grid.js" />
-    <Content Include="App_Code\Helpers.cshtml" />
     <None Include="Properties\PublishProfiles\algotrader.pubxml" />
     <Content Include="Scripts\_App\NoAuth.min.js.map">
       <DependentUpon>NoAuth.js</DependentUpon>

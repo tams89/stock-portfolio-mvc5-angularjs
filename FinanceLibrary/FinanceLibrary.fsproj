@@ -63,7 +63,6 @@
     <None Include="App.config" />
     <Compile Include="BlackScholes.fs" />
     <Compile Include="VolatilityAndMarketData.fs" />
-    <Compile Include="RiskFreeInterestRate.fs" />
     <Compile Include="YahooApiEngineOptions.fs" />
     <Compile Include="YahooApiEngineStock.fs" />
     <Compile Include="AmericanOptionBinomial.fs" />

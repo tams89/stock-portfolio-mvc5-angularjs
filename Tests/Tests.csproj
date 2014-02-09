@@ -114,7 +114,7 @@
     <Compile Include="Core\FinancialCalculationServiceTests.cs" />
     <Compile Include="Core\HFTServiceTests.cs" />
     <Compile Include="FinanceLibrary\FinanceCalcTests.cs" />
-    <Compile Include="PortfolioApp\BundleTests.cs" />
+    <Compile Include="PortfolioApp\StartUpTests.cs" />
     <Compile Include="PortfolioApp\ControllerTests.cs" />
     <Compile Include="ORM\DbSetupPortfolio.cs" />
     <Compile Include="ORM\HFTTests.cs" />

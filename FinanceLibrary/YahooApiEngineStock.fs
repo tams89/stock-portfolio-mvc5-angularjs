@@ -25,7 +25,7 @@ type StocksData = { Symbol:string; Ask:string; Bid:string; AverageDailyVolume:st
 type stock = XmlProvider<"yqlstock.xml", false, false>
 
 let DownloadStocksFeed (url:string) =
- let req = WebRequest.Create(url) :?> HttpWebRequest
+ let req = HttpWebRequest.Create(url)
  use stream = req.GetResponse().GetResponseStream()
  use reader = new StreamReader(stream)
  let read = reader.ReadToEnd()
@@ -39,4 +39,4 @@ let DownloadStocksFeed (url:string) =
 
 let GetStocksData ticker =
     let url = makeUrlStocks ticker
-    DownloadStocksFeed(url.AbsoluteUri)
+    DownloadStocksFeed url.AbsoluteUri

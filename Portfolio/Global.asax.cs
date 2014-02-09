@@ -1,6 +1,7 @@
-﻿namespace Portfolio
+﻿using Portfolio.App_Start;
+
+namespace Portfolio
 {
-    using App_Start;
     using Core;
     using System;
     using System.Web;

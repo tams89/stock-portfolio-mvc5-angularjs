@@ -1,16 +1,7 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="FilterConfig.cs" company="">
-//   
-// </copyright>
-// <summary>
-//   The filter config.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
+﻿using System.Web.Mvc;
 
 namespace Portfolio.App_Start
 {
-    using System.Web.Mvc;
-
     /// <summary>
     /// The filter config.
     /// </summary>

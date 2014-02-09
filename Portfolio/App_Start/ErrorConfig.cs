@@ -1,19 +1,11 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ErrorConfig.cs" company="">
-//   
-// </copyright>
-// <summary>
-//   Defines the ErrorConfig type.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
+﻿using Portfolio.Controllers;
+using System.Globalization;
+using System.Web;
+using System.Web.Mvc;
+using System.Web.Routing;
+
 namespace Portfolio.App_Start
 {
-    using System.Globalization;
-    using System.Web;
-    using System.Web.Mvc;
-    using System.Web.Routing;
-    using Controllers;
-
     /// <summary>
     /// The error config.
     /// </summary>

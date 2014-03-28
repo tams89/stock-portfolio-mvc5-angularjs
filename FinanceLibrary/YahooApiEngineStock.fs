@@ -7,7 +7,6 @@ open System.Xml
 open System.Xml.Linq
 open System.Xml.Serialization
 open FSharp.Data
-open FSharp.Net
 
 let makeUrlStocks ticker =
     new Uri("http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20('" + ticker + "')&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys")

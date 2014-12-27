@@ -232,7 +232,6 @@
     <Content Include="Scripts\Angular\angular-scenario.min.js" />
     <Content Include="Scripts\Angular\ui-bootstrap-tpls-0.7.0.js" />
     <Content Include="Scripts\Angular\ui-bootstrap-tpls-0.7.0.min.js" />
-    <Content Include="Scripts\README Merge _App JS files using Shell.txt" />
     <Content Include="Scripts\_App\AlgoTrader.js" />
     <Content Include="Scripts\_App\AlgoTrader.min.js">
       <DependentUpon>AlgoTrader.js</DependentUpon>
@@ -386,10 +385,7 @@
     <Content Include="Scripts\_App\Directives\circle.min.js.map">
       <DependentUpon>circle.js</DependentUpon>
     </Content>
-    <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Main\Register.cshtml" />
-    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
-    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
     <Content Include="Views\Main\About.cshtml" />
     <Content Include="Views\Main\Login.cshtml" />
     <Content Include="Views\Main\Home.cshtml" />

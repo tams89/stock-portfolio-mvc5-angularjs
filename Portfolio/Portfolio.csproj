@@ -31,7 +31,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Portfolio.XML</DocumentationFile>
+    <DocumentationFile>
+    </DocumentationFile>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -232,6 +233,7 @@
     <Content Include="Scripts\Angular\angular-scenario.min.js" />
     <Content Include="Scripts\Angular\ui-bootstrap-tpls-0.7.0.js" />
     <Content Include="Scripts\Angular\ui-bootstrap-tpls-0.7.0.min.js" />
+    <Content Include="Scripts\HighStock\highstock.min.js" />
     <Content Include="Scripts\_App\AlgoTrader.js" />
     <Content Include="Scripts\_App\AlgoTrader.min.js">
       <DependentUpon>AlgoTrader.js</DependentUpon>

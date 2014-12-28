@@ -67,16 +67,8 @@
     <Compile Include="YahooApiEngineOptions.fs" />
     <Compile Include="YahooApiEngineStock.fs" />
     <Compile Include="AmericanOptionBinomial.fs" />
-    <None Include="ReutersNewsFeed.fsx" />
     <Content Include="yqlstock.xml" />
     <None Include="packages.config" />
-    <None Include="Samples\MathNet.Numerics.FSharp\Vectors.fsx" />
-    <None Include="Samples\MathNet.Numerics.FSharp\RandomAndDistributions.fsx" />
-    <None Include="Samples\MathNet.Numerics.FSharp\MCMC.fsx" />
-    <None Include="Samples\MathNet.Numerics.FSharp\Matrices.fsx" />
-    <None Include="Samples\MathNet.Numerics.FSharp\LinearRegression.fsx" />
-    <None Include="Samples\MathNet.Numerics.FSharp\Histogram.fsx" />
-    <None Include="Samples\MathNet.Numerics.FSharp\Apply.fsx" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Data">

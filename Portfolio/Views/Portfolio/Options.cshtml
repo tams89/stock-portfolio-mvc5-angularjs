@@ -6,7 +6,7 @@
         <form>
             <input type="hidden" name="symbol" value='{{selected.Symbol}}' />
             <h4>Search:</h4>
-            <input class="form-control" type="text" placeholder="Press enter to select a company - see option table below"
+            <input class="form-control" type="text" placeholder="Use the Arrow keys & Enter to select a company - see option table below"
                    ng-change="OnInputChange()" ng-model="selected" ng-enter="SelectSymbol()"
                    typeahead="symbol as symbol.Name + ' - ' + symbol.Symbol for symbol in symbols | limitTo: 5" autofocus />
         </form>

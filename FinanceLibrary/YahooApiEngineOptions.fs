@@ -2,9 +2,7 @@
 
 open System
 open System.IO
-open System.Linq
 open System.Net
-open System.Xml
 open System.Xml.Linq
 open System.Globalization
 open System.Text.RegularExpressions

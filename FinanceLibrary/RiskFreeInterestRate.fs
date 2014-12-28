@@ -1,7 +1,5 @@
 ﻿module AlgoTrader.RiskFreeInterestRate
 
-open Microsoft.FSharp.Math;
-
 /// V = Value
 /// A = initial asset value?
 /// r = annual compound interest rate

@@ -2,8 +2,6 @@
 
 open System
 open System.IO
-open System.Xml
-open System.Text
 open System.Net
 open System.Globalization
 

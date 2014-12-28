@@ -36,8 +36,9 @@ body.home {
 }
 
 .jumbotron {
-    padding: 5px;
+    padding: 0;
     background-color: transparent;
+    margin-bottom: 0;
 }
 
 /* Animations */

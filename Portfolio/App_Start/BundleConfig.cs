@@ -32,7 +32,9 @@
             bundles.Add(new StyleBundle("~/Content/siteCss").Include("~/Content/Styles/Site.css"));
 
             // Required libraries
-            bundles.Add(new ScriptBundle("~/bundles/highStock").IncludeDirectory("~/Scripts/HighStock", "*.min.js", true));
+            bundles.Add(new ScriptBundle("~/bundles/highStock")
+                .Include("~/Scripts/HighStock/highstock.min.js")
+                .Include("~/Scripts/Highcharts-4.0.1/highcharts.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                 "~/Scripts/Angular/angular.js",
@@ -50,6 +52,7 @@
             bundles.Add(new ScriptBundle("~/bundles/underScore").Include("~/Scripts/UnderScore/underscore-min.js"));
 
             // Created SPA JS Bundles
+
             //bundles.Add(new ScriptBundle("~/bundles/angularApp")
             //    .IncludeDirectory("~/Scripts/_App", "AlgoTrader.js")
             //    .IncludeDirectory("~/Scripts/_App/Modules", "*.js")

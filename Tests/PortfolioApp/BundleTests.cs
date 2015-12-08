@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using System.Web.Optimization;
+using Portfolio;
 
 namespace Test.PortfolioApp
 {
@@ -10,8 +11,7 @@ namespace Test.PortfolioApp
         public void DoBundlesRegister()
         {
             var bundleCollection = new BundleCollection();
-            Portfolio.App_Start.BundleConfig.RegisterBundles(bundleCollection);
-
+            BundleConfig.RegisterBundles(bundleCollection);
             Assert.IsTrue(bundleCollection.Count > 1);
         }
     }

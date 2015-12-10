@@ -1,16 +1,7 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="LocalPasswordModel.cs" company="">
-//   
-// </copyright>
-// <summary>
-//   The local password model.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace Portfolio.Models
+namespace AlgoTrader.Portfolio.Models
 {
-    using System.ComponentModel.DataAnnotations;
-
     /// <summary>
     /// The local password model.
     /// </summary>

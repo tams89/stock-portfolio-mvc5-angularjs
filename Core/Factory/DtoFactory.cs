@@ -1,7 +1,7 @@
-﻿namespace Core.Factory
-{
-    using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
+namespace AlgoTrader.Core.Factory
+{
     /// <summary>
     /// Factory for creating DTO objects.
     /// </summary>

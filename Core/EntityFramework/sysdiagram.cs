@@ -7,11 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Core.EntityFramework
+using System;
+
+namespace AlgoTrader.Core.EntityFramework
 {
-    using System;
-    using System.Collections.Generic;
-    
     public partial class sysdiagram
     {
         public string name { get; set; }

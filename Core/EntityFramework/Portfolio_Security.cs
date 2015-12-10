@@ -7,11 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Core.EntityFramework
+namespace AlgoTrader.Core.EntityFramework
 {
-    using System;
-    using System.Collections.Generic;
-    
     public partial class Portfolio_Security
     {
         public System.Guid Id { get; set; }

@@ -1,7 +1,7 @@
-﻿using Core.Models.HFT;
-using System;
+﻿using System;
+using AlgoTrader.Core.Models.HFT;
 
-namespace Core.Repository
+namespace AlgoTrader.Core.Repository
 {
     /// <summary>
     /// Work contracts.

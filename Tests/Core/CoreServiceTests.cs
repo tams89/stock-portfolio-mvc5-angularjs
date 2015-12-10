@@ -1,9 +1,9 @@
-﻿using Core;
-using Core.Services;
-using Core.Services.Interfaces;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using System.Linq;
 using System.Threading.Tasks;
+using AlgoTrader.Core.AutoMapper;
+using AlgoTrader.Core.Services;
+using AlgoTrader.Core.Services.Interfaces;
 
 namespace Test.Core
 {
@@ -18,12 +18,12 @@ namespace Test.Core
         /// <summary>
         /// The _yahoo finance service.
         /// </summary>
-        private IYahooFinanceService yahooFinanceService;
+        private IYahooFinanceService _yahooFinanceService;
 
         /// <summary>
         /// The financial calculation service.
         /// </summary>
-        private IFinancialCalculationService financialCalculationService;
+        private IFinancialCalculationService _financialCalculationService;
 
         #endregion Fields
 
@@ -31,8 +31,8 @@ namespace Test.Core
         public void Init()
         {
             AutoMapperConfig.Configure();
-            yahooFinanceService = new YahooFinanceService();
-            financialCalculationService = new FinancialCalculationService();
+            _yahooFinanceService = new YahooFinanceService();
+            _financialCalculationService = new FinancialCalculationService();
         }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace Test.Core
         [Test]
         public void GetStockData()
         {
-            var marketData = yahooFinanceService.GetStockData("MSFT", null, null);
+            var marketData = _yahooFinanceService.GetStockData("MSFT");
             Assert.IsNotNull(marketData);
         }
 
@@ -51,7 +51,7 @@ namespace Test.Core
         [Test]
         public void GetOptionData()
         {
-            var optionData = yahooFinanceService.GetOptionData("GOOG");
+            var optionData = _yahooFinanceService.GetOptionData("GOOG");
             Assert.IsNotNull(optionData);
         }
 
@@ -61,12 +61,12 @@ namespace Test.Core
         [Test]
         public void Does_BlackScholes_GetCalculated()
         {
-            var optionData = yahooFinanceService.GetOptionData("MSFT").ToList();
+            var optionData = _yahooFinanceService.GetOptionData("MSFT").ToList();
 
             Parallel.ForEach(optionData, dto =>
             {
-                dto.Volatility = financialCalculationService.Volatility(dto, null, null);
-                dto.BlackScholes = financialCalculationService.BlackScholes(dto);
+                dto.Volatility = _financialCalculationService.Volatility(dto);
+                dto.BlackScholes = _financialCalculationService.BlackScholes(dto);
             });
 
             Assert.IsTrue(optionData.Any(x => x.BlackScholes > 1 && x.Volatility > 0.001));

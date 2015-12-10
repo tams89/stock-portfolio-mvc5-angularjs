@@ -1,15 +1,16 @@
-﻿namespace Portfolio
-{
-    using App_Start;
-    using Core;
-    using System;
-    using System.Web;
-    using System.Web.Mvc;
-    using System.Web.Optimization;
-    using System.Web.Routing;
+﻿using System;
+using System.Web;
+using System.Web.Http;
+using System.Web.Mvc;
+using System.Web.Optimization;
+using System.Web.Routing;
+using AlgoTrader.Core.AutoMapper;
+using AlgoTrader.Portfolio.DependencyResolution;
 
+namespace AlgoTrader.Portfolio
+{
     /// <summary>
-    /// The mvc application.
+    /// The mvc application initialising members.
     /// </summary>
     public class MvcApplication : HttpApplication
     {
@@ -26,11 +27,10 @@
 
             MvcHandler.DisableMvcResponseHeader = true; // Security?
 
-            MunqConfig.PreStart(); // IoC
+            StructuremapMvc.Start(); // IoC Setup.
             AutoMapperConfig.Configure();
 
-            // Disabled doesnt support Munq IoC
-            // WebApiConfig.Register(GlobalConfiguration.Configuration); 
+            WebApiConfig.Register(GlobalConfiguration.Configuration);
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

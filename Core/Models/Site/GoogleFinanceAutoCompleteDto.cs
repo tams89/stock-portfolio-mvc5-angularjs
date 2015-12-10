@@ -6,7 +6,7 @@
 //   The google finance json.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-namespace Core.Models.Site
+namespace AlgoTrader.Core.Models.Site
 {
     /// <summary>
     /// The google finance json.

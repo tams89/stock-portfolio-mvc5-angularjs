@@ -6,7 +6,7 @@
         if ($scope.loginForm.$valid) {
             var validatedPromise = authenticationService.Login($scope.loginModel, $scope.antiForgeryToken);
             validatedPromise.then(function (data) {
-                if (data == "true") {
+                if (data === "true") {
                     window.location.href = "/";
                     return true;
                 } else {

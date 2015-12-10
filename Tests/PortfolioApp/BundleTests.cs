@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 using System.Web.Optimization;
-using Portfolio;
+using AlgoTrader.Portfolio;
 
 namespace Test.PortfolioApp
 {

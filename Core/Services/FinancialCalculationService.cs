@@ -1,12 +1,11 @@
-﻿using System.Net;
+﻿using System;
+using System.Collections.Generic;
+using System.Net;
+using AlgoTrader.Core.DTO;
+using AlgoTrader.Core.Services.Interfaces;
 
-namespace Core.Services
+namespace AlgoTrader.Core.Services
 {
-    using DTO;
-    using Interfaces;
-    using System;
-    using System.Collections.Generic;
-
     /// <summary>
     /// FinancialCalculationService contains methods to calculate properties of option & stocks.
     /// </summary>
@@ -15,7 +14,7 @@ namespace Core.Services
         /// <summary>
         /// Key value pair storing the symbol and volatility of a option.
         /// </summary>
-        private KeyValuePair<string, double> symbolVolatility;
+        private KeyValuePair<string, double> _symbolVolatility;
 
         /// <summary>
         /// Calculates the Black-Scholes price of an option.
@@ -83,13 +82,13 @@ namespace Core.Services
 
                 // If volatility already calculated for this symbol/option use the stored value.
                 double volatility = 0;
-                if (symbolVolatility.Key != companyTicker)
+                if (_symbolVolatility.Key != companyTicker)
                 {
                     volatility = AlgoTrader.YahooApi.VolatilityAndMarketData.highLowVolatility(companyTicker, fromDate.Value, toDate.Value);
-                    symbolVolatility = new KeyValuePair<string, double>(companyTicker, volatility);
+                    _symbolVolatility = new KeyValuePair<string, double>(companyTicker, volatility);
                 }
-                else if (symbolVolatility.Key == companyTicker)
-                    volatility = symbolVolatility.Value;
+                else if (_symbolVolatility.Key == companyTicker)
+                    volatility = _symbolVolatility.Value;
                 if (Math.Abs(volatility) < double.Epsilon)
                     throw new InvalidOperationException(
                         string.Format("Volatility cannot be zero (tolerance double epsilson constant)'{0}'", volatility));

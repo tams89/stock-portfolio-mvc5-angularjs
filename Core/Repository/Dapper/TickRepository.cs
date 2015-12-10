@@ -1,13 +1,13 @@
-﻿using Core.Models.HFT;
-using DapperExtensions;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Linq.Expressions;
+using AlgoTrader.Core.Models.HFT;
+using DapperExtensions;
 
-namespace Core.Repository.Dapper
+namespace AlgoTrader.Core.Repository.Dapper
 {
     /// <summary>
     /// Dapper Read-Only Tick repository.

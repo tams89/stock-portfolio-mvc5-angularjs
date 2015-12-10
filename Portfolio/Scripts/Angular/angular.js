@@ -16196,7 +16196,7 @@ var VALID_CLASS = 'ng-valid',
  *
  * <example module="badIsolatedDirective">
     <file name="script.js">
-		angular.module('badIsolatedDirective', []).directive('isolate', function() {
+        angular.module('badIsolatedDirective', []).directive('isolate', function() {
       return {
         require: 'ngModel',
         scope: { },
@@ -16208,7 +16208,7 @@ var VALID_CLASS = 'ng-valid',
           });
         }
       };
-		});
+        });
     </file>
     <file name="index.html">
         <input ng-model="someModel"/>

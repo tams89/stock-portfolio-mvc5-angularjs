@@ -6,7 +6,7 @@
 //   Defines the IWebRequestService type.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-namespace Core.Services.Interfaces
+namespace AlgoTrader.Core.Services.Interfaces
 {
     /// <summary>
     /// 

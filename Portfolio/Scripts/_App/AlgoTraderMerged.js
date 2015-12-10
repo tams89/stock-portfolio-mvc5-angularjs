@@ -31,7 +31,7 @@ app.config(["$routeProvider", function ($routeProvider) {
         if ($scope.loginForm.$valid) {
             var validatedPromise = authenticationService.Login($scope.loginModel, $scope.antiForgeryToken);
             validatedPromise.then(function (data) {
-                if (data == "true") {
+                if (data === "true") {
                     window.location.href = "/";
                     return true;
                 } else {
@@ -54,7 +54,7 @@ app.config(["$routeProvider", function ($routeProvider) {
 }]);﻿// Setup navigation routes controller sets navbar items to active and so highlights when on page.
 app.controller("NavigationController", ["$scope", "$location", function ($scope, $location) {
     $scope.getClass = function (path) {
-        if ($location.path().substr(0, path.length) == path) {
+        if ($location.path().substr(0, path.length) === path) {
             return true;
         } else {
             return false;
@@ -102,7 +102,7 @@ app.controller("NavigationController", ["$scope", "$location", function ($scope,
     function getOptionData(symbol) {
         var optionDataPromise = optionAnalysisService.getOptions(symbol);
         optionDataPromise.then(function (data) {
-            if (data.length == 0) {
+            if (data.length === 0) {
                 toaster.pop("information", "No options found.", "Please try another symbol/company as not all companies have option listings");
                 $scope.selected = undefined;
                 $scope.loading = false;

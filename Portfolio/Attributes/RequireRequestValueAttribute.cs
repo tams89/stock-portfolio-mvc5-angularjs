@@ -7,11 +7,11 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Portfolio.Attributes
-{
-    using System.Reflection;
-    using System.Web.Mvc;
+using System.Reflection;
+using System.Web.Mvc;
 
+namespace AlgoTrader.Portfolio.Attributes
+{
     /// <summary>
     /// The require request value attribute.
     /// </summary>

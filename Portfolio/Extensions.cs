@@ -1,18 +1,15 @@
-﻿namespace Portfolio
-{
-    using System.Web.Helpers;
+﻿using System.Web.Helpers;
 
+namespace AlgoTrader.Portfolio
+{
     /// <summary>
-    /// The extensions.
+    /// Helpers for the Web Application.
     /// </summary>
     public static class Extensions
     {
         /// <summary>
         /// The get anti forgery token.
         /// </summary>
-        /// <returns>
-        /// The <see cref="string"/>.
-        /// </returns>
         public static string GetAntiForgeryToken()
         {
             string cookieToken, formToken;

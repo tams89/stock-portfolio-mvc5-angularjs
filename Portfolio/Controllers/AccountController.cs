@@ -1,13 +1,14 @@
-﻿namespace Portfolio.Controllers
-{
-    using Filters;
-    using Models;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Web.Mvc;
-    using System.Web.Security;
-    using WebMatrix.WebData;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Web.Mvc;
+using System.Web.Security;
+using AlgoTrader.Portfolio.Attributes;
+using AlgoTrader.Portfolio.Filters;
+using AlgoTrader.Portfolio.Models;
+using WebMatrix.WebData;
 
+namespace AlgoTrader.Portfolio.Controllers
+{
     /// <summary>
     /// The account controller.
     /// </summary>

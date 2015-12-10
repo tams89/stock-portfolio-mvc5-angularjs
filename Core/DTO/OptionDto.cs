@@ -1,7 +1,7 @@
-﻿namespace Core.DTO
-{
-    using System;
+﻿using System;
 
+namespace AlgoTrader.Core.DTO
+{
     /// <summary>
     /// The option dto.
     /// </summary>

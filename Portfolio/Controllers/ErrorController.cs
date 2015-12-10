@@ -1,16 +1,8 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ErrorController.cs" company="">
-//   
-// </copyright>
-// <summary>
-//   The error controller.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-namespace Portfolio.Controllers
-{
-    using System;
-    using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 
+namespace AlgoTrader.Portfolio.Controllers
+{
     /// <summary>
     /// The error controller.
     /// </summary>
@@ -29,10 +21,10 @@ namespace Portfolio.Controllers
         /// </returns>
         public ActionResult Index(int? id)
         {
-            var statusCode = id.HasValue ? id.Value : 500;
+            var statusCode = id ?? 500;
             var error =
                 new HandleErrorInfo(
-                    new Exception(string.Format("Wooo, this is embarrassing, a http {0} error occured.", statusCode)),
+                    new Exception($"Wooo, this is embarrassing, a http {statusCode} error occured."),
                     "Error",
                     "Index");
             return View("Error", error);

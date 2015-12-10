@@ -1,12 +1,12 @@
-﻿namespace Core.Services
-{
-    using Interfaces;
-    using Models.Site;
-    using Newtonsoft.Json.Linq;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using AlgoTrader.Core.Models.Site;
+using AlgoTrader.Core.Services.Interfaces;
+using Newtonsoft.Json.Linq;
 
+namespace AlgoTrader.Core.Services
+{
     /// <summary>
     /// The google finance service.
     /// </summary>

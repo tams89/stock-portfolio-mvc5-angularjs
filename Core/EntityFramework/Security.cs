@@ -7,11 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Core.EntityFramework
+using System.Collections.Generic;
+
+namespace AlgoTrader.Core.EntityFramework
 {
-    using System;
-    using System.Collections.Generic;
-    
     public partial class Security
     {
         public Security()

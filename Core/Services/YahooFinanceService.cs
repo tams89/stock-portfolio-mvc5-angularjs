@@ -1,18 +1,16 @@
-﻿
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
+using AlgoTrader.Core.DTO;
+using AlgoTrader.Core.Services.Interfaces;
+using AlgoTrader.YahooApi;
+using AutoMapper;
 
-namespace Core.Services
+namespace AlgoTrader.Core.Services
 {
-    using AlgoTrader.YahooApi;
-    using AutoMapper;
-    using DTO;
-    using Interfaces;
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Linq;
-
     /// <summary>
     /// The yahoo finance service.
     /// </summary>

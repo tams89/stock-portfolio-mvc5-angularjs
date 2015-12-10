@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{3788A7EE-763B-419C-973A-4C671C9B0E13}"
 	ProjectSection(SolutionItems) = preProject
@@ -9,13 +9,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{3788A7
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 	EndProjectSection
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FinanceLibrary", "FinanceLibrary\FinanceLibrary.fsproj", "{7B0B1DF4-E819-4283-90AF-77E999EC8CE3}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AlgoTrader.FinanceLibrary", "FinanceLibrary\AlgoTrader.FinanceLibrary.fsproj", "{7B0B1DF4-E819-4283-90AF-77E999EC8CE3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{BFCEF614-1598-44C5-A3E0-3A956D5CD209}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgoTrader.Core", "Core\AlgoTrader.Core.csproj", "{BFCEF614-1598-44C5-A3E0-3A956D5CD209}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{68AD4F77-FE4B-4EF9-A585-69C736BCD21B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgoTrader.Integration.Tests", "Tests\AlgoTrader.Integration.Tests.csproj", "{68AD4F77-FE4B-4EF9-A585-69C736BCD21B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio", "Portfolio\Portfolio.csproj", "{16A33873-0735-4C48-832D-453E30C9E7D9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgoTrader.Portfolio", "Portfolio\AlgoTrader.Portfolio.csproj", "{16A33873-0735-4C48-832D-453E30C9E7D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

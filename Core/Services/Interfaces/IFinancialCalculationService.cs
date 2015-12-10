@@ -1,10 +1,10 @@
-﻿namespace Core.Services.Interfaces
-{
-    using DTO;
-    using System;
+﻿using System;
+using AlgoTrader.Core.DTO;
 
+namespace AlgoTrader.Core.Services.Interfaces
+{
     /// <summary>
-    /// Interface to FinancialCalculationService contains methods to calculate properties of option & stocks.
+    /// Interface to FinancialCalculationService contains methods to calculate properties of option and stocks.
     /// </summary>
     public interface IFinancialCalculationService
     {
@@ -14,8 +14,6 @@
         /// </summary>
         /// <param name="option">
         /// </param>
-        /// <returns>
-        /// </returns>
         double BlackScholes(OptionDto option);
 
         /// <summary>
@@ -29,9 +27,6 @@
         /// <param name="toDate">
         /// The to Date.
         /// </param>
-        /// <returns>
-        /// The <see cref="double"/>.
-        /// </returns>
-        double Volatility(OptionDto option, DateTime? fromDate, DateTime? toDate);
+        double Volatility(OptionDto option, DateTime? fromDate = null, DateTime? toDate = null);
     }
 }

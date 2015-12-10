@@ -1,7 +1,7 @@
-﻿using Core.Models.HFT;
-using System.Data.Entity;
+﻿using System.Data.Entity;
+using AlgoTrader.Core.Models.HFT;
 
-namespace Core.Repository.EntityFramework
+namespace AlgoTrader.Core.Repository.EntityFramework
 {
     /// <summary>
     /// Entity Framework work unit.

@@ -1,16 +1,7 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="UsersContext.cs" company="">
-//   
-// </copyright>
-// <summary>
-//   The users context.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
+﻿using System.Data.Entity;
 
-namespace Portfolio.Models
+namespace AlgoTrader.Portfolio.Models
 {
-    using System.Data.Entity;
-
     /// <summary>
     /// The users context.
     /// </summary>

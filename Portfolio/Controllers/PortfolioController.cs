@@ -1,37 +1,30 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Web.Mvc;
+using AlgoTrader.Core.Services.Interfaces;
 
-namespace Portfolio.Controllers
+namespace AlgoTrader.Portfolio.Controllers
 {
-    using Core.Services.Interfaces;
-    using System;
-    using System.Linq;
-    using System.Web.Mvc;
-
     /// <summary>
     /// The portfolio controller.
     /// </summary>
     public class PortfolioController : AsyncController
     {
-        #region Fields
-
         /// <summary>
         /// The google finance service.
         /// </summary>
-        private readonly IGoogleFinanceService googleFinanceService;
+        private readonly IGoogleFinanceService _googleFinanceService;
 
         /// <summary>
         /// The yahoo finance service.
         /// </summary>
-        private readonly IYahooFinanceService yahooFinanceService;
+        private readonly IYahooFinanceService _yahooFinanceService;
 
         /// <summary>
         /// The financial calculation service.
         /// </summary>
-        private readonly IFinancialCalculationService financialCalculationService;
-
-        #endregion
-
-        #region Constructors and Destructors
+        private readonly IFinancialCalculationService _financialCalculationService;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="PortfolioController"/> class.
@@ -47,20 +40,16 @@ namespace Portfolio.Controllers
         public PortfolioController(IYahooFinanceService yahooFinanceService, IGoogleFinanceService googleFinanceService, IFinancialCalculationService financialCalculationService)
         {
             if (googleFinanceService == null)
-                throw new ArgumentNullException("googleFinanceService");
+                throw new ArgumentNullException(nameof(googleFinanceService));
             if (yahooFinanceService == null)
-                throw new ArgumentNullException("yahooFinanceService");
+                throw new ArgumentNullException(nameof(yahooFinanceService));
             if (financialCalculationService == null)
-                throw new ArgumentNullException("financialCalculationService");
+                throw new ArgumentNullException(nameof(financialCalculationService));
 
-            this.yahooFinanceService = yahooFinanceService;
-            this.googleFinanceService = googleFinanceService;
-            this.financialCalculationService = financialCalculationService;
+            _yahooFinanceService = yahooFinanceService;
+            _googleFinanceService = googleFinanceService;
+            _financialCalculationService = financialCalculationService;
         }
-
-        #endregion
-
-        #region Public Methods and Operators
 
         /// <summary>
         /// The auto complete.
@@ -74,7 +63,7 @@ namespace Portfolio.Controllers
         [HttpPost]
         public JsonResult AutoComplete(string symbol)
         {
-            var results = googleFinanceService.SymbolSearch(symbol).ToArray();
+            var results = _googleFinanceService.SymbolSearch(symbol).ToArray();
             return results.Any() ? Json(results.Select(x => new { x.Name, x.Symbol })) : null;
         }
 
@@ -90,7 +79,7 @@ namespace Portfolio.Controllers
         [HttpPost]
         public JsonResult MarketData(string symbol)
         {
-            var marketData = yahooFinanceService.GetStockData(symbol, null, null);
+            var marketData = _yahooFinanceService.GetStockData(symbol);
             return Json(marketData);
         }
 
@@ -108,14 +97,14 @@ namespace Portfolio.Controllers
         /// The <see cref="JsonResult"/>.
         /// </returns>
         [HttpPost]
-        public JsonResult OptionData(string symbol, DateTime? from, DateTime? to)
+        public JsonResult OptionData(string symbol, DateTime? from = null, DateTime? to = null)
         {
-            var optionData = yahooFinanceService.GetOptionData(symbol);
+            var optionData = _yahooFinanceService.GetOptionData(symbol);
 
             Parallel.ForEach(optionData, dto =>
             {
-                dto.Volatility = financialCalculationService.Volatility(dto, null, null);
-                dto.BlackScholes = financialCalculationService.BlackScholes(dto);
+                dto.Volatility = _financialCalculationService.Volatility(dto, from , to);
+                dto.BlackScholes = _financialCalculationService.BlackScholes(dto);
             });
 
             return Json(optionData);
@@ -142,7 +131,5 @@ namespace Portfolio.Controllers
         {
             return View();
         }
-
-        #endregion
     }
 }

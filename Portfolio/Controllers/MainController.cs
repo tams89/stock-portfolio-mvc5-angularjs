@@ -1,16 +1,7 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="MainController.cs" company="">
-//   
-// </copyright>
-// <summary>
-//   The main controller.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
+﻿using System.Web.Mvc;
 
-namespace Portfolio.Controllers
+namespace AlgoTrader.Portfolio.Controllers
 {
-    using System.Web.Mvc;
-
     /// <summary>
     /// The main controller.
     /// </summary>

@@ -1,34 +1,22 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="InitializeSimpleMembershipAttribute.cs" company="">
-//   
-// </copyright>
-// <summary>
-//   The initialize simple membership attribute.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-
+﻿using System;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
+using System.Threading;
+using System.Web.Mvc;
+using AlgoTrader.Portfolio.Models;
+using WebMatrix.WebData;
 
-namespace Portfolio.Filters
+namespace AlgoTrader.Portfolio.Filters
 {
-    using System;
-    using System.Data.Entity.Infrastructure;
-    using System.Threading;
-    using System.Web.Mvc;
-    using Models;
-    using WebMatrix.WebData;
-
     // See for implementation.
     // http://techbrij.com/angularjs-antiforgerytoken-asp-net-mvc
     // http://techbrij.com/angularjs-asp-net-mvc-username-check
     /// <summary>
     /// The initialize simple membership attribute.
     /// </summary>
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
     public sealed class InitializeSimpleMembershipAttribute : ActionFilterAttribute
     {
-        #region Static Fields
-
         /// <summary>
         /// The _initializer.
         /// </summary>
@@ -44,10 +32,6 @@ namespace Portfolio.Filters
         /// </summary>
         private static bool _isInitialized;
 
-        #endregion
-
-        #region Public Methods and Operators
-
         /// <summary>
         /// The on action executing.
         /// </summary>
@@ -60,15 +44,11 @@ namespace Portfolio.Filters
             LazyInitializer.EnsureInitialized(ref _initializer, ref _isInitialized, ref _initializerLock);
         }
 
-        #endregion
-
         /// <summary>
         /// The simple membership initializer.
         /// </summary>
         private class SimpleMembershipInitializer
         {
-            #region Constructors and Destructors
-
             /// <summary>
             /// Initializes a new instance of the <see cref="SimpleMembershipInitializer"/> class.
             /// </summary>
@@ -90,21 +70,19 @@ namespace Portfolio.Filters
                     }
 
                     WebSecurity.InitializeDatabaseConnection(
-                        "DefaultConnection", 
-                        "UserProfile", 
-                        "UserId", 
-                        "UserName", 
+                        "DefaultConnection",
+                        "UserProfile",
+                        "UserId",
+                        "UserName",
                         autoCreateTables: true);
                 }
                 catch (Exception ex)
                 {
                     throw new InvalidOperationException(
-                        "The ASP.NET Simple Membership database could not be initialized. For more information, please see http://go.microsoft.com/fwlink/?LinkId=256588", 
+                        "The ASP.NET Simple Membership database could not be initialized. For more information, please see http://go.microsoft.com/fwlink/?LinkId=256588",
                         ex);
                 }
             }
-
-            #endregion
         }
     }
 }

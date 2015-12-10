@@ -1,7 +1,7 @@
-﻿using Core.Models.HFT;
+﻿using AlgoTrader.Core.Models.HFT;
 using DapperExtensions.Mapper;
 
-namespace Core.Dapper.Mapping.HFT
+namespace AlgoTrader.Core.Dapper.Mapping.HFT
 {
     /// <summary>
     /// The tick map.

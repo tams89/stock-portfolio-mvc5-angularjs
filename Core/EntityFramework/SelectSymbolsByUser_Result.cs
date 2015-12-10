@@ -7,10 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Core.EntityFramework
+namespace AlgoTrader.Core.EntityFramework
 {
-    using System;
-    
     public partial class SelectSymbolsByUser_Result
     {
         public System.Guid SecurityId { get; set; }

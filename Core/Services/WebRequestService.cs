@@ -9,9 +9,9 @@
 
 using System;
 using System.Net;
-using Core.Services.Interfaces;
+using AlgoTrader.Core.Services.Interfaces;
 
-namespace Core.Services
+namespace AlgoTrader.Core.Services
 {
     /// <summary>
     /// The web request service.

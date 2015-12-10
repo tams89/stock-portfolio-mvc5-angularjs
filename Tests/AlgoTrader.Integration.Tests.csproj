@@ -8,7 +8,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Test</RootNamespace>
     <AssemblyName>Test</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -115,23 +115,21 @@
     <Compile Include="Core\HFTServiceTests.cs" />
     <Compile Include="PortfolioApp\BundleTests.cs" />
     <Compile Include="PortfolioApp\ControllerTests.cs" />
-    <Compile Include="ORM\DbSetupPortfolio.cs" />
-    <Compile Include="ORM\HFTTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Core\CoreServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Core\Core.csproj">
+    <ProjectReference Include="..\Core\AlgoTrader.Core.csproj">
       <Project>{bfcef614-1598-44c5-a3e0-3a956d5cd209}</Project>
-      <Name>Core</Name>
+      <Name>AlgoTrader.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\FinanceLibrary\FinanceLibrary.fsproj">
+    <ProjectReference Include="..\FinanceLibrary\AlgoTrader.FinanceLibrary.fsproj">
       <Project>{7b0b1df4-e819-4283-90af-77e999ec8ce3}</Project>
-      <Name>FinanceLibrary</Name>
+      <Name>AlgoTrader.FinanceLibrary</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Portfolio\Portfolio.csproj">
+    <ProjectReference Include="..\Portfolio\AlgoTrader.Portfolio.csproj">
       <Project>{16a33873-0735-4c48-832d-453e30c9e7d9}</Project>
-      <Name>Portfolio</Name>
+      <Name>AlgoTrader.Portfolio</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

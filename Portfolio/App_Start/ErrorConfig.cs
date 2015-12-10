@@ -1,19 +1,11 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ErrorConfig.cs" company="">
-//   
-// </copyright>
-// <summary>
-//   Defines the ErrorConfig type.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-namespace Portfolio.App_Start
-{
-    using System.Globalization;
-    using System.Web;
-    using System.Web.Mvc;
-    using System.Web.Routing;
-    using Controllers;
+﻿using System.Globalization;
+using System.Web;
+using System.Web.Mvc;
+using System.Web.Routing;
+using AlgoTrader.Portfolio.Controllers;
 
+namespace AlgoTrader.Portfolio
+{
     /// <summary>
     /// The error config.
     /// </summary>

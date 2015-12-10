@@ -7,10 +7,10 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Portfolio.App_Start
-{
-    using System.Web.Mvc;
+using System.Web.Mvc;
 
+namespace AlgoTrader.Portfolio
+{
     /// <summary>
     /// The filter config.
     /// </summary>

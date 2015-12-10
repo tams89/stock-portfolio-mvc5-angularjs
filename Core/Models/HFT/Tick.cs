@@ -1,7 +1,7 @@
-﻿using Core.Repository;
-using System;
+﻿using System;
+using AlgoTrader.Core.Repository;
 
-namespace Core.Models.HFT
+namespace AlgoTrader.Core.Models.HFT
 {
     /// <summary>
     /// Tick Model

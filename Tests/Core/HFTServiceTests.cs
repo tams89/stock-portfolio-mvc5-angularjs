@@ -1,26 +1,26 @@
-﻿using Core;
-using Core.Repository;
-using Core.Repository.Dapper;
-using Core.Services;
-using Core.Services.Interfaces;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using System.Linq;
-using Tick = Core.Models.HFT.Tick;
+using AlgoTrader.Core.AutoMapper;
+using AlgoTrader.Core.Models.HFT;
+using AlgoTrader.Core.Repository;
+using AlgoTrader.Core.Repository.Dapper;
+using AlgoTrader.Core.Services;
+using AlgoTrader.Core.Services.Interfaces;
 
 namespace Test.Core
 {
     [TestFixture]
-    public class HFTServiceTests
+    public class HftServiceTests
     {
-        private IReadOnlyRepository<Tick> tickRepository;
-        private IHFTService hftService;
+        private IReadOnlyRepository<Tick> _tickRepository;
+        private IHFTService _hftService;
 
         [SetUp]
         public void Init()
         {
             AutoMapperConfig.Configure();
-            tickRepository = new TickRepository();
-            hftService = new HFTService(tickRepository);
+            _tickRepository = new TickRepository();
+            _hftService = new HFTService(_tickRepository);
         }
 
         [TestCase("IBM", true)]
@@ -28,7 +28,7 @@ namespace Test.Core
         [TestCase("", false)]
         public void GetTickData_ByPredicate(string symbol, bool expected)
         {
-            var data = hftService.BySymbol(symbol);
+            var data = _hftService.BySymbol(symbol);
             Assert.IsTrue(data.Any() == expected);
         }
     }

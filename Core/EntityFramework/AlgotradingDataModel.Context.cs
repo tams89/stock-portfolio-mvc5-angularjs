@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Core.EntityFramework
+namespace AlgoTrader.Core.EntityFramework
 {
     using System;
     using System.Data.Entity;

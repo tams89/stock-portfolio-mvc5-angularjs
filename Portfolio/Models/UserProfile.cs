@@ -1,17 +1,8 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="UserProfile.cs" company="">
-//   
-// </copyright>
-// <summary>
-//   The user profile.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Portfolio.Models
+namespace AlgoTrader.Portfolio.Models
 {
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-
     /// <summary>
     /// The user profile.
     /// </summary>

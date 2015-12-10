@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq.Expressions;
 
-namespace Core.Repository
+namespace AlgoTrader.Core.Repository
 {
     /// <summary>
     /// Read only contracts.

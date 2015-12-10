@@ -2,9 +2,7 @@
 
 open System
 open System.IO
-open System.Linq
 open System.Net
-open System.Xml
 open System.Xml.Linq
 open System.Globalization
 open System.Text.RegularExpressions
@@ -49,7 +47,7 @@ let expiryDate (optionTicker:string) =
 let daysToExpiry (expiryDate:DateTime) : string = 
     (expiryDate- DateTime.Today).TotalDays.ToString()
 
-let InTheMoney symbol strikePrice marketPrice =    
+let InTheMoney symbol strikePrice marketPrice = 
     // Call option is in the money when the strike price is below the market price.
     if symbol.ToString().[10] = 'C' then strikePrice < marketPrice
     // Put option is in the money when the strike price is above the market price.
@@ -57,9 +55,7 @@ let InTheMoney symbol strikePrice marketPrice =
     else false;
 
 /// Call or Put option is at the money when the strike price is equal to the market price.
-let AtTheMoney strikePrice marketPrice =    
-    if strikePrice = marketPrice then true
-    else false
+let AtTheMoney strikePrice marketPrice = strikePrice = marketPrice
 
 /// Gets SOAP data and serialises into optionsData type.
 let DownloadOptionsFeed (url:string) =

@@ -1,9 +1,9 @@
-﻿namespace Core
-{
-    using AlgoTrader.YahooApi;
-    using AutoMapper;
-    using DTO;
+﻿using AlgoTrader.Core.DTO;
+using AlgoTrader.YahooApi;
+using AutoMapper;
 
+namespace AlgoTrader.Core.AutoMapper
+{
     /// <summary>
     /// The auto mapper config.
     /// </summary>

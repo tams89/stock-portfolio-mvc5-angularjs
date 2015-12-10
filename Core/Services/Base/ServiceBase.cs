@@ -1,6 +1,6 @@
 ﻿using System.Security.Principal;
 
-namespace Core.Services
+namespace AlgoTrader.Core.Services.Base
 {
     /// <summary>
     /// The service base.

@@ -1,11 +1,11 @@
-namespace Portfolio.Migrations
-{
-    using Models;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
-    using System.Web.Security;
-    using WebMatrix.WebData;
+using System.Data.Entity.Migrations;
+using System.Linq;
+using System.Web.Security;
+using AlgoTrader.Portfolio.Models;
+using WebMatrix.WebData;
 
+namespace AlgoTrader.Portfolio.Migrations
+{
     /// <summary>
     /// The configuration.
     /// </summary>

@@ -1,16 +1,14 @@
-﻿namespace Core.Services.Interfaces
-{
-    using DTO;
-    using System;
-    using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using AlgoTrader.Core.DTO;
 
+namespace AlgoTrader.Core.Services.Interfaces
+{
     /// <summary>
     /// The YahooFinanceService interface.
     /// </summary>
     public interface IYahooFinanceService
     {
-        #region Public Methods and Operators
-
         /// <summary>
         /// Obtains market data related to symbol.
         /// </summary>
@@ -23,10 +21,7 @@
         /// <param name="to">
         /// The to.
         /// </param>
-        /// <returns>
-        /// The <see cref="IEnumerable"/>.
-        /// </returns>
-        IEnumerable<MarketDto> GetStockData(string symbol, DateTime? @from, DateTime? to);
+        IEnumerable<MarketDto> GetStockData(string symbol, DateTime? from = null, DateTime? to = null);
 
         /// <summary>
         /// The get option data.
@@ -34,11 +29,6 @@
         /// <param name="symbol">
         /// The symbol.
         /// </param>
-        /// <returns>
-        /// The <see cref="IEnumerable"/>.
-        /// </returns>
         IEnumerable<OptionDto> GetOptionData(string symbol);
-
-        #endregion
     }
 }

@@ -1,10 +1,10 @@
-﻿using Core.Models.HFT;
-using Core.Repository;
-using Core.Services.Interfaces;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using AlgoTrader.Core.Models.HFT;
+using AlgoTrader.Core.Repository;
+using AlgoTrader.Core.Services.Interfaces;
 
-namespace Core.Services
+namespace AlgoTrader.Core.Services
 {
     /// <summary>
     /// The hft service.

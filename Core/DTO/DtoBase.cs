@@ -1,4 +1,4 @@
-﻿namespace Core.DTO
+﻿namespace AlgoTrader.Core.DTO
 {
     /// <summary>
     /// The dto base.

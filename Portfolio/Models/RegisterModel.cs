@@ -1,16 +1,7 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="RegisterModel.cs" company="">
-//   
-// </copyright>
-// <summary>
-//   The register model.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace Portfolio.Models
+namespace AlgoTrader.Portfolio.Models
 {
-    using System.ComponentModel.DataAnnotations;
-
     /// <summary>
     /// The register model.
     /// </summary>

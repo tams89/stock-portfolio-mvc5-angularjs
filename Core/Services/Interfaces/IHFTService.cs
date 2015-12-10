@@ -1,7 +1,7 @@
-﻿using Core.Models.HFT;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using AlgoTrader.Core.Models.HFT;
 
-namespace Core.Services.Interfaces
+namespace AlgoTrader.Core.Services.Interfaces
 {
     /// <summary>
     /// The HFTService interface.

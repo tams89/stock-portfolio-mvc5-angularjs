@@ -1,7 +1,7 @@
-﻿using Core.Models.Site;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using AlgoTrader.Core.Models.Site;
 
-namespace Core.Services.Interfaces
+namespace AlgoTrader.Core.Services.Interfaces
 {
     /// <summary>
     /// Interface to google finance service.

@@ -7,11 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Core.EntityFramework
+namespace AlgoTrader.Core.EntityFramework
 {
-    using System;
-    using System.Collections.Generic;
-    
     public partial class Tick
     {
         public System.Guid Id { get; set; }

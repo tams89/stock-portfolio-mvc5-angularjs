@@ -4,7 +4,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 
-namespace Core.Repository.EntityFramework
+namespace AlgoTrader.Core.Repository.EntityFramework
 {
     /// <summary>
     /// Entity Framework Respository.

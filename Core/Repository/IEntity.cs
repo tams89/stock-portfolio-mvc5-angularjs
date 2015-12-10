@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Core.Repository
+namespace AlgoTrader.Core.Repository
 {
     /// <summary>
     /// Contract to entities.

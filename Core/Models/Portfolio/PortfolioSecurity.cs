@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Core.Models.Portfolio
+namespace AlgoTrader.Core.Models.Portfolio
 {
     /// <summary>
     /// The portfolio security.

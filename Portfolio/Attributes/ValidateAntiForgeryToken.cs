@@ -7,13 +7,13 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Portfolio
-{
-    using System;
-    using System.Web;
-    using System.Web.Helpers;
-    using System.Web.Mvc;
+using System;
+using System.Web;
+using System.Web.Helpers;
+using System.Web.Mvc;
 
+namespace AlgoTrader.Portfolio.Attributes
+{
     /// <summary>
     /// The validate angular post header.
     /// </summary>

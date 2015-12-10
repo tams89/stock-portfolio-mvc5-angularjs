@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using AlgoTrader.Core.Models.Site;
+using AlgoTrader.Core.DTO;
 using AlgoTrader.Core.Services.Interfaces;
 using Newtonsoft.Json.Linq;
 
@@ -15,7 +15,7 @@ namespace AlgoTrader.Core.Services
         /// <summary>
         /// The _web request service.
         /// </summary>
-        private readonly IWebRequestService webRequestService;
+        private readonly IWebRequestService _webRequestService;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GoogleFinanceService"/> class. 
@@ -25,7 +25,7 @@ namespace AlgoTrader.Core.Services
         /// </param>
         public GoogleFinanceService(IWebRequestService webRequestService)
         {
-            this.webRequestService = webRequestService;
+            this._webRequestService = webRequestService;
         }
 
         /// <example>
@@ -52,7 +52,7 @@ namespace AlgoTrader.Core.Services
                 var url = Constants.GoogleFinanceJsonApiUrl + term.Trim();
 
                 // Download json data as a string.
-                var json = webRequestService.GetResponse(url);
+                var json = _webRequestService.GetResponse(url);
 
                 // Useful data in Json contained within [...]
                 var firstOccurrence = json.IndexOf('[');

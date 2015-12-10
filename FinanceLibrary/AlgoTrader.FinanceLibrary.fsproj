@@ -61,14 +61,15 @@
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <ItemGroup>
     <None Include="App.config" />
+    <Content Include="yqlstock.xml" />
     <Compile Include="BlackScholes.fs" />
     <Compile Include="VolatilityAndMarketData.fs" />
     <Compile Include="RiskFreeInterestRate.fs" />
     <Compile Include="YahooApiEngineOptions.fs" />
     <Compile Include="YahooApiEngineStock.fs" />
     <Compile Include="AmericanOptionBinomial.fs" />
-    <Content Include="yqlstock.xml" />
     <None Include="packages.config" />
+    <Content Include="GoogleFinanceJsonSample.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Data">
@@ -78,13 +79,9 @@
     <Reference Include="mscorlib" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.Entity" />
-    <Reference Include="System.Data.Linq" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Numerics" />
-    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml.Serialization" />
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

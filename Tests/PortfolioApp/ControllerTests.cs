@@ -59,6 +59,7 @@ namespace Test.PortfolioApp
         [TestCase("MSFT", null, null)]
         [TestCase("MSFT", "1900/01/01", "2000/01/01")]
         [TestCase("MSFT", "2000/01/01", "1990/01/01")]
+        [Ignore("Yahoo Options API does not work.")]
         public void PortfolioController_DoesGetOptionData_FromService(string symbol, string from, string to)
         {
             JsonResult data;
@@ -81,6 +82,7 @@ namespace Test.PortfolioApp
         /// The option data null test.
         /// </summary>
         [TestCase("", "2000/01/01", "1990/01/01")]
+        [Ignore("Yahoo Options API does not work.")]
         public void PortfolioController_DoesntGetOptionData_FromService(string symbol, string from, string to)
         {
             var fromDate = DateTime.Parse(from);

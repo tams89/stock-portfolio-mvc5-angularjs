@@ -7,8 +7,6 @@ namespace AlgoTrader.Portfolio.Controllers
     /// </summary>
     public class MainController : Controller
     {
-        #region Public Methods and Operators
-
         /// <summary>
         /// The about.
         /// </summary>
@@ -41,29 +39,5 @@ namespace AlgoTrader.Portfolio.Controllers
         {
             return View("Index");
         }
-
-        /// <summary>
-        /// The login.
-        /// </summary>
-        /// <returns>
-        /// The <see cref="ActionResult"/>.
-        /// </returns>
-        public ActionResult Login()
-        {
-            return View("Login");
-        }
-
-        /// <summary>
-        /// The register.
-        /// </summary>
-        /// <returns>
-        /// The <see cref="ActionResult"/>.
-        /// </returns>
-        public ActionResult Register()
-        {
-            return View("Register");
-        }
-
-        #endregion
     }
 }

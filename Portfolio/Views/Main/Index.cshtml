@@ -19,31 +19,13 @@
                         <li ng-class="{'active':getClass('/About')}"><a href="/#/About">About</a></li>
                     </ul>
                 </li>
-                @if (User.Identity.IsAuthenticated)
-                {
-                    <li class="dropdown" ng-class="{'active':getClass('/Portfolio')}">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Portfolio <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li ng-class="{'active':getClass('/Stocks')}"><a href="/#/Stocks">Historical Stock Data</a></li>
-                            <li ng-class="{'active':getClass('/Options')}"><a href="/#/Options">Option Tables</a></li>
-                        </ul>
-                    </li>
-                }
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                @if (User.Identity.IsAuthenticated)
-                {
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown">Welcome, @User.Identity.Name!<b class="caret"></b></a>
-                        <ul class="dropdown-menu" ng-controller="LoginController">
-                            <li><a class="text-right" role="button" ng-model="antiForgeryToken" ng-init='antiForgeryToken="@Extensions.GetAntiForgeryToken()"' ng-click="logOut()">Sign Out</a></li>
-                        </ul>
-                    </li>
-                }
-                else
-                {
-                    <li><a ng-class="{'active':getClass('/Login')}" href="/#/Login">Sign in</a></li>
-                }
+                <li class="dropdown" ng-class="{'active':getClass('/Portfolio')}">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Portfolio <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li ng-class="{'active':getClass('/Stocks')}"><a href="/#/Stocks">Historical Stock Data</a></li>
+                        <li ng-class="{'active':getClass('/Options')}"><a href="/#/Options">Option Tables</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>
@@ -52,6 +34,6 @@
     <div class="page-change" ng-view></div>
     <hr />
     <footer>
-        <p>&copy; @DateTime.Now.Year - Sivaguru Enterprises Ltd. - THIS SITE IS FOR DEMO PURPOSES ONLY.</p>
+        <p>&copy; @DateTime.Now.Year - Sivaguru Enterprises LTD. - THIS SITE IS FOR DEMO PURPOSES ONLY.</p>
     </footer>
 </div>

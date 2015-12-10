@@ -16,8 +16,7 @@ namespace AlgoTrader.Portfolio
         public static void RegisterBundles(BundleCollection bundles)
         {
             // Library CSS
-            bundles.Add(
-                new StyleBundle("~/Content/css").Include(
+            bundles.Add(new StyleBundle("~/Content/css").Include(
                     "~/Content/Styles/angular-csp.min.css",
                     "~/Content/Styles/bootstrap.min.css",
                     "~/Content/Styles/toaster.min.css",
@@ -56,13 +55,6 @@ namespace AlgoTrader.Portfolio
                 .IncludeDirectory("~/Scripts/_App/Directives", "*.js")
                 .IncludeDirectory("~/Scripts/_App/Services", "*.js")
                 .IncludeDirectory("~/Scripts/_App/Controllers", "*.js"));
-
-            bundles.Add(new ScriptBundle("~/bundles/NoAuth")
-                .Include("~/Scripts/_App/NoAuth.min.js")
-                .Include("~/Scripts/_App/Services/authenticationService.min.js")
-                .Include("~/Scripts/_App/Controllers/NavigationController.min.js")
-                .Include("~/Scripts/_App/Controllers/LoginController.min.js")
-                .Include("~/Scripts/_App/Controllers/RegistrationController.min.js"));
         }
     }
 }

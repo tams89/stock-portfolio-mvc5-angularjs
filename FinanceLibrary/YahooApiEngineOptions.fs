@@ -8,7 +8,7 @@ open System.Globalization
 open System.Text.RegularExpressions
 
 let makeUrlOptions ticker =
-    new Uri("http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.options%20where%20symbol%20in%20('" + ticker + "')&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys")
+    new Uri("http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.options%20where%20symbol%20in%20(" + ticker + ")&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys")
 
 type OptionsData = { Symbol:string; ExpiryDate:DateTime; DaysToExpiry:string; StrikePrice:Decimal; LastPrice:Decimal; ChangeDirection:string; Change:Decimal; 
                      Bid:Decimal; Ask:Decimal; Vol:int; OpenInt:int; InTheMoney:bool; AtTheMoney:bool }

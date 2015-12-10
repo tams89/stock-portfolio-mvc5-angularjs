@@ -91,7 +91,7 @@ namespace AlgoTrader.Core.Services
                     volatility = _symbolVolatility.Value;
                 if (Math.Abs(volatility) < double.Epsilon)
                     throw new InvalidOperationException(
-                        string.Format("Volatility cannot be zero (tolerance double epsilson constant)'{0}'", volatility));
+                        $"Volatility cannot be zero (tolerance double epsilson constant)'{volatility}'");
 
                 return volatility;
             }

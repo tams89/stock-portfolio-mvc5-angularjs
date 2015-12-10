@@ -87,7 +87,7 @@ let closeVolatility symbol (fromDate:DateTime) (toDate:DateTime) =
                            
         let secondValue = (System.Math.Pow((close1 data), 2.0)) * ( 1.0 / (System.Convert.ToDouble(data.Length - 1) *(System.Convert.ToDouble(data.Length - 1) - 1.0 )))
        
-        System.Math.Sqrt (firstValue - secondValue) * System.Math.Sqrt(252.0)     
+        System.Math.Sqrt (firstValue - secondValue) * System.Math.Sqrt(252.0)
 
 //highLowCloseVolatility "MSFT" (new DateTime(2010,1,1)) (new DateTime(2010,1,30));;
 let highLowCloseVolatility symbol (fromDate:DateTime) (toDate:DateTime) =

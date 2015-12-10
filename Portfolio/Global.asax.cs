@@ -9,16 +9,8 @@ using AlgoTrader.Portfolio.DependencyResolution;
 
 namespace AlgoTrader.Portfolio
 {
-    /// <summary>
-    /// The mvc application initialising members.
-    /// </summary>
     public class MvcApplication : HttpApplication
     {
-        #region Methods
-
-        /// <summary>
-        /// The application_ start.
-        /// </summary>
         protected void Application_Start()
         {
             // This prevents mvc from searching for .aspx pages in a razor based project by removing the engine. Performance?
@@ -48,7 +40,5 @@ namespace AlgoTrader.Portfolio
         {
             ErrorConfig.Handle(Context);
         }
-
-        #endregion
     }
 }

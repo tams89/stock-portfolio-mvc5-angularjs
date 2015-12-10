@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using AlgoTrader.Core.Models.Site;
+using AlgoTrader.Core.DTO;
 
 namespace AlgoTrader.Core.Services.Interfaces
 {

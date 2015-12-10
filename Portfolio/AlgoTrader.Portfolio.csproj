@@ -34,7 +34,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\AlgoTrader.Portfolio.xml</DocumentationFile>
+    <DocumentationFile>
+    </DocumentationFile>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -77,14 +78,6 @@
     </Reference>
     <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.3.4.13329\lib\net45-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="FSharp.Core, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
@@ -229,8 +222,6 @@
     <Compile Include="App_Start\DependencyResolution\StructuremapMvc.cs" />
     <Compile Include="App_Start\StructuremapMvc.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Attributes\RequireRequestValueAttribute.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\PortfolioController.cs" />
@@ -238,19 +229,10 @@
     <Compile Include="App_Start\DependencyResolution\IoC.cs" />
     <Compile Include="App_Start\DependencyResolution\StructureMapDependencyResolver.cs" />
     <Compile Include="App_Start\DependencyResolution\StructureMapDependencyScope.cs" />
-    <Compile Include="Extensions.cs" />
-    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\LocalPasswordModel.cs" />
-    <Compile Include="Models\LoginModel.cs" />
-    <Compile Include="Models\RegisterModel.cs" />
-    <Compile Include="Models\UserProfile.cs" />
-    <Compile Include="Models\UsersContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Attributes\ValidateAntiForgeryToken.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Directives\circle.html" />
@@ -381,10 +363,6 @@
     <Content Include="Scripts\_App\Modules\highcharts-ng.min.js">
       <DependentUpon>highcharts-ng.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\_App\NoAuth.js" />
-    <Content Include="Scripts\_App\NoAuth.min.js">
-      <DependentUpon>NoAuth.js</DependentUpon>
-    </Content>
     <Content Include="Scripts\_App\Services\authenticationService.js" />
     <Content Include="Scripts\_App\Controllers\NavigationController.js" />
     <Content Include="Scripts\_App\Controllers\StockController.js" />
@@ -415,9 +393,6 @@
     <Content Include="Scripts\HighStock\Modules\exporting.js" />
     <Content Include="Scripts\HighStock\Themes\grid.js" />
     <None Include="Properties\PublishProfiles\algotrader.pubxml" />
-    <Content Include="Scripts\_App\NoAuth.min.js.map">
-      <DependentUpon>NoAuth.js</DependentUpon>
-    </Content>
     <Content Include="Scripts\_App\Controllers\RegistrationController.min.js.map">
       <DependentUpon>RegistrationController.js</DependentUpon>
     </Content>
@@ -463,9 +438,7 @@
     <Content Include="Scripts\_App\Directives\circle.min.js.map">
       <DependentUpon>circle.js</DependentUpon>
     </Content>
-    <Content Include="Views\Main\Register.cshtml" />
     <Content Include="Views\Main\About.cshtml" />
-    <Content Include="Views\Main\Login.cshtml" />
     <Content Include="Views\Main\Home.cshtml" />
     <Content Include="Views\Portfolio\Options.cshtml" />
     <Content Include="Views\Portfolio\Stocks.cshtml" />

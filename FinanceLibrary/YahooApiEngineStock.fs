@@ -8,7 +8,7 @@ open System.Xml.Serialization
 open FSharp.Data
 
 let makeUrlStocks ticker =
-    new Uri("http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20('" + ticker + "')&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys")
+    new Uri("http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(" + ticker + ")&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys")
 
 [<CLIMutable>]
 type StocksData = { Symbol:string; Ask:string; Bid:string; AverageDailyVolume:string; AskRealTime:string; BidRealTime:string;
@@ -20,14 +20,14 @@ type StocksData = { Symbol:string; Ask:string; Bid:string; AverageDailyVolume:st
                     PriceEPSEstimateCurrentYear:string; PriceEPSEstimateNextYear:string; ShortRatio:string; OneyrTargetPrice:string;
                     Volume:string; StockExchange:string; DividendYield:string; }
 
-type stock = XmlProvider<"yqlstock.xml", false, false>
+type Stock = XmlProvider<"yqlstock.xml", false, false>
 
 let DownloadStocksFeed (url:string) =
  let req = WebRequest.Create(url) :?> HttpWebRequest
  use stream = req.GetResponse().GetResponseStream()
  use reader = new StreamReader(stream)
  let read = reader.ReadToEnd()
- let feed = stock.Parse(read)
+ let feed = Stock.Parse(read)
  let result  = feed.Results.Quote.XElement.ToString()
  let reader = XDocument.Parse(result).CreateReader()
  let xRoot = XmlRootAttribute("quote")

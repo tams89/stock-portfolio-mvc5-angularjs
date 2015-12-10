@@ -9,17 +9,8 @@
     @Html.Partial("_Dependencies")
 </head>
 <body class="home">
-    @if (User.Identity.IsAuthenticated)
-    {
-        <div ng-app="AlgoTrader" ng-cloak>
-            @RenderBody()
-        </div>
-    }
-    else
-    {
-        <div ng-app="NoAuth" ng-cloak>
-            @RenderBody()
-        </div>
-    }
+    <div ng-app="AlgoTrader" ng-cloak>
+        @RenderBody()
+    </div>
 </body>
 </html>

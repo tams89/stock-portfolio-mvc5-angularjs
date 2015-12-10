@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -11,13 +10,8 @@ using AutoMapper;
 
 namespace AlgoTrader.Core.Services
 {
-    /// <summary>
-    /// The yahoo finance service.
-    /// </summary>
     public class YahooFinanceService : IYahooFinanceService
     {
-        #region Public Methods and Operators
-
         /// <summary>
         /// Obtains stock data related to symbol.
         /// </summary>
@@ -30,9 +24,6 @@ namespace AlgoTrader.Core.Services
         /// <param name="to">
         /// The to.
         /// </param>
-        /// <returns>
-        /// The <see cref="IEnumerable"/>.
-        /// </returns>
         public IEnumerable<MarketDto> GetStockData(string symbol, DateTime? from, DateTime? to)
         {
             if (string.IsNullOrEmpty(symbol))
@@ -66,9 +57,7 @@ namespace AlgoTrader.Core.Services
         /// <param name="symbol">
         /// The symbol.
         /// </param>
-        /// <returns>
-        /// The <see cref="IEnumerable"/>.
-        /// </returns>
+        [Obsolete("YQL Options API no longer funtional.")]
         public IEnumerable<OptionDto> GetOptionData(string symbol)
         {
             if (string.IsNullOrEmpty(symbol))
@@ -76,7 +65,5 @@ namespace AlgoTrader.Core.Services
             var optionData = Options.GetOptionsData(symbol);
             return Mapper.Map<IEnumerable<Options.OptionsData>, IEnumerable<OptionDto>>(optionData);
         }
-
-        #endregion
     }
 }

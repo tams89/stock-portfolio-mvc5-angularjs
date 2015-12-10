@@ -1,5 +1,5 @@
-﻿using NUnit.Framework;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
+using NUnit.Framework;
 using AlgoTrader.Portfolio;
 
 namespace Test.PortfolioApp

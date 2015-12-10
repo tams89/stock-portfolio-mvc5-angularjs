@@ -44,15 +44,25 @@ namespace AlgoTrader.Portfolio
                 "~/Scripts/Angular/angular-sanitize.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include("~/Scripts/Angular/ui-bootstrap-*"));
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include("~/Scripts/Jquery/jquery-*"));
-            bundles.Add(new ScriptBundle("~/bundles/jqueryVal").Include("~/Scripts/Jquery/Validate/jquery.unobtrusive*", "~/Scripts/Jquery/Validate/jquery.validate*"));
+            bundles.Add(new ScriptBundle("~/bundles/jquery").Include("~/Scripts/jquery-*"));
+            bundles.Add(new ScriptBundle("~/bundles/jqueryVal").Include("~/Scripts/jquery.unobtrusive*", "~/Scripts/jquery.validate*"));
             bundles.Add(new ScriptBundle("~/bundles/toast").Include("~/Scripts/Toast/toaster.js"));
             bundles.Add(new ScriptBundle("~/bundles/underScore").Include("~/Scripts/UnderScore/underscore-min.js"));
 
             // Created SPA JS Bundles
+            bundles.Add(new ScriptBundle("~/bundles/angularApp")
+                .IncludeDirectory("~/Scripts/_App", "AlgoTrader.js")
+                .IncludeDirectory("~/Scripts/_App/Modules", "*.js")
+                .IncludeDirectory("~/Scripts/_App/Directives", "*.js")
+                .IncludeDirectory("~/Scripts/_App/Services", "*.js")
+                .IncludeDirectory("~/Scripts/_App/Controllers", "*.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/angularApp").Include("~/Scripts/_App/AlgoTraderMergedNgMin.min.js"));
-            bundles.Add(new ScriptBundle("~/bundles/NoAuth").Include("~/Scripts/_App/NoAuthNgMerged.min.js"));
+            bundles.Add(new ScriptBundle("~/bundles/NoAuth")
+                .Include("~/Scripts/_App/NoAuth.min.js")
+                .Include("~/Scripts/_App/Services/authenticationService.min.js")
+                .Include("~/Scripts/_App/Controllers/NavigationController.min.js")
+                .Include("~/Scripts/_App/Controllers/LoginController.min.js")
+                .Include("~/Scripts/_App/Controllers/RegistrationController.min.js"));
         }
     }
 }

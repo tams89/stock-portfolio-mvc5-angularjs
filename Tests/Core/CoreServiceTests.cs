@@ -52,7 +52,7 @@ namespace Test.Core
         public void GetOptionData()
         {
             var optionData = _yahooFinanceService.GetOptionData("GOOG");
-            Assert.IsNotNull(optionData);
+            Assert.IsNotEmpty(optionData);
         }
 
         /// <summary>

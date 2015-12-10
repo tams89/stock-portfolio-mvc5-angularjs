@@ -13,12 +13,5 @@
 </div>
 
 <div id="appScripts">
-    @if (User.Identity.IsAuthenticated)
-    {
-        @Scripts.Render("~/bundles/angularApp")
-    }
-    else
-    {
-        @Scripts.Render("~/bundles/NoAuth")
-    }
+    @(User.Identity.IsAuthenticated ? Scripts.Render("~/bundles/angularApp") : Scripts.Render("~/bundles/NoAuth"))
 </div>

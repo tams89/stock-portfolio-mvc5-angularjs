@@ -77,8 +77,8 @@ namespace AlgoTrader.Core.Services
                 }
 
                 // Annual volatilty by default.
-                fromDate = fromDate.HasValue ? fromDate.Value : DateTime.Today.AddYears(-1);
-                toDate = toDate.HasValue ? toDate.Value : DateTime.Today;
+                fromDate = fromDate ?? DateTime.Today.AddYears(-1);
+                toDate = toDate ?? DateTime.Today;
 
                 // If volatility already calculated for this symbol/option use the stored value.
                 double volatility = 0;
@@ -97,7 +97,7 @@ namespace AlgoTrader.Core.Services
             }
             catch (WebException ex)
             {
-                // Log http exception and carry on.
+                // TODO Log http exception and carry on.
                 return 0.0;
             }
             catch (Exception ex)

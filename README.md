@@ -8,6 +8,3 @@ Key Notes:
 * F# Options pricing algorithms.
 * F# functions to pull data from Yahoo Finance.
 * HighCharts to display data from Yahoo Finance.
-* Generic Repository
-* Dapper used as the ORM (Object Relational Mapper) for Tick data.
-* Entity Framework 6 for general data access where extra performance isn't required.

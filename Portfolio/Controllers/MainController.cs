@@ -29,6 +29,8 @@ namespace AlgoTrader.Portfolio.Controllers
             return View("Home");
         }
 
+        /// Test
+
         /// <summary>
         /// The index.
         /// </summary>

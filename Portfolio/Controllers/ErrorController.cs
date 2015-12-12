@@ -27,6 +27,7 @@ namespace AlgoTrader.Portfolio.Controllers
                     new Exception($"Wooo, this is embarrassing, a http {statusCode} error occured."),
                     "Error",
                     "Index");
+
             return View("Error", error);
         }
 

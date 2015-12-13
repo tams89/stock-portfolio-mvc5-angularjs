@@ -30,8 +30,8 @@ namespace AlgoTrader.Portfolio
 
             // Required libraries
             bundles.Add(new ScriptBundle("~/bundles/highStock")
-                .Include("~/Scripts/HighStock/highstock.min.js")
-                .Include("~/Scripts/Highcharts-4.0.1/highcharts.js"));
+                .Include("~/Scripts/HighStock/highstock.js")
+                );
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                 "~/Scripts/Angular/angular.js",
@@ -55,6 +55,8 @@ namespace AlgoTrader.Portfolio
                 .IncludeDirectory("~/Scripts/_App/Directives", "*.js")
                 .IncludeDirectory("~/Scripts/_App/Services", "*.js")
                 .IncludeDirectory("~/Scripts/_App/Controllers", "*.js"));
+
+            BundleTable.EnableOptimizations = false;
         }
     }
 }

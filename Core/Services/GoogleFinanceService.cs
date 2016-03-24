@@ -25,7 +25,7 @@ namespace AlgoTrader.Core.Services
         /// </param>
         public GoogleFinanceService(IWebRequestService webRequestService)
         {
-            this._webRequestService = webRequestService;
+            _webRequestService = webRequestService;
         }
 
         /// <example>

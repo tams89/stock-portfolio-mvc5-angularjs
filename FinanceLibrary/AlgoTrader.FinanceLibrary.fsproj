@@ -65,11 +65,12 @@
     <Compile Include="BlackScholes.fs" />
     <Compile Include="VolatilityAndMarketData.fs" />
     <Compile Include="RiskFreeInterestRate.fs" />
-    <Compile Include="YahooApiEngineOptions.fs" />
     <Compile Include="YahooApiEngineStock.fs" />
     <Compile Include="AmericanOptionBinomial.fs" />
+    <Compile Include="GoogleOptions.fs" />
     <None Include="packages.config" />
-    <Content Include="GoogleFinanceJsonSample.txt" />
+    <None Include="GoogleFinanceOptionSample.json" />
+    <Compile Include="YahooApiEngineOptions.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Data">
@@ -79,6 +80,7 @@
     <Reference Include="mscorlib" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml.Serialization" />

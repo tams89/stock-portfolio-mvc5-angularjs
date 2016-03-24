@@ -56,11 +56,38 @@ type OptionChain =
      Calls : Option []
      Puts : Option []}
 
+let parseInt item = 
+    let mutable result = 0
+    let parsed = Int32.TryParse(item, &result)
+    result, parsed
+
+let parseDecimal item = 
+    let mutable result = 0M
+    let parsed = Decimal.TryParse(item, &result)
+    result, parsed
+
+let parseExpiry rawExpiry = DateTime(int rawExpiry.y, int rawExpiry.m, int rawExpiry.d)
+
+let toOption rawOption = 
+    {Symbol = rawOption.s
+     StrikePrice = decimal rawOption.strike
+     Expiry = DateTime.ParseExact(rawOption.expiry, "MMM dd, yyyy", System.Globalization.CultureInfo.CurrentCulture)
+     Bid = parseDecimal rawOption.b |> fst
+     Ask = parseDecimal rawOption.a |> fst
+     Vol = parseInt rawOption.vol |> fst
+     OpenInt = parseInt rawOption.oi |> fst}
+
 let DownloadOptionsFeed(url : string) = 
     let wc = new WebClient()
     let mutable str = wc.DownloadString(url)
     let obj = JsonConvert.DeserializeObject<RawOptionChain>(str)
-    obj
+    {Expiry = parseExpiry obj.Expiry
+     Expirations = 
+         [|for e in obj.Expirations -> parseExpiry e|]
+     Calls = 
+         [|for o in obj.Calls -> toOption o|]
+     Puts = 
+         [|for o in obj.Puts -> toOption o|]}
 
 /// Example: GetOptionsData "MSFT";;
 let GetOptionsData ticker expiryDate = 

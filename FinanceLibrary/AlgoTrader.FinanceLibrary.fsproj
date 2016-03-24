@@ -69,7 +69,6 @@
     <Compile Include="AmericanOptionBinomial.fs" />
     <Compile Include="GoogleOptions.fs" />
     <None Include="packages.config" />
-    <None Include="GoogleFinanceOptionSample.json" />
     <Compile Include="YahooApiEngineOptions.fs" />
   </ItemGroup>
   <ItemGroup>

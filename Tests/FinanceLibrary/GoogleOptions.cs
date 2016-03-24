@@ -12,7 +12,7 @@ namespace Test.FinanceLibrary
         [Test]
         public void CanGetOptionChain_FromGoogle()
         {
-            var optionChain = Options.GetOptionsData("GOOG", new FSharpOption<DateTime>(DateTime.Now));
+            var optionChain = Options.GetOptionsData("GOOG", FSharpOption<DateTime>.None);
             Assert.IsTrue(optionChain.Calls.Any());
         }
     }

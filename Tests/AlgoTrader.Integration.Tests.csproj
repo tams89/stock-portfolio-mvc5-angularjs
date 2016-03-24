@@ -48,7 +48,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="FinanceLibrary\GoogleOptions.cs" />
+    <Compile Include="FinanceLibrary\GoogleOptionsTests.cs" />
     <Compile Include="PortfolioApp\BundleTests.cs" />
     <Compile Include="PortfolioApp\ControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

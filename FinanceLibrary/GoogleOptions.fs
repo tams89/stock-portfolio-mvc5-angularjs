@@ -1,11 +1,8 @@
 ﻿module AlgoTrader.GoogleApi.Options
 
+open Newtonsoft.Json
 open System
-open System.IO
 open System.Net
-open System.Runtime.Serialization.Json
-open System.Text
-open System.Text.RegularExpressions
 
 let makeUrlOptions (expiryDate : DateTime option) ticker = 
     match expiryDate with
@@ -17,7 +14,7 @@ let makeUrlOptions (expiryDate : DateTime option) ticker =
         + "&output=json"
     | None -> "http://www.google.com/finance/option_chain?q=" + ticker + "&output=json"
 
-type Expiry = 
+type RawExpiry = 
     {y : string
      m : string
      d : string}
@@ -38,6 +35,12 @@ type RawOption =
      cs : string
      cp : string}
 
+type RawOptionChain = 
+    {Expiry : RawExpiry
+     Expirations : RawExpiry []
+     Calls : RawOption []
+     Puts : RawOption []}
+
 type Option = 
     {Symbol : string
      StrikePrice : Decimal
@@ -45,27 +48,18 @@ type Option =
      Bid : Decimal
      Ask : Decimal
      Vol : int
-     OpenInt : int
-     InTheMoney : bool
-     AtTheMoney : bool}
+     OpenInt : int}
 
-type OptionChain(expiry, expirations, calls, puts) = 
-    class
-        member this.Expiry : DateTime = expiry 
-        member this.Expirations : Expiry [] = expirations 
-        member this.Calls : RawOption [] = calls 
-        member this.Puts  : RawOption [] = puts 
-    end
+type OptionChain = 
+    {Expiry : DateTime
+     Expirations : DateTime []
+     Calls : Option []
+     Puts : Option []}
 
-/// Gets SOAP data and serialises into optionsData type.
 let DownloadOptionsFeed(url : string) = 
     let wc = new WebClient()
     let mutable str = wc.DownloadString(url)
-    str <- Regex.Replace(str, @"(\w+:)(\d+\.?\d*)", "$1\"$2\"")
-    str <- Regex.Replace(str, @"(\w+):", "\"$1\":")
-    let js = DataContractJsonSerializer(typeof<OptionChain>)
-    use memStream = new MemoryStream(Encoding.UTF8.GetBytes(str))
-    let obj = js.ReadObject(memStream) :?> OptionChain
+    let obj = JsonConvert.DeserializeObject<RawOptionChain>(str)
     obj
 
 /// Example: GetOptionsData "MSFT";;

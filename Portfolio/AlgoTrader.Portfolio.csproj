@@ -289,7 +289,6 @@
       <DependentUpon>toaster.css</DependentUpon>
     </Content>
     <Content Include="Content\ui-bootstrap-csp.css" />
-    <Content Include="gulpfile.js" />
     <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.js" />
     <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.min.js" />
     <Content Include="Scripts\angular-ui\ui-bootstrap.js" />

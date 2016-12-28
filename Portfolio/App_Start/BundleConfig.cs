@@ -54,7 +54,8 @@ namespace AlgoTrader.Portfolio
                 .IncludeDirectory("~/Scripts/_App/Modules", "*.js")
                 .IncludeDirectory("~/Scripts/_App/Directives", "*.js")
                 .IncludeDirectory("~/Scripts/_App/Services", "*.js")
-                .IncludeDirectory("~/Scripts/_App/Controllers", "*.js"));
+                .IncludeDirectory("~/Scripts/_App/Controllers", "*.js")
+                .IncludeDirectory("~/tsScripts", "*.js"));
 
             BundleTable.EnableOptimizations = false;
         }

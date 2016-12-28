@@ -1,0 +1,24 @@
+﻿{
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es5",
+    "module": "commonjs",
+    "noImplicitAny": false,
+    "outDir": "../Scripts/",
+    "removeComments": false,
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "typeRoots": [
+      "../node_modules/@types"
+    ],
+    "types": [
+      "core-js"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "typings/main",
+    "typings/main.d.ts"
+  ]
+}

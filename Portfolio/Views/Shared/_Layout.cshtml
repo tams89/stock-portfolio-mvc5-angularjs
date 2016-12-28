@@ -9,8 +9,11 @@
     @Html.Partial("_Dependencies")
 </head>
 <body class="home">
-    <div ng-app="AlgoTrader" ng-cloak>
+    <div ng-cloak>
         @RenderBody()
     </div>
 </body>
 </html>
+<script>
+    angular.bootstrap(document.body, ['AlgoTrader'], { strictDi: true });
+</script>

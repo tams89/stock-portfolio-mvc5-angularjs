@@ -159,3 +159,5 @@ $RECYCLE.BIN/
 /.vs/config
 /Output-Build.txt
 /Settings.FSharpLint
+/node_modules/@types/core-js
+/Portfolio/node_modules

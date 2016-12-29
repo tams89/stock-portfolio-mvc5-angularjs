@@ -6,3 +6,4 @@ platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1
     var upgrade = platformRef.injector.get(static_1.UpgradeModule);
     upgrade.bootstrap(document.body, ['AlgoTrader'], { strictDi: true });
 });
+//# sourceMappingURL=main.js.map

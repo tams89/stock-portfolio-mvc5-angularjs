@@ -45,8 +45,10 @@
     <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
     <TypeScriptModuleKind>CommonJS</TypeScriptModuleKind>
     <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
-    <TypeScriptOutFile />
-    <TypeScriptOutDir />
+    <TypeScriptOutFile>
+    </TypeScriptOutFile>
+    <TypeScriptOutDir>
+    </TypeScriptOutDir>
     <TypeScriptGeneratesDeclarations>True</TypeScriptGeneratesDeclarations>
     <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
     <TypeScriptSourceMap>True</TypeScriptSourceMap>
@@ -289,6 +291,7 @@
       <DependentUpon>toaster.css</DependentUpon>
     </Content>
     <Content Include="Content\ui-bootstrap-csp.css" />
+    <Content Include="gulpfile.js" />
     <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.js" />
     <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.min.js" />
     <Content Include="Scripts\angular-ui\ui-bootstrap.js" />
@@ -310,6 +313,9 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\_App2\app.module.js" />
+    <Content Include="Scripts\_App2\main.js" />
+    <Content Include="Scripts\_App2\systemjs.config.js" />
     <Content Include="Scripts\_App\AlgoTrader.js" />
     <Content Include="Scripts\_App\AlgoTrader.min.js">
       <DependentUpon>AlgoTrader.js</DependentUpon>
@@ -525,6 +531,8 @@
     <Content Include="Scripts\_App\Directives\ng-grid-2.0.7.debug.min.js.map">
       <DependentUpon>ng-grid-2.0.7.debug.js</DependentUpon>
     </Content>
+    <Content Include="tsScripts\tsconfig.json" />
+    <Content Include="typings.json" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\AlgoTrader.Core.csproj">
@@ -544,9 +552,9 @@
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <TypeScriptCompile Include="tsScripts\app.module.ts" />
+    <TypeScriptCompile Include="tsScripts\app.ts" />
+    <TypeScriptCompile Include="tsScripts\boot.ts" />
     <TypeScriptCompile Include="tsScripts\main.ts" />
   </ItemGroup>
   <ItemGroup>

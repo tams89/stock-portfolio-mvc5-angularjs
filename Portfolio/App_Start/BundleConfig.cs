@@ -49,13 +49,14 @@ namespace AlgoTrader.Portfolio
             bundles.Add(new ScriptBundle("~/bundles/underScore").Include("~/Scripts/UnderScore/underscore-min.js"));
 
             // Created SPA JS Bundles
+            // IMPORTANT - Angular2 scripts are bundled using browserify
             bundles.Add(new ScriptBundle("~/bundles/angularApp")
                 .IncludeDirectory("~/Scripts/_App", "AlgoTrader.js")
                 .IncludeDirectory("~/Scripts/_App/Modules", "*.js")
                 .IncludeDirectory("~/Scripts/_App/Directives", "*.js")
                 .IncludeDirectory("~/Scripts/_App/Services", "*.js")
                 .IncludeDirectory("~/Scripts/_App/Controllers", "*.js")
-                .IncludeDirectory("~/tsScripts", "*.js"));
+                );
 
             BundleTable.EnableOptimizations = false;
         }

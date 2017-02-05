@@ -339,6 +339,7 @@
     <Content Include="Scripts\_App\Controllers\StockController.min.js">
       <DependentUpon>StockController.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\_App\Directives\angular2Component.js" />
     <Content Include="Scripts\_App\Directives\circle.js" />
     <Content Include="Scripts\_App\Directives\circle.min.js">
       <DependentUpon>circle.js</DependentUpon>

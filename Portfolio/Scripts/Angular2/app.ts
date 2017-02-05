@@ -1,4 +1,6 @@
 ﻿import { Component } from '@angular/core';
+import { UpgradeAdapter } from '@angular/upgrade';
+
 @Component({
     selector: 'my-app',
     template: `    
@@ -11,7 +13,7 @@
     </ul>
   `
 })
-export class AppComponent {
+export class Angular2SmallComponent {
     title = 'ASP.NET MVC 5 with Angular 2';
     skills = ['MVC 5', 'Angular 2', 'TypeScript', 'Visual Studio 2015'];
     myskills = this.skills[1];

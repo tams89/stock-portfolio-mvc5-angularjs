@@ -8,20 +8,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+///<reference path="../../typings/globals/core-js/index.d.ts"/>
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = 'ASP.NET MVC 5 with Angular 2';
-        this.skills = ['MVC 5', 'Angular 2', 'TypeScript', 'Visual Studio 2015'];
-        this.myskills = this.skills[1];
+var platform_browser_1 = require("@angular/platform-browser");
+// Custom component
+var app_1 = require("./app");
+var AppModule = (function () {
+    function AppModule() {
     }
-    return AppComponent;
+    return AppModule;
 }());
-AppComponent = __decorate([
-    core_1.Component({
-        selector: 'my-app',
-        template: "    \n    <h2>My favorite skill is: {{myskills}}</h2>\n    <p>Skill:</p>\n    <ul>\n      <li *ngFor=\"let skl of skills\">\n        {{ skl }}\n      </li>\n    </ul>\n  "
+AppModule = __decorate([
+    core_1.NgModule({
+        imports: [platform_browser_1.BrowserModule],
+        declarations: [app_1.AppComponent],
+        bootstrap: [app_1.AppComponent]
     }),
     __metadata("design:paramtypes", [])
-], AppComponent);
-exports.AppComponent = AppComponent;
+], AppModule);
+exports.AppModule = AppModule;
+//# sourceMappingURL=boot.js.map

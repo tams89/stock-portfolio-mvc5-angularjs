@@ -22,5 +22,9 @@ app.config(["$routeProvider", function ($routeProvider) {
                 controller: "OptionController",
                 templateUrl: "Portfolio/Options"
             })
+        .when("/Sample",
+            {
+                templateUrl: "Sample/Angular2"
+            })
         .otherwise({ redirectTo: "/Home" });
 }]);

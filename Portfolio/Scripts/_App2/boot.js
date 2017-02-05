@@ -8,9 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-///<reference path="./../typings/globals/core-js/index.d.ts"/>
+///<reference path="../../typings/globals/core-js/index.d.ts"/>
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
+// Custom component
 var app_1 = require("./app");
 var AppModule = (function () {
     function AppModule() {
@@ -26,4 +27,3 @@ AppModule = __decorate([
     __metadata("design:paramtypes", [])
 ], AppModule);
 exports.AppModule = AppModule;
-//# sourceMappingURL=boot.js.map

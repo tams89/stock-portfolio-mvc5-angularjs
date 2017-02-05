@@ -250,6 +250,7 @@
     <Compile Include="App_Start\DependencyResolution\IoC.cs" />
     <Compile Include="App_Start\DependencyResolution\StructureMapDependencyResolver.cs" />
     <Compile Include="App_Start\DependencyResolution\StructureMapDependencyScope.cs" />
+    <Compile Include="Controllers\SampleController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -531,8 +532,9 @@
     <Content Include="Scripts\_App\Directives\ng-grid-2.0.7.debug.min.js.map">
       <DependentUpon>ng-grid-2.0.7.debug.js</DependentUpon>
     </Content>
-    <Content Include="tsScripts\tsconfig.json" />
+    <Content Include="Scripts\Angular2\tsconfig.json" />
     <Content Include="typings.json" />
+    <Content Include="Views\Sample\Angular2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\AlgoTrader.Core.csproj">
@@ -553,13 +555,14 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="tsScripts\app.ts" />
-    <TypeScriptCompile Include="tsScripts\boot.ts" />
-    <TypeScriptCompile Include="tsScripts\main.ts" />
+    <TypeScriptCompile Include="Scripts\Angular2\app.ts" />
+    <TypeScriptCompile Include="Scripts\Angular2\boot.ts" />
+    <TypeScriptCompile Include="Scripts\Angular2\main.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

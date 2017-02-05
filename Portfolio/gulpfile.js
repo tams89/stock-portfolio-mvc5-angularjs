@@ -26,13 +26,13 @@ gulp.task("scriptsNStyles", () => {
         .pipe(gulp.dest("./libs"));
 });
 
-var tsProject = ts.createProject('tsScripts/tsconfig.json', {
+var tsProject = ts.createProject('Scripts/Angular2/tsconfig.json', {
     typescript: require('typescript')
 });
 gulp.task('ts', function (done) {
     //var tsResult = tsProject.src()
     var tsResult = gulp.src([
-            "tsScripts/*.ts"
+            "Scripts/Angular2/*.ts"
     ])
         .pipe(ts(tsProject), undefined, ts.reporter.fullReporter());
     return tsResult.js.pipe(gulp.dest('./Scripts/_App2/'));
@@ -41,7 +41,7 @@ gulp.task('ts', function (done) {
 gulp.task('watch', ['watch.ts']);
 
 gulp.task('watch.ts', ['ts'], function () {
-    return gulp.watch('tsScripts/*.ts', ['ts']);
+    return gulp.watch('Scripts/Angular2/*.ts', ['ts']);
 });
 
 gulp.task('default', ['scriptsNStyles', 'watch']);
